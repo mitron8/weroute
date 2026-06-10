@@ -39,7 +39,7 @@ export default function Page() {
         }}
       >
 
-        <Navbar />
+        
 
         <main>
 
@@ -62,7 +62,6 @@ export default function Page() {
 
         </main>
 
-        <Footer />
 
       </div>
     </>

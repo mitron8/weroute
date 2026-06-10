@@ -102,7 +102,7 @@ const MENU = {
         title: "Vendor-Agnostic",
         desc:
           "Technology chosen for outcomes, not lock-in.",
-          
+          href:"/vendor-agnostic"
           
       },
 
@@ -120,7 +120,7 @@ const MENU = {
         title: "Operational Clarity",
         desc:
           "Visibility, monitoring, and optimization.",
-          href:"/enterprise-delivery"
+          href:"/operational-clarity"
           
       },
 
