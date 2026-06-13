@@ -1,13 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
-
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-
+import React from "react";
+import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   Network,
@@ -44,23 +38,10 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const sectionRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative h-[260vh] bg-[#f7f9fc]"
-      style={{ overflow: "clip" }}
-    >
-
+    <section className="relative bg-[#f7f9fc] py-28" style={{ overflow: "clip" }}>
       {/* background */}
-      <div className="absolute inset-0">
-
+      <div className="absolute inset-0 pointer-events-none">
         {/* grid */}
         <div
           className="
@@ -83,83 +64,67 @@ export default function ServicesSection() {
             blur-3xl
           "
         />
-
       </div>
 
-      {/* sticky */}
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      {/* content wrapper */}
+      <div className="relative mx-auto w-full max-w-7xl px-4 md:px-10">
+        
+        {/* Animated Heading Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-16 max-w-3xl"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#052440]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#080357]">
+            Core Capabilities
+          </span>
 
-        {/* content */}
-        <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 md:gap-5 md:px-10">
+          <h2 className="mt-8 text-4xl font-black leading-tight tracking-[-0.04em] text-[#080357] md:text-5xl lg:text-6xl">
+            Enterprise <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] text-transparent bg-clip-text">Solutions</span>
+            <br />
+            Built for Scale
+          </h2>
 
+          <p className="mt-6 text-lg leading-relaxed text-[#052440]/65">
+            We engineer resilient, high-performance systems designed to handle complex workloads seamlessly across network, security, cloud, and AI architectures.
+          </p>
+        </motion.div>
+
+        {/* Services Cards */}
+        <div className="flex flex-col gap-5">
           {services.map((service, index) => {
-            const start = index * 0.18;
-
-            const end = start + 0.2;
-
-            // width animation
-            const width = useTransform(
-              scrollYProgress,
-              [start, end],
-              ["16%", "100%"]
-            );
-
-            // fade
-            const opacity = useTransform(
-              scrollYProgress,
-              [start, end],
-              [0.6, 1]
-            );
-
-            // smooth scale
-            const scale = useTransform(
-              scrollYProgress,
-              [start, end],
-              [0.94, 1]
-            );
-
-            // content reveal
-            const contentOpacity = useTransform(
-              scrollYProgress,
-              [start + 0.08, end],
-              [0, 1]
-            );
-
-            const contentX = useTransform(
-              scrollYProgress,
-              [start + 0.08, end],
-              [20, 0]
-            );
-
             const Icon = service.icon;
 
             return (
               <motion.div
                 key={index}
-                style={{
-                  width,
-                  opacity,
-                  scale,
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="
-                  will-change-transform
+                  group
                   relative
-                  h-[100px]
+                  w-full
                   overflow-hidden
                   rounded-[1.8rem]
                   border
                   border-[#052440]/10
                   bg-white
-                  shadow-[0_15px_50px_rgba(5,36,64,0.05)]
+                  py-5
+                  shadow-[0_15px_50px_rgba(5,36,64,0.03)]
+                  transition-shadow
+                  hover:shadow-[0_15px_50px_rgba(5,36,64,0.08)]
+                  md:h-[100px]
+                  md:py-0
                 "
               >
-
                 {/* inner */}
-                <div className="flex h-full items-center justify-between px-4 md:px-8">
-
+                <div className="flex h-full flex-col justify-between gap-6 px-5 md:flex-row md:items-center md:px-8">
                   {/* left */}
                   <div className="flex min-w-0 items-center gap-4 md:gap-6">
-
                     {/* icon */}
                     <div
                       className="
@@ -177,9 +142,7 @@ export default function ServicesSection() {
                         md:w-14
                       "
                     >
-
                       <Icon size={22} />
-
                     </div>
 
                     {/* number */}
@@ -201,33 +164,26 @@ export default function ServicesSection() {
                     <h2
                       className="
                         whitespace-nowrap
-                        text-lg
+                        text-xl
                         font-bold
                         tracking-tight
                         text-[#052440]
-                        md:text-4xl
+                        md:text-3xl
+                        lg:text-4xl
                       "
                     >
                       {service.title}
                     </h2>
-
                   </div>
 
                   {/* right content */}
-                  <motion.div
-                    style={{
-                      opacity: contentOpacity,
-                      x: contentX,
-                    }}
-                    className="hidden items-center gap-8 md:flex"
-                  >
-
+                  <div className="flex items-center justify-between gap-8 pl-16 md:pl-0">
                     <p
                       className="
                         max-w-sm
                         text-sm
                         leading-relaxed
-                        text-[#052440]/50
+                        text-[#052440]/60
                       "
                     >
                       {service.desc}
@@ -235,8 +191,7 @@ export default function ServicesSection() {
 
                     <button
                       className="
-                        group
-                        flex
+                        hidden
                         shrink-0
                         items-center
                         gap-3
@@ -254,11 +209,10 @@ export default function ServicesSection() {
                         duration-500
                         hover:bg-[#052440]
                         hover:text-white
+                        md:flex
                       "
                     >
-
                       View Details
-
                       <ArrowUpRight
                         size={15}
                         className="
@@ -268,44 +222,32 @@ export default function ServicesSection() {
                           group-hover:-translate-y-1
                         "
                       />
-
                     </button>
 
-                  </motion.div>
-
-                  {/* mobile arrow */}
-                  <div
-                    className="
-                      flex
-                      h-10
-                      w-10
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-[#052440]/10
-                      md:hidden
-                    "
-                  >
-
-                    <ArrowUpRight
-                      size={18}
-                      className="text-[#052440]"
-                    />
-
+                    {/* mobile arrow */}
+                    <div
+                      className="
+                        flex
+                        h-10
+                        w-10
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        border
+                        border-[#052440]/10
+                        md:hidden
+                      "
+                    >
+                      <ArrowUpRight size={18} className="text-[#052440]" />
+                    </div>
                   </div>
-
                 </div>
-
               </motion.div>
             );
           })}
-
         </div>
-
       </div>
-
     </section>
   );
 }

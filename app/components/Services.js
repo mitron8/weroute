@@ -128,7 +128,7 @@ export default function Services() {
                 text-4xl
                 font-black
                 tracking-[-0.04em]
-                text-[#052440]
+                text-[#080357]
                 md:text-5xl
                 lg:text-6xl
               "
@@ -137,8 +137,8 @@ export default function Services() {
               <span
                 className="
                   bg-gradient-to-r
-                  from-[#052440]
-                  to-[#0d5ea8]
+                  from-[#080357]
+                  to-[#A7BF73]
                   bg-clip-text
                   text-transparent
                 "
@@ -184,7 +184,7 @@ export default function Services() {
                 text-[#052440]
                 shadow-sm
                 transition-all duration-300
-                hover:bg-[#052440]
+                hover:bg-[#0E1A59]
                 hover:text-white
               "
             >
@@ -201,7 +201,7 @@ export default function Services() {
                 justify-center
                 rounded-2xl
                 border border-[#052440]/10
-                bg-[#052440]
+                bg-[#0E1A59]
                 text-white
                 shadow-sm
                 transition-all duration-300
@@ -313,7 +313,7 @@ export default function Services() {
                     justify-center
                     rounded-2xl
                     border border-[#052440]/10
-                    bg-[#052440]
+                    bg-[#0E1A59]
                     text-white
                     transition-all duration-500
                     group-hover:scale-110

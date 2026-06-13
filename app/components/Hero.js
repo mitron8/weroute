@@ -34,12 +34,12 @@ export default function Hero() {
         text-white
       "
       style={{
-        backgroundImage: "url('/herobg.png')",
+        backgroundImage: "url('/weroutehero.png')",
       }}
     >
 
       {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-[#040816]/78" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#080357] to-[#FFFFFD]/10" />
 
       {/* GRID */}
       <div
@@ -122,7 +122,7 @@ export default function Hero() {
               leading-[0.92]
               tracking-[-0.07em]
               text-white
-              sm:text-[72px]
+              sm:text-[62px]
               lg:text-[84px]
             "
           >
@@ -182,7 +182,7 @@ export default function Hero() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-10
+              mt-6
               max-w-2xl
               text-sm
               leading-9
@@ -200,7 +200,7 @@ export default function Hero() {
           {/* BUTTONS */}
           <div
             className="
-              mt-14
+              mt-10
               flex
               flex-wrap
               items-center

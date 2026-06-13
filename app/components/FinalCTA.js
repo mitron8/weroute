@@ -1,375 +1,174 @@
 "use client";
 
-import {
-  ArrowRight,
-  Sparkles,
-} from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1], // Smooth deceleration curve
+    },
+  },
+};
 
 export default function FinalCTA() {
   return (
     <section
       id="cta"
-      className="
-        relative
-        overflow-hidden
-        bg-[#f7f9fc]
-        py-32
-        text-[#052440]
-      "
+      className="relative overflow-hidden bg-[#f7f9fc] py-32 text-[#080357]"
     >
-
       {/* BACKGROUND */}
-      <div className="absolute inset-0">
-
+      <div className="absolute inset-0 pointer-events-none">
         {/* GRID */}
-        <div
-          className="
-            absolute inset-0
-            bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)]
-            bg-[size:80px_80px]
-          "
-        />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
-        {/* GLOW */}
-        <div
-          className="
-            absolute
-            left-1/2
-            top-1/2
-            h-[500px]
-            w-[500px]
-            -translate-x-1/2
-            -translate-y-1/2
-            rounded-full
-            bg-[#052440]/5
-            blur-3xl
-          "
+        {/* ANIMATED GLOW */}
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.4, 0.6, 0.4],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#080357]/5 blur-[100px]"
         />
-
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-
         {/* MAIN CARD */}
-        <div
-          className="
-            relative
-            overflow-hidden
-            rounded-[40px]
-            border
-            border-[#052440]/10
-            bg-white/90
-            px-8
-            py-20
-            shadow-[0_20px_80px_rgba(5,36,64,0.06)]
-            backdrop-blur-2xl
-            md:px-16
-            lg:px-24
-          "
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="relative overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white/90 px-8 py-20 shadow-[0_20px_80px_rgba(5,36,64,0.06)] backdrop-blur-2xl md:px-16 lg:px-24"
         >
-
-          {/* TOP */}
-          <div
-            className="
-              flex
-              flex-col
-              gap-16
-              lg:flex-row
-              lg:items-center
-              lg:justify-between
-            "
-          >
-
-            {/* LEFT */}
+          {/* TOP SECTION */}
+          <div className="flex flex-col gap-16 lg:flex-row lg:items-center lg:justify-between">
+            {/* LEFT CONTENT */}
             <div className="max-w-3xl">
-
               {/* BADGE */}
-              <div
-                className="
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  border
-                  border-[#052440]/10
-                  bg-[#052440]/5
-                  px-5
-                  py-2.5
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    h-8
-                    w-8
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#052440]
-                    text-white
-                  "
-                >
-                  <Sparkles size={15} />
+              <motion.div variants={itemVariants}>
+                <div className="inline-flex items-center gap-3 rounded-full border border-[#052440]/10 bg-[#080357]/5 px-5 py-2.5">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#080357] text-white shadow-sm">
+                    <Sparkles size={15} />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#080357]">
+                    Start Your Transformation
+                  </span>
                 </div>
-
-                <span
-                  className="
-                    text-xs
-                    font-semibold
-                    uppercase
-                    tracking-[0.24em]
-                    text-[#052440]
-                  "
-                >
-                  Start Your Transformation
-                </span>
-
-              </div>
+              </motion.div>
 
               {/* HEADING */}
-              <h2
-                className="
-                  mt-10
-                  text-4xl
-                  font-black
-                  leading-[1]
-                  tracking-[-0.05em]
-                  text-[#052440]
-                  md:text-5xl
-                  lg:text-7xl
-                "
-              >
-                Build Smarter,
-                <br />
-
-                Scale Faster.
-
-              </h2>
+              <motion.div variants={itemVariants}>
+                <h2 className="mt-7 text-5xl font-black leading-[1.1] tracking-[-0.04em] md:text-6xl lg:text-7xl">
+                  <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+                    Build Smarter,
+                  </span>
+                  <br />
+                  <span className="text-[#080357]">Scale Faster.</span>
+                </h2>
+              </motion.div>
 
               {/* TEXT */}
-              <p
-                className="
-                  mt-8
-                  max-w-2xl
-                  text-lg
-                  leading-8
-                  text-[#052440]/60
-                "
-              >
-                From cloud infrastructure and
-                cybersecurity to AI-powered
-                automation, WeRoute helps
-                enterprises modernize operations
-                with scalable and resilient
-                technology ecosystems.
-              </p>
-
+              <motion.div variants={itemVariants}>
+                <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#052440]/65 md:text-xl">
+                  From cloud infrastructure and cybersecurity to AI-powered
+                  automation, WeRoute helps enterprises modernize operations
+                  with scalable and resilient technology ecosystems.
+                </p>
+              </motion.div>
             </div>
 
-            {/* RIGHT */}
-            <div
-              className="
-                flex
-                flex-col
-                gap-5
-                lg:min-w-[320px]
-              "
+            {/* RIGHT CONTENT (BUTTONS) */}
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col gap-5 lg:min-w-[340px]"
             >
-
               {/* PRIMARY BUTTON */}
               <a
-                href="#"
-                className="
-                  group
-                  flex
-                  items-center
-                  justify-between
-                  rounded-2xl
-                  bg-[#052440]
-                  px-7
-                  py-5
-                  text-white
-                  shadow-[0_15px_40px_rgba(5,36,64,0.18)]
-                  transition-all
-                  duration-300
-                  hover:translate-y-[-2px]
-                "
+                href="#contact"
+                className="group flex items-center justify-between rounded-3xl bg-gradient-to-br from-[#080357] to-[#A7BF73] px-8 py-6 text-white shadow-[0_15px_40px_rgba(8,3,87,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(8,3,87,0.35)]"
               >
-
                 <div>
-
-                  <div
-                    className="
-                      text-xs
-                      uppercase
-                      tracking-[0.25em]
-                      text-white/50
-                    "
-                  >
+                  <div className="text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
                     Consultation
                   </div>
-
-                  <div
-                    className="
-                      mt-2
-                      text-lg
-                      font-semibold
-                    "
-                  >
+                  <div className="mt-2 text-xl font-bold tracking-tight">
                     Talk to an Expert
                   </div>
-
                 </div>
-
-                <div
-                  className="
-                    flex
-                    h-12
-                    w-12
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-white/10
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-1
-                  "
-                >
-                  <ArrowRight size={20} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 backdrop-blur-md transition-transform duration-300 group-hover:bg-white/20 group-hover:translate-x-1">
+                  <ArrowRight size={22} />
                 </div>
-
               </a>
 
               {/* SECONDARY BUTTON */}
               <a
                 href="#services"
-                className="
-                  flex
-                  items-center
-                  justify-between
-                  rounded-2xl
-                  border
-                  border-[#052440]/10
-                  bg-[#052440]/5
-                  px-7
-                  py-5
-                  transition-all
-                  duration-300
-                  hover:bg-[#052440]/8
-                "
+                className="group flex items-center justify-between rounded-3xl border border-[#052440]/10 bg-white px-8 py-6 transition-all duration-300 hover:border-[#080357]/20 hover:bg-[#080357]/[0.02]"
               >
-
                 <div>
-
-                  <div
-                    className="
-                      text-xs
-                      uppercase
-                      tracking-[0.25em]
-                      text-[#052440]/40
-                    "
-                  >
+                  <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#080357]/50">
                     Solutions
                   </div>
-
-                  <div
-                    className="
-                      mt-2
-                      text-lg
-                      font-semibold
-                      text-[#052440]
-                    "
-                  >
+                  <div className="mt-2 text-xl font-bold tracking-tight text-[#080357]">
                     Explore Services
                   </div>
-
                 </div>
-
-                <div
-                  className="
-                    flex
-                    h-12
-                    w-12
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-[#052440]/10
-                    text-[#052440]
-                  "
-                >
-                  <ArrowRight size={20} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#052440]/10 text-[#080357] transition-all duration-300 group-hover:border-[#080357]/30 group-hover:bg-[#080357]/5 group-hover:translate-x-1">
+                  <ArrowRight size={22} />
                 </div>
-
               </a>
-
-            </div>
-
+            </motion.div>
           </div>
 
-          {/* STATS */}
-          <div
-            className="
-              mt-20
-              grid
-              gap-6
-              border-t
-              border-[#052440]/10
-              pt-10
-              sm:grid-cols-2
-              lg:grid-cols-4
-            "
+          {/* STATS SECTION */}
+          <motion.div
+            variants={containerVariants}
+            className="mt-2 grid gap-6 border-t border-[#052440]/10 pt-12 sm:grid-cols-2 lg:grid-cols-4"
           >
-
             {[
               ["150+", "Enterprise Clients"],
               ["99.99%", "Infrastructure Uptime"],
               ["24/7", "Operational Support"],
               ["40+", "Technology Experts"],
-            ].map(([num, label]) => (
-              <div
+            ].map(([num, label], index) => (
+              <motion.div
                 key={label}
-                className="
-                  rounded-2xl
-                  border
-                  border-[#052440]/10
-                  bg-[#052440]/[0.03]
-                  p-6
-                "
+                variants={itemVariants}
+                className="group rounded-3xl border border-[#052440]/5 bg-[#f7f9fc]/50 p-8 transition-colors hover:bg-[#f7f9fc]"
               >
-
-                <div
-                  className="
-                    text-4xl
-                    font-black
-                    tracking-[-0.04em]
-                    text-[#052440]
-                  "
-                >
+                <div className="text-4xl font-black tracking-[-0.04em] text-[#080357] md:text-5xl">
                   {num}
                 </div>
-
-                <div
-                  className="
-                    mt-3
-                    text-sm
-                    font-medium
-                    text-[#052440]/55
-                  "
-                >
+                <div className="mt-3 text-sm font-semibold text-[#080357]/60">
                   {label}
                 </div>
-
-              </div>
+              </motion.div>
             ))}
-
-          </div>
-
-        </div>
-
+          </motion.div>
+        </motion.div>
       </div>
-
     </section>
   );
 }

@@ -10,7 +10,7 @@ export default function Footer() {
         relative
         overflow-hidden
         border-t border-white/10
-        bg-[#040711]
+        bg-[#080357]
         pt-24
         text-white
       "

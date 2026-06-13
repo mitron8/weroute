@@ -10,7 +10,7 @@ export default function Trust() {
         relative
         overflow-hidden
         border-y border-white/5
-        bg-[#060b18]
+        bg-[#0E1A59]
         py-20
       "
     >
@@ -64,7 +64,7 @@ export default function Trust() {
             "
           >
             Built with
-            <span className="text-white/40">
+            <span className="text-[#A7BF73]">
               {" "}industry-leading
             </span>
 
@@ -113,7 +113,7 @@ export default function Trust() {
             h-full
             w-32
             bg-gradient-to-r
-            from-[#060b18]
+            from-[#070459]
             to-transparent
           "
         />
@@ -128,7 +128,7 @@ export default function Trust() {
             h-full
             w-32
             bg-gradient-to-l
-            from-[#060b18]
+            from-[#070459]
             to-transparent
           "
         />

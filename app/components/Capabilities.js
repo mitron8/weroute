@@ -11,7 +11,7 @@ export default function Capabilities() {
         overflow-hidden
         bg-[#f7f9fc]
         py-32
-        text-[#052440]
+        text-[#0E1A59]
       "
     >
 
@@ -36,7 +36,7 @@ export default function Capabilities() {
             h-[420px]
             w-[420px]
             rounded-full
-            bg-[#052440]/5
+            bg-[#080357]/5
             blur-3xl
           "
         />
@@ -103,7 +103,7 @@ export default function Capabilities() {
                 font-black
                 leading-[1]
                 tracking-[-0.05em]
-                text-[#052440]
+                text-[#080357]
                 md:text-5xl
                 lg:text-7xl
               "
@@ -115,8 +115,8 @@ export default function Capabilities() {
               <span
                 className="
                   bg-gradient-to-r
-                  from-[#052440]
-                  to-[#0d5ea8]
+                  from-[#080357]
+                  to-[#A7BF73]
                   bg-clip-text
                   text-transparent
                 "
@@ -224,7 +224,7 @@ export default function Capabilities() {
                     items-center
                     justify-center
                     rounded-2xl
-                    bg-[#052440]
+                    bg-[#0E1A59]
                     text-white
                     shadow-lg
                     transition-transform

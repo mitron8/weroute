@@ -97,7 +97,7 @@ export default function WhyWeRoute() {
               font-black
               leading-[1.05]
               tracking-[-0.04em]
-              text-[#052440]
+              text-[#080357]
               md:text-5xl
               lg:text-6xl
             "
@@ -110,8 +110,8 @@ export default function WhyWeRoute() {
             <span
               className="
                 bg-gradient-to-r
-                from-[#052440]
-                to-[#0d5ea8]
+                from-[#080357]
+                to-[#A7BF73]
                 bg-clip-text
                 text-transparent
               "
@@ -211,7 +211,7 @@ export default function WhyWeRoute() {
                     justify-center
                     rounded-2xl
                     border border-[#052440]/10
-                    bg-[#052440]
+                    bg-[#080357]
                     text-white
                     transition-all duration-500
                     group-hover:scale-110

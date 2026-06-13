@@ -116,8 +116,8 @@ export default function WhoWeAre() {
               <span
                 className="
                   bg-gradient-to-r
-                  from-[#052440]
-                  to-[#0d5ea8]
+                  from-[#080357]
+                  to-[#A7BF73]
                   bg-clip-text
                   text-transparent
                 "
@@ -203,7 +203,7 @@ export default function WhoWeAre() {
                   backdrop-blur-xl
                   transition-all duration-500
                   hover:-translate-y-2
-                  hover:border-[#052440]/20
+                  hover:border-[#080357]/20
                   hover:shadow-[0_20px_60px_rgba(5,36,64,0.08)]
                 "
               >
@@ -239,7 +239,7 @@ export default function WhoWeAre() {
                       justify-center
                       rounded-2xl
                       border border-[#052440]/10
-                      bg-[#080357]
+                      bg-[#0E1A59]
                       text-lg
                       font-bold
                       text-white
