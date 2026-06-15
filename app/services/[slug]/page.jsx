@@ -20,11 +20,11 @@ export default async function ServicePage({ params }) {
         
         {/* 1. Hero Section */}
         <div className="max-w-4xl">
-          <span className="inline-flex mt-10 items-center gap-2 rounded-full border border-[#052440]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#052440]">
+          <span className="inline-flex mt-10 items-center gap-2 rounded-full border border-[#080357]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#052440]">
             {service.hero.badge}
           </span>
 
-          <h1 className="mt-8 text-5xl font-black leading-none tracking-[-0.05em] text-[#052440] md:text-6xl">
+          <h1 className="mt-8 text-5xl font-black leading-none tracking-[-0.05em] text-[#080357] md:text-6xl">
             {service.hero.title}
           </h1>
 
@@ -36,7 +36,7 @@ export default async function ServicePage({ params }) {
         {/* 2. Overview & Challenges Split */}
         <div className="mt-20 grid gap-16 rounded-[40px] bg-white p-10 shadow-sm border border-[#052440]/5 lg:grid-cols-2 lg:p-16">
           <div>
-            <h2 className="text-3xl font-black text-[#052440]">
+            <h2 className="text-3xl font-black text-[#080357]">
               {service.overview.title}
             </h2>
             <p className="mt-6 leading-8 text-[#052440]/65">
@@ -62,7 +62,7 @@ export default async function ServicePage({ params }) {
           </div>
 
           <div className="rounded-[32px] bg-[#f7f9fc] p-8 md:p-10">
-            <h3 className="text-2xl font-bold text-[#052440]">Core Challenges</h3>
+            <h3 className="text-2xl font-bold text-[#080357]">Core Challenges</h3>
             <div className="mt-8 space-y-4">
               {service.challenges.map((challenge) => (
                 <div key={challenge} className="flex items-start gap-4">
@@ -78,24 +78,24 @@ export default async function ServicePage({ params }) {
 
         {/* 3. Solutions Grid */}
         <div className="mt-28">
-          <h2 className="text-4xl font-black tracking-[-0.04em] text-[#052440]">
+          <h2 className="text-4xl font-black tracking-[-0.04em] text-[#080357]">
             Our Solutions
           </h2>
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {service.solutions.map((item, index) => (
               <div
                 key={item.title}
-                className="group rounded-[32px] border border-[#052440]/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-md"
+                className="group rounded-[32px] border border-[#080357]/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-md"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#052440] text-white transition-colors duration-300 group-hover:bg-[#0d5ea8]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#080357] text-white transition-colors duration-300 group-hover:bg-[#080357]">
                   <span className="text-xl font-bold">{index + 1}</span>
                 </div>
 
-                <h3 className="mt-6 text-xl font-bold text-[#052440]">
+                <h3 className="mt-6 text-xl font-bold text-[#080357]">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 leading-relaxed text-[#052440]/60">
+                <p className="mt-4 leading-relaxed text-[#080357]/60">
                   {item.description}
                 </p>
               </div>
@@ -107,7 +107,7 @@ export default async function ServicePage({ params }) {
         <div className="mt-28 grid items-center gap-16 lg:grid-cols-2">
           {/* Left Side - Dark Card for Process */}
           <div>
-            <div className="rounded-[40px] bg-[#052440] p-10 text-white shadow-xl shadow-[#052440]/10 lg:p-12">
+            <div className="rounded-[40px] bg-[#080357] p-10 text-white shadow-xl shadow-[#052440]/10 lg:p-12">
               <span className="uppercase tracking-[0.25em] text-white/50 text-sm font-semibold">
                 Delivery Approach
               </span>
@@ -158,7 +158,7 @@ export default async function ServicePage({ params }) {
         </div>
 
         {/* 5. CTA Section */}
-        <div className="mt-28 overflow-hidden rounded-[40px] bg-[#0d5ea8] relative">
+        <div className="mt-28 overflow-hidden rounded-[40px] bg-gradient-to-r from-[#080357] via-[#A7BF73] to-[#080357] relative">
           {/* Decorative background element */}
           <div className="absolute -right-20 -top-40 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
           

@@ -226,18 +226,22 @@ const MENU = {
   },
 };
 
+// Updated: Array of objects with labels and dedicated landing page links
 const NAV_ITEMS = [
-  "Who We Are",
-  "Why WeRoute",
-  "Services",
-  "Solutions",
-  "Capabilities",
+  { label: "Who We Are", href: "/who-we-are" },
+  { label: "Why WeRoute", href: "/why-weroute" },
+  { label: "Services", href: "/services" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Capabilities", href: "/capabilities" },
 ];
 
 export default function Navbar() {
   const [active, setActive] = useState(null);
   const [activeSub, setActiveSub] = useState(0);
+  
+  // Mobile states
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileActive, setMobileActive] = useState(null);
 
   return (
     <header className="fixed left-0 top-0 z-[999] w-full border-b border-white/10 bg-[#080357]/95 backdrop-blur-xl">
@@ -255,25 +259,27 @@ export default function Navbar() {
         <nav className="relative hidden xl:flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 backdrop-blur-xl">
           {NAV_ITEMS.map((item) => (
             <div
-              key={item}
+              key={item.label}
               className="relative"
               onMouseEnter={() => {
-                setActive(item);
+                setActive(item.label);
                 setActiveSub(0);
               }}
             >
-              <button
-                className={`relative rounded-xl px-5 py-3 text-[15px] font-semibold transition-all duration-300 ${
-                  active === item
+              {/* Updated to Link to support landing page routing */}
+              <Link
+                href={item.href}
+                className={`relative block rounded-xl px-5 py-3 text-[15px] font-semibold transition-all duration-300 ${
+                  active === item.label
                     ? "bg-white/10 text-white"
                     : "text-white/75 hover:text-white"
                 }`}
               >
-                {item}
-                {active === item && (
+                {item.label}
+                {active === item.label && (
                   <span className="absolute bottom-1 left-1/2 h-[2px] w-[38px] -translate-x-1/2 rounded-full bg-white" />
                 )}
-              </button>
+              </Link>
             </div>
           ))}
 
@@ -396,7 +402,7 @@ export default function Navbar() {
                               <span className="text-[24px] font-bold text-white/20">
                                 {String(i + 1).padStart(2, "0")}
                               </span>
-                              <span className="text-[18px] font-medium leading-8 text-white/80">
+                              <span className="text-[18px] font-medium leading-8 text-white/80 transition-colors group-hover:text-white">
                                 {feature.title}
                               </span>
                             </Link>
@@ -435,28 +441,112 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       <div
-        className={`overflow-hidden border-t border-white/10 bg-[#041120]/98 backdrop-blur-2xl transition-all duration-500 xl:hidden ${
-          mobileOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-y-auto border-t border-white/10 bg-[#041120]/98 backdrop-blur-2xl transition-all duration-500 xl:hidden ${
+          mobileOpen ? "max-h-screen opacity-100 pb-20" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 py-6">
-          <div className="flex flex-col gap-2">
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-left text-[15px] font-semibold text-white/80 transition-all duration-300 hover:bg-white/[0.05] hover:text-white"
-              >
-                {item}
-              </button>
-            ))}
+          <div className="flex flex-col gap-3">
+            {NAV_ITEMS.map((item) => {
+              const isExpanded = mobileActive === item.label;
+              const menuData = MENU[item.label];
+
+              return (
+                <div
+                  key={item.label}
+                  className="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    {/* Link to the landing page */}
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)} // close menu on navigate
+                      className="flex-1 px-5 py-4 text-left text-[15px] font-semibold text-white/80 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+
+                    {/* Toggle button for mega menu contents */}
+                    {menuData && (
+                      <button
+                        onClick={() => setMobileActive(isExpanded ? null : item.label)}
+                        className="flex items-center justify-center border-l border-white/10 px-5 py-4 text-white/60 transition-colors hover:text-white"
+                      >
+                        <ChevronRight
+                          size={18}
+                          className={`transition-transform duration-300 ${
+                            isExpanded ? "rotate-90" : ""
+                          }`}
+                        />
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Mega Menu Content Expansion */}
+                  {isExpanded && menuData && (
+                    <div className="flex flex-col gap-5 border-t border-white/5 bg-white/[0.02] px-5 py-5">
+                      {menuData.type === "grid" ? (
+                        <div className="flex flex-col gap-4">
+                          {menuData.items.map((subItem, i) => (
+                            <Link
+                              key={i}
+                              href={subItem.href || "#"}
+                              onClick={() => setMobileOpen(false)}
+                              className="flex items-start gap-3"
+                            >
+                              <div className="mt-0.5 text-[#73a8ff]">
+                                {subItem.icon}
+                              </div>
+                              <div className="flex flex-col">
+                                <span className="text-sm font-semibold text-white/90">
+                                  {subItem.title}
+                                </span>
+                                <span className="text-xs text-white/50">
+                                  {subItem.desc}
+                                </span>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="flex flex-col gap-6">
+                          {menuData.groups.map((group, i) => (
+                            <div key={i} className="flex flex-col gap-3">
+                              <div className="flex items-center gap-2 text-[#73a8ff]">
+                                {group.icon}
+                                <span className="text-sm font-semibold text-white/90">
+                                  {group.title}
+                                </span>
+                              </div>
+                              <div className="ml-2 flex flex-col gap-2.5 border-l border-white/10 pl-4">
+                                {group.features.map((feature, j) => (
+                                  <Link
+                                    key={j}
+                                    href={feature.href || "#"}
+                                    onClick={() => setMobileOpen(false)}
+                                    className="text-[13px] text-white/60 transition-colors hover:text-white"
+                                  >
+                                    {feature.title}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* MOBILE CTA */}
-          <div className="mt-6 flex flex-col gap-3">
-            <button className="rounded-2xl bg-white px-6 py-4 text-sm font-semibold text-black">
+          <div className="mt-8 flex flex-col gap-3">
+            <button className="rounded-2xl bg-white px-6 py-4 text-[15px] font-semibold text-black">
               Get Started
             </button>
-            <button className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 text-sm font-medium text-white">
+            <button className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 text-[15px] font-medium text-white">
               Contact
             </button>
           </div>

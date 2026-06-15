@@ -11,7 +11,7 @@ import {
 
 export default function CompanyOverview() {
   return (
-    <main className="bg-[#f7f9fc] text-[#052440]">
+    <main className="bg-[#f7f9fc] text-[#080357]">
 
       {/* HERO */}
       <section className="relative overflow-hidden pt-40 pb-28">
@@ -34,7 +34,7 @@ export default function CompanyOverview() {
               h-[500px]
               w-[500px]
               rounded-full
-              bg-[#052440]/5
+              bg-[#080357]/5
               blur-3xl
             "
           />
@@ -52,7 +52,7 @@ export default function CompanyOverview() {
                 className="
                   inline-flex
                   rounded-full
-                  border border-[#052440]/10
+                  border border-[#080357]/10
                   bg-white
                   px-5 py-2
                   text-xs
