@@ -11,6 +11,7 @@ import {
   ArrowRight,
   MessageSquare
 } from "lucide-react";
+import WavePath from "./WavePath";
 
 const valuePillars = [
   {
@@ -67,7 +68,7 @@ export default function SolutionsClosingSections() {
                   Cross-Solution Value
                 </span>
                 
-                <h2 className="mt-8 text-4xl font-black leading-[1.1] tracking-[-0.04em] text-[#052440] md:text-5xl lg:text-6xl">
+                <h2 className="mt-8 text-4xl font-bold leading-[1.1] tracking-[-0.04em] text-[#052440] md:text-5xl lg:text-6xl">
                   Why Enterprises Choose{" "}
                   <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
                     WeRoute
@@ -117,6 +118,7 @@ export default function SolutionsClosingSections() {
           </div>
         </div>
       </section>
+      
 
       {/* =========================================
           FINAL CALL TO ACTION (RESIZED & POLISHED)
@@ -127,7 +129,7 @@ export default function SolutionsClosingSections() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-5xl relative overflow-hidden rounded-[32px] bg-[#080357] shadow-[0_20px_60px_rgba(8,3,87,0.15)]"
+          className="mx-auto max-w-5xl relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#052440] via-[#052440] to-[#052440] shadow-[0_20px_60px_rgba(8,3,87,0.15)]"
         >
           {/* Animated Background Elements */}
           <div className="absolute inset-0 pointer-events-none">

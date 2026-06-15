@@ -133,12 +133,12 @@ export default function SolutionsListSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="mb-20 max-w-3xl"
+          className="mb-20 max-w-3xl "
         >
           <span className="inline-block rounded-full border border-[#052440]/10 bg-white/80 px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440] shadow-sm backdrop-blur-md">
             Our Core Offerings
           </span>
-          <h2 className="mt-8 text-4xl font-black leading-tight tracking-[-0.04em] text-[#052440] md:text-5xl lg:text-6xl">
+          <h2 className="mt-8 text-4xl font-bold   leading-tight tracking-[-0.04em] text-[#052440] md:text-5xl lg:text-6xl">
             Solutions We{" "}
             <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
               Deliver

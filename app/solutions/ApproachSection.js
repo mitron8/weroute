@@ -3,10 +3,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Target, Workflow, Unlock, TrendingUp } from "lucide-react";
+import { IconHover3D } from "./IconHover3D";
 
 const differentiators = [
   {
-    icon: Target,
+    icon: Target, // Kept for your data structure, though IconHover3D uses its own 3D cube
     title: "Business-Outcome Focused",
     desc: "We start with your business challenges—performance, security, scalability, compliance, and agility—and design solutions around measurable outcomes.",
   },
@@ -78,7 +79,7 @@ export default function ApproachSection() {
             Our Differentiator
           </span>
           
-          <h2 className="mt-8 text-4xl font-black leading-tight tracking-[-0.04em] text-[#052440] md:text-5xl">
+          <h2 className="mt-8 text-4xl font-bold leading-tight tracking-[-0.04em] text-[#052440] md:text-5xl">
             How WeRoute Approaches{" "}
             <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
               Solutions
@@ -90,7 +91,7 @@ export default function ApproachSection() {
           </p>
         </motion.div>
 
-        {/* DIFFERENTIATORS GRID */}
+        {/* DIFFERENTIATORS GRID (Now using IconHover3D) */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -98,36 +99,22 @@ export default function ApproachSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="mt-20 grid gap-8 md:grid-cols-2"
         >
-          {differentiators.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="group relative overflow-hidden rounded-[32px] border border-[#052440]/10 bg-white/80 p-10 shadow-[0_10px_40px_rgba(5,36,64,0.03)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#080357]/20 hover:shadow-[0_20px_60px_rgba(5,36,64,0.08)]"
-              >
-                {/* Hover Gradient Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#052440]/[0.02] via-transparent to-[#A7BF73]/[0.05] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                
-                <div className="relative z-10">
-                  {/* Icon Container */}
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#080357] text-white shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#0d5ea8]">
-                    <Icon size={28} strokeWidth={1.5} />
-                  </div>
-                  
-                  {/* Content */}
-                  <h3 className="mt-8 text-2xl font-bold tracking-tight text-[#052440]">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="mt-4 text-base leading-8 text-[#052440]/65">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+          {differentiators.map((item, index) => (
+            <motion.div 
+              key={index} 
+              variants={itemVariants} 
+              className="flex w-full"
+            >
+              <IconHover3D
+                heading={item.title}
+                text={item.desc}
+                // Setting height to 100% ensures cards match height in the CSS grid
+                className="h-full w-full" 
+              />
+            </motion.div>
+          ))}
         </motion.div>
+
       </div>
     </section>
   );
