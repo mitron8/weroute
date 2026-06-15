@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import {
   Network,
   Cloud,
@@ -10,7 +10,6 @@ import {
   Code,
   CheckCircle2,
   ArrowRight,
-  Plus
 } from "lucide-react";
 
 const solutionsData = [
@@ -120,9 +119,6 @@ const solutionsData = [
 ];
 
 export default function SolutionsListSection() {
-  // State to track which accordion is open. Defaulting to the first one ("01").
-  const [expandedId, setExpandedId] = useState("01");
-
   return (
     <section id="solutions" className="relative bg-[#f7f9fc] py-28">
       {/* BACKGROUND ELEMENTS */}
@@ -150,11 +146,10 @@ export default function SolutionsListSection() {
           </h2>
         </motion.div>
 
-        {/* SOLUTIONS ACCORDION LIST */}
-        <div className="flex flex-col gap-6">
+        {/* SOLUTIONS LIST */}
+        <div className="flex flex-col gap-12">
           {solutionsData.map((solution, index) => {
             const Icon = solution.icon;
-            const isOpen = expandedId === solution.id;
 
             return (
               <motion.div
@@ -163,130 +158,87 @@ export default function SolutionsListSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
-                className={`group relative overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white/80 backdrop-blur-xl transition-all duration-500 ${
-                  isOpen
-                    ? "shadow-[0_20px_60px_rgba(5,36,64,0.08)] border-[#080357]/20"
-                    : "shadow-[0_10px_30px_rgba(5,36,64,0.03)] hover:shadow-[0_15px_40px_rgba(5,36,64,0.06)] hover:border-[#080357]/10"
-                }`}
+                className="group relative overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white/80 shadow-[0_15px_50px_rgba(5,36,64,0.04)] backdrop-blur-xl transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(5,36,64,0.08)]"
               >
                 {/* Decorative Hover Glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#080357]/[0.02] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#080357]/[0.02] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                {/* ACCORDION HEADER (Always Visible) */}
-                <div
-                  onClick={() => setExpandedId(isOpen ? null : solution.id)}
-                  className="relative z-10 flex cursor-pointer items-center justify-between p-6 md:p-10 transition-colors hover:bg-white/50"
-                >
-                  <div className="flex items-center gap-6">
-                    {/* Icon Container */}
-                    <div
-                      className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl shadow-md transition-all duration-500 ${
-                        isOpen
-                          ? "bg-[#0d5ea8] text-white scale-105"
-                          : "bg-[#080357] text-white group-hover:bg-[#0d5ea8] group-hover:scale-105"
-                      }`}
-                    >
-                      <Icon size={28} />
-                    </div>
-                    {/* Title */}
+                <div className="grid gap-0 lg:grid-cols-12">
+                  
+                  {/* LEFT COLUMN: Overview & CTA */}
+                  <div className="relative z-10 flex flex-col justify-between p-10 lg:col-span-5 lg:p-14 lg:pr-10">
                     <div>
-                      <span className="text-sm font-bold tracking-[0.2em] text-[#052440]/40">
-                        {solution.id}
-                      </span>
-                      <h3 className="mt-1 text-2xl font-black tracking-tight text-[#052440] md:text-3xl lg:text-4xl">
+                      <div className="flex items-center gap-5">
+                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#080357] text-white shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#0d5ea8]">
+                          <Icon size={24} />
+                        </div>
+                        <span className="text-sm font-bold tracking-[0.2em] text-[#052440]/40">
+                          {solution.id}
+                        </span>
+                      </div>
+                      
+                      <h3 className="mt-8 text-3xl font-black tracking-tight text-[#052440] md:text-4xl">
                         {solution.title}
                       </h3>
+                      
+                      <p className="mt-6 text-lg leading-relaxed text-[#052440]/65">
+                        {solution.desc}
+                      </p>
+                    </div>
+
+                    <div className="mt-12 lg:mt-0 pt-8 border-t border-[#052440]/10 lg:border-none lg:pt-0">
+                      <a
+                        href={solution.link}
+                        className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-[#080357] transition-all hover:text-[#A7BF73]"
+                      >
+                        Explore Solutions
+                        <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                      </a>
                     </div>
                   </div>
 
-                  {/* Toggle Indicator */}
-                  <div
-                    className={`hidden md:flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#052440]/10 transition-all duration-700 ease-in-out ${
-                      isOpen
-                        ? "rotate-45 bg-[#f7f9fc] border-[#080357]/20"
-                        : "bg-white group-hover:bg-[#f7f9fc]"
-                    }`}
-                  >
-                    <Plus size={20} className="text-[#052440]" />
-                  </div>
-                </div>
-
-                {/* ACCORDION BODY (Expandable) */}
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      // Slow, luxurious custom cubic-bezier animation
-                      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="grid gap-0 border-t border-[#052440]/10 lg:grid-cols-12">
-                        
-                        {/* LEFT COLUMN: Overview & CTA */}
-                        <div className="relative z-10 flex flex-col justify-between bg-white/50 p-8 lg:col-span-5 lg:p-14 lg:pr-10">
-                          <p className="text-lg leading-relaxed text-[#052440]/75">
-                            {solution.desc}
-                          </p>
-
-                          <div className="mt-12 lg:mt-0 pt-8 lg:pt-0">
-                            <a
-                              href={solution.link}
-                              className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-[#080357] transition-all hover:text-[#A7BF73]"
-                            >
-                              Explore Solutions
-                              <ArrowRight size={18} className="transition-transform duration-300 hover:translate-x-1" />
-                            </a>
-                          </div>
-                        </div>
-
-                        {/* RIGHT COLUMN: Problems & Includes */}
-                        <div className="relative z-10 border-t border-[#052440]/10 bg-[#f7f9fc]/80 p-8 lg:col-span-7 lg:border-l lg:border-t-0 lg:p-14">
-                          <div className="grid gap-12 sm:grid-cols-2">
-                            
-                            {/* Business Problems List */}
-                            <div>
-                              <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#052440]/40">
-                                Problems We Solve
-                              </h4>
-                              <ul className="mt-6 space-y-4">
-                                {solution.problems.map((prob, i) => (
-                                  <li key={i} className="flex items-start gap-3">
-                                    <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#A7BF73]" />
-                                    <span className="text-[15px] font-medium leading-relaxed text-[#052440]/80">
-                                      {prob}
-                                    </span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            {/* Capabilities Included */}
-                            <div>
-                              <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#052440]/40">
-                                Capabilities Included
-                              </h4>
-                              <div className="mt-6 flex flex-wrap gap-2.5">
-                                {solution.includes.map((item, i) => (
-                                  <span
-                                    key={i}
-                                    className="inline-block rounded-xl border border-[#052440]/10 bg-white px-4 py-2.5 text-sm font-semibold text-[#052440]/70 shadow-sm transition-colors hover:border-[#080357]/20 hover:text-[#080357]"
-                                  >
-                                    {item}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-
+                  {/* RIGHT COLUMN: Problems & Includes */}
+                  <div className="relative z-10 border-t border-[#052440]/10 bg-[#f7f9fc]/50 p-10 lg:col-span-7 lg:border-l lg:border-t-0 lg:p-14">
+                    <div className="grid gap-12 sm:grid-cols-2">
+                      
+                      {/* Business Problems List */}
+                      <div>
+                        <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#052440]/40">
+                          Problems We Solve
+                        </h4>
+                        <ul className="mt-6 space-y-4">
+                          {solution.problems.map((prob, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                              <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#A7BF73]" />
+                              <span className="text-[15px] font-medium leading-relaxed text-[#052440]/80">
+                                {prob}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-                
+
+                      {/* Capabilities Included */}
+                      <div>
+                        <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#052440]/40">
+                          Capabilities Included
+                        </h4>
+                        <div className="mt-6 flex flex-wrap gap-2.5">
+                          {solution.includes.map((item, i) => (
+                            <span
+                              key={i}
+                              className="inline-block rounded-xl border border-[#052440]/10 bg-white px-4 py-2.5 text-sm font-semibold text-[#052440]/70 shadow-sm transition-colors hover:border-[#080357]/20 hover:text-[#080357]"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
               </motion.div>
             );
           })}
