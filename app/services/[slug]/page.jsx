@@ -19,19 +19,31 @@ export default async function ServicePage({ params }) {
       <div className="mx-auto max-w-7xl px-6">
         
         {/* 1. Hero Section */}
-        <div className="max-w-4xl">
-          <span className="inline-flex mt-10 items-center gap-2 rounded-full border border-[#080357]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#052440]">
-            {service.hero.badge}
-          </span>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+  {/* Content */}
+  <div className="max-w-4xl">
+    <span className="inline-flex mt-10 items-center gap-2 rounded-full border border-[#080357]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#052440]">
+      {service.hero.badge}
+    </span>
 
-          <h1 className="mt-8 text-5xl font-black leading-none tracking-[-0.05em] text-[#080357] md:text-6xl">
-            {service.hero.title}
-          </h1>
+    <h1 className="mt-8 text-5xl font-black leading-none tracking-[-0.05em] text-[#080357] md:text-6xl">
+      {service.hero.title}
+    </h1>
 
-          <p className="mt-8 max-w-3xl text-lg leading-8 text-[#052440]/65">
-            {service.hero.subtitle}
-          </p>
-        </div>
+    <p className="mt-8 max-w-3xl text-lg leading-8 text-[#052440]/65">
+      {service.hero.subtitle}
+    </p>
+  </div>
+
+  {/* Image */}
+  <div className="flex justify-center mt-20 lg:justify-end">
+    <img
+      src={service.hero.image}
+      alt="Service"
+      className="w-full max-w-md object-contain rounded-2xl"
+    />
+  </div>
+</div>
 
         {/* 2. Overview & Challenges Split */}
         <div className="mt-20 grid gap-16 rounded-[40px] bg-white p-10 shadow-sm border border-[#052440]/5 lg:grid-cols-2 lg:p-16">

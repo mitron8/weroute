@@ -5,6 +5,7 @@ export const servicesData = {
       title: "Managed Data Center Services",
       subtitle:
         "Ensure performance, availability, and operational efficiency across your data center environment with proactive management and expert support.",
+        image:"https://images.unsplash.com/photo-1581092919535-7146ff1a590b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
 
     overview: {
@@ -91,7 +92,8 @@ export const servicesData = {
       title: "Managed Cloud and Hybrid Environments",
       subtitle:
         "Seamlessly manage multi-cloud and hybrid infrastructures while ensuring performance, governance, and security.",
-    },
+        image:"https://plus.unsplash.com/premium_photo-1726842420928-e2d727ca4b9f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
 
     overview: {
       title: "Overview",
@@ -165,6 +167,7 @@ export const servicesData = {
       title: "Network and Infrastructure Observability",
       subtitle:
         "Gain complete visibility into network performance, infrastructure health, and service reliability.",
+        image:"https://images.unsplash.com/photo-1737408011230-995d7a7aca1b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
 
     overview: {
@@ -238,6 +241,7 @@ export const servicesData = {
       title: "Managed Cybersecurity",
       subtitle:
         "Protect your business with proactive security monitoring, threat detection, and risk management.",
+        image:"https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
 
     overview: {
@@ -311,6 +315,7 @@ export const servicesData = {
       title: "SOC Operations",
       subtitle:
         "24/7 threat monitoring, incident response, and security operations to protect your organization.",
+        image:"https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
 
     overview: {
@@ -378,3 +383,5 @@ export const servicesData = {
     },
   },
 };
+
+

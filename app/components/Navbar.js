@@ -13,7 +13,7 @@ import {
   FileText,
   HelpCircle,
   Menu,
-  X,
+  X,Cpu,Code
 } from "lucide-react";
 import Link from "next/link";
 
@@ -153,32 +153,68 @@ const MENU = {
   },
 
   Solutions: {
-    type: "list",
-    groups: [
-      {
-        icon: <Network size={18} />,
-        title: "Network & Connectivity",
-        desc: "Secure and scalable enterprise connectivity.",
-        features: [
-          { title: "AI Network Solution", href: "/solutions/ai-network" },
-          { title: "Network Observability", href: "/solutions/network-observability" },
-          { title: "SD-WAN / SD-LAN / SDN", href: "/solutions/sdn-sdwan" },
-          { title: "Network as a Service", href: "/solutions/naas" },
-        ],
-      },
-      {
-        icon: <Shield size={18} />,
-        title: "Cybersecurity Solutions",
-        desc: "Security controls, operations, and risk management.",
-        features: [
-          { title: "Endpoint and Cloud Security", href: "/solutions/endpoint-cloud-security" },
-          { title: "SOC / SIEM / SOAR", href: "/solutions/soc-siem-soar" },
-          { title: "Zero Trust Architecture", href: "/solutions/zero-trust" },
-          { title: "Identity and Access", href: "/solutions/iam" },
-        ],
-      },
-    ],
-  },
+  type: "list",
+  groups: [
+    {
+      icon: <Network size={18} />,
+      title: "Network & Connectivity",
+      desc: "Build resilient, intelligent, and scalable enterprise networks.",
+      features: [
+        { title: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
+        { title: "SD-WAN / SD-LAN / SDN", href: "/solution/network-connectivity/sd-wan-sd-lan-sdn" },
+        { title: "Network Observability & Assurance", href: "/solution/network-connectivity/network-observability-assurance" },
+        { title: "Network as a Service (NaaS)", href: "/solution/network-connectivity/network-as-a-service" },
+        { title: "Mobility & Wireless Solutions", href: "/solution/network-connectivity/mobility-wireless-solutions" },
+      ],
+    },
+    {
+      icon: <Cloud size={18} />,
+      title: "Cloud & DevOps",
+      desc: "Enable agility and governance across cloud and hybrid IT environments.",
+      features: [
+        { title: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
+        { title: "DevOps & Platform Engineering", href: "/solution/CloudDevOpsPage/devops-platform-engineering" },
+        { title: "Infrastructure as Code (IaC)", href: "/solution/CloudDevOpsPage/infrastructure-as-code" },
+        { title: "Cloud Observability", href: "/solution/CloudDevOpsPage/cloud-observability" },
+      ],
+    },
+    {
+      icon: <Shield size={18} />,
+      title: "Cybersecurity",
+      desc: "Protect users and infrastructure with enterprise-ready security architectures.",
+      features: [
+        { title: "Endpoint & Cloud Security", href: "/solutions/endpoint-cloud-security" },
+        { title: "Identity & Access Management", href: "/solutions/iam" },
+        { title: "SOC / SIEM / SOAR", href: "/solutions/soc-siem-soar" },
+        { title: "GRC & Vendor Risk Management", href: "/solutions/grc-vendor-risk" },
+        { title: "Zero Trust Architecture", href: "/solutions/zero-trust" },
+      ],
+    },
+    {
+      icon: <Cpu size={18} />, 
+      title: "AI & Intelligent Automation",
+      desc: "Apply intelligence to improve operational visibility and decision-making.",
+      features: [
+        { title: "AI Network Intelligence", href: "/solutions/ai-network-intelligence" },
+        { title: "AI-Driven Observability", href: "/solutions/ai-observability" },
+        { title: "AI Software Services", href: "/solutions/ai-software" },
+        { title: "AI/ML Model Deployment", href: "/solutions/ai-ml-deployment" },
+        { title: "Automation & AIOps", href: "/solutions/automation-aiops" },
+      ],
+    },
+    {
+      icon: <Code size={18} />,
+      title: "Software & Digital Engineering",
+      desc: "Design and modernize digital platforms that scale seamlessly.",
+      features: [
+        { title: "Custom Software Development", href: "/solutions/custom-software" },
+        { title: "Enterprise Applications", href: "/solutions/enterprise-applications" },
+        { title: "Mobile Application Development", href: "/solutions/mobile-development" },
+        { title: "API & Platform Engineering", href: "/solutions/api-platform" },
+      ],
+    },
+  ],
+},
 
   Capabilities: {
     type: "grid",

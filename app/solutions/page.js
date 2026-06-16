@@ -7,6 +7,7 @@ import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 import HyperTextParagraph from '../components/ui/HyperTextParagraph'
+import SolutionsFAQ from './SolutionsFAQ'
 
 
 const page = () => {
@@ -36,6 +37,7 @@ const page = () => {
         <ApproachSection/>
         <SolutionsListSection/>
         <SolutionsClosingSections/>
+        <SolutionsFAQ/>
       
     </div>
   )
