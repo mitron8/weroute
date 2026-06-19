@@ -9,22 +9,22 @@ const differentiators = [
   {
     icon: Target, // Kept for your data structure, though IconHover3D uses its own 3D cube
     title: "Business-Outcome Focused",
-    desc: "We start with your business challenges—performance, security, scalability, compliance, and agility—and design solutions around measurable outcomes.",
+    desc: "We design every solution around your specific performance, security, scalability, and compliance goals. We achieve desired outcomes with curated technology.",
   },
   {
     icon: Workflow,
     title: "Architecture-First Thinking",
-    desc: "Every solution is architected to fit your existing environment seamlessly while establishing a resilient foundation that prepares you for future growth.",
+    desc: "We architect every solution to fit your current environment and build a foundation that supports long-term business growth without costly rebuilds.",
   },
   {
     icon: Unlock,
     title: "Vendor-Agnostic by Design",
-    desc: "WeRoute solutions are not tied to specific platforms or products, giving you absolute flexibility, architectural longevity, and freedom of choice.",
+    desc: "We at WeRoute, recommend technologies based on business fit, operational requirements, and long-term scalability instead of not vendor incentives or platform partnerships.",
   },
   {
     icon: TrendingUp,
     title: "Built to Scale",
-    desc: "From mid-enterprise to large global environments, our solutions are intelligently designed for massive growth, high resilience, and operational maturity.",
+    desc: "From mid-market to large global enterprises, our solutions are built for operational maturity, high resilience, and growth without architectural rework.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function ApproachSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <span className="inline-block rounded-full border border-[#052440]/10 bg-white/80 px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440] shadow-sm backdrop-blur-md">
-            Our Differentiator
+            Our Approach
           </span>
           
           <h2 className="mt-8 text-4xl font-bold leading-tight tracking-[-0.04em] text-[#052440] md:text-5xl">
@@ -87,8 +87,7 @@ export default function ApproachSection() {
           </h2>
           
           <p className="mt-6 text-lg leading-relaxed text-[#052440]/65">
-            We don't just deploy tools; we engineer ecosystems. Our methodology ensures every technological implementation directly serves your strategic vision.
-          </p>
+While most technology providers deploy and move on. We at WeRoute - start with strategy. Every engagement begins with consulting to understand business outcomes, then moves to architecture design, and only then to it’s implementation.          </p>
         </motion.div>
 
         {/* DIFFERENTIATORS GRID (Now using IconHover3D) */}

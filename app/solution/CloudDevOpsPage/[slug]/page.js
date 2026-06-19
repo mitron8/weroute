@@ -1,325 +1,79 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
-import {
-  ShieldAlert,
-  CheckCircle2,
-  Cpu,
-  Workflow,
-  ArrowRight,
-  MessageSquare,
-} from "lucide-react";
+import HeroSection from "./components/HeroSection";
+import OverviewSection from "./components/OverviewSection";
+import WhyEssentialSection from "./components/WhyEssentialSection";
+import WhatIsSection from "./components/WhatIsSection";
+import CapabilitiesSection from "./components/CapabilitiesSection";
+import UseCasesSection from "./components/UseCasesSection";
+import OutcomesSection from "./components/OutcomesSection";
+import WhyWerouteSection from "./components/WhyWerouteSection";
+import StrategyFitSection from "./components/StrategyFitSection";
+import FAQSection from "./components/FAQSection";
+import CTASection from "./components/CTASection";
 
 import { cloudDevOpsData } from "@/data/cloudDevOpsData";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
+export default async function Page({ params }) {
+  const { slug } = await params;
 
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-export default function CloudDevOpsPage({ params }) {
-  const { slug } = React.use(params);
+  console.log("Current Slug:", slug);
+  console.log("Available Keys:", Object.keys(cloudDevOpsData));
 
   const solution = cloudDevOpsData[slug];
 
   if (!solution) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#f7f9fc]">
-        <h1 className="text-4xl font-bold text-[#052440]">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-[#f7f9fc]">
+        <h1 className="text-3xl font-bold text-[#052440]">
           Solution Not Found
         </h1>
+
+        <p className="mt-4 text-[#052440]/60">
+          Requested slug: {slug}
+        </p>
+
+        <div className="mt-8 rounded-xl bg-white p-6 shadow">
+          <h3 className="font-bold mb-3">Available Slugs:</h3>
+
+          <ul className="space-y-2">
+            {Object.keys(cloudDevOpsData).map((key) => (
+              <li key={key}>{key}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
 
   return (
-    <main className="bg-[#f7f9fc] overflow-hidden">
-      
-     
+    <main className="bg-[#f7f9fc] pt-32 pb-28">
+      <div className="mx-auto max-w-7xl px-6">
 
-      {/* HERO */}
-<section className="relative bg-[#f7f9fc] pt-32 pb-16">
-  <div className="mx-auto max-w-7xl px-6">
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="group relative overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white/80 shadow-[0_15px_50px_rgba(5,36,64,0.04)] backdrop-blur-xl"
-    >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#080357]/[0.02] to-transparent" />
+        <HeroSection data={solution.hero} />
 
-      <div className="relative z-10 grid items-center gap-10 p-10 lg:grid-cols-2 lg:p-16">
-        
-        {/* Left Content */}
-        <div>
-          <span className="inline-block rounded-full border border-[#052440]/10 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440]">
-            {solution.hero.badge}
-          </span>
+        <OverviewSection data={solution.overview} />
 
-          <h1 className="mt-8 text-4xl font-black tracking-tight text-[#052440] md:text-6xl">
-            {solution.hero.title}
-          </h1>
+        <WhyEssentialSection
+          whyEssential={solution.whyEssential}
+          challenges={solution.challenges}
+        />
 
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#052440]/65">
-            {solution.hero.subtitle}
-          </p>
+        <WhatIsSection data={solution.whatIs} />
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button className="rounded-2xl bg-[#080357] px-8 py-4 font-bold text-white transition-all hover:bg-[#0d5ea8]">
-              Explore Solution
-            </button>
+        <CapabilitiesSection data={solution.capabilities} />
 
-            <button className="rounded-2xl border border-[#052440]/10 bg-white px-8 py-4 font-semibold text-[#052440] hover:bg-blue-800 ">
-              Contact Expert
-            </button>
-          </div>
-        </div>
+        <UseCasesSection data={solution.useCases} />
 
-        {/* Right Image */}
-        <div className="flex justify-center">
-          <img
-            src={solution.hero.image}
-            alt="Solution Hero"
-            className="w-full max-w-lg rounded-3xl object-cover"
-          />
-        </div>
+        <OutcomesSection data={solution.outcomes} />
+
+        <WhyWerouteSection data={solution.whyWeroute} />
+
+        <StrategyFitSection data={solution.strategyFit} />
+
+        <FAQSection data={solution.faq} />
+
+        <CTASection data={solution.cta} />
 
       </div>
-    </motion.div>
-  </div>
-</section>
-
-      {/* OVERVIEW + CHALLENGES */}
-      <section className="py-20">
-         
-  <div className="mx-auto max-w-7xl px-6">
-
-    <div className="group relative overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white/80 shadow-[0_15px_50px_rgba(5,36,64,0.04)] backdrop-blur-xl">
-
-      <div className="grid lg:grid-cols-12">
-
-        <div className="p-10 lg:col-span-5 lg:p-14">
-          <span className="text-sm font-bold uppercase tracking-[0.15em] text-[#052440]/40">
-            Overview
-          </span>
-
-          <h2 className="mt-6 text-4xl font-black text-[#052440]">
-            {solution.overview.title}
-          </h2>
-
-          <p className="mt-6 leading-8 text-[#052440]/65">
-            {solution.overview.description}
-          </p>
-        </div>
-
-        <div className="border-t border-[#052440]/10 bg-[#f7f9fc]/50 p-10 lg:col-span-7 lg:border-l lg:border-t-0 lg:p-14">
-
-          <div className="flex items-center gap-4">
-            <ShieldAlert className="text-red-500" />
-            <h3 className="text-2xl font-bold text-[#052440]">
-              Challenges We Solve
-            </h3>
-          </div>
-
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {solution.challenges.map((item) => (
-              <div key={item} className="flex gap-3">
-                <CheckCircle2
-                  size={18}
-                  className="mt-1 text-[#A7BF73]"
-                />
-                <span className="text-[#052440]/75">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-      {/* SOLUTIONS */}
-      <section className="py-24 mb-20 ">
-       
-        
-        <div className="mx-auto mt-20 max-w-7xl px-6">
-          
-
-          <div className="mb-20 text-center">
-            <h2 className="text-5xl font-black  text-[#052440]">
-              Solution Components
-            </h2>
-          </div>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-          >
-            {solution.solutions.map((item, index) => (
-              <motion.div
-                key={item.title}
-                variants={itemVariants}
-                whileHover={{ y: -10 }}
-                className="rounded-[32px] border border-[#052440]/10 bg-[#f7f9fc] p-8"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#080357] text-white">
-                  {index === 0 ? (
-                    <Cpu />
-                  ) : index === 1 ? (
-                    <Workflow />
-                  ) : (
-                    <ArrowRight />
-                  )}
-                </div>
-
-                <h3 className="mt-6 text-xl font-bold text-[#052440]">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 text-[#052440]/65">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* BENEFITS + PROCESS */}
-     <section className="py-24  ">
-  <div className="mx-auto max-w-7xl px-6">
-
-    <div className="overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white/80 shadow-[0_15px_50px_rgba(5,36,64,0.04)] backdrop-blur-xl">
-
-      <div className="grid lg:grid-cols-12">
-
-        <div className="bg-[#052440] p-10 lg:col-span-5 lg:p-14">
-
-          <h3 className="text-3xl font-black text-white">
-            Business Benefits
-          </h3>
-
-          <div className="mt-8 space-y-4">
-            {solution.benefits.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-2xl bg-white/5 p-4"
-              >
-                <CheckCircle2
-                  size={18}
-                  className="text-[#A7BF73]"
-                />
-                <span className="text-white">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-
-        </div>
-
-        <div className="p-10 lg:col-span-7 lg:p-14">
-
-          <h3 className="text-3xl font-black text-[#052440]">
-            Technologies
-          </h3>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            {solution.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-xl border border-[#052440]/10 bg-[#f7f9fc] px-4 py-2 text-sm font-semibold text-[#052440]"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          <h3 className="mt-12 text-3xl font-black text-[#052440]">
-            Delivery Process
-          </h3>
-
-          <div className="mt-8 space-y-5">
-            {solution.process.map((step, index) => (
-              <div
-                key={step}
-                className="flex items-center gap-5"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#080357] text-white font-bold">
-                  {index + 1}
-                </div>
-
-                <span className="font-medium text-[#052440]">
-                  {step}
-                </span>
-              </div>
-            ))}
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-      {/* CTA */}
-      <section className="pb-24 mt-20">
-        <div className="mx-auto max-w-6xl px-6">
-
-          <motion.div
-            whileInView={{ opacity: [0, 1], y: [50, 0] }}
-            viewport={{ once: true }}
-            className="overflow-hidden rounded-[40px] h-[500px] flex flex-col justify-center items-center bg-gradient-to-r from-[#052440] to-[#080357] p-16 text-center"
-          >
-            <h2 className="text-5xl font-black text-white">
-              {solution.cta.title}
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70">
-              {solution.cta.description}
-            </p>
-
-            <button className="mt-10 inline-flex items-center gap-3 rounded-2xl bg-[#A7BF73] px-8 py-4 font-bold text-[#052440] transition hover:-translate-y-1">
-              {solution.cta.button}
-              <MessageSquare size={18} />
-            </button>
-          </motion.div>
-
-        </div>
-      </section>
-
     </main>
   );
 }

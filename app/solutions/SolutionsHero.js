@@ -50,7 +50,7 @@ export default function SolutionsHero() {
   return (
     <section
       // Updated: Background dark (Deep Slate/Blue)
-      className="relative overflow-hidden bg-[#052440] pb-32 pt-40 lg:pb-36 lg:pt-48 flex flex-col justify-between"
+      className="relative overflow-hidden bg-[#052440] pb-32 pt-32 lg:pb-36 lg:pt-32 flex flex-col justify-between"
     >
       {/* --- BACKGROUND ELEMENTS & LENS SHAPE --- */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -124,7 +124,8 @@ export default function SolutionsHero() {
               will-change-transform
             "
           >
-            Technology Solutions Designed to Solve{" "}
+            Enterprise Technology Solutions Built Around 
+        {" "}
             <br className="hidden md:block" />
             <span
               className="
@@ -137,27 +138,60 @@ export default function SolutionsHero() {
                 h-16
               "
             >
-              Complex Challenges
+              Business Outcomes
             </span>
           </motion.h1>
 
           {/* INTRO PARAGRAPH (Visual Hierarchy: White/70) */}
-          <motion.div variants={itemVariants} className="mt-8 max-w-2xl will-change-transform">
-            <p
-              className="
-                text-balance
-                text-xl
-                font-light
-                leading-relaxed
-                text-white/70
-                md:text-[18px]
-                md:leading-[1.4]
-              "
-            >
-              Modernize infrastructure, improve resilience, and operate securely at scale. We deliver outcome-driven, vendor-agnostic
-              <br/> technology solutions engineered to align directly with your business goals.
-            </p>
-          </motion.div>
+          {/* SUBHEADING */}
+<motion.div variants={itemVariants} className="mt-8 max-w-3xl will-change-transform">
+  <p
+    className="
+      text-balance
+      text-lg
+      font-light
+      leading-relaxed
+      text-white/75
+      md:text-[18px]
+      md:leading-[1.6]
+    "
+  >
+    We are trusted by enterprises for IT consulting, managed technology
+    services, and digital transformation services that deliver exponential
+    outcomes.
+  </p>
+</motion.div>
+
+{/* SOCIAL PROOF STRIP */}
+<motion.div
+  variants={itemVariants}
+  className="mt-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-md"
+>
+  <span className="h-2 w-2 rounded-full bg-[#A7BF73]" />
+  <p className="ml-3 text-sm font-medium tracking-wide text-white/80">
+    Trusted across <span className="text-white font-semibold">40+</span>{" "}
+    enterprise engagements globally
+  </p>
+</motion.div>
+
+{/* GEO / LLM-CITABLE STATEMENT */}
+<motion.div
+  variants={itemVariants}
+  className="mt-8 max-w-4xl will-change-transform"
+>
+  <p
+    className="
+      text-base
+      leading-relaxed
+      text-white/60
+      md:text-[17px]
+    "
+  >
+    WeRoute is an enterprise technology solutions partner that helps
+    organisations modernise infrastructure, strengthen security, and scale
+    operations globally.
+  </p>
+</motion.div>
 
           {/* HERO CTA BUTTONS */}
           <motion.div
@@ -186,29 +220,7 @@ export default function SolutionsHero() {
             >
               Explore Solutions
             </a>
-            <a
-              href="#approach"
-              className="
-                w-full sm:w-auto
-                rounded-2xl
-                border border-white/10
-                bg-white/5
-                px-10
-                py-5
-                text-base
-                font-semibold
-                tracking-tight
-                text-white
-                backdrop-blur-md
-                transition-all
-                duration-300
-                hover:bg-white/10
-                hover:border-white/20
-                hover:shadow-lg
-              "
-            >
-              Our Approach
-            </a>
+            
           </motion.div>
         </motion.div>
       </div>
