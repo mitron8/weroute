@@ -102,6 +102,7 @@ const MENU = {
       {
         icon: <Headphones size={18} />,
         title: "Managed Services",
+        href:"managed-services",
         desc: "Run, monitor, secure, and optimize critical IT environments.",
         features: [
           { title: "Managed Data Center Services", href: "/services/managed-data-center" },
@@ -114,6 +115,7 @@ const MENU = {
       {
         icon: <Activity size={18} />,
         title: "Consulting & Advisory Services",
+        href:"consulting-&-advisory-services",
         desc: "Strategic guidance for architecture and modernization.",
         features: [
           {
@@ -141,6 +143,7 @@ const MENU = {
       {
         icon: <Code2 size={18} />,
         title: "Software & AI Development",
+        href:"software-&-ai-development",
         desc: "Custom applications, AI services, and deployment pipelines.",
         features: [
           { title: "AI and ML Development Services", href: "/services/ai-ml-development" },
@@ -152,12 +155,13 @@ const MENU = {
     ],
   },
 
-  Solutions: {
+Solutions: {
   type: "list",
   groups: [
     {
       icon: <Network size={18} />,
       title: "Network & Connectivity",
+      href: "/solutions/network-connectivity", // <-- Added heading route
       desc: "Build resilient, intelligent, and scalable enterprise networks.",
       features: [
         { title: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
@@ -170,6 +174,7 @@ const MENU = {
     {
       icon: <Cloud size={18} />,
       title: "Cloud & DevOps",
+      href: "/solutions/CloudDevOpsPage", // <-- Added heading route
       desc: "Enable agility and governance across cloud and hybrid IT environments.",
       features: [
         { title: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
@@ -181,6 +186,7 @@ const MENU = {
     {
       icon: <Shield size={18} />,
       title: "Cybersecurity",
+      href: "/solutions/cybersecurity", // <-- Added heading route
       desc: "Protect users and infrastructure with enterprise-ready security architectures.",
       features: [
         { title: "Endpoint & Cloud Security", href: "/solution/cybersecurity/endpoint-cloud-security" },
@@ -193,6 +199,7 @@ const MENU = {
     {
       icon: <Cpu size={18} />, 
       title: "AI & Intelligent Automation",
+      href: "/solutions/AI-Intelligent-Automation", // <-- Added heading route
       desc: "Apply intelligence to improve operational visibility and decision-making.",
       features: [
         { title: "AI Network Intelligence", href: "/solution/AI-Intelligent-Automation/ai-network-intelligence" },
@@ -205,6 +212,7 @@ const MENU = {
     {
       icon: <Code size={18} />,
       title: "Software & Digital Engineering",
+      href: "/solutions/softwareDigitalEngineering", // <-- Added heading route
       desc: "Design and modernize digital platforms that scale seamlessly.",
       features: [
         { title: "Custom Software Development", href: "/solution/softwareDigitalEngineering/custom-software-development" },
@@ -336,7 +344,7 @@ export default function Navbar() {
                   <div className="grid grid-cols-2 gap-x-10 gap-y-12 p-12">
                     {MENU[active].items.map((item, i) => (
                       <Link
-                        href={item.href || "#"}
+                        href={item.href}
                         key={i}
                         className="group flex gap-4"
                       >
@@ -378,8 +386,11 @@ export default function Navbar() {
 
                     <div className="space-y-2">
                       {MENU[active].groups.map((group, i) => (
+                        <Link  key={i}
+                            href={group.href || "#"}>
                         <button
-                          key={i}
+                        
+                          
                           onMouseEnter={() => setActiveSub(i)}
                           className={`flex w-full items-center justify-between rounded-2xl px-5 py-4 text-left transition-all duration-300 ${
                             activeSub === i
@@ -403,7 +414,7 @@ export default function Navbar() {
                                 : "text-white/60"
                             }`}
                           />
-                        </button>
+                        </button></Link>
                       ))}
                     </div>
                   </div>

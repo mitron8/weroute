@@ -8,42 +8,76 @@ import {
   Layers,
   ShieldCheck,
   Handshake,
-  ArrowRight,
   MessageSquare
 } from "lucide-react";
-import WavePath from "./WavePath";
+
+// =========================================
+// DATA ARRAYS
+// =========================================
+
+const industries = [
+  "Financial Services",
+  "Healthcare",
+  "Manufacturing",
+  "Retail",
+  "Government",
+  "Technology"
+];
 
 const valuePillars = [
   {
     icon: Lightbulb,
-    title: "Consulting-Led Solution Design",
-    desc: "We don't push products. We start with strategic consulting to ensure every technical decision perfectly aligns with your specific business goals and operational needs.",
+    title: "Strategy Before Technology",
+    desc: "We do not lead with technology. We instead begin every engagement with strategic advisory to define the right architecture before any implementation decision is made.",
   },
   {
     icon: Building2,
-    title: "Deep Enterprise & Industry Experience",
-    desc: "Our team brings decades of experience architecting and managing complex, highly regulated environments across multiple global industries.",
+    title: "Enterprise Delivery Experience",
+    desc: "With 40+ enterprise projects delivered and 99.9% system reliability, we bring the execution rigour required by complex regulated environments.",
   },
   {
     icon: Layers,
-    title: "Integrated Approach",
-    desc: "We break down silos, delivering unified solutions that seamlessly bridge network, cloud platforms, cybersecurity protocols, AI, and modern software.",
+    title: "Integrated Expertise Across the Stack",
+    desc: "Network, cloud, cybersecurity, AI, and digital engineering expertise in one team. There’re no handoffs between vendors. One accountable partner across the full technology stack.",
   },
   {
     icon: ShieldCheck,
-    title: "Focus on Resilience, Security & Scalability",
-    desc: "Security and scale aren't afterthoughts. They are embedded into the DNA of every architecture we design, ensuring your business is protected and prepared for growth.",
+    title: "Security and Scalability Built In",
+    desc: "Zero trust architecture principles and scalability requirements are built into every solution from the first design decision, not added after deployment.",
   },
   {
     icon: Handshake,
     title: "Long-Term Partnership Mindset",
-    desc: "We view our client relationships as strategic partnerships. We are committed to your long-term success, continuous optimization, and technological evolution.",
+    desc: "We measure success by client outcomes, not project completion. Every engagement is built for continuous optimisation and long-term technology evolution.",
   },
 ];
 
 export default function SolutionsClosingSections() {
   return (
     <>
+      {/* =========================================
+          INDUSTRIES WE SUPPORT STRIP
+      ========================================= */}
+      <section className="border-y border-[#052440]/10 bg-white py-8">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+            <span className="shrink-0 text-sm font-bold uppercase tracking-[0.15em] text-[#052440]/50">
+              Industries We Support
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:justify-end">
+              {industries.map((industry, i) => (
+                <span
+                  key={i}
+                  className="text-[15px] font-semibold text-[#052440]"
+                >
+                  {industry}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* =========================================
           WHY ENTERPRISES CHOOSE WEROUTE
       ========================================= */}
@@ -76,7 +110,7 @@ export default function SolutionsClosingSections() {
                 </h2>
                 
                 <p className="mt-6 text-lg leading-relaxed text-[#052440]/65">
-                  Delivering technology is easy. Delivering technology that actually moves the needle for your business requires a different kind of partner.
+                  Technology delivery is common. Technology that moves business outcomes forward requires a different kind of partner.
                 </p>
               </motion.div>
             </div>
@@ -121,7 +155,7 @@ export default function SolutionsClosingSections() {
       
 
       {/* =========================================
-          FINAL CALL TO ACTION (RESIZED & POLISHED)
+          FINAL CALL TO ACTION
       ========================================= */}
       <section className="relative bg-[#f7f9fc] px-6 pb-24">
         <motion.div
@@ -146,37 +180,27 @@ export default function SolutionsClosingSections() {
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:30px_30px] opacity-20" />
           </div>
 
-          {/* Tighter padding and scaled down typography */}
           <div className="relative z-10 flex flex-col items-center px-6 py-16 text-center md:px-12 md:py-20">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#A7BF73] backdrop-blur-md">
               Start Your Journey
             </span>
             
             <h2 className="mt-6 max-w-3xl text-3xl font-black leading-tight tracking-[-0.03em] text-white md:text-4xl lg:text-5xl">
-              Build Technology That Works for Your Business
+              Ready to Build Technology That Works?
             </h2>
             
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-              Whether you are modernizing infrastructure, improving security, or scaling digital platforms, WeRoute helps you design and deliver solutions directly aligned with your strategic goals.
+              Partner with WeRoute—a technology advisory services team that designs secure, scalable, and future-ready solutions aligned with your strategic goals.
             </p>
 
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               {/* Primary Button */}
               <a
                 href="#contact"
-                className="group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#A7BF73] px-7 py-4 text-[14px] font-bold text-[#080357] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_15px_40px_rgba(255,255,255,0.15)] sm:w-auto"
+                className="group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#A7BF73] px-8 py-4 text-[14px] font-bold text-[#080357] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_15px_40px_rgba(255,255,255,0.15)] sm:w-auto"
               >
                 Talk to an Expert
                 <MessageSquare size={16} className="transition-transform duration-300 group-hover:scale-110" />
-              </a>
-              
-              {/* Secondary Button */}
-              <a
-                href="#consultation"
-                className="group flex w-full items-center justify-center gap-2.5 rounded-2xl border border-white/20 bg-white/5 px-7 py-4 text-[14px] font-bold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 sm:w-auto"
-              >
-                Request Consultation
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
           </div>
