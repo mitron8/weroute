@@ -1,73 +1,71 @@
 "use client";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+export default function FaqSection({ data }) {
+  const [openIndex, setOpenIndex] = useState(null);
 
-export default function FAQSection({ data }) {
-  const [active, setActive] = useState(null);
-
-  if (!data?.length) return null;
+  if (!data || !data.items) return null;
 
   return (
-    <section className="mt-24">
+    <section className="w-full bg-white py-24 md:py-32">
+      <div className="container mx-auto px-6 max-w-3xl">
+        
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-extrabold text-[#052440] mb-12 text-center tracking-tight"
+        >
+          {data.title}
+        </motion.h2>
 
-      <div className="text-center">
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#052440]/40">
-          FAQs
-        </span>
+        <div className="space-y-4">
+          {data.items.map((item, index) => {
+            const isOpen = openIndex === index;
 
-        <h2 className="mt-5 text-5xl font-black text-[#052440]">
-          Frequently Asked Questions
-        </h2>
-      </div>
-
-      <div className="mx-auto mt-16 max-w-4xl space-y-5">
-
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="overflow-hidden rounded-[28px] border border-[#052440]/10 bg-white"
-          >
-            <button
-              onClick={() =>
-                setActive(active === index ? null : index)
-              }
-              className="flex w-full items-center justify-between p-6 text-left"
-            >
-              <h3 className="text-lg font-bold text-[#052440]">
-                {item.question}
-              </h3>
-
-              {active === index ? (
-                <Minus size={20} />
-              ) : (
-                <Plus size={20} />
-              )}
-            </button>
-
-            <AnimatePresence>
-              {active === index && (
-                <motion.div
-                  initial={{ height: 0 }}
-                  animate={{ height: "auto" }}
-                  exit={{ height: 0 }}
-                  className="overflow-hidden"
+            return (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="border border-gray-200 rounded-xl overflow-hidden bg-[#F8F9FA]"
+              >
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                 >
-                  <div className="border-t border-[#052440]/10 px-6 py-5">
-                    <p className="leading-8 text-[#052440]/65">
-                      {item.answer}
-                    </p>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-          </div>
-        ))}
+                  <span className="text-lg font-semibold text-[#052440]">
+                    {item.question}
+                  </span>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-[#B7F36B] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+                  />
+                </button>
+                
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <div className="px-6 pb-6 text-gray-600 font-light leading-relaxed border-t border-gray-100 pt-4">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
 
       </div>
-
     </section>
   );
 }

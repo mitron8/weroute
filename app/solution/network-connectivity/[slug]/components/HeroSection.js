@@ -1,99 +1,109 @@
-"use client";
+"use client"
 
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { motion } from "framer-motion";
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ChevronRight } from 'lucide-react';
 
 export default function HeroSection({ data }) {
-  if (!data) return null;
+  const { breadcrumb, hero } = data;
+
+  // Animation variants for the staggered entrance
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
 
   return (
-    <section>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white shadow-[0_15px_50px_rgba(5,36,64,0.04)]"
-      >
-        <div className="grid lg:grid-cols-12">
+    <section className="relative w-full bg-[#052440] text-white overflow-hidden py-24 lg:py-32 flex flex-col items-center justify-center min-h-[85vh]">
+      
+      {/* Optional: Subtle ambient glow behind the text using the lime green */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B7F36B] opacity-[0.03] blur-[120px] rounded-full pointer-events-none" />
 
-          {/* LEFT CONTENT */}
-          <div className="p-10 lg:col-span-7 lg:p-16">
-
-            <span className="inline-flex rounded-full border border-[#052440]/10 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440]">
-              {data.badge}
-            </span>
-
-            <h1 className="mt-8 text-5xl font-black tracking-tight text-[#052440] md:text-6xl">
-              {data.title}
-            </h1>
-
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#052440]/65">
-              {data.subtitle}
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-2xl bg-[#080357] px-8 py-4 font-semibold text-white transition hover:-translate-y-1">
-                Talk To An Expert
-              </button>
-
-              <button className="rounded-2xl border border-[#052440]/10 px-8 py-4 font-semibold text-[#052440] transition hover:bg-[#f7f9fc]">
-                Request Consultation
-              </button>
-            </div>
-
-          </div>
-
-          {/* RIGHT PANEL */}
-          <div className="border-t border-[#052440]/10 bg-[#052440] p-10 lg:col-span-5 lg:border-l lg:border-t-0 lg:p-16">
-
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
-              Key Outcomes
-            </span>
-
-            <div className="mt-8 space-y-5">
-
-              {[
-                "Improved Network Reliability",
-                "Faster Issue Resolution",
-                "Operational Efficiency",
-                "Enhanced User Experience",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4"
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          className="max-w-4xl mx-auto flex flex-col items-center text-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Breadcrumbs */}
+          <motion.nav variants={itemVariants} className="flex items-center space-x-2 text-sm text-gray-400 mb-12">
+            {breadcrumb.map((item, index) => (
+              <div key={index} className="flex items-center">
+                <Link 
+                  href={item.href} 
+                  className="hover:text-[#B7F36B] transition-colors duration-200"
                 >
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#A7BF73]"
-                  />
-
-                  <span className="text-white">
-                    {item}
-                  </span>
-                </div>
-              ))}
-
-            </div>
-
-            <div className="mt-10 rounded-[28px] border border-white/10 bg-white/5 p-6">
-              <div className="flex items-center gap-2 text-[#A7BF73]">
-                <ArrowRight size={18} />
-                <span className="text-sm font-semibold uppercase tracking-wider">
-                  Enterprise Ready
-                </span>
+                  {item.title}
+                </Link>
+                {index < breadcrumb.length - 1 && (
+                  <ChevronRight className="w-4 h-4 mx-2 text-gray-500" />
+                )}
               </div>
+            ))}
+          </motion.nav>
 
-              <p className="mt-4 text-white/70 leading-7">
-                Designed for distributed enterprise environments,
-                hybrid infrastructure, cloud transformation, and
-                modern network operations.
-              </p>
-            </div>
+          {/* Badge */}
+          <motion.div variants={itemVariants} className="mb-8">
+            <span className="inline-block px-4 py-1.5 rounded-full border border-[#B7F36B]/40 text-[#B7F36B] text-sm font-medium tracking-wide shadow-[0_0_15px_rgba(183,243,107,0.1)] bg-[#B7F36B]/5 backdrop-blur-sm">
+              {hero.badge}
+            </span>
+          </motion.div>
 
-          </div>
+          {/* Title */}
+          <motion.h1 
+            variants={itemVariants}
+            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-300"
+          >
+            {hero.title}
+          </motion.h1>
 
-        </div>
-      </motion.div>
+          {/* Description */}
+          <motion.p 
+            variants={itemVariants}
+            className="text-lg md:text-xl text-gray-300 max-w-2xl mb-6 leading-relaxed"
+          >
+            {hero.description}
+          </motion.p>
+
+          {/* Geo Statement */}
+          <motion.p 
+            variants={itemVariants}
+            className="text-sm text-gray-400 max-w-xl mb-10 font-light"
+          >
+            {hero.geoStatement}
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+            {hero.buttons.map((button, index) => (
+              <Link 
+                key={index} 
+                href={button.href}
+                className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-[#052440] bg-[#B7F36B] rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+              >
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                  {button.label}
+                </span>
+                {/* Hover effect background fill */}
+                <div className="absolute inset-0 h-full w-full bg-white scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out" />
+              </Link>
+            ))}
+          </motion.div>
+
+        </motion.div>
+      </div>
     </section>
   );
 }

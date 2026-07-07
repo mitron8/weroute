@@ -165,8 +165,8 @@ Solutions: {
       desc: "Build resilient, intelligent, and scalable enterprise networks.",
       features: [
         { title: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
-        { title: "SD-WAN / SD-LAN / SDN", href: "/solution/network-connectivity/sd-wan-sd-lan-sdn" },
-        { title: "Network Observability & Assurance", href: "/solution/network-connectivity/network-observability-assurance" },
+        { title: "SD-WAN / SD-LAN / SDN", href: "/solution/network-connectivity/sd-wan-sdn-solutions" },
+        { title: "Network Observability & Assurance", href: "/solution/network-connectivity/network-observability" },
         { title: "Network as a Service (NaaS)", href: "/solution/network-connectivity/network-as-a-service" },
         { title: "Mobility & Wireless Solutions", href: "/solution/network-connectivity/mobility-wireless-solutions" },
       ],
