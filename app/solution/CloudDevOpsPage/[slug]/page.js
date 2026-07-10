@@ -1,79 +1,50 @@
-import HeroSection from "./components/HeroSection";
-import OverviewSection from "./components/OverviewSection";
-import WhyEssentialSection from "./components/WhyEssentialSection";
-import WhatIsSection from "./components/WhatIsSection";
-import CapabilitiesSection from "./components/CapabilitiesSection";
-import UseCasesSection from "./components/UseCasesSection";
-import OutcomesSection from "./components/OutcomesSection";
-import WhyWerouteSection from "./components/WhyWerouteSection";
-import StrategyFitSection from "./components/StrategyFitSection";
-import FAQSection from "./components/FAQSection";
-import CTASection from "./components/CTASection";
+import { cloudDevOpsData } from '@/data/cloudDevOpsData'; // Adjust the import path to your data file
+import { notFound } from 'next/navigation';
+import Hero from './components/Hero';
+import Philosophy from './components/Philosophy';
+import WhySection from './components/WhySection';
+import WhatIs from './components/WhatIs';
+import Capabilities from './components/Capabilities';
+import UseCases from './components/UseCases';
+import Outcomes from './components/Outcomes';
+import WhyChoose from './components/WhyChoose';
+import FAQ from './components/FAQ';
+import FinalCta from './components/FinalCta';
 
-import { cloudDevOpsData } from "@/data/cloudDevOpsData";
-
-export default async function Page({ params }) {
+export async function generateMetadata({ params }) {
   const { slug } = await params;
+  const data = cloudDevOpsData[slug];
+  if (!data) return { title: 'Page Not Found | WeRoute' };
+  
+  return {
+    title: data.seo.title,
+    description: data.seo.description,
+    keywords: data.seo.keywords.join(', '),
+    alternates: { canonical: data.seo.canonical },
+  };
+}
 
-  console.log("Current Slug:", slug);
-  console.log("Available Keys:", Object.keys(cloudDevOpsData));
+export default async function DynamicServicePage({ params }) {
+  const { slug } = await params;
+  const data = cloudDevOpsData[slug];
 
-  const solution = cloudDevOpsData[slug];
+  if (!data) notFound();
 
-  if (!solution) {
-    return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-[#f7f9fc]">
-        <h1 className="text-3xl font-bold text-[#052440]">
-          Solution Not Found
-        </h1>
-
-        <p className="mt-4 text-[#052440]/60">
-          Requested slug: {slug}
-        </p>
-
-        <div className="mt-8 rounded-xl bg-white p-6 shadow">
-          <h3 className="font-bold mb-3">Available Slugs:</h3>
-
-          <ul className="space-y-2">
-            {Object.keys(cloudDevOpsData).map((key) => (
-              <li key={key}>{key}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    );
-  }
+  // Handle dynamic keys
+  const whyData = data.whyNetworking || data.whyPlatformEngineering;
 
   return (
-    <main className="bg-[#f7f9fc] pt-32 pb-28">
-      <div className="mx-auto max-w-7xl px-6">
-
-        <HeroSection data={solution.hero} />
-
-        <OverviewSection data={solution.overview} />
-
-        <WhyEssentialSection
-          whyEssential={solution.whyEssential}
-          challenges={solution.challenges}
-        />
-
-        <WhatIsSection data={solution.whatIs} />
-
-        <CapabilitiesSection data={solution.capabilities} />
-
-        <UseCasesSection data={solution.useCases} />
-
-        <OutcomesSection data={solution.outcomes} />
-
-        <WhyWerouteSection data={solution.whyWeroute} />
-
-        <StrategyFitSection data={solution.strategyFit} />
-
-        <FAQSection data={solution.faq} />
-
-        <CTASection data={solution.cta} />
-
-      </div>
+    <main className="bg-[#070B19] text-white min-h-screen font-sans selection:bg-[#A3D133] selection:text-[#070B19]">
+      <Hero data={data.hero} />
+      <Philosophy data={data.philosophy} />
+      <WhySection data={whyData} />
+      <WhatIs data={data.whatIs} />
+      <Capabilities data={data.capabilities} />
+      <UseCases data={data.useCases} />
+      <Outcomes data={data.outcomes} />
+      <WhyChoose data={data.whyChoose} />
+      <FAQ data={data.faq} />
+      <FinalCta data={data.finalCta} />
     </main>
   );
 }

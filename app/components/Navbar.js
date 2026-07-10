@@ -174,7 +174,7 @@ Solutions: {
     {
       icon: <Cloud size={18} />,
       title: "Cloud & DevOps",
-      href: "/solutions/CloudDevOpsPage", // <-- Added heading route
+      href: "/solutions/cloud-and-devOps", // <-- Added heading route
       desc: "Enable agility and governance across cloud and hybrid IT environments.",
       features: [
         { title: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
