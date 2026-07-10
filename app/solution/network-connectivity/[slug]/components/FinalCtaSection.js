@@ -6,7 +6,7 @@ export default function FinalCtaSection({ data }) {
   if (!data) return null;
 
   return (
-    <section className="relative w-full bg-[#052440] py-24 md:py-32 overflow-hidden text-center flex flex-col items-center justify-center">
+    <section className="relative w-full bg-[#080357] py-24 md:py-32 overflow-hidden text-center flex flex-col items-center justify-center">
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#B7F36B] opacity-[0.03] blur-[150px] rounded-full pointer-events-none" />

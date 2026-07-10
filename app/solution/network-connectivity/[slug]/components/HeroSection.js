@@ -25,7 +25,7 @@ export default function HeroSection({ data }) {
   };
 
   return (
-    <section className="relative w-full bg-[#052440] text-white overflow-hidden py-24 lg:py-32 flex flex-col items-center justify-center min-h-[85vh]">
+    <section className="relative w-full bg-[#080357] text-white overflow-hidden py-24 lg:py-32 flex flex-col items-center justify-center min-h-[85vh]">
       
       {/* Optional: Subtle ambient glow behind the text using the lime green */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B7F36B] opacity-[0.03] blur-[120px] rounded-full pointer-events-none" />
@@ -64,7 +64,7 @@ export default function HeroSection({ data }) {
           {/* Title */}
           <motion.h1 
             variants={itemVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-300"
+            className="text-5xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-5 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-300"
           >
             {hero.title}
           </motion.h1>
@@ -72,7 +72,7 @@ export default function HeroSection({ data }) {
           {/* Description */}
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-gray-300 max-w-2xl mb-6 leading-relaxed"
+            className="text-lg md:text-lg text-gray-300/80 max-w-2xl mb-6 leading-relaxed"
           >
             {hero.description}
           </motion.p>

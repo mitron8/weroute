@@ -13,7 +13,7 @@ export default function OutcomesSection({ data }) {
   };
 
   return (
-    <section className="w-full bg-[#052440] relative overflow-hidden py-24 md:py-32">
+    <section className="w-full bg-[#080357] relative overflow-hidden py-24 md:py-32">
       
       {/* Subtle Background Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#B7F36B] opacity-[0.02] blur-[100px] rounded-full pointer-events-none" />
