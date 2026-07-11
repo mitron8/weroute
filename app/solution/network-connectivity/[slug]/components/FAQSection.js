@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
-export default function FaqSection({ data }) {
+export default function FAQSection({ data }) {
   const [openIndex, setOpenIndex] = useState(null);
 
   if (!data || !data.items) return null;

@@ -11,7 +11,7 @@ import CapabilitiesSection from "./components/CapabilitiesSection";
 import UseCasesSection from "./components/UseCasesSection";
 import OutcomesSection from "./components/OutcomesSection";
 import WhyChooseSection from "./components/WhyChooseSection";
-import FaqSection from "./components/FaqSection";
+import FAQSection from "./components/FAQSection";
 import RelatedSolutionsSection from "./components/RelatedSolutionsSection";
 import FinalCtaSection from "./components/FinalCtaSection";
 
@@ -101,7 +101,7 @@ export default async function Page({ params }) {
         <UseCasesSection data={solution.useCases} />
         <OutcomesSection data={solution.outcomes} />
         <WhyChooseSection data={solution.whyChoose} />
-        <FaqSection data={solution.faq} />
+        <FAQSection data={solution.faq} />
         <RelatedSolutionsSection data={solution.relatedSolutions} />
         <FinalCtaSection data={solution.finalCta} />
       </main>
