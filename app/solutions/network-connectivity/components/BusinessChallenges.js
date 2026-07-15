@@ -30,13 +30,13 @@ export default function BusinessChallenges() {
     <section
       className="
         relative
-        overflow-hidden
+        overflow-x-clip
         bg-[#080357]
         py-32
         text-white
       "
     >
-      {/* Grid */}
+      {/* Grid Background */}
       <div
         className="
           absolute inset-0
@@ -60,15 +60,20 @@ export default function BusinessChallenges() {
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
+        {/* 1. lg:items-start prevents columns from stretching to equal height
+        */}
         <div
           className="
             grid
             gap-20
             lg:grid-cols-12
+            lg:items-start
           "
         >
-          {/* LEFT */}
-          <div className="lg:col-span-5">
+          {/* 2. lg:sticky and lg:top-32 lock the left column in place
+               self-start is added as a double-guarantee against stretching
+          */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
             <span
               className="
                 inline-flex
@@ -101,7 +106,6 @@ export default function BusinessChallenges() {
             >
               Business
               <br />
-
               Challenges
               <span className="text-[#B7F36B]">
                 {" "}
@@ -157,7 +161,7 @@ export default function BusinessChallenges() {
             </div>
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT: This column will scroll naturally past the pinned left column */}
           <div
             className="
               lg:col-span-7

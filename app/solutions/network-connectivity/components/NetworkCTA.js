@@ -5,250 +5,90 @@ import { motion } from "framer-motion";
 
 export default function NetworkCTA() {
   return (
-    <section
-      className="
-        relative
-        overflow-hidden
-        bg-[#080357]
-        py-36
-        text-white
-      "
-    >
-      {/* GRID */}
-      <div
-        className="
-          absolute inset-0
-          bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)]
-          bg-[size:90px_90px]
-        "
-      />
+    <section className="relative overflow-hidden bg-[#080357] py-28 text-white">
+      {/* Subtle Architectural Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-      {/* GLOWS */}
-      <div
-        className="
-          absolute
-          left-[-10%]
-          top-[-10%]
-          h-[500px]
-          w-[500px]
-          rounded-full
-          bg-[#B7F36B]/10
-          blur-3xl
-        "
-      />
-
-      <div
-        className="
-          absolute
-          right-[-10%]
-          bottom-[-10%]
-          h-[500px]
-          w-[500px]
-          rounded-full
-          bg-white/5
-          blur-3xl
-        "
-      />
+      {/* Ambient Blue/Indigo Glows */}
+      <div className="pointer-events-none absolute left-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute right-[-10%] bottom-[-10%] h-[500px] w-[500px] rounded-full bg-indigo-500/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="
-            rounded-[48px]
-            border
-            border-white/10
-            bg-white/[0.03]
-            p-10
-            backdrop-blur-xl
-            md:p-16
-            lg:p-20
-          "
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative overflow-hidden rounded-[32px] border border-white/15 bg-white/[0.03] p-8 backdrop-blur-xl md:p-12 lg:p-16"
         >
-          {/* Badge */}
-          <span
-            className="
-              inline-flex
-              rounded-full
-              border
-              border-white/10
-              bg-white/[0.03]
-              px-5
-              py-2
-              text-xs
-              font-semibold
-              uppercase
-              tracking-[0.22em]
-              text-white/70
-            "
-          >
-            Ready To Modernize
-          </span>
+          {/* Top Accent Line */}
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-400 opacity-75" />
 
-          {/* Heading */}
-          <h2
-            className="
-              mt-8
-              max-w-5xl
-              text-5xl
-              font-black
-              leading-[0.95]
-              tracking-[-0.05em]
-              text-white
-              md:text-6xl
-              lg:text-8xl
-            "
-          >
-            Stop Managing
-            <br />
+          {/* Main Content Split Layout */}
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:justify-between">
+            {/* Left Column: Badge & Heading */}
+            <div className="lg:col-span-7">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white/80 shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+                Ready To Modernize
+              </span>
 
-            Complexity.
-            <br />
+              <h2 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+                Stop Managing <br />
+                Complexity. <br />
+                <span className="font-light text-white/60">
+                  Start Removing It.
+                </span>
+              </h2>
+            </div>
 
-            <span className="text-[#B7F36B]">
-              Start Removing It.
-            </span>
-          </h2>
+            {/* Right Column: Description & Action */}
+            <div className="flex flex-col justify-end lg:col-span-5 lg:pl-6">
+              <p className="text-base leading-relaxed text-white/70 sm:text-lg">
+                Partner with a team that designs network architecture around
+                reliability, visibility, and growth, not just uptime reports.
+              </p>
 
-          {/* Description */}
-          <p
-            className="
-              mt-10
-              max-w-3xl
-              text-lg
-              leading-9
-              text-white/65
-            "
-          >
-            Partner with a team that designs network
-            architecture around reliability, visibility,
-            and growth, not just uptime reports.
-          </p>
-
-          {/* Actions */}
-          <div
-            className="
-              mt-12
-              flex
-              flex-wrap
-              gap-5
-            "
-          >
-            <a
-              href="/contact"
-              className="
-                group
-                flex
-                items-center
-                gap-3
-                rounded-2xl
-                bg-white
-                px-8
-                py-4
-                text-sm
-                font-semibold
-                text-black
-                transition-all
-                duration-300
-                hover:scale-[1.03]
-              "
-            >
-              Request Consultation
-
-              <ArrowRight
-                size={18}
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
-              />
-            </a>
+              <div className="mt-8 pt-2">
+                <a
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-sm font-bold text-[#080357] shadow-lg shadow-white/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90 hover:shadow-xl hover:shadow-white/15"
+                >
+                  <span>Request Consultation</span>
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Metrics */}
-          <div
-            className="
-              mt-20
-              grid
-              gap-8
-              border-t
-              border-white/10
-              pt-10
-              md:grid-cols-3
-            "
-          >
-            <div>
-              <h3
-                className="
-                  text-4xl
-                  font-bold
-                  tracking-[-0.04em]
-                "
-              >
+          {/* Metrics Section */}
+          <div className="mt-16 grid gap-6 border-t border-white/10 pt-12 sm:grid-cols-3">
+            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04]">
+              <h3 className="font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
                 40+
               </h3>
-
-              <p
-                className="
-                  mt-3
-                  text-white/50
-                "
-              >
+              <p className="mt-2 text-sm font-medium text-white/60">
                 Enterprise Projects Delivered
               </p>
             </div>
 
-            <div>
-              <h3
-                className="
-                  text-4xl
-                  font-bold
-                  tracking-[-0.04em]
-                "
-              >
+            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04]">
+              <h3 className="font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
                 99.9%
               </h3>
-
-              <p
-                className="
-                  mt-3
-                  text-white/50
-                "
-              >
+              <p className="mt-2 text-sm font-medium text-white/60">
                 System Reliability
               </p>
             </div>
 
-            <div>
-              <h3
-                className="
-                  text-4xl
-                  font-bold
-                  tracking-[-0.04em]
-                "
-              >
+            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04]">
+              <h3 className="font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
                 Global
               </h3>
-
-              <p
-                className="
-                  mt-3
-                  text-white/50
-                "
-              >
+              <p className="mt-2 text-sm font-medium text-white/60">
                 Enterprise Delivery Capability
               </p>
             </div>

@@ -27,7 +27,7 @@ export default function HeroSection({ data }) {
   return (
     <section className="relative w-full bg-[#080357] text-white overflow-hidden py-24 lg:py-32 flex flex-col items-center justify-center min-h-[85vh]">
       
-      {/* Optional: Subtle ambient glow behind the text using the lime green */}
+      {/* Subtle ambient glow behind the text using the lime green */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B7F36B] opacity-[0.03] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -38,7 +38,7 @@ export default function HeroSection({ data }) {
           animate="visible"
         >
           {/* Breadcrumbs */}
-          <motion.nav variants={itemVariants} className="flex items-center space-x-2 text-sm text-gray-400 mb-12">
+          <motion.nav variants={itemVariants} className="flex flex-wrap justify-center items-center gap-y-1 text-sm text-gray-400 mb-12">
             {breadcrumb.map((item, index) => (
               <div key={index} className="flex items-center">
                 <Link 
@@ -48,7 +48,7 @@ export default function HeroSection({ data }) {
                   {item.title}
                 </Link>
                 {index < breadcrumb.length - 1 && (
-                  <ChevronRight className="w-4 h-4 mx-2 text-gray-500" />
+                  <ChevronRight className="w-4 h-4 mx-2 text-gray-500 shrink-0" />
                 )}
               </div>
             ))}
@@ -64,7 +64,7 @@ export default function HeroSection({ data }) {
           {/* Title */}
           <motion.h1 
             variants={itemVariants}
-            className="text-5xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-5 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-300"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-300"
           >
             {hero.title}
           </motion.h1>
@@ -72,7 +72,7 @@ export default function HeroSection({ data }) {
           {/* Description */}
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-lg text-gray-300/80 max-w-2xl mb-6 leading-relaxed"
+            className="text-base md:text-lg text-gray-300/80 max-w-2xl mb-6 leading-relaxed"
           >
             {hero.description}
           </motion.p>
@@ -87,19 +87,30 @@ export default function HeroSection({ data }) {
 
           {/* CTA Buttons */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-            {hero.buttons.map((button, index) => (
-              <Link 
-                key={index} 
-                href={button.href}
-                className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-[#052440] bg-[#B7F36B] rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
-              >
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                  {button.label}
-                </span>
-                {/* Hover effect background fill */}
-                <div className="absolute inset-0 h-full w-full bg-white scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out" />
-              </Link>
-            ))}
+            {hero.buttons.map((button, index) => {
+              const isPrimary = button.variant === "primary" || !button.variant;
+              
+              return (
+                <Link 
+                  key={index} 
+                  href={button.href}
+                  className={`group relative inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95 ${
+                    isPrimary 
+                      ? "text-[#052440] bg-[#B7F36B]" 
+                      : "text-white border border-[#B7F36B]/40 bg-white/5 backdrop-blur-sm"
+                  }`}
+                >
+                  <span className={`relative z-10 transition-colors duration-300 ${
+                    isPrimary ? "group-hover:text-black" : "group-hover:text-[#052440]"
+                  }`}>
+                    {button.label}
+                  </span>
+                  
+                  {/* Hover effect background fill */}
+                  <div className="absolute inset-0 h-full w-full bg-white scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out" />
+                </Link>
+              );
+            })}
           </motion.div>
 
         </motion.div>

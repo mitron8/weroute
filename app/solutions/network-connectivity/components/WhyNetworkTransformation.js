@@ -37,39 +37,44 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.2,
+      delayChildren: 0.1,
     },
   },
 };
 
+// Safe card variants (No CSS blur to prevent Safari/mobile GPU freezes)
 const cardVariants = {
-  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 25 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
 export default function WhyNetworkTransformation() {
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] py-32">
+    <section className="relative overflow-hidden bg-[#F8FAFC] py-28 text-[#080357]">
       {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Subtle Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(5,36,64,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.04)_1px,transparent_1px)] bg-[size:80px_80px]" />
-        
+      <div className="pointer-events-none absolute inset-0">
+        {/* Subtle Architectural Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(5,36,64,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.035)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
         {/* Animated Glow Orbs */}
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-[10%] -right-[5%] h-[500px] w-[500px] rounded-full bg-[#080357]/5 blur-[100px]"
+          className="absolute -right-[5%] -top-[10%] h-[500px] w-[500px] rounded-full bg-[#080357]/5 blur-[100px]"
         />
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-[40%] -left-[10%] h-[400px] w-[400px] rounded-full bg-[#A7BF73]/10 blur-[100px]"
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+          className="absolute -left-[10%] top-[40%] h-[400px] w-[400px] rounded-full bg-[#A7BF73]/10 blur-[100px]"
         />
       </div>
 
@@ -78,15 +83,16 @@ export default function WhyNetworkTransformation() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           className="max-w-4xl"
         >
-          <span className="inline-flex rounded-full border border-[#052440]/10 bg-white px-5 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#052440] shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#052440]/10 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#080357] shadow-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#080357]" />
             Network Modernization
           </span>
 
-          <h2 className="mt-8 text-5xl font-black leading-[1.05] tracking-tight text-[#080357] md:text-6xl lg:text-7xl lg:leading-[0.95] lg:tracking-[-0.04em]">
+          <h2 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight text-[#080357] sm:text-5xl lg:text-6xl">
             Why Network <br className="hidden md:block" />
             Transformation
             <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
@@ -95,117 +101,119 @@ export default function WhyNetworkTransformation() {
             </span>
           </h2>
 
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[#052440]/70 sm:text-xl sm:leading-9">
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#052440]/70 sm:text-lg sm:leading-8">
             Most networks were designed for an office that no longer exists.
             Hybrid work, cloud-first applications, and distributed teams have
             quietly broken assumptions that legacy network architecture was
-            built on, and most enterprises are still running on yesterday's
+            built on, and most enterprises are still running on yesterday&apos;s
             blueprint.
           </p>
         </motion.div>
 
-        {/* Philosophy Block */}
+        {/* Challenge Grid (All 5 Cards Unified in Style) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-20 relative overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white p-10 shadow-[0_20px_60px_rgba(5,36,64,0.05)] sm:p-14 lg:p-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="mt-16 grid gap-6 lg:grid-cols-12"
         >
-          {/* Subtle inner gradient line */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#080357] via-[#A7BF73] to-transparent opacity-50" />
-          
-          <p className="text-3xl font-semibold leading-snug tracking-[-0.03em] text-[#080357] lg:text-4xl lg:leading-tight">
-            A network should be an operating advantage, <br className="hidden lg:block"/>
-            <span className="text-[#A7BF73]">not an operational burden.</span>
-          </p>
+          {challenges.map((item, index) => {
+            const isFullWidth = index === 4;
+
+            return (
+              <motion.div
+                key={item.title}
+                variants={cardVariants}
+                whileHover={{ y: -6 }}
+                className={`group relative overflow-hidden rounded-[28px] border border-[#052440]/10 bg-white p-8 shadow-sm transition-all duration-300 hover:border-[#080357]/30 hover:shadow-xl hover:shadow-[#080357]/5 ${
+                  index === 0
+                    ? "lg:col-span-7"
+                    : index === 1
+                    ? "lg:col-span-5"
+                    : index === 2
+                    ? "lg:col-span-5"
+                    : index === 3
+                    ? "lg:col-span-7"
+                    : "lg:col-span-12"
+                } ${isFullWidth ? "lg:p-10" : ""}`}
+              >
+                {/* Top Hover Accent Line */}
+                <div className="absolute inset-x-0 top-0 h-1 bg-[#080357] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                {/* Subtle Background Watermark Number */}
+                <span className="pointer-events-none absolute right-6 top-4 select-none font-mono text-[64px] font-black leading-none text-[#080357]/[0.03] transition-colors group-hover:text-[#080357]/[0.06]">
+                  {item.n}
+                </span>
+
+                <div
+                  className={`relative z-10 flex h-full flex-col justify-between ${
+                    isFullWidth
+                      ? "lg:flex-row lg:items-center lg:justify-between lg:gap-12"
+                      : "gap-8"
+                  }`}
+                >
+                  {/* Left / Top Section */}
+                  <div className={isFullWidth ? "lg:max-w-xl" : ""}>
+                    {/* Interactive Number Badge */}
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#052440]/10 bg-[#080357]/[0.03] font-mono text-sm font-bold text-[#080357] transition-colors duration-300 group-hover:border-[#080357] group-hover:bg-[#080357] group-hover:text-white">
+                      {item.n}
+                    </div>
+
+                    <h3 className="mt-6 text-2xl font-bold tracking-tight text-[#052440] transition-colors group-hover:text-[#080357] sm:text-3xl">
+                      {item.title}
+                    </h3>
+
+                    {!isFullWidth && (
+                      <p className="mt-4 text-sm leading-relaxed text-[#052440]/65 sm:text-base">
+                        {item.desc}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Right Section (Only rendered on Card 05 for desktop balance) */}
+                  {isFullWidth && (
+                    <div className="mt-4 flex-1 lg:mt-0 lg:border-l lg:border-[#052440]/10 lg:pl-12">
+                      <p className="text-base leading-relaxed text-[#052440]/65 sm:text-lg">
+                        {item.desc}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
 
-        {/* Challenge Grid */}
-        {/* Challenge Grid */}
-<motion.div
-  variants={containerVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, margin: "-50px" }}
-  className="mt-16"
->
-  {/* First 4 Cards */}
-  <div className="grid gap-6 lg:grid-cols-12">
-    {challenges.slice(0, 4).map((item, index) => (
-      <motion.div
-        key={item.title}
-        variants={cardVariants}
-        whileHover={{ y: -8 }}
-        className={`
-          group relative overflow-hidden rounded-[32px] border border-[#052440]/10 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-[0_20px_40px_rgba(5,36,64,0.08)]
-          ${
-            index === 0
-              ? "lg:col-span-7"
-              : index === 1
-              ? "lg:col-span-5"
-              : index === 2
-              ? "lg:col-span-5"
-              : "lg:col-span-7"
-          }
-        `}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#f0f4f8] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        {/* Philosophy Block (Moved to bottom as an Executive Closing Banner) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative mt-16 overflow-hidden rounded-[32px] bg-[#080357] p-8 text-white shadow-xl shadow-[#080357]/10 sm:p-12 lg:p-14"
+        >
+          {/* Background Ambient Glow Inside Banner */}
+          <div className="pointer-events-none absolute -bottom-10 -right-10 h-64 w-64 rounded-full bg-[#A7BF73]/20 blur-2xl" />
+          <div className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-[#A7BF73] to-blue-500" />
 
-        <div className="relative z-10">
-          <span className="inline-block text-sm font-black tracking-[0.25em] text-[#052440]/30 transition-colors duration-300 group-hover:text-[#A7BF73]">
-            {item.n}
-          </span>
+          <div className="relative z-10 flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
+            <p className="max-w-3xl text-xl font-medium leading-relaxed tracking-tight text-white/90 sm:text-2xl lg:text-3xl">
+              &ldquo;A network should be an operating advantage,{" "}
+              <span className="text-[#A7BF73]">
+                not an operational burden.
+              </span>
+              &rdquo;
+            </p>
 
-          <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight text-[#052440] sm:text-3xl">
-            {item.title}
-          </h3>
-
-          <p className="mt-5 text-base leading-relaxed text-[#052440]/65 sm:text-lg">
-            {item.desc}
-          </p>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-
-  {/* Featured Closing Card */}
-  <motion.div
-    variants={cardVariants}
-    whileHover={{ y: -6 }}
-    className="group relative mt-6 overflow-hidden rounded-[40px] bg-[#080357] p-10 lg:p-14"
-  >
-    {/* Glow */}
-    <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#A7BF73]/20 blur-3xl" />
-
-    <div className="absolute bottom-0 right-0 h-full w-[45%] bg-gradient-to-l from-[#A7BF73]/10 to-transparent" />
-
-    <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-      <div className="w-full">
-        <span className="inline-block  text-sm font-black tracking-[0.3em] text-[#A7BF73]">
-          05
-        </span>
-
-        <h3 className="mt-6 text-4xl font-black leading-tight tracking-tight text-white lg:text-5xl">
-          Efficiency Became the New Battleground
-        </h3>
-
-        <p className="mt-6 text-lg leading-relaxed text-white/75 lg:text-xl">
-          Enterprises are not just asking if the network works. They are
-          asking what it costs to run, troubleshoot, and scale every single
-          month.
-        </p>
-      </div>
-
-      <div className="flex items-center gap-6">
-        <div className="h-px w-20 bg-white/20" />
-        <div className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold tracking-[0.15em] text-[#A7BF73] uppercase backdrop-blur">
-          Network Efficiency
-        </div>
-      </div>
-    </div>
-  </motion.div>
-</motion.div>
+            <div className="flex shrink-0 items-center gap-3">
+              <div className="h-px w-8 bg-white/30 lg:hidden" />
+              <span className="text-xs font-bold uppercase tracking-widest text-white/60">
+                Core Philosophy
+              </span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

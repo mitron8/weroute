@@ -89,16 +89,16 @@ export const networkSolutionsData = {
 
     breadcrumb: [
       {
-        title: "Home",
-        href: "/",
+        title: "Solutions",
+        href: "/solutions",
       },
       {
         title: "Network Connectivity",
-        href: "/network-connectivity",
+        href: "/solutions/network-connectivity",
       },
       {
         title: "AI Network Solutions",
-        href: "/network-connectivity/ai-network-solutions",
+        href: "/solution/network-connectivity/ai-network-solutions",
       },
     ],
 
@@ -593,17 +593,17 @@ export const networkSolutionsData = {
     },
 
     breadcrumb: [
-      {
-        title: "Home",
-        href: "/",
+       {
+        title: "Solutions",
+        href: "/solutions",
       },
       {
         title: "Network Connectivity",
-        href: "/network-connectivity",
+        href: "/solutions/network-connectivity",
       },
       {
         title: "SD-WAN & SDN Solutions",
-        href: "/network-connectivity/sd-wan-sdn-solutions",
+        href: "/solution/network-connectivity/sd-wan-sdn-solutions",
       },
     ],
 
@@ -995,16 +995,16 @@ export const networkSolutionsData = {
 
     breadcrumb: [
       {
-        title: "Home",
-        href: "/",
+        title: "Solutions",
+        href: "/solutions",
       },
       {
         title: "Network Connectivity",
-        href: "/network-connectivity",
+        href: "/solutions/network-connectivity",
       },
       {
         title: "Network Observability",
-        href: "/network-connectivity/network-observability",
+        href: "/solution/network-connectivity/network-observability",
       },
     ],
 
@@ -1384,17 +1384,17 @@ export const networkSolutionsData = {
     },
 
     breadcrumb: [
-      {
-        title: "Home",
-        href: "/",
+       {
+        title: "Solutions",
+        href: "/solutions",
       },
       {
         title: "Network Connectivity",
-        href: "/network-connectivity",
+        href: "/solutions/network-connectivity",
       },
       {
         title: "Network as a Service",
-        href: "/network-connectivity/network-as-a-service",
+        href: "/solution/network-connectivity/network-as-a-service",
       },
     ],
 
@@ -1780,17 +1780,17 @@ export const networkSolutionsData = {
     },
 
     breadcrumb: [
-      {
-        title: "Home",
-        href: "/",
+       {
+        title: "Solutions",
+        href: "/solutions",
       },
       {
         title: "Network Connectivity",
-        href: "/network-connectivity",
+        href: "/solutions/network-connectivity",
       },
       {
         title: "Mobility & Wireless Solutions",
-        href: "/network-connectivity/mobility-wireless-solutions",
+        href: "/solution/network-connectivity/mobility-wireless-solutions",
       },
     ],
 

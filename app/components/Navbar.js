@@ -189,10 +189,10 @@ Solutions: {
       href: "/solutions/cybersecurity", // <-- Added heading route
       desc: "Protect users and infrastructure with enterprise-ready security architectures.",
       features: [
-        { title: "Endpoint & Cloud Security", href: "/solution/cybersecurity/endpoint-cloud-security" },
+        { title: "Endpoint & Cloud Security", href: "/solution/cybersecurity/endpoint-and-cloud-security-services" },
         { title: "Identity & Access Management", href: "/solution/cybersecurity/identity-access-management" },
         { title: "SOC / SIEM / SOAR", href: "/solution/cybersecurity/soc-siem-soar" },
-        { title: "GRC & Vendor Risk Management", href: "/solution/cybersecurity/grc-vendor-risk" },
+        { title: "GRC & Vendor Risk Management", href: "/solution/cybersecurity/grc-vendor-risk-management" },
         { title: "Zero Trust Architecture", href: "/solution/cybersecurity/zero-trust-architecture" },
       ],
     },
@@ -289,11 +289,11 @@ export default function Navbar() {
 
   return (
     <header className="fixed left-0 top-0 z-[999] w-full border-b border-white/10 bg-[#080357]/95 backdrop-blur-xl">
-      <div className="mx-auto flex h-[88px] max-w-[1500px] items-center justify-between px-8">
+      <div className="mx-auto  flex h-[88px] max-w-[1500px] items-center justify-between px-8">
         {/* LOGO */}
         <a href="/" className="flex shrink-0 items-center">
           <img
-            className="h-8 px-15"
+            className="h-8 md:px-15"
             src={"/images/logo/weroute.png"}
             alt="WeRoute"
           />

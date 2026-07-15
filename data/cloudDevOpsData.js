@@ -74,16 +74,16 @@ export const cloudDevOpsData = {
 
     breadcrumb: [
       {
-        title: "Home",
-        href: "/",
+        title: "Solutions",
+        href: "/solutions",
       },
       {
         title: "Cloud Services",
-        href: "/cloud-services",
+        href: "/cloud-and-devOps",
       },
       {
         title: "Cloud Architecture & Integration",
-        href: "/cloud-services/cloud-architecture-integration",
+        href: "/cloud-and-devOps/cloud-architecture-integration",
       },
     ],
 

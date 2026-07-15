@@ -25,8 +25,9 @@ export default function CloudDevOpsPage() {
       <Capabilities />
       <BusinessOutcomes />
       <WhyChooseUs />
-      <RelatedAndFAQ />
       <FinalCTA />
+      <RelatedAndFAQ />
+      
     </main>
   );
 }

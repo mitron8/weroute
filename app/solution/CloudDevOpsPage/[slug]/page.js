@@ -35,7 +35,7 @@ export default async function DynamicServicePage({ params }) {
 
   return (
     <main className="bg-[#070B19] text-white min-h-screen font-sans selection:bg-[#A3D133] selection:text-[#070B19]">
-      <Hero data={data.hero} />
+      <Hero data={data.hero} breadcrumb={data.breadcrumb} />
       <Philosophy data={data.philosophy} />
       <WhySection data={whyData} />
       <WhatIs data={data.whatIs} />
@@ -43,8 +43,9 @@ export default async function DynamicServicePage({ params }) {
       <UseCases data={data.useCases} />
       <Outcomes data={data.outcomes} />
       <WhyChoose data={data.whyChoose} />
-      <FAQ data={data.faq} />
+      
       <FinalCta data={data.finalCta} />
+      <FAQ data={data.faq} />
     </main>
   );
 }

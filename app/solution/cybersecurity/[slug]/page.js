@@ -1,42 +1,89 @@
+import { notFound } from "next/navigation";
+import { cybersecurityData } from "@/data/cybersecurityData"; // Adjust this path if needed
+
+// Import all UI Components (mapped to the Enterprise Security design system)
 import HeroSection from "./components/HeroSection";
-import OverviewSection from "./components/OverviewSection";
-import WhyEssentialSection from "./components/WhyEssentialSection";
+import PhilosophySection from "./components/PhilosophySection";
 import WhatIsSection from "./components/WhatIsSection";
+import WhySecuritySection from "./components/WhySecuritySection";
+import BusinessChallengesSection from "./components/BusinessChallengesSection";
 import CapabilitiesSection from "./components/CapabilitiesSection";
 import UseCasesSection from "./components/UseCasesSection";
 import OutcomesSection from "./components/OutcomesSection";
-import WhyWerouteSection from "./components/WhyWerouteSection";
-import StrategyFitSection from "./components/StrategyFitSection";
+import WhyChooseSection from "./components/WhyChooseSection";
 import FAQSection from "./components/FAQSection";
-import CTASection from "./components/CTASection";
+import RelatedSolutionsSection from "./components/RelatedSolutionsSection";
+import FinalCtaSection from "./components/FinalCtaSection";
 
-import { cybersecurityData } from "@/data/cybersecurityData";
+// 1. Pre-generate static routes for all 5 security services at build time (SSG)
+export async function generateStaticParams() {
+  return Object.keys(cybersecurityData).map((slug) => ({
+    slug: slug,
+  }));
+}
 
-export default async function Page({ params }) {
+// 2. Dynamic SEO Metadata Generation
+export async function generateMetadata({ params }) {
   const { slug } = await params;
-
-  console.log("Current Slug:", slug);
-  console.log("Available Keys:", Object.keys(cybersecurityData));
-
   const solution = cybersecurityData[slug];
 
   if (!solution) {
+    return { title: 'Solution Not Found | WeRoute' };
+  }
+
+  const { seo } = solution;
+
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords.join(", "),
+    alternates: {
+      canonical: seo.canonical,
+    },
+    openGraph: {
+      title: seo.openGraph.title,
+      description: seo.openGraph.description,
+      url: seo.openGraph.url,
+      siteName: seo.openGraph.siteName,
+      type: seo.openGraph.type,
+      images: seo.openGraph.images.map((img) => ({
+        url: img.url,
+        width: img.width,
+        height: img.height,
+        alt: img.alt,
+      })),
+    },
+    twitter: {
+      card: seo.twitter.card,
+      title: seo.twitter.title,
+      description: seo.twitter.description,
+      images: seo.twitter.images,
+    },
+    robots: {
+      index: seo.robots.index,
+      follow: seo.robots.follow,
+    },
+  };
+}
+
+// 3. Main Page Component
+export default async function Page({ params }) {
+  const { slug } = await params;
+  const solution = cybersecurityData[slug];
+
+  // 404 Fallback UI if the slug doesn't exist in our data
+  if (!solution) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#f7f9fc]">
-        <h1 className="text-3xl font-bold text-[#052440]">
-          Solution Not Found
-        </h1>
-
-        <p className="mt-4 text-[#052440]/60">
-          Requested slug: {slug}
-        </p>
-
+        <h1 className="text-3xl font-bold text-[#052440]">Solution Not Found</h1>
+        <p className="mt-4 text-[#052440]/60">Requested slug: {slug}</p>
         <div className="mt-8 rounded-xl bg-white p-6 shadow">
-          <h3 className="font-bold mb-3">Available Slugs:</h3>
-
+          <h3 className="font-bold mb-3 text-[#052440]">Available Slugs:</h3>
           <ul className="space-y-2">
             {Object.keys(cybersecurityData).map((key) => (
-              <li key={key}>{key}</li>
+              <li key={key} className="text-gray-600 font-mono text-sm">
+                {key}
+              </li>
             ))}
           </ul>
         </div>
@@ -45,35 +92,29 @@ export default async function Page({ params }) {
   }
 
   return (
-    <main className="bg-[#f7f9fc] pt-32 pb-28">
-      <div className="mx-auto max-w-7xl px-6">
+    <>
+      {/* Inject JSON-LD Schema for Google Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(solution.schema) }}
+      />
 
-        <HeroSection data={solution.hero} />
-
-        <OverviewSection data={solution.overview} />
-
-        <WhyEssentialSection
-          whyEssential={solution.whyEssential}
-          challenges={solution.challenges}
-        />
-
+      {/* Main Page Layout */}
+      <main className="bg-[#f7f9fc] flex flex-col min-h-screen">
+        <HeroSection data={solution} />
+        <PhilosophySection data={solution.philosophy} />
         <WhatIsSection data={solution.whatIs} />
-
+        {/* Note: Mapped to solution.whySecurity instead of solution.whyNetworking */}
+        <WhySecuritySection data={solution.whySecurity} />
+        <BusinessChallengesSection data={solution.businessChallenges} />
         <CapabilitiesSection data={solution.capabilities} />
-
         <UseCasesSection data={solution.useCases} />
-
         <OutcomesSection data={solution.outcomes} />
-
-        <WhyWerouteSection data={solution.whyWeroute} />
-
-        <StrategyFitSection data={solution.strategyFit} />
-
+        <WhyChooseSection data={solution.whyChoose} />
         <FAQSection data={solution.faq} />
-
-        <CTASection data={solution.cta} />
-
-      </div>
-    </main>
+        <RelatedSolutionsSection data={solution.relatedSolutions} />
+        <FinalCtaSection data={solution.finalCta} />
+      </main>
+    </>
   );
 }
