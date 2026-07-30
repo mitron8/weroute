@@ -41,9 +41,11 @@ export default function WhyWerouteSection({ data }) {
 
             <div className="grid gap-5 md:grid-cols-2">
 
-              {data.points.map((item) => (
+              {data.points.map((item, i) => {
+                const isObject = typeof item === 'object' && item !== null;
+                return (
                 <div
-                  key={item}
+                  key={isObject ? item.title : item}
                   className="rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
                 >
                   <div className="flex items-start gap-3">
@@ -53,13 +55,21 @@ export default function WhyWerouteSection({ data }) {
                       className="mt-1 shrink-0 text-[#A7BF73]"
                     />
 
-                    <span className="text-white">
-                      {item}
-                    </span>
+                    <div className="text-white">
+                      {isObject ? (
+                        <>
+                          <span className="font-bold block">{item.title}</span>
+                          <span className="text-sm text-white/70 mt-1 block">{item.desc || item.description}</span>
+                        </>
+                      ) : (
+                        item
+                      )}
+                    </div>
 
                   </div>
                 </div>
-              ))}
+              );
+            })}
 
             </div>
 

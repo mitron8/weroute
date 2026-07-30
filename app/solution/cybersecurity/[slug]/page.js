@@ -111,9 +111,9 @@ export default async function Page({ params }) {
         <UseCasesSection data={solution.useCases} />
         <OutcomesSection data={solution.outcomes} />
         <WhyChooseSection data={solution.whyChoose} />
-        <FAQSection data={solution.faq} />
         <RelatedSolutionsSection data={solution.relatedSolutions} />
         <FinalCtaSection data={solution.finalCta} />
+        <FAQSection data={solution.faq} />
       </main>
     </>
   );

@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function CloudDevOpsPage() {
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-hidden">
+    <main className="min-h-screen bg-gray-50 text-gray-900 font-sans">
       <Hero />
       <WhyItMatters />
       <BusinessChallenges />

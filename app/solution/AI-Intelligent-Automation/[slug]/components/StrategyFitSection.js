@@ -41,21 +41,29 @@ export default function StrategyFitSection({ data }) {
 
             <div className="grid gap-5">
 
-              {data.items.map((item) => (
+              {data.items.map((item, i) => {
+                const isObject = typeof item === 'object' && item !== null;
+                return (
                 <div
-                  key={item}
+                  key={isObject ? item.title : item}
                   className="group flex items-center justify-between rounded-[24px] border border-[#052440]/10 bg-[#f7f9fc] p-5 transition hover:border-[#A7BF73]/50 hover:bg-white"
                 >
-                  <span className="font-medium text-[#052440]">
-                    {item}
-                  </span>
+                  <div className="font-medium text-[#052440]">
+                    {isObject ? (
+                      <>
+                        <span className="block font-bold">{item.title}</span>
+                        {item.desc && <span className="block text-sm text-[#052440]/70 mt-1">{item.desc}</span>}
+                      </>
+                    ) : item}
+                  </div>
 
                   <ArrowRight
                     size={18}
-                    className="text-[#080357] transition group-hover:translate-x-1"
+                    className="text-[#080357] transition group-hover:translate-x-1 shrink-0 ml-4"
                   />
                 </div>
-              ))}
+              );
+            })}
 
             </div>
 

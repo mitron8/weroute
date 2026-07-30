@@ -33,7 +33,7 @@ export default function HeroSection({ data }) {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <button className="rounded-2xl bg-[#080357] px-8 py-4 font-semibold text-white transition hover:-translate-y-1">
-                Talk To An Expert
+                {data.cta || "Talk To An Expert"}
               </button>
 
               <button className="rounded-2xl border border-[#052440]/10 px-8 py-4 font-semibold text-[#052440] transition hover:bg-[#f7f9fc]">
@@ -52,12 +52,12 @@ export default function HeroSection({ data }) {
 
             <div className="mt-8 space-y-5">
 
-              {[
+              {(data.highlights || [
                 "Improved Network Reliability",
                 "Faster Issue Resolution",
                 "Operational Efficiency",
                 "Enhanced User Experience",
-              ].map((item) => (
+              ]).map((item) => (
                 <div
                   key={item}
                   className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4"
@@ -79,14 +79,12 @@ export default function HeroSection({ data }) {
               <div className="flex items-center gap-2 text-[#A7BF73]">
                 <ArrowRight size={18} />
                 <span className="text-sm font-semibold uppercase tracking-wider">
-                  Enterprise Ready
+                  {data.geoStatement ? "Enterprise AI" : "Enterprise Ready"}
                 </span>
               </div>
 
               <p className="mt-4 text-white/70 leading-7">
-                Designed for distributed enterprise environments,
-                hybrid infrastructure, cloud transformation, and
-                modern network operations.
+                {data.geoStatement || "Designed for distributed enterprise environments, hybrid infrastructure, cloud transformation, and modern network operations."}
               </p>
             </div>
 

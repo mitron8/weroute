@@ -34,21 +34,31 @@ export default function WhyEssentialSection({
           </p>
 
           <div className="mt-10 space-y-5">
-            {whyEssential.points.map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-4"
-              >
-                <CheckCircle2
-                  size={20}
-                  className="mt-1 text-[#A7BF73]"
-                />
+            {whyEssential.points.map((item, i) => {
+              const isObject = typeof item === 'object' && item !== null;
+              return (
+                <div
+                  key={isObject ? item.title : item}
+                  className="flex items-start gap-4"
+                >
+                  <CheckCircle2
+                    size={20}
+                    className="mt-1 text-[#A7BF73] shrink-0"
+                  />
 
-                <span className="text-white">
-                  {item}
-                </span>
-              </div>
-            ))}
+                  <div className="text-white">
+                    {isObject ? (
+                      <>
+                        <span className="font-bold block text-white">{item.title}</span>
+                        <span className="text-white/70 text-sm mt-1 block">{item.desc || item.description}</span>
+                      </>
+                    ) : (
+                      item
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </motion.div>
 
@@ -76,16 +86,26 @@ export default function WhyEssentialSection({
           </h2>
 
           <div className="mt-10 space-y-4">
-            {challenges.items.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl bg-[#f7f9fc] p-5 border border-[#052440]/5"
-              >
-                <span className="text-[#052440]/75">
-                  {item}
-                </span>
-              </div>
-            ))}
+            {challenges.items.map((item, i) => {
+              const isObject = typeof item === 'object' && item !== null;
+              return (
+                <div
+                  key={isObject ? item.title : item}
+                  className="rounded-2xl bg-[#f7f9fc] p-5 border border-[#052440]/5"
+                >
+                  <div className="text-[#052440]/75">
+                    {isObject ? (
+                      <>
+                        <span className="font-bold block text-[#052440]">{item.title}</span>
+                        <span className="text-sm mt-1 block">{item.desc || item.description}</span>
+                      </>
+                    ) : (
+                      item
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </motion.div>
 

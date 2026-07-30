@@ -2,71 +2,104 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Hero() {
   return (
-    <section
-      className="relative overflow-hidden bg-cover bg-center bg-no-repeat text-white"
-      style={{
-        // Swapped for a cloud/server-themed high-res Unsplash image to fit the layout style
-        backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072')",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#080357] via-[#052440]/90 to-[#052440]/40" />
+    <section className="relative overflow-hidden bg-white pt-32 pb-20">
+      {/* Decorative Blob */}
+      <div className="absolute left-[-10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#050849]/[0.02] blur-[120px] pointer-events-none" />
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:90px_90px] opacity-40" />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 min-h-[80vh] flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+          
+          {/* LEFT COLUMN: Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-7 flex flex-col items-start"
+          >
+            {/* Badge */}
+            <div className="clay-badge-light mb-6 inline-flex items-center gap-3 rounded-full border border-[#050849]/10 bg-white px-5 py-2.5 shadow-sm">
+              <div className="h-2 w-2 rounded-full bg-[#00d2ff]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#050849]">
+                Cloud &amp; DevOps Solutions
+              </span>
+            </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-32 pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl"
-        >
-          {/* Badge - Derived from original italic text */}
-          <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 backdrop-blur-xl">
-            <div className="h-2 w-2 rounded-full bg-[#B7F36B]" />
-            <span className="text-[11px] uppercase tracking-[0.24em] text-white/65 italic">
-              "Cloud transformation that ignores governance just moves the chaos somewhere new."
-            </span>
-          </div>
+            {/* Heading */}
+            <h1 className="text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-[#050849] sm:text-4xl lg:text-5xl xl:text-[48px]">
+              Cloud &amp; DevOps <br className="hidden sm:block" />
+              Solutions Built for <br className="hidden sm:block" />
+              <span className="bg-gradient-to-r from-[#050849] to-[#4c658a] bg-clip-text text-transparent font-medium">Enterprise Scale</span>
+            </h1>
 
-          {/* Heading - Original Content */}
-          <h1 className="text-5xl font-light leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-[92px] lg:leading-[0.92] lg:tracking-[-0.07em]">
-            Cloud &amp; DevOps <br className="hidden sm:block" />
-            Solutions Built for <br className="hidden sm:block" />
-            <span className="text-[#B7F36B]">Enterprise Scale</span>
-          </h1>
-
-          {/* Supporting Text - Original Content */}
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl sm:leading-9">
-            WeRoute delivers cloud transformation and DevOps consulting for enterprises running hybrid cloud environments, combining architecture, automation, and governance into one coordinated approach to modern cloud operations.
-          </p>
-
-          {/* Statement Box - Replaces original left-border callout */}
-          <div className="mt-10 max-w-3xl rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl sm:p-8">
-            <p className="text-sm leading-relaxed text-white/80 sm:text-base sm:leading-8 border-l-4 border-[#B7F36B] pl-4">
-              WeRoute delivers Cloud &amp; DevOps Solutions spanning cloud architecture, platform engineering, infrastructure automation, and observability for enterprises running hybrid and multi-cloud environments.
+            {/* Supporting Text */}
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#4c658a] sm:text-lg sm:leading-8 font-normal">
+              WeRoute delivers cloud transformation and DevOps consulting for enterprises running hybrid cloud environments, combining architecture, automation, and governance into one coordinated approach to modern cloud operations.
             </p>
-          </div>
 
-          {/* Buttons - Original Text with Target Theme Styling */}
-          <div className="mt-10 flex flex-wrap gap-5">
-            <a
-              href="/contact"
-              className="group flex items-center gap-3 rounded-2xl bg-[#B7F36B] px-8 py-4 text-sm font-semibold text-[#080357] transition-all duration-300 hover:scale-[1.03] hover:bg-[#a3e059] shadow-lg shadow-[#B7F36B]/10"
-            >
-              Talk to a Cloud Expert
-              <ArrowRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-1"
+            {/* Buttons */}
+            <div className="mt-8 flex flex-wrap gap-5">
+              <a
+                href="/contact"
+                className="group flex h-13 items-center justify-center gap-2 rounded-xl bg-[#050849] px-8 text-sm font-bold text-white transition-all duration-300 hover:bg-[#4c658a] hover:shadow-lg"
+              >
+                Talk to a Cloud Expert
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </a>
+            </div>
+
+            {/* GEO Statement (Clay) */}
+            <div className="clay-light mt-6 w-full max-w-xl rounded-2xl border border-[#050849]/5 bg-[#f7f9fc] p-5 sm:p-6 shadow-sm">
+              <p className="text-sm font-medium leading-relaxed text-[#050849]/80 sm:leading-6 border-l-4 border-[#00d2ff] pl-4">
+                WeRoute delivers Cloud &amp; DevOps Solutions spanning cloud architecture, platform engineering, infrastructure automation, and observability for enterprises running hybrid and multi-cloud environments.
+              </p>
+            </div>
+
+            {/* Metrics */}
+            <div className="mt-12 w-full max-w-2xl grid grid-cols-2 gap-4 border-t border-[#050849]/10 pt-8 sm:grid-cols-4 lg:gap-4">
+              {[
+                ["99.99%", "Uptime SLA"],
+                ["50+", "Cloud Migrations"],
+                ["Zero", "Downtime Deployments"],
+                ["100%", "Infrastructure as Code"],
+              ].map(([value, label]) => (
+                <div key={label} className="flex flex-col gap-1 min-w-0">
+                  <h3 className="text-lg font-bold tracking-tight text-[#050849] lg:text-xl break-words">
+                    {value}
+                  </h3>
+                  <p className="text-[10px] leading-tight font-semibold text-[#4c658a] lg:text-xs">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT COLUMN: Lottie Animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+            className="lg:col-span-5 flex items-center justify-center w-full lg:-mt-20"
+          >
+            <div className="w-full max-w-[440px] aspect-square flex items-center justify-center mix-blend-multiply">
+              <DotLottieReact
+                src="https://lottie.host/fa8a0c8f-90f0-4ea1-b5a3-eab06b53a3bc/PjlJ6bHKNK.lottie"
+                loop
+                autoplay
+                className="w-full h-full object-contain"
               />
-            </a>
-          </div>
-        </motion.div>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
-}
+}

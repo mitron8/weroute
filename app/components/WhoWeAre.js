@@ -23,15 +23,6 @@ export default function WhoWeAre() {
       {/* BACKGROUND */}
       <div className="absolute inset-0">
 
-        {/* LIGHT GRID */}
-        <div
-          className="
-            absolute inset-0
-            bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)]
-            bg-[size:80px_80px]
-          "
-        />
-
         {/* GLOW */}
         <div
           className="
@@ -98,14 +89,13 @@ export default function WhoWeAre() {
             {/* HEADING */}
             <h2
               className="
-                mt-8
-                text-4xl
-                font-black
-                leading-[1.05]
-                tracking-[-0.04em]
+                mt-6
+                text-3xl
+                font-normal
+                leading-tight
                 text-[#052440]
-                md:text-5xl
-                lg:text-6xl
+                md:text-4xl
+                lg:text-[44px]
               "
             >
               Technology Built

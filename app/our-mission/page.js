@@ -18,15 +18,6 @@ export default function MissionPage() {
       <section className="relative overflow-hidden pt-40 pb-28">
 
         <div className="absolute inset-0">
-
-          <div
-            className="
-              absolute inset-0
-              bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)]
-              bg-[size:80px_80px]
-            "
-          />
-
           <div
             className="
               absolute

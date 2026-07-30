@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import CircuitBackground from "./CircuitBackground";
 import { motion } from "framer-motion";
 import { Target, Workflow, Unlock, TrendingUp } from "lucide-react";
 import { IconHover3D } from "./IconHover3D";
@@ -57,12 +58,11 @@ export default function ApproachSection() {
       id="approach"
       className="relative overflow-hidden bg-[#f7f9fc] py-28"
     >
+      <CircuitBackground />
       {/* --- BACKGROUND ELEMENTS --- */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
-        
         {/* Soft Center Glow */}
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#080357]/[0.03] blur-[100px]" />
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#050849]/[0.03] blur-[100px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -75,18 +75,18 @@ export default function ApproachSection() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="inline-block rounded-full border border-[#052440]/10 bg-white/80 px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440] shadow-sm backdrop-blur-md">
+          <span className="clay-badge-light inline-block border border-[#050849]/5 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#050849]">
             Our Approach
           </span>
           
-          <h2 className="mt-8 text-4xl font-bold leading-tight tracking-[-0.04em] text-[#052440] md:text-5xl">
+          <h2 className="mt-6 text-3xl font-normal leading-tight text-[#050849] md:text-4xl lg:text-[42px]">
             How WeRoute Approaches{" "}
-            <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#050849] to-[#4c658a] bg-clip-text text-transparent font-medium">
               Solutions
             </span>
           </h2>
           
-          <p className="mt-6 text-lg leading-relaxed text-[#052440]/65">
+          <p className="mt-6 text-lg leading-relaxed text-[#050849]/65">
 While most technology providers deploy and move on. We at WeRoute - start with strategy. Every engagement begins with consulting to understand business outcomes, then moves to architecture design, and only then to it’s implementation.          </p>
         </motion.div>
 

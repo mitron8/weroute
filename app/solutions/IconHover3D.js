@@ -59,9 +59,9 @@ export function IconHover3D({
   const handleMouseLeave = () => setCurrentVariant("Default");
 
   // WEROUTE THEME VARIABLES
-  const brandNavy = "#052440";
-  const brandBlue = "#0d5ea8";
-  const bgWhite = "#A7BF73";
+  const brandNavy = "#050849";
+  const brandBlue = "#4c658a";
+  const bgWhite = "#98c93c";
 
   const cubeSliceVariants = {
     hovered: {
@@ -105,20 +105,14 @@ export function IconHover3D({
           <Transition value={transition1}>
             <motion.div
               {...restProps}
-              className={`group relative overflow-hidden rounded-[32px] border border-[#052440]/10 bg-white/80 p-8 shadow-[0_10px_40px_rgba(5,36,64,0.03)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(5,36,64,0.08)] ${className}`}
+              className={`clay-light group relative overflow-hidden bg-[#f7f9fc] p-8 transition-all duration-500 hover:-translate-y-2 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 sm:gap-[30px] ${className}`}
               ref={refBinding}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={isHoverVariant ? handleMouseLeave : undefined}
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: "30px",
-                ...style,
-              }}
+              style={style}
             >
               {/* Subtle hover gradient background */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#052440]/[0.02] via-transparent to-[#0d5ea8]/[0.05] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#050849]/[0.02] via-transparent to-[#4c658a]/[0.05] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               {/* --- ICON 3D CONTAINER --- */}
               <motion.div
@@ -331,14 +325,7 @@ export function IconHover3D({
               >
                 {/* Heading with Hover Fill Effect */}
                 <motion.div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    overflow: "hidden",
-                    height: "40px",
-                    borderRadius: "8px",
-                  }}
+                  className="relative flex items-center justify-center sm:justify-start overflow-hidden h-[40px] rounded-lg"
                 >
                   {/* Background Text (Navy) */}
                   <span
@@ -385,7 +372,7 @@ export function IconHover3D({
                 </motion.div>
 
                 {/* Description Text */}
-                <motion.div className="text-base leading-relaxed text-[#052440]/65">
+                <motion.div className="text-base leading-relaxed text-[#050849]/65">
                   {text}
                 </motion.div>
               </motion.div>

@@ -1,680 +1,610 @@
 export const softwareDigitalEngineeringData = {
-"custom-software-development": {
-  hero: {
-    badge: "Software & Digital Engineering",
-    title: "Custom Software Development",
-    subtitle:
-      "Design, develop, and scale custom software solutions that align technology investments with business growth, operational efficiency, and digital transformation objectives.",
-    highlights: [
-      "Custom-Built Solutions",
-      "Scalable Architecture",
-      "Modern Engineering",
-      "Business-Driven Innovation",
-    ],
-  },
-
-  overview: {
-    title: "Purpose-Built Software Designed Around Your Business",
-    description:
-      "Many organizations rely on software that was never designed to support their unique processes, growth objectives, or customer expectations. As a result, teams often work around technology limitations instead of leveraging technology as a competitive advantage.",
-    description2:
-      "Generic applications may address common requirements, but they rarely provide the flexibility, integration, scalability, and differentiation modern businesses need.",
-    description3:
-      "WeRoute’s Custom Software Development Services help organizations create tailored digital solutions that streamline operations, improve user experiences, and support long-term business growth.",
-  },
-
-  whyEssential: {
-    title: "Why Custom Software Development Matters",
-    description:
-      "As organizations evolve, technology must adapt to changing operational models, customer expectations, and market opportunities.",
-    points: [
-      "Unique business processes requiring tailored solutions",
-      "Need for competitive differentiation",
-      "Digital transformation initiatives",
-      "Legacy system modernization requirements",
-      "Growing integration and scalability demands",
-    ],
-  },
-
-  challenges: {
-    title: "Business Challenges We Address",
-    items: [
-      "Off-the-shelf applications that fail to meet business needs",
-      "Operational inefficiencies caused by fragmented systems",
-      "Limited scalability as the business grows",
-      "Complex manual processes impacting productivity",
-      "Difficulty integrating with existing platforms and services",
-      "Technology constraints limiting innovation",
-    ],
-  },
-
-  whatIs: {
-    title: "What Is Custom Software Development?",
-    content: [
-      "Custom Software Development focuses on designing and building applications specifically aligned to an organization's goals, workflows, and operational requirements.",
-      "Unlike generic software products, custom solutions are developed to solve unique business challenges while supporting future growth and innovation.",
-      "The objective is to create software that becomes a strategic business asset rather than a limitation.",
-    ],
-  },
-
-  capabilities: {
-    title: "How WeRoute Delivers Custom Software Development",
-    items: [
-      {
-        title: "Business-Centric Solution Design",
-        description:
-          "Every application is designed around business objectives, user requirements, and operational workflows.",
-      },
-      {
-        title: "Modern Application Architecture",
-        description:
-          "Scalable, secure, and future-ready architectures support long-term growth and evolving business needs.",
-      },
-      {
-        title: "System Integration & Connectivity",
-        description:
-          "Applications integrate seamlessly with enterprise systems, cloud platforms, and third-party services.",
-      },
-      {
-        title: "User Experience Engineering",
-        description:
-          "Intuitive interfaces improve adoption, productivity, and customer engagement.",
-      },
-      {
-        title: "Continuous Evolution & Optimization",
-        description:
-          "Applications are designed to evolve alongside changing business and technology requirements.",
-      },
-    ],
-  },
-
-  useCases: {
-    title: "Where Custom Software Development Delivers Value",
-    items: [
-      "Enterprise application modernization",
-      "Customer experience platforms",
-      "Business process automation initiatives",
-      "Industry-specific digital solutions",
-      "Operational workflow optimization",
-      "Digital transformation programs",
-    ],
-  },
-
-  outcomes: {
-    title: "Business Outcomes You Can Expect",
-    items: [
-      "Improved operational efficiency",
-      "Greater business agility",
-      "Enhanced customer experiences",
-      "Reduced reliance on manual processes",
-      "Scalable technology foundations",
-      "Long-term competitive differentiation",
-    ],
-  },
-
-  whyWeroute: {
-    title: "Why WeRoute for Custom Software Development",
-    description:
-      "WeRoute combines software engineering expertise, business process understanding, and modern architecture practices to deliver solutions that create measurable business value.",
-    points: [
-      "Architecture-first development approach",
-      "Business-outcome-driven solution design",
-      "Scalable and secure engineering frameworks",
-      "Enterprise integration expertise",
-      "Long-term partnership and optimization focus",
-    ],
-  },
-
-  strategyFit: {
-    title: "How Custom Software Development Fits Into Your Strategy",
-    description:
-      "Custom software serves as the digital foundation that supports innovation, operational excellence, customer engagement, and business transformation initiatives.",
-    items: [
-      "Digital Transformation Programs",
-      "Enterprise Modernization Initiatives",
-      "Customer Experience Strategies",
-      "Data & Analytics Platforms",
-      "Cloud Transformation Roadmaps",
-    ],
-  },
-
-  faq: [
-    {
-      question: "Why choose custom software over off-the-shelf solutions?",
-      answer:
-        "Custom software is built around your specific business requirements, providing greater flexibility, scalability, and competitive differentiation than generic products.",
+  "custom-software-development": {
+    "hero": {
+      "badge": "Software & Digital Engineering",
+      "title": "Custom Software Development Services",
+      "subtitle": "WeRoute designs and builds custom software that fits how your business actually works, replacing generic tools with applications engineered around your exact processes and goals.",
+      "highlights": [
+        "Custom-Built Solutions",
+        "Scalable Architecture",
+        "Secure & Compliant",
+        "Business-Driven Innovation"
+      ]
     },
-    {
-      question: "Can custom applications integrate with existing systems?",
-      answer:
-        "Yes. Modern custom solutions are designed to integrate seamlessly with enterprise applications, cloud services, APIs, and third-party platforms.",
+    "overview": {
+      "title": "The best software fits the business, not the other way around.",
+      "description": "Off-the-shelf software is built for the average company, not yours. As business processes grow more specific and competitive pressure increases, generic tools force teams to adapt their processes to the software, instead of the software adapting to them.",
+      "description2": "Custom software removes that constraint, since it is built around how the business actually operates.",
+      "description3": "Every business runs slightly differently, and generic software rarely reflects that reality."
     },
-    {
-      question: "How do you ensure scalability?",
-      answer:
-        "Applications are built using modern architectures, scalable infrastructure patterns, and cloud-native principles that support future growth.",
+    "whyEssential": {
+      "title": "Why Custom Software Matters",
+      "description": "Software built around your exact processes becomes an advantage competitors cannot easily copy.",
+      "points": [
+        "Custom software scales with the business, instead of hitting limits generic platforms impose.",
+        "Purpose-built software connects cleanly with the systems your business already depends on.",
+        "As the business changes, custom software can change with it, without starting over."
+      ]
     },
-    {
-      question: "Can existing legacy applications be modernized?",
-      answer:
-        "Absolutely. We help organizations transform legacy systems into modern, scalable, and maintainable digital platforms.",
+    "challenges": {
+      "title": "Business Challenges We Solve",
+      "items": [
+        "Generic software forces teams to adapt their own workflows to fit the tool.",
+        "Aging legacy systems slow down every new initiative built on top of them.",
+        "Connecting new tools to existing systems often takes more effort than expected.",
+        "Performance bottlenecks surface under real usage, often well after launch.",
+        "Unaddressed technical debt quietly slows down every future software release."
+      ]
     },
-  ],
-
-  cta: {
-    title: "Build Software That Gives Your Business a Competitive Edge",
-    description:
-      "Create scalable, secure, and business-aligned software solutions designed to accelerate innovation and support long-term growth.",
-    button: "Talk to a Software Engineering Expert",
-  },
-},
-
- "enterprise-applications": {
-  hero: {
-    badge: "Software & Digital Engineering",
-    title: "Enterprise Applications",
-    subtitle:
-      "Modernize business operations through integrated enterprise applications that improve productivity, streamline workflows, and enable data-driven decision-making.",
-    highlights: [
-      "Business Process Integration",
-      "Operational Efficiency",
-      "Enterprise Scalability",
-      "Digital Transformation",
-    ],
-  },
-
-  overview: {
-    title: "Enterprise Applications That Drive Operational Excellence",
-    description:
-      "As organizations grow, managing disconnected systems, manual processes, and fragmented data becomes increasingly challenging. These inefficiencies impact productivity, decision-making, and customer experiences.",
-    description2:
-      "Enterprise applications provide a centralized platform for managing business operations, enabling teams to collaborate more effectively while improving visibility across departments.",
-    description3:
-      "WeRoute’s Enterprise Application Services help organizations modernize operations, automate processes, and create connected digital ecosystems that support long-term business growth.",
-  },
-
-  whyEssential: {
-    title: "Why Enterprise Applications Matter",
-    description:
-      "Organizations require integrated systems that support collaboration, efficiency, and scalability across business functions.",
-    points: [
-      "Increasing operational complexity",
-      "Need for cross-functional collaboration",
-      "Demand for real-time business visibility",
-      "Digital transformation initiatives",
-      "Scalable business growth requirements",
-    ],
-  },
-
-  challenges: {
-    title: "Business Challenges We Address",
-    items: [
-      "Disconnected business systems and applications",
-      "Data silos limiting visibility and reporting",
-      "Manual and repetitive operational processes",
-      "Inefficient workflows impacting productivity",
-      "Lack of scalability for growing business demands",
-      "Limited access to real-time business insights",
-    ],
-  },
-
-  whatIs: {
-    title: "What Are Enterprise Applications?",
-    content: [
-      "Enterprise Applications are business-critical software systems designed to support and optimize organizational processes across departments and functions.",
-      "They centralize data, automate workflows, improve collaboration, and provide visibility into business operations.",
-      "The goal is to create a connected and scalable operational environment that supports strategic business objectives.",
-    ],
-  },
-
-  capabilities: {
-    title: "How WeRoute Delivers Enterprise Applications",
-    items: [
+    "whatIs": {
+      "title": "What Is Enterprise Custom Software Development?",
+      "content": [
+        "Enterprise custom software development is the design and engineering of applications built specifically around a company's workflows, not just its functional requirements.",
+        "It accounts for scalable architecture, security, maintainability, and integration with existing systems from the start, so the software supports the business as it operates today and as it grows."
+      ]
+    },
+    "capabilities": {
+      "title": "How WeRoute Delivers Custom Software Development",
+      "items": [
+        {
+          "title": "Architecture First",
+          "description": "We start every engagement with architecture, so the software we build is designed to scale and adapt from day one."
+        },
+        {
+          "title": "Modular Components",
+          "description": "We design applications in modular components, so individual parts can be updated without rebuilding the entire system."
+        },
+        {
+          "title": "Security by Design",
+          "description": "We build protection into every stage of the software development lifecycle, from design through deployment and ongoing maintenance."
+        },
+        {
+          "title": "Clean Integration",
+          "description": "We integrate custom software cleanly with your existing enterprise systems, data, and workflows, not around them."
+        },
+        {
+          "title": "Continuous Governance",
+          "description": "We govern code quality continuously, so the software stays maintainable and stable long after the initial release."
+        }
+      ]
+    },
+    "useCases": {
+      "title": "Where Custom Software Creates Business Value",
+      "items": [
+        "Core business platforms run daily operations on software built around how the business actually works.",
+        "Customer portal development gives clients secure, self-service access built around their needs.",
+        "Internal operations systems replace spreadsheets and manual processes with connected, purpose-built tools.",
+        "Industry-specific applications handle requirements generic software was never designed to support.",
+        "Digital transformation initiatives depend on software that can adapt as strategy evolves."
+      ]
+    },
+    "outcomes": {
+      "title": "Business Outcomes",
+      "items": [
+        "Teams work more efficiently on software built around their actual workflows, not generic ones.",
+        "New features and products reach users faster, without fighting inflexible software.",
+        "Applications perform better under real load, since they were built for it.",
+        "Technical debt shrinks over time instead of quietly building up unchecked.",
+        "The business gains the agility to adapt software as priorities shift.",
+        "Software scales alongside the business instead of needing to be replaced."
+      ]
+    },
+    "whyWeroute": {
+      "title": "Why Choose WeRoute",
+      "description": "WeRoute brings deep enterprise software expertise to every engagement, built on real delivery experience, not theory.",
+      "points": [
+        "We lead every engagement with architecture first, so software decisions hold up for years, not just the next release.",
+        "Security is built into our development practices from the outset, not added on after launch.",
+        "We design software with integration in mind from the start, so it connects cleanly with what you already run.",
+        "Our relationship continues well past launch, with a long-term focus on platform sustainability as your business evolves."
+      ]
+    },
+    "strategyFit": {
+      "title": "Custom Software Within Your Digital Strategy",
+      "description": "Custom software development connects to WeRoute's broader digital strategy, working alongside enterprise applications, API and platform engineering, cloud, and AI so every system supports one coherent architecture.",
+      "items": [
+        "Enterprise Applications",
+        "API & Platform Engineering",
+        "Cloud & DevOps",
+        "AI & Intelligent Automation",
+        "Cybersecurity Solutions"
+      ]
+    },
+    "faq": [
       {
-        title: "Business Process Automation",
-        description:
-          "Manual workflows are digitized and streamlined to improve efficiency and consistency.",
+        "question": "What is custom software development?",
+        "answer": "Custom software development is the design and build of applications tailored specifically to a business's workflows and goals, rather than software built for a general market."
       },
       {
-        title: "Enterprise System Integration",
-        description:
-          "Applications connect seamlessly with ERP, CRM, HRMS, finance, and other enterprise systems.",
+        "question": "Why choose custom software over off-the-shelf solutions?",
+        "answer": "Off-the-shelf software is faster to adopt initially, but custom software fits the business exactly, scales without licensing limits, and avoids the workarounds generic tools eventually require."
       },
       {
-        title: "Data Centralization",
-        description:
-          "Information is consolidated to provide a single source of truth across the organization.",
+        "question": "How does custom software support digital transformation?",
+        "answer": "Custom software supports digital transformation by giving new digital initiatives a foundation built specifically for how the business operates, rather than forcing strategy around a generic platform's limitations."
       },
       {
-        title: "Workflow Optimization",
-        description:
-          "Operational processes are redesigned to eliminate bottlenecks and improve performance.",
+        "question": "What industries benefit from custom software?",
+        "answer": "Industries with specific regulatory, operational, or workflow requirements, such as finance, healthcare, logistics, and manufacturing, tend to benefit most, though any business with unique processes can gain an advantage."
       },
       {
-        title: "Enterprise Reporting & Analytics",
-        description:
-          "Decision-makers gain access to real-time insights and business intelligence capabilities.",
+        "question": "How does custom software improve scalability?",
+        "answer": "Custom software improves scalability because the architecture is designed for the business's actual growth path from the start, rather than hitting the fixed limits of a generic platform."
       },
+      {
+        "question": "How long does enterprise software development take?",
+        "answer": "Timelines vary by scope, but enterprise software development typically moves through discovery, design, and phased delivery over several months, with the most critical capabilities released first."
+      },
+      {
+        "question": "How do custom applications integrate with existing systems?",
+        "answer": "Custom applications integrate with existing systems through APIs, data pipelines, and defined integration points planned during the architecture phase, rather than added as an afterthought."
+      }
     ],
-  },
-
-  useCases: {
-    title: "Where Enterprise Applications Deliver Value",
-    items: [
-      "Enterprise resource planning initiatives",
-      "Customer relationship management systems",
-      "Human resource management platforms",
-      "Supply chain and logistics operations",
-      "Financial management systems",
-      "Business process transformation programs",
-    ],
-  },
-
-  outcomes: {
-    title: "Business Outcomes You Can Expect",
-    items: [
-      "Improved operational efficiency",
-      "Greater collaboration across departments",
-      "Enhanced business visibility",
-      "Reduced manual effort and errors",
-      "Faster decision-making",
-      "Scalable business operations",
-    ],
-  },
-
-  whyWeroute: {
-    title: "Why WeRoute for Enterprise Applications",
-    description:
-      "WeRoute combines business consulting expertise with enterprise software engineering capabilities to deliver solutions that create measurable operational improvements.",
-    points: [
-      "Business-first implementation approach",
-      "Enterprise integration expertise",
-      "Scalable architecture frameworks",
-      "Industry-aligned best practices",
-      "Long-term optimization and support focus",
-    ],
-  },
-
-  strategyFit: {
-    title: "How Enterprise Applications Fit Into Your Strategy",
-    description:
-      "Enterprise applications provide the operational backbone required to support digital transformation, process optimization, and sustainable business growth.",
-    items: [
-      "Digital Transformation Programs",
-      "Business Process Modernization",
-      "Data & Analytics Strategies",
-      "Customer Experience Initiatives",
-      "Enterprise Technology Roadmaps",
-    ],
-  },
-
-  faq: [
-    {
-      question: "How do enterprise applications improve efficiency?",
-      answer:
-        "Enterprise applications automate workflows, centralize information, and streamline collaboration, reducing manual effort and operational bottlenecks.",
+    "cta": {
+      "title": "Build Software That Grows With Your Business",
+      "description": "Partner with WeRoute to design and build custom software engineered around how your business actually operates.",
+      "button": "Talk to a Custom Software Expert"
     },
-    {
-      question: "Can enterprise applications integrate with existing systems?",
-      answer:
-        "Yes. Modern enterprise applications are designed to integrate with ERP, CRM, HRMS, finance, and third-party platforms.",
+    "seo": {
+      "title": "Custom Software Development Services | WeRoute",
+      "description": "WeRoute designs and builds custom software that fits how your business actually works, replacing generic tools with applications engineered around your exact processes and goals.",
+      "keywords": "Software Engineering, Custom Software Development Company, Custom Software Development, Custom Software Development Services, Software Development Lifecycle, Custom Application Development, Software Development Services, Business Software Solutions, Custom Software Engineering, Bespoke Software Development, Software Development Partner, Customer Portal Development, Enterprise Software Development, Enterprise Application Development"
+    }
+  },
+  "enterprise-applications": {
+    "hero": {
+      "badge": "Software & Digital Engineering",
+      "title": "Enterprise Application Services",
+      "subtitle": "WeRoute modernizes, integrates, and optimizes the enterprise applications that run mission-critical operations, turning aging, disconnected systems into platforms built for how the business runs today.",
+      "highlights": [
+        "Business Process Integration",
+        "Operational Efficiency",
+        "Enterprise Scalability",
+        "Digital Transformation"
+      ]
     },
-    {
-      question: "Are enterprise applications scalable?",
-      answer:
-        "Absolutely. Enterprise applications are built to support organizational growth, increasing user volumes, and evolving business requirements.",
+    "overview": {
+      "title": "The systems running the business should not be the reason it can't move faster.",
+      "description": "Legacy enterprise systems were built for a different era of business. As operations grow more complex and expectations for speed increase, aging applications become the constraint holding everything else back.",
+      "description2": "Modernization removes that ceiling, giving the business systems that can scale, integrate, and adapt as requirements keep changing.",
+      "description3": "Businesses that can change their systems quickly can also change strategy quickly."
     },
-    {
-      question: "How do enterprise applications support decision-making?",
-      answer:
-        "They provide centralized reporting, analytics, and real-time visibility into business performance, enabling informed decisions.",
+    "whyEssential": {
+      "title": "Why Enterprise Application Modernization Matters",
+      "description": "Aging systems accumulate risk and cost long after they stop serving the business well.",
+      "points": [
+        "As operations grow more complex, disconnected systems make simple changes harder than they should be.",
+        "Disconnected applications create data silos that slow down decisions across the business.",
+        "Applications built for yesterday's scale rarely hold up under tomorrow's demand."
+      ]
     },
-  ],
-
-  cta: {
-    title: "Transform Operations Through Intelligent Enterprise Applications",
-    description:
-      "Build connected, scalable, and data-driven business environments that improve productivity and accelerate growth.",
-    button: "Talk to an Enterprise Applications Expert",
-  },
-},
- "mobile-application-development": {
-  hero: {
-    badge: "Software & Digital Engineering",
-    title: "Mobile Application Development",
-    subtitle:
-      "Design and build intuitive, scalable, and high-performance mobile experiences that connect users, accelerate engagement, and drive business growth.",
-    highlights: [
-      "Native & Cross-Platform Apps",
-      "User-Centric Experiences",
-      "Scalable Mobile Architecture",
-      "Business-Driven Mobility",
-    ],
-  },
-
-  overview: {
-    title: "Mobile Experiences Designed for a Connected World",
-    description:
-      "Mobile devices have become the primary channel through which customers, employees, and partners interact with businesses. Organizations that fail to deliver seamless mobile experiences risk losing engagement, productivity, and competitive advantage.",
-    description2:
-      "Modern mobile applications must balance usability, performance, security, and scalability while supporting evolving customer expectations and business objectives.",
-    description3:
-      "WeRoute’s Mobile Application Development Services help organizations create mobile solutions that enhance user experiences, streamline operations, and support long-term digital growth strategies.",
-  },
-
-  whyEssential: {
-    title: "Why Mobile Application Development Matters",
-    description:
-      "Organizations increasingly rely on mobile experiences to engage customers, empower employees, and extend digital capabilities beyond traditional environments.",
-    points: [
-      "Growing mobile-first user expectations",
-      "Demand for seamless digital experiences",
-      "Need for workforce mobility",
-      "Customer engagement and retention goals",
-      "Expansion of digital business channels",
-    ],
-  },
-
-  challenges: {
-    title: "Business Challenges We Address",
-    items: [
-      "Poor user engagement and application adoption",
-      "Fragmented experiences across devices and platforms",
-      "Performance and scalability limitations",
-      "Security and compliance concerns",
-      "Difficulty maintaining multiple mobile platforms",
-      "Long development and release cycles",
-    ],
-  },
-
-  whatIs: {
-    title: "What Is Mobile Application Development?",
-    content: [
-      "Mobile Application Development focuses on creating software experiences optimized for smartphones, tablets, and mobile ecosystems.",
-      "It encompasses strategy, design, development, testing, deployment, and lifecycle management across native and cross-platform environments.",
-      "The objective is to deliver secure, intuitive, and high-performing applications that create measurable business value.",
-    ],
-  },
-
-  capabilities: {
-    title: "How WeRoute Delivers Mobile Application Development",
-    items: [
+    "challenges": {
+      "title": "Business Challenges We Solve",
+      "items": [
+        "Monolithic architectures make it hard to change one part without risking the whole system.",
+        "Fragmented platforms force teams to maintain overlapping systems that do similar things.",
+        "Connecting legacy applications to modern tools often takes more effort than expected.",
+        "Aging systems struggle to keep up as transaction volume and users increase.",
+        "Maintaining outdated systems consumes time that could go toward real improvement."
+      ]
+    },
+    "whatIs": {
+      "title": "What Are Enterprise Applications?",
+      "content": [
+        "Enterprise applications are the software systems that support critical business operations, from finance and HR to supply chain and customer management.",
+        "Modernizing them improves performance, interoperability, and governance, replacing rigid, siloed systems with platforms that adapt as the business grows, rather than limiting how it can grow."
+      ]
+    },
+    "capabilities": {
+      "title": "How WeRoute Delivers Enterprise Application Services",
+      "items": [
+        {
+          "title": "Strategic Planning",
+          "description": "We start with strategic modernization planning, assessing what to refactor, replace, or retire before any code changes."
+        },
+        {
+          "title": "Modular Refactoring",
+          "description": "We refactor application architecture into modular components, so individual parts can evolve without rebuilding the whole system."
+        },
+        {
+          "title": "API & System Integration",
+          "description": "We connect modernized applications through APIs and system integration, so data and processes flow cleanly across the business."
+        },
+        {
+          "title": "Performance Engineering",
+          "description": "We engineer for performance and reliability from the start, so modernized systems hold up under real production load."
+        },
+        {
+          "title": "Governance & Compliance",
+          "description": "We align modernization with governance and compliance requirements, so upgraded systems remain audit-ready and secure."
+        }
+      ]
+    },
+    "useCases": {
+      "title": "Where Enterprise Applications Create Business Value",
+      "items": [
+        "ERP modernization keeps core financial and operational data accurate as the business scales.",
+        "CRM transformation gives sales and service teams a single, reliable view of the customer.",
+        "HR and workforce platforms replace manual processes with connected, self-service systems.",
+        "Supply chain systems stay resilient when they integrate with partners and data in real time.",
+        "Financial management applications support faster, more accurate reporting across the business."
+      ]
+    },
+    "outcomes": {
+      "title": "Business Outcomes",
+      "items": [
+        "The business can change direction faster, since its systems are no longer the constraint.",
+        "Applications run faster and more reliably, even under heavier day-to-day use.",
+        "Systems exchange data cleanly instead of relying on manual workarounds.",
+        "A planned, phased approach keeps modernization risk lower than a full rebuild.",
+        "Teams spend less time maintaining old systems and more time improving the business.",
+        "Platforms scale with the business instead of becoming next year's legacy problem."
+      ]
+    },
+    "whyWeroute": {
+      "title": "Why Choose WeRoute",
+      "description": "WeRoute brings deep enterprise modernization expertise to every engagement, built on real delivery experience, not theory.",
+      "points": [
+        "We lead every modernization effort with architecture first, so decisions hold up for years, not just the next release.",
+        "We integrate cleanly across platforms, connecting legacy and modern systems instead of forcing an all-at-once rebuild.",
+        "Every modernization initiative is governance-driven by default, with controls built in rather than added on later.",
+        "Our relationship continues well past go-live, with a long-term focus on digital transformation as your business evolves."
+      ]
+    },
+    "strategyFit": {
+      "title": "Enterprise Applications Within Your Digital Strategy",
+      "description": "Enterprise application modernization connects to WeRoute's broader digital strategy, working alongside custom software development, API and platform engineering, cloud, and AI so every system supports one coherent architecture.",
+      "items": [
+        "Custom Software Development",
+        "API & Platform Engineering",
+        "Cloud & DevOps",
+        "AI & Intelligent Automation",
+        "Cybersecurity Solutions"
+      ]
+    },
+    "faq": [
       {
-        title: "Mobile Experience Strategy",
-        description:
-          "Applications are designed around user journeys, business objectives, and engagement goals.",
+        "question": "What are enterprise applications?",
+        "answer": "Enterprise applications are the software systems that support critical business functions, such as finance, HR, supply chain, and customer management, across an organization."
       },
       {
-        title: "Native & Cross-Platform Development",
-        description:
-          "Solutions are engineered for performance, scalability, and consistent experiences across devices.",
+        "question": "Why modernize enterprise applications?",
+        "answer": "Enterprises modernize applications because aging systems become harder to maintain, integrate, and scale over time, eventually limiting how quickly the business can adapt."
       },
       {
-        title: "UX/UI Engineering",
-        description:
-          "Intuitive interfaces are designed to maximize usability, accessibility, and customer satisfaction.",
+        "question": "How do enterprise applications support digital transformation?",
+        "answer": "Enterprise applications support digital transformation by giving new digital initiatives a modern, integrated foundation to build on, rather than forcing new capabilities onto outdated systems."
       },
       {
-        title: "Mobile Security & Compliance",
-        description:
-          "Security controls are embedded throughout the application lifecycle to protect users and data.",
+        "question": "How can legacy systems be modernized?",
+        "answer": "Legacy systems can be modernized through approaches such as refactoring, replatforming, or rebuilding specific components, chosen based on risk, business priority, and system criticality."
       },
       {
-        title: "Continuous Delivery & Optimization",
-        description:
-          "Applications evolve through iterative improvements, analytics, and user feedback.",
-      },
-    ],
-  },
-
-  useCases: {
-    title: "Where Mobile Application Development Delivers Value",
-    items: [
-      "Customer engagement platforms",
-      "Employee productivity applications",
-      "Field workforce enablement",
-      "E-commerce and digital commerce experiences",
-      "Healthcare and service delivery applications",
-      "Digital transformation initiatives",
-    ],
-  },
-
-  outcomes: {
-    title: "Business Outcomes You Can Expect",
-    items: [
-      "Improved customer engagement",
-      "Enhanced user satisfaction",
-      "Greater workforce productivity",
-      "Expanded digital reach",
-      "Faster innovation cycles",
-      "Scalable mobile ecosystems",
-    ],
-  },
-
-  whyWeroute: {
-    title: "Why WeRoute for Mobile Application Development",
-    description:
-      "WeRoute combines user-centered design, modern engineering practices, and scalable architecture expertise to deliver mobile solutions that create lasting business value.",
-    points: [
-      "User-first development methodology",
-      "Cross-platform engineering expertise",
-      "Scalable mobile architecture design",
-      "Security-focused implementation approach",
-      "Long-term product evolution strategy",
-    ],
-  },
-
-  strategyFit: {
-    title: "How Mobile Application Development Fits Into Your Strategy",
-    description:
-      "Mobile applications extend digital capabilities, strengthen customer relationships, and support broader digital transformation and growth initiatives.",
-    items: [
-      "Digital Transformation Programs",
-      "Customer Experience Strategies",
-      "Workforce Mobility Initiatives",
-      "Digital Commerce Platforms",
-      "Enterprise Modernization Roadmaps",
-    ],
-  },
-
-  faq: [
-    {
-      question: "Should we build native or cross-platform applications?",
-      answer:
-        "The choice depends on business objectives, performance requirements, budget, and time-to-market considerations. Both approaches can deliver excellent results when aligned with the right use case.",
-    },
-    {
-      question: "How do you ensure mobile application security?",
-      answer:
-        "Security is embedded throughout development through secure coding practices, authentication controls, encryption, and compliance-focused architecture design.",
-    },
-    {
-      question: "Can mobile applications integrate with enterprise systems?",
-      answer:
-        "Yes. Mobile solutions can integrate seamlessly with enterprise platforms, APIs, cloud services, and business applications.",
-    },
-    {
-      question: "How do you improve user adoption?",
-      answer:
-        "We focus on intuitive design, user-centric experiences, performance optimization, and continuous feedback-driven improvements.",
-    },
-  ],
-
-  cta: {
-    title: "Build Mobile Experiences That Users Love",
-    description:
-      "Create secure, scalable, and engaging mobile applications that strengthen customer relationships and drive business growth.",
-    button: "Talk to a Mobile App Expert",
-  },
-},
-
- "api-platform-engineering": {
-  hero: {
-    badge: "Software & Digital Engineering",
-    title: "API & Platform Engineering",
-    subtitle:
-      "Build scalable digital platforms and API ecosystems that accelerate innovation, improve integration, and enable seamless enterprise connectivity.",
-    highlights: [
-      "API-First Architecture",
-      "Platform Scalability",
-      "Enterprise Integration",
-      "Developer Enablement",
-    ],
-  },
-
-  overview: {
-    title: "Building the Digital Foundations for Modern Enterprises",
-    description:
-      "Modern organizations depend on connected systems, real-time data exchange, and scalable digital platforms to deliver business value. However, fragmented architectures, disconnected applications, and inconsistent integration approaches often slow innovation and increase operational complexity.",
-    description2:
-      "As organizations expand their digital ecosystems, APIs and platform capabilities become critical enablers of agility, interoperability, and growth.",
-    description3:
-      "WeRoute’s API & Platform Engineering Services help organizations design, build, and manage modern digital platforms that support seamless integrations, developer productivity, and long-term scalability.",
-  },
-
-  whyEssential: {
-    title: "Why API & Platform Engineering Matters",
-    description:
-      "Digital transformation depends on the ability to connect systems, automate workflows, and create reusable capabilities that support innovation at scale.",
-    points: [
-      "Growing integration requirements",
-      "Increasing demand for digital services",
-      "Cloud-native transformation initiatives",
-      "Need for reusable business capabilities",
-      "Acceleration of application delivery cycles",
-    ],
-  },
-
-  challenges: {
-    title: "Business Challenges We Address",
-    items: [
-      "Complex system integrations slowing innovation",
-      "Disconnected applications and data silos",
-      "Scalability limitations in existing platforms",
-      "Inconsistent API governance and standards",
-      "Developer productivity bottlenecks",
-      "Security and compliance concerns across integrations",
-    ],
-  },
-
-  whatIs: {
-    title: "What Is API & Platform Engineering?",
-    content: [
-      "API & Platform Engineering focuses on creating the foundational digital capabilities that enable applications, services, and systems to communicate efficiently and securely.",
-      "It combines API strategy, integration architecture, platform development, governance, and operational management into a unified approach.",
-      "The objective is to create scalable, reusable, and resilient digital ecosystems that accelerate business innovation.",
-    ],
-  },
-
-  capabilities: {
-    title: "How WeRoute Delivers API & Platform Engineering",
-    items: [
-      {
-        title: "API Strategy & Governance",
-        description:
-          "Establish standards, lifecycle management practices, and governance frameworks that ensure consistency, security, and scalability.",
+        "question": "What are the benefits of application modernization?",
+        "answer": "Application modernization improves performance, interoperability, and governance, while reducing the operational risk and maintenance burden that comes with running outdated systems."
       },
       {
-        title: "Platform Architecture Design",
-        description:
-          "Build modern digital platforms designed to support growth, performance, and operational resilience.",
+        "question": "How do enterprise applications integrate with other business systems?",
+        "answer": "Enterprise applications integrate with other business systems through APIs, data pipelines, and defined integration points, allowing information to flow accurately across the organization."
       },
       {
-        title: "Integration Engineering",
-        description:
-          "Enable seamless connectivity across enterprise applications, cloud services, and third-party ecosystems.",
+        "question": "How can modernization reduce operational risk?",
+        "answer": "Modernization reduces operational risk by replacing fragile, hard-to-maintain systems with governed, well-documented platforms that are easier to monitor, secure, and update."
+      }
+    ],
+    "cta": {
+      "title": "Build Enterprise Platforms Ready for Tomorrow",
+      "description": "Partner with WeRoute to modernize, integrate, and future-proof the enterprise applications that run your business.",
+      "button": "Talk to an Enterprise Applications Expert"
+    },
+    "seo": {
+      "title": "Enterprise Application Services | WeRoute",
+      "description": "WeRoute modernizes, integrates, and optimizes the enterprise applications that run mission-critical operations, turning aging, disconnected systems into platforms built for how the business runs today.",
+      "keywords": "Enterprise Software Solutions, Application Modernization Services, Application Modernization, Enterprise Applications, Legacy Application Modernization, System Integration Services, Legacy System Modernization, Enterprise Application Development, Systems Integration, Enterprise Application Services, Enterprise Application Modernization, ERP Modernization, Business Application Modernization, Application Portfolio Rationalization, Enterprise Systems Integration"
+    }
+  },
+  "mobile-application-development": {
+    "hero": {
+      "badge": "Software & Digital Engineering",
+      "title": "Mobile Application Development Services",
+      "subtitle": "WeRoute designs and builds secure, scalable mobile applications that connect employees, customers, and enterprise systems, extending the business to any device without compromising control.",
+      "highlights": [
+        "Native & Cross-Platform Apps",
+        "User-Centric Experiences",
+        "Scalable Mobile Architecture",
+        "Business-Driven Mobility"
+      ]
+    },
+    "overview": {
+      "title": "Mobile should extend the business, not create a separate one to maintain.",
+      "description": "Mobile applications have moved beyond a customer channel into a core business capability. Employees expect to work from anywhere, customers expect instant access, and operations increasingly happen in real time.",
+      "description2": "Enterprise mobility now determines how well a business can engage its people and customers, not just how modern it looks.",
+      "description3": "Employees increasingly expect to do their jobs from any location, on any device."
+    },
+    "whyEssential": {
+      "title": "Why Enterprise Mobility Matters",
+      "description": "Mobile access has to be convenient and secure at the same time.",
+      "points": [
+        "Customers expect fast, mobile-first experiences from every business they interact with.",
+        "Operations that depend on real-time data need mobile access to keep pace.",
+        "Mobile apps have become a primary channel for ongoing digital engagement."
+      ]
+    },
+    "challenges": {
+      "title": "Business Challenges We Solve",
+      "items": [
+        "Without a unified strategy, mobile efforts end up scattered across disconnected apps.",
+        "Mobile devices expand the attack surface if security is not built in from the start.",
+        "Connecting mobile apps to backend systems often takes more effort than expected.",
+        "Apps that perform well in testing can still slow down under real usage.",
+        "Inconsistent experiences across devices and platforms erode user trust over time."
+      ]
+    },
+    "whatIs": {
+      "title": "What Is Enterprise Mobile Application Development?",
+      "content": [
+        "Enterprise mobile application development is the design and engineering of mobile apps that connect users to business processes, APIs, cloud services, and enterprise systems.",
+        "Unlike consumer apps, these applications are built with security, governance, and scalability in mind from the start, so they can support real operations, not just individual convenience."
+      ]
+    },
+    "capabilities": {
+      "title": "How WeRoute Delivers Mobile Application Development",
+      "items": [
+        {
+          "title": "Security First",
+          "description": "We design mobile architecture with security built in from the start, protecting data across devices and networks."
+        },
+        {
+          "title": "API Integration",
+          "description": "We integrate mobile apps with enterprise APIs and backend systems, so data stays accurate and current everywhere."
+        },
+        {
+          "title": "Performance Optimization",
+          "description": "We optimize performance for real-world conditions, so apps stay fast and responsive under actual daily usage."
+        },
+        {
+          "title": "UX Engineering",
+          "description": "We engineer user experience with the same rigor as backend architecture, so adoption does not become a barrier."
+        },
+        {
+          "title": "Governance & Compliance",
+          "description": "We build governance and compliance into every mobile application, so deployed apps remain secure and auditable."
+        }
+      ]
+    },
+    "useCases": {
+      "title": "Where Mobile Applications Create Business Value",
+      "items": [
+        "Employee productivity apps put daily tools and workflows directly in employees' hands.",
+        "Customer self-service portals let users manage accounts and requests without waiting on support.",
+        "Field service management apps give technicians real-time access to jobs, data, and updates.",
+        "Sales and operations mobility keeps teams connected to data while working from anywhere.",
+        "Executive dashboards put real-time business performance in front of leaders wherever they are."
+      ]
+    },
+    "outcomes": {
+      "title": "Business Outcomes",
+      "items": [
+        "Well-built mobile experiences keep users engaged instead of abandoning the app early.",
+        "Employees complete more work from the field, without waiting to reach a desk.",
+        "Secure mobile access lets people work from anywhere without exposing business data.",
+        "New digital services reach users faster once mobile becomes part of the delivery plan.",
+        "Operations run more efficiently when mobile access removes everyday delays.",
+        "Mobile platforms scale with usage instead of needing to be rebuilt later."
+      ]
+    },
+    "whyWeroute": {
+      "title": "Why Choose WeRoute",
+      "description": "WeRoute brings deep enterprise mobility expertise to every engagement, built on real delivery experience, not theory.",
+      "points": [
+        "We engineer mobile applications security-first, so protection is built in rather than added after launch.",
+        "Our applications integrate through APIs from day one, connecting cleanly to the systems you already run.",
+        "We build mobile applications that scale across platforms and user volume without a costly rebuild.",
+        "Our relationship continues well past launch, with a long-term focus on digital evolution as your business changes."
+      ]
+    },
+    "strategyFit": {
+      "title": "Mobile Applications Within Your Digital Strategy",
+      "description": "Mobile application development connects to WeRoute's broader digital strategy, working alongside enterprise applications, API and platform engineering, cloud, and AI so every system supports one coherent architecture.",
+      "items": [
+        "Enterprise Applications",
+        "API & Platform Engineering",
+        "Cloud & DevOps",
+        "AI & Intelligent Automation",
+        "Cybersecurity Solutions"
+      ]
+    },
+    "faq": [
+      {
+        "question": "What is enterprise mobile application development?",
+        "answer": "Enterprise mobile application development is the design and build of mobile apps created specifically for business use, connecting employees, customers, and enterprise systems securely."
       },
       {
-        title: "Developer Experience Enablement",
-        description:
-          "Create developer-friendly environments that accelerate delivery and encourage platform adoption.",
+        "question": "How do mobile applications support digital transformation?",
+        "answer": "Mobile applications support digital transformation by extending digital initiatives to any device, giving employees and customers access to systems and services wherever they are."
       },
       {
-        title: "Security & Compliance Integration",
-        description:
-          "Embed security, access controls, and governance throughout the platform and API lifecycle.",
+        "question": "Why are secure mobile applications important?",
+        "answer": "Secure mobile applications matter because mobile devices expand the ways business data can be accessed, so security has to be built into the application rather than added afterward."
       },
+      {
+        "question": "How do enterprise mobile apps integrate with backend systems?",
+        "answer": "Enterprise mobile apps integrate with backend systems through APIs and defined integration points, allowing data to move accurately between the app and core business systems."
+      },
+      {
+        "question": "What industries benefit from enterprise mobility?",
+        "answer": "Industries with distributed workforces or high customer interaction, such as field services, retail, logistics, and financial services, tend to benefit most from enterprise mobility, though most businesses can gain value from it."
+      },
+      {
+        "question": "How can mobile applications improve workforce productivity?",
+        "answer": "Mobile applications improve workforce productivity by putting everyday tools and information directly into employees' hands, reducing the time spent waiting for access to a desk or system."
+      },
+      {
+        "question": "How do mobile apps support customer engagement?",
+        "answer": "Mobile apps support customer engagement by giving customers a direct, convenient channel to interact with a business, access services, and get support without extra friction."
+      }
     ],
-  },
-
-  useCases: {
-    title: "Where API & Platform Engineering Delivers Value",
-    items: [
-      "Enterprise application integration",
-      "Cloud-native platform initiatives",
-      "Digital product ecosystems",
-      "Customer and partner portals",
-      "Microservices architectures",
-      "Enterprise modernization programs",
-    ],
-  },
-
-  outcomes: {
-    title: "Business Outcomes You Can Expect",
-    items: [
-      "Faster application delivery",
-      "Improved integration efficiency",
-      "Enhanced scalability and resilience",
-      "Greater developer productivity",
-      "Accelerated innovation cycles",
-      "Stronger digital ecosystem connectivity",
-    ],
-  },
-
-  whyWeroute: {
-    title: "Why WeRoute for API & Platform Engineering",
-    description:
-      "WeRoute combines enterprise architecture expertise, integration experience, and modern engineering practices to create digital foundations that support long-term growth and innovation.",
-    points: [
-      "API-first architecture expertise",
-      "Enterprise integration experience",
-      "Cloud-native platform engineering capabilities",
-      "Security and governance-focused approach",
-      "Scalable and future-ready design principles",
-    ],
-  },
-
-  strategyFit: {
-    title: "How API & Platform Engineering Fits Into Your Strategy",
-    description:
-      "API & Platform Engineering provides the connectivity and scalability layer that powers digital transformation, application modernization, and enterprise innovation initiatives.",
-    items: [
-      "Digital Transformation Programs",
-      "Cloud Modernization Initiatives",
-      "Application Modernization Strategies",
-      "Enterprise Integration Roadmaps",
-      "Developer Platform Engineering Programs",
-    ],
-  },
-
-  faq: [
-    {
-      question: "Why are APIs important for digital transformation?",
-      answer:
-        "APIs enable systems, applications, and services to communicate efficiently, making it easier to integrate technologies, automate processes, and accelerate innovation.",
+    "cta": {
+      "title": "Build Mobile Experiences That Scale With Your Business",
+      "description": "Partner with WeRoute to build secure, scalable mobile applications that extend your business to any device.",
+      "button": "Talk to a Mobile Engineering Expert"
     },
-    {
-      question: "How does platform engineering improve developer productivity?",
-      answer:
-        "Platform engineering creates reusable tools, services, and workflows that reduce complexity and allow development teams to focus on delivering business value.",
-    },
-    {
-      question: "Can APIs integrate legacy systems with modern applications?",
-      answer:
-        "Yes. APIs act as a bridge between legacy platforms and modern applications, enabling seamless data exchange and interoperability.",
-    },
-    {
-      question: "How do you ensure API security?",
-      answer:
-        "Security is integrated through authentication, authorization, encryption, monitoring, governance policies, and lifecycle management best practices.",
-    },
-  ],
-
-  cta: {
-    title: "Build Platforms That Accelerate Innovation",
-    description:
-      "Create scalable APIs and modern digital platforms that improve connectivity, developer productivity, and long-term business agility.",
-    button: "Talk to an API & Platform Engineering Expert",
+    "seo": {
+      "title": "Mobile Application Development Services | WeRoute",
+      "description": "WeRoute designs and builds secure, scalable mobile applications that connect employees, customers, and enterprise systems, extending the business to any device without compromising control.",
+      "keywords": "Mobile Application Development, Mobile App Development Services, Mobile App Development Company, Field Service Management App, Mobile Application Development Services, Enterprise Mobility Solutions, Enterprise Applications, Enterprise Mobile App Development, Enterprise Mobile App Development Company, Enterprise Mobile Solutions, Mobile Software Development, Enterprise Mobility Services, Business Mobile Applications"
+    }
   },
-},
+  "api-platform-engineering": {
+    "hero": {
+      "badge": "Software & Digital Engineering",
+      "title": "API & Platform Engineering Services",
+      "subtitle": "WeRoute designs governed, scalable API ecosystems that connect enterprise applications, cloud platforms, and partners, turning fragmented integrations into a secure, unified digital foundation.",
+      "highlights": [
+        "API-First Architecture",
+        "Platform Scalability",
+        "Enterprise Integration",
+        "Developer Enablement"
+      ]
+    },
+    "overview": {
+      "title": "Integration should scale the business, not multiply its complexity.",
+      "description": "APIs have moved beyond simple integration tools into the connective infrastructure of the enterprise. Every application, partner relationship, and cloud service now depends on well-governed APIs to function together.",
+      "description2": "Without a deliberate platform engineering approach, that connective tissue becomes fragile, insecure, and expensive to maintain as the business grows.",
+      "description3": "Digital ecosystems now span dozens of applications, partners, and cloud services working together."
+    },
+    "whyEssential": {
+      "title": "Why API & Platform Engineering Matters",
+      "description": "Enterprise integration determines how quickly new systems and partners can connect and contribute value.",
+      "points": [
+        "Without governance, APIs multiply inconsistently, creating risk instead of reusable business capability.",
+        "Partner connectivity increasingly depends on secure, well-documented APIs rather than one-off integrations.",
+        "Business agility now depends on how fast new digital capabilities can be connected and launched."
+      ]
+    },
+    "challenges": {
+      "title": "Business Challenges We Solve",
+      "items": [
+        "Disconnected systems force teams to rebuild the same integration logic for every new project.",
+        "Uncontrolled API growth creates duplication, inconsistent standards, and rising maintenance overhead across teams.",
+        "Every exposed API without proper governance widens the enterprise's overall attack surface.",
+        "Poorly architected integrations slow down critical systems as transaction volume grows.",
+        "Without shared standards, every team builds APIs differently, complicating long-term maintenance."
+      ]
+    },
+    "whatIs": {
+      "title": "What Is API & Platform Engineering?",
+      "content": [
+        "API and platform engineering is the discipline of designing secure, governed digital ecosystems that connect applications, services, data, and partners through standardized interfaces.",
+        "Rather than building integrations one at a time, it establishes reusable platform capabilities, developer self-service, and consistent governance that let the enterprise scale connections without accumulating risk or technical debt."
+      ]
+    },
+    "capabilities": {
+      "title": "How WeRoute Delivers API & Platform Engineering",
+      "items": [
+        {
+          "title": "Domain-Driven Design",
+          "description": "We design APIs around real business domains rather than individual systems, so integrations stay logical and easy to extend."
+        },
+        {
+          "title": "Lifecycle Governance",
+          "description": "We govern every API from design through retirement, maintaining consistent standards, versioning, and documentation across its full lifecycle."
+        },
+        {
+          "title": "Scalable Platforms",
+          "description": "We build platform capabilities that scale with demand, so growing API traffic and new integrations never require rebuilding the foundation."
+        },
+        {
+          "title": "Secure Services",
+          "description": "We expose services securely through authentication, access control, and monitoring built into every API from day one."
+        },
+        {
+          "title": "Performance Engineering",
+          "description": "We engineer APIs and platforms for resilience under real production load, so performance holds steady as usage and demand grow."
+        }
+      ]
+    },
+    "useCases": {
+      "title": "Where API & Platform Engineering Creates Value",
+      "items": [
+        "Connecting core business applications so data and processes flow accurately across the organization.",
+        "Governed APIs let partners and suppliers connect securely without custom integration for every relationship.",
+        "APIs power the customer experiences that connect apps, portals, and services into one journey.",
+        "Platform engineering gives cloud-native applications the governed foundation they need to scale reliably.",
+        "Internal developer platforms give engineering teams self-service access to APIs, tools, and infrastructure."
+      ]
+    },
+    "outcomes": {
+      "title": "Business Outcomes",
+      "items": [
+        "New systems and partners connect faster when standardized APIs replace one-off custom builds.",
+        "Consistent governance keeps every API secure, auditable, and aligned with enterprise policy.",
+        "Applications, partners, and cloud services work together smoothly instead of in isolation.",
+        "Platforms scale with business growth instead of needing to be rebuilt under pressure.",
+        "Reusable platform capabilities cut the time and cost of every new integration.",
+        "Teams launch new digital capabilities faster once the underlying platform is already governed."
+      ]
+    },
+    "whyWeroute": {
+      "title": "Why Choose WeRoute",
+      "description": "WeRoute designs platforms around long-term architecture, not short-term fixes, so today's integrations do not become tomorrow's constraints.",
+      "points": [
+        "Our team brings deep, hands-on experience designing and governing API ecosystems for complex enterprise environments.",
+        "We build governance into every API and platform from the start, rather than adding controls after the fact.",
+        "Our integration architecture stays vendor-agnostic, so your platform choices remain flexible as technology and needs evolve.",
+        "Our relationship continues well past launch, evolving your API ecosystem as business needs and integrations grow."
+      ]
+    },
+    "strategyFit": {
+      "title": "API & Platform Engineering Within Your Digital Strategy",
+      "description": "API and platform engineering connects to WeRoute's broader digital strategy, working alongside custom software, enterprise applications, cloud, and AI so every system supports one coherent architecture.",
+      "items": [
+        "Custom Software Development",
+        "Enterprise Applications",
+        "Cloud & DevOps",
+        "AI & Intelligent Automation",
+        "Cybersecurity Solutions"
+      ]
+    },
+    "faq": [
+      {
+        "question": "What is API & Platform Engineering?",
+        "answer": "API and platform engineering is the practice of designing secure, governed digital ecosystems that connect applications, services, and partners through standardized, reusable APIs."
+      },
+      {
+        "question": "Why are APIs important for digital transformation?",
+        "answer": "APIs are important for digital transformation because they let new applications, partners, and digital services connect to existing systems quickly and securely."
+      },
+      {
+        "question": "What is API governance?",
+        "answer": "API governance is the set of standards, policies, and lifecycle controls that keep APIs consistent, secure, and manageable as they scale across the enterprise."
+      },
+      {
+        "question": "How do APIs improve enterprise integration?",
+        "answer": "APIs improve enterprise integration by giving systems a standardized, reusable way to exchange data, replacing one-off custom connections with a consistent integration layer."
+      },
+      {
+        "question": "How can organizations manage API sprawl?",
+        "answer": "Organizations manage API sprawl by establishing governance, shared standards, and a centralized platform approach that prevents duplicate or inconsistent APIs across teams."
+      },
+      {
+        "question": "What are the benefits of platform engineering?",
+        "answer": "Platform engineering gives organizations reusable infrastructure, self-service tools, and consistent governance, reducing the time and effort needed to build and scale digital capabilities."
+      },
+      {
+        "question": "How do APIs support cloud-native architectures?",
+        "answer": "APIs support cloud-native architectures by connecting independently deployed services and applications, allowing them to communicate reliably as the platform scales."
+      }
+    ],
+    "cta": {
+      "title": "Build Digital Platforms That Connect Everything",
+      "description": "Partner with WeRoute to design governed, scalable API ecosystems that connect your applications, partners, and digital platforms.",
+      "button": "Talk to an API & Platform Engineering Expert"
+    },
+    "seo": {
+      "title": "API & Platform Engineering Services | WeRoute",
+      "description": "WeRoute designs governed, scalable API ecosystems that connect enterprise applications, cloud platforms, and partners, turning fragmented integrations into a secure, unified digital foundation.",
+      "keywords": "Platform Engineering, API Management Platform, Internal Developer Platform, API Integration Services, API Development Services, API Governance, Platform Engineering Services, API Lifecycle Management, Enterprise API Management, API Engineering, API & Platform Engineering Services, API & Platform Engineering, Enterprise Integration Solutions"
+    }
+  }
 };

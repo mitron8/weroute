@@ -21,17 +21,17 @@ export default function UseCasesSection({ data }) {
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-white/70">
-            Designed for complex enterprise environments where
-            performance, visibility, scalability, and reliability
-            are critical.
+            {data.description || "Designed for complex enterprise environments where performance, visibility, scalability, and reliability are critical."}
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 
-          {data.items.map((item, index) => (
+          {data.items.map((item, index) => {
+            const isObject = typeof item === 'object' && item !== null;
+            return (
             <motion.div
-              key={item}
+              key={isObject ? item.title : item}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -42,19 +42,25 @@ export default function UseCasesSection({ data }) {
               className="group rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:bg-white/10"
             >
               <div className="flex items-start justify-between">
-
-                <span className="text-lg font-medium text-white">
-                  {item}
-                </span>
+                <div>
+                  <span className="text-lg font-medium text-white block">
+                    {isObject ? item.title : item}
+                  </span>
+                  {isObject && (
+                    <span className="text-sm text-white/70 mt-2 block pr-4">
+                      {item.desc || item.description}
+                    </span>
+                  )}
+                </div>
 
                 <ArrowUpRight
                   size={18}
-                  className="text-[#A7BF73] transition group-hover:translate-x-1 group-hover:-translate-y-1"
+                  className="text-[#A7BF73] transition group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mt-1"
                 />
 
               </div>
             </motion.div>
-          ))}
+          )})}
 
         </div>
 

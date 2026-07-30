@@ -20,43 +20,35 @@ const solutionsData = [
     icon: Network,
     desc: "Enterprise networks are the backbone of everything. We deliver managed network services and network security services that give IT teams visibility, control, and performance assurance across every site.",
     link: "/solutions/network-connectivity",
-
     problems: [
-      "Network performance bottlenecks slowing application delivery and user productivity",
-      "Limited visibility into network health, traffic patterns, and site-level performance",
-      "Rising operational costs from legacy MPLS and unmanaged WAN infrastructure",
-      "Complex multi-site connectivity with no centralised control or policy enforcement",
-      "Inconsistent user experience across branch offices, remote sites, and cloud environments",
+      "Network performance bottlenecks slowing application delivery",
+      "Limited visibility into network health and traffic patterns",
+      "Rising operational costs from legacy MPLS",
+      "Complex multi-site connectivity with no centralised control",
     ],
-
     includes: [
-      "SD-WAN and SD-LAN deployment and managed network services",
-      "Network Observability and Assurance",
+      "SD-WAN and SD-LAN",
+      "Network Observability",
       "Network as a Service (NaaS)",
-      "AI-driven network intelligence",
-      "Mobility and wireless solutions",
+      "AI-driven intelligence",
     ],
   },
   {
     id: "02",
     title: "Cloud & DevOps",
     icon: Cloud,
-    desc: "Moving to cloud requires more than lift-and-shift. We at WeRoute design and deliver cloud migration services and enterprise cloud services that reduce risk, improve consistency, and accelerate your development velocity.",
+    desc: "Moving to cloud requires more than lift-and-shift. We design and deliver cloud migration services and enterprise cloud services that reduce risk, improve consistency, and accelerate your development velocity.",
     link: "/solutions/cloud-devops",
-
     problems: [
-      "Slow infrastructure provisioning blocking development and deployment cycles",
-      "Operational risk and cost overruns during cloud adoption and migration",
-      "Inconsistency across cloud and on-premises environments creating compliance gaps",
-      "Security vulnerabilities in cloud configurations, access policies, and data handling",
-      "Limited visibility into cloud application performance and infrastructure spend",
+      "Slow infrastructure provisioning blocking deployments",
+      "Operational risk and cost overruns during migration",
+      "Inconsistency across cloud and on-premises environments",
+      "Security vulnerabilities in cloud configurations",
     ],
-
     includes: [
-      "Cloud architecture design and migration services",
-      "DevOps services and platform engineering",
+      "Cloud architecture design",
+      "DevOps platform engineering",
       "Infrastructure as Code (IaC)",
-      "Enterprise cloud services",
       "Cloud Observability",
     ],
   },
@@ -64,76 +56,62 @@ const solutionsData = [
     id: "03",
     title: "Cybersecurity",
     icon: ShieldCheck,
-    desc: "Perimeter security doesn’t cut it anymore. We deliver cybersecurity consulting services built on zero trust architecture, where every user, device, and connection is verified before access is granted. Security is not an add-on here, it’s the foundation.",
+    desc: "Perimeter security doesn’t cut it anymore. We deliver cybersecurity consulting services built on zero trust architecture, where every user, device, and connection is verified before access is granted.",
     link: "/solutions/cybersecurity",
-
     problems: [
-      "Expanding attack surfaces from cloud adoption, remote access, and third-party integrations",
-      "Lack of centralised security visibility across network, endpoints, and cloud workloads",
-      "Compliance pressure from regulatory frameworks across BFSI, healthcare, and government sectors",
-      "Reactive incident response with no proactive threat detection or early warning capability",
-      "Tool sprawl creating operational complexity, coverage gaps, and unmanageable alert volumes",
+      "Expanding attack surfaces from cloud adoption",
+      "Lack of centralised security visibility",
+      "Compliance pressure from regulatory frameworks",
+      "Reactive incident response with no early warning",
     ],
-
     includes: [
       "Zero Trust Architecture",
       "Endpoint and Cloud Security",
-      "Identity and Access Management",
-      "Managed SOC with SIEM and SOAR",
-      "GRC & Vendor Risk Management",
+      "Identity & Access Management",
+      "Managed SOC",
     ],
   },
   {
     id: "04",
     title: "AI & Intelligent Automation",
     icon: Cpu,
-    desc: "Manual operations create risk and slow teams down. We apply intelligent automation and AI-driven observability to help enterprises detect problems earlier, resolve them faster, and run leaner. We also help organisations evaluate, deploy, and govern enterprise AI and Generative AI initiatives.",
+    desc: "Manual operations create risk and slow teams down. We apply intelligent automation and AI-driven observability to help enterprises detect problems earlier, resolve them faster, and run leaner.",
     link: "/solutions/ai-automation",
-
     problems: [
-      "Manual, error-prone operations consuming engineering capacity and slowing response times",
-      "No predictive insight into network, infrastructure, or application behaviour patterns",
-      "Slow incident detection and resolution increasing mean time to recovery and business impact",
-      "Operational inefficiencies across disconnected IT, network, and security teams",
-      "Limited data-driven decision making at leadership and operational levels",
+      "Manual, error-prone operations slowing response times",
+      "No predictive insight into infrastructure behaviour",
+      "Slow incident detection and resolution",
+      "Limited data-driven decision making",
     ],
-
     includes: [
       "AI Network Intelligence",
       "AIOps",
       "Intelligent Automation",
-      "AI-Driven Observability",
-      "Network Automation Services",
-      "Enterprise AI & Generative AI",
+      "Enterprise AI initiatives",
     ],
   },
   {
     id: "05",
     title: "Software & Digital Engineering",
     icon: Code,
-    desc: "Software that cannot scale is a liability. We deliver enterprise application development services and custom enterprise software development for organisations that need platforms built for complexity, performance, and long-term maintainability.",
+    desc: "Software that cannot scale is a liability. We deliver enterprise application development services for organisations that need platforms built for complexity, performance, and long-term maintainability.",
     link: "/solutions/software-engineering",
-
     problems: [
-      "Legacy systems limiting innovation, integration, and product development velocity",
-      "Poor application scalability under growing user, transaction, and data loads",
-      "Disconnected platforms and APIs creating operational silos and data inconsistency",
-      "Slow time-to-market from manual development, testing, and deployment processes",
-      "Inflexible application architectures that cannot adapt to changing business requirements",
+      "Legacy systems limiting product development velocity",
+      "Poor application scalability under growing loads",
+      "Disconnected platforms and APIs creating silos",
+      "Slow time-to-market from manual deployment processes",
     ],
-
     includes: [
-      "Custom Enterprise Software Development",
-      "Enterprise Application Development",
+      "Custom Enterprise Software",
       "API & Platform Engineering",
-      "Mobile Application Development",
+      "Mobile App Development",
       "Digital Engineering Services",
     ],
   },
 ];
 
 export default function SolutionsListSection() {
-  // State to track which accordion item is open. 
   const [expandedId, setExpandedId] = useState(null);
 
   const toggleExpand = (id) => {
@@ -141,34 +119,56 @@ export default function SolutionsListSection() {
   };
 
   return (
-    <section id="solutions" className="relative bg-[#f7f9fc] py-28">
-      {/* BACKGROUND ELEMENTS */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
+    <section id="solutions" className="relative bg-[#f7f9fc] py-28 lg:py-40 overflow-hidden">
+      
+      {/* --- STATIC BACKGROUND TEXTURES --- */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Animated Accent Green Blob */}
+        <motion.div 
+          animate={{ 
+            x: [0, -40, 20, 0],
+            y: [0, 50, -30, 0],
+            scale: [1, 1.1, 0.9, 1]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-[-10%] top-[10%] h-[600px] w-[600px] rounded-full bg-[#98c93c] opacity-[0.07] blur-[120px]" 
+        />
+        
+        {/* Animated Navy Blob */}
+        <motion.div 
+          animate={{ 
+            x: [0, 50, -20, 0],
+            y: [0, -40, 30, 0],
+            scale: [1, 1.2, 0.8, 1]
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-[-10%] bottom-[10%] h-[700px] w-[700px] rounded-full bg-[#050849] opacity-[0.03] blur-[150px]" 
+        />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
+        
         {/* SECTION HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="mb-20 max-w-3xl "
+          className="mb-20 max-w-3xl"
         >
-          <span className="inline-block rounded-full border border-[#052440]/10 bg-white/80 px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440] shadow-sm backdrop-blur-md">
+          <span className="clay-badge-light inline-block rounded-full border border-[#050849]/10 bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#050849] shadow-sm">
             Our Core Offerings
           </span>
-          <h2 className="mt-8 text-4xl font-bold leading-tight tracking-[-0.04em] text-[#052440] md:text-5xl lg:text-6xl">
+          <h2 className="mt-6 text-3xl font-normal leading-tight text-[#050849] md:text-4xl lg:text-[44px]">
             Solutions We{" "}
-            <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+            <span className="font-medium bg-gradient-to-r from-[#050849] to-[#4c658a] bg-clip-text text-transparent">
               Deliver
             </span>
           </h2>
         </motion.div>
 
-        {/* SOLUTIONS LIST (ACCORDION) */}
-        <div className="flex flex-col gap-6">
+        {/* EDITORIAL ACCORDION LIST */}
+        <div className="flex flex-col gap-4">
           {solutionsData.map((solution, index) => {
             const Icon = solution.icon;
             const isExpanded = expandedId === solution.id;
@@ -176,39 +176,40 @@ export default function SolutionsListSection() {
             return (
               <motion.div
                 key={solution.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white/80 shadow-[0_15px_50px_rgba(5,36,64,0.04)] backdrop-blur-xl transition-all duration-500 hover:shadow-[0_20px_60px_rgba(5,36,64,0.08)] cursor-pointer"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="clay-light group relative overflow-hidden mb-4 bg-white transition-all duration-500 hover:-translate-y-1 cursor-pointer"
                 onClick={() => toggleExpand(solution.id)}
               >
-                {/* Decorative Hover Glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#080357]/[0.02] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-
-                {/* ALWAYS VISIBLE HEADER */}
-                <div className="relative z-10 flex items-center justify-between p-8 lg:p-10">
-                  <div className="flex items-center gap-6">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#080357] text-white shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#0d5ea8]">
-                      <Icon size={24} />
-                    </div>
-                    <div>
-                      <span className="text-sm font-bold tracking-[0.2em] text-[#052440]/40">
+                {/* ALWAYS VISIBLE HEADER ROW */}
+                <div className="flex items-center justify-between py-6 md:py-8 px-6 md:px-10">
+                  <div className="flex items-center gap-6 md:gap-10">
+                    
+                    {/* Number / Icon */}
+                    <div className="flex items-center gap-6">
+                      <span className="hidden md:block text-sm font-bold tracking-[0.2em] text-[#4c658a]/40 transition-colors duration-500 group-hover:text-[#98c93c]">
                         {solution.id}
                       </span>
-                      <h3 className="mt-1 text-2xl font-black tracking-tight text-[#052440] md:text-3xl">
-                        {solution.title}
-                      </h3>
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f7f9fc] border border-[#050849]/5 text-[#050849] transition-all duration-500 group-hover:bg-[#98c93c] group-hover:text-white group-hover:border-transparent group-hover:shadow-[0_10px_30px_rgba(152,201,60,0.3)]">
+                        <Icon size={24} strokeWidth={1.5} />
+                      </div>
                     </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-medium tracking-tight text-[#050849] md:text-3xl transition-colors duration-500">
+                      {solution.title}
+                    </h3>
                   </div>
                   
-                  {/* Expand/Collapse Chevron */}
+                  {/* Expand Chevron */}
                   <motion.div
                     animate={{ rotate: isExpanded ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-[#052440]/5 text-[#052440] group-hover:bg-[#052440]/10"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#050849]/10 text-[#050849] transition-colors duration-300 group-hover:border-[#98c93c] group-hover:text-[#98c93c]"
                   >
-                    <ChevronDown size={20} />
+                    <ChevronDown size={20} strokeWidth={1.5} />
                   </motion.div>
                 </div>
 
@@ -220,72 +221,78 @@ export default function SolutionsListSection() {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="overflow-hidden"
                     >
-                      <div className="grid gap-0 border-t border-[#052440]/10 lg:grid-cols-12">
-                        
-                        {/* LEFT COLUMN: Description & CTA */}
-                        <div className="relative z-10 flex flex-col justify-between p-8 lg:col-span-5 lg:p-10">
-                          <p className="text-lg leading-relaxed text-[#052440]/65">
-                            {solution.desc}
-                          </p>
+                      <div className="px-6 pb-8 md:px-10 md:pb-10 pt-2 border-t border-[#050849]/5 mt-4">
+                        <div className="grid gap-12 lg:grid-cols-12 pt-8">
+                          
+                          {/* LEFT COLUMN: Description & CTA */}
+                          <div className="lg:col-span-5 flex flex-col justify-between">
+                            <p className="text-lg font-light leading-relaxed text-[#4c658a]">
+                              {solution.desc}
+                            </p>
 
-                          <div className="mt-8 pt-8 border-t border-[#052440]/10 lg:border-none lg:pt-0 lg:mt-12">
-                            <a
-                              href={solution.link}
-                              onClick={(e) => e.stopPropagation()} 
-                              className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-[#080357] transition-all hover:text-[#A7BF73]"
-                            >
-                              Explore Solutions
-                              <ArrowRight
-                                size={18}
-                                className="transition-transform duration-300 group-hover:translate-x-1"
-                              />
-                            </a>
-                          </div>
-                        </div>
-
-                        {/* RIGHT COLUMN: Problems & Includes */}
-                        <div className="relative z-10 border-t border-[#052440]/10 bg-[#f7f9fc]/50 p-8 lg:col-span-7 lg:border-l lg:border-t-0 lg:p-10">
-                          <div className="grid gap-10 sm:grid-cols-2">
-                            {/* Business Problems List */}
-                            <div>
-                              <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#052440]/40">
-                                Problems We Solve
-                              </h4>
-                              <ul className="mt-6 space-y-4">
-                                {solution.problems.map((prob, i) => (
-                                  <li key={i} className="flex items-start gap-3">
-                                    <CheckCircle2
-                                      size={18}
-                                      className="mt-0.5 shrink-0 text-[#A7BF73]"
-                                    />
-                                    <span className="text-[15px] font-medium leading-relaxed text-[#052440]/80">
-                                      {prob}
-                                    </span>
-                                  </li>
-                                ))}
-                              </ul>
+                            <div className="mt-8 pt-8 lg:mt-auto">
+                              <a
+                                href={solution.link}
+                                onClick={(e) => e.stopPropagation()} 
+                                className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.15em] text-[#050849] transition-all hover:text-[#98c93c]"
+                              >
+                                Explore Solutions
+                                <ArrowRight
+                                  size={18}
+                                  className="transition-transform duration-300 group-hover:translate-x-1"
+                                />
+                              </a>
                             </div>
+                          </div>
 
-                            {/* Capabilities Included */}
-                            <div>
-                              <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#052440]/40">
-                                Capabilities Included
-                              </h4>
-                              <div className="mt-6 flex flex-wrap gap-2.5">
-                                {solution.includes.map((item, i) => (
-                                  <span
-                                    key={i}
-                                    className="inline-block rounded-xl border border-[#052440]/10 bg-white px-4 py-2.5 text-sm font-semibold text-[#052440]/70 shadow-sm transition-colors hover:border-[#080357]/20 hover:text-[#080357]"
-                                  >
-                                    {item}
-                                  </span>
-                                ))}
+                          {/* RIGHT COLUMN: Problems & Includes */}
+                          <div className="lg:col-span-7">
+                            <div className="grid gap-10 sm:grid-cols-2 rounded-3xl bg-[#f7f9fc]/80 p-8 border border-[#050849]/5 shadow-inner">
+                              
+                              {/* Problems List */}
+                              <div>
+                                <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-[#050849]/40 mb-6">
+                                  Problems We Solve
+                                </h4>
+                                <ul className="space-y-4">
+                                  {solution.problems.map((prob, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                      <CheckCircle2
+                                        size={18}
+                                        strokeWidth={2}
+                                        className="mt-0.5 shrink-0 text-[#98c93c]"
+                                      />
+                                      <span className="text-sm leading-relaxed text-[#4c658a]">
+                                        {prob}
+                                      </span>
+                                    </li>
+                                  ))}
+                                </ul>
                               </div>
+
+                              {/* Capabilities */}
+                              <div>
+                                <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-[#050849]/40 mb-6">
+                                  Capabilities Included
+                                </h4>
+                                <div className="flex flex-wrap gap-2">
+                                  {solution.includes.map((item, i) => (
+                                    <span
+                                      key={i}
+                                      className="inline-block rounded-full border border-[#050849]/10 bg-white px-4 py-2 text-xs font-medium text-[#4c658a] shadow-sm transition-colors hover:border-[#98c93c] hover:text-[#050849]"
+                                    >
+                                      {item}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+
                             </div>
                           </div>
+                          
                         </div>
-
                       </div>
                     </motion.div>
                   )}

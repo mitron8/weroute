@@ -41,16 +41,6 @@ export default function Hero() {
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#080357] to-[#FFFFFD]/10" />
 
-      {/* GRID */}
-      <div
-        className="
-          absolute inset-0
-          bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)]
-          bg-[size:90px_90px]
-          opacity-40
-        "
-      />
-
       {/* CONTENT */}
       <div
         className="
@@ -117,13 +107,13 @@ export default function Hero() {
           {/* HEADING */}
           <h1
             className="
-              text-[52px]
-              font-light
-              leading-[0.92]
-              tracking-[-0.07em]
+              text-[36px]
+              font-normal
+              leading-[1.1]
+              tracking-[-0.02em]
               text-white
-              sm:text-[62px]
-              lg:text-[84px]
+              sm:text-[46px]
+              lg:text-[54px]
             "
           >
 

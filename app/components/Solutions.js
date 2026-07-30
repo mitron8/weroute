@@ -42,15 +42,6 @@ export default function ServicesSection() {
     <section className="relative bg-[#f7f9fc] py-28" style={{ overflow: "clip" }}>
       {/* background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* grid */}
-        <div
-          className="
-            absolute inset-0
-            bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)]
-            bg-[size:80px_80px]
-          "
-        />
-
         {/* glow */}
         <div
           className="
@@ -81,7 +72,7 @@ export default function ServicesSection() {
             Core Capabilities
           </span>
 
-          <h2 className="mt-8 text-4xl font-black leading-tight tracking-[-0.04em] text-[#080357] md:text-5xl lg:text-6xl">
+          <h2 className="mt-6 text-3xl font-normal leading-tight text-[#080357] md:text-4xl lg:text-[44px]">
             Enterprise <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] text-transparent bg-clip-text">Solutions</span>
             <br />
             Built for Scale

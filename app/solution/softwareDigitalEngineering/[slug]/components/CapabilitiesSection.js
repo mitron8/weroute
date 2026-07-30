@@ -21,24 +21,24 @@ export default function CapabilitiesSection({ data }) {
   if (!data) return null;
 
   return (
-    <section className="mt-24">
+    <section className="mt-16">
 
       <div className="text-center">
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#052440]/40">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#052440]/40">
           Core Capabilities
         </span>
 
-        <h2 className="mt-5 text-5xl font-black text-[#052440]">
+        <h2 className="mt-2 text-4xl font-black text-[#052440]">
           {data.title}
         </h2>
 
-        <p className="mx-auto mt-6 max-w-3xl text-lg text-[#052440]/65">
+        <p className="mx-auto mt-4 max-w-2xl text-base text-[#052440]/65">
           Purpose-built capabilities designed to improve visibility,
           performance, reliability, and operational efficiency.
         </p>
       </div>
 
-      <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
         {data.items.map((item, index) => {
           const Icon = icons[index % icons.length];
@@ -51,31 +51,31 @@ export default function CapabilitiesSection({ data }) {
               viewport={{ once: true }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.08,
+                delay: index * 0.05,
               }}
               whileHover={{
-                y: -8,
+                y: -4,
               }}
-              className="group relative overflow-hidden rounded-[32px] border border-[#052440]/10 bg-white p-8 shadow-[0_10px_30px_rgba(5,36,64,0.04)]"
+              className="group relative overflow-hidden rounded-2xl border border-[#052440]/10 bg-white p-6 shadow-sm"
             >
 
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#080357] to-[#A7BF73]" />
 
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#080357] text-white">
-                <Icon size={22} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#080357] text-white">
+                <Icon size={18} />
               </div>
 
-              <h3 className="mt-6 text-xl font-bold text-[#052440]">
+              <h3 className="mt-4 text-lg font-bold text-[#052440]">
                 {item.title}
               </h3>
 
-              <p className="mt-4 leading-8 text-[#052440]/65">
+              <p className="mt-2 text-sm leading-6 text-[#052440]/65">
                 {item.description}
               </p>
 
-              <div className="mt-8 flex items-center gap-2 text-[#080357] font-semibold opacity-0 transition group-hover:opacity-100">
+              <div className="mt-4 flex items-center gap-1 text-sm text-[#080357] font-semibold opacity-0 transition group-hover:opacity-100">
                 Learn More
-                <ArrowRight size={16} />
+                <ArrowRight size={14} />
               </div>
 
             </motion.div>

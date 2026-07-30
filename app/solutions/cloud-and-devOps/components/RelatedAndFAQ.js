@@ -56,29 +56,29 @@ export default function RelatedAndFAQ() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] py-32">
+    <section className="relative bg-[#f7f9fc] py-32">
       {/* 80px Architectural Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(#4c658a0A_1px,transparent_1px),linear-gradient(90deg,#4c658a0A_1px,transparent_1px)] bg-[size:80px_80px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header Section */}
         <div className="mb-20 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-4xl">
-            <span className="inline-flex rounded-full border border-[#052440]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440]">
+            <span className="clay-badge-light inline-flex rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#050849]">
               Cloud &amp; DevOps FAQ
             </span>
 
-            <h2 className="mt-8 text-4xl font-black leading-[0.95] tracking-[-0.05em] text-[#080357] md:text-6xl lg:text-7xl">
+            <h2 className="mt-8 text-4xl font-black leading-[0.95] tracking-[-0.05em] text-[#050849] md:text-6xl lg:text-7xl">
               Frequently <br />
               Asked
-              <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+              <span className="text-[#98c93c]">
                 {" "}
                 Questions
               </span>
             </h2>
           </div>
 
-          <p className="max-w-xl text-lg leading-9 text-[#052440]/60">
+          <p className="max-w-xl text-lg leading-9 text-[#4c658a]">
             Everything you need to know about our coordinated approach to cloud architecture, platform engineering, infrastructure automation, and observability.
           </p>
         </div>
@@ -90,33 +90,33 @@ export default function RelatedAndFAQ() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
             className="lg:col-span-5 lg:sticky lg:top-32"
           >
-            <div className="overflow-hidden rounded-[36px] bg-[#080357] p-8 text-white shadow-[0_15px_50px_rgba(5,36,64,0.1)] sm:p-10">
-              <span className="inline-flex rounded-full border border-white/15 bg-white/[0.05] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#B7F36B]">
+            <div className="clay-light rounded-[36px] p-8 sm:p-10">
+              <span className="clay-badge-light inline-flex rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#050849]">
                 Explore More
               </span>
 
-              <h3 className="mt-6 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+              <h3 className="mt-6 text-2xl font-bold tracking-tight text-[#050849] sm:text-3xl">
                 Related Cloud &amp; <br />
-                <span className="text-[#B7F36B]">DevOps Solutions</span>
+                <span className="text-[#98c93c]">DevOps Solutions</span>
               </h3>
 
-              <p className="mt-4 text-sm leading-relaxed text-gray-300">
+              <p className="mt-4 text-sm leading-relaxed text-[#4c658a]">
                 WeRoute&apos;s cloud and DevOps work spans four connected disciplines, each building on the others to support a complete cloud strategy.
               </p>
 
-              <ul className="mt-8 space-y-3 border-t border-white/10 pt-8">
+              <ul className="mt-8 space-y-3 border-t border-[#4c658a]/20 pt-8">
                 {relatedSolutions.map((link, i) => (
                   <li key={i}>
                     <a
                       href="#"
-                      className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.03] p-4 text-sm font-medium text-gray-200 transition-all duration-300 hover:border-[#B7F36B]/40 hover:bg-white/[0.08] hover:text-[#B7F36B] hover:translate-x-1"
+                      className="group flex items-center justify-between rounded-2xl bg-white p-4 text-sm font-medium text-[#050849] shadow-sm transition-all duration-300 hover:text-[#98c93c] hover:translate-x-1"
                     >
                       <span>{link}</span>
-                      <ChevronRight size={18} className="text-white/40 transition-colors group-hover:text-[#B7F36B]" />
+                      <ChevronRight size={18} className="text-[#4c658a] transition-colors group-hover:text-[#98c93c]" />
                     </a>
                   </li>
                 ))}
@@ -128,7 +128,7 @@ export default function RelatedAndFAQ() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
             className="space-y-5 lg:col-span-7"
           >
@@ -139,17 +139,17 @@ export default function RelatedAndFAQ() {
                 <motion.div
                   key={faq.q}
                   variants={fadeInUp}
-                  className="overflow-hidden rounded-[36px] border border-[#052440]/10 bg-white shadow-[0_15px_50px_rgba(5,36,64,0.05)] transition-all duration-300 hover:border-[#052440]/20"
+                  className="clay-light overflow-hidden rounded-[36px] transition-all duration-300"
                 >
                   <button
                     onClick={() => setActive(open ? null : index)}
                     className="flex w-full items-center justify-between gap-6 p-8 text-left sm:p-10"
                   >
-                    <h3 className="text-xl font-bold leading-relaxed tracking-[-0.03em] text-[#052440]">
+                    <h3 className="text-xl font-bold leading-relaxed tracking-[-0.03em] text-[#050849]">
                       {faq.q}
                     </h3>
 
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#080357] text-white transition-transform duration-300">
+                    <div className="clay-badge-light flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-[#050849] transition-transform duration-300">
                       {open ? <Minus size={18} /> : <Plus size={18} />}
                     </div>
                   </button>
@@ -162,8 +162,8 @@ export default function RelatedAndFAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="border-t border-[#052440]/10 px-8 py-8 sm:px-10">
-                          <p className="max-w-3xl text-base leading-8 text-[#052440]/65">
+                        <div className="border-t border-[#4c658a]/10 px-8 py-8 sm:px-10">
+                          <p className="max-w-3xl text-base leading-8 text-[#4c658a]">
                             {faq.a}
                           </p>
                         </div>

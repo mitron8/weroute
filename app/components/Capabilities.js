@@ -18,15 +18,6 @@ export default function Capabilities() {
       {/* BACKGROUND */}
       <div className="absolute inset-0">
 
-        {/* GRID */}
-        <div
-          className="
-            absolute inset-0
-            bg-[linear-gradient(rgba(5,36,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,36,64,0.03)_1px,transparent_1px)]
-            bg-[size:80px_80px]
-          "
-        />
-
         {/* GLOW */}
         <div
           className="
@@ -98,14 +89,13 @@ export default function Capabilities() {
             {/* TITLE */}
             <h2
               className="
-                mt-8
-                text-4xl
-                font-black
-                leading-[1]
-                tracking-[-0.05em]
+                mt-6
+                text-3xl
+                font-normal
+                leading-tight
                 text-[#080357]
-                md:text-5xl
-                lg:text-7xl
+                md:text-4xl
+                lg:text-[46px]
               "
             >
               Engineering

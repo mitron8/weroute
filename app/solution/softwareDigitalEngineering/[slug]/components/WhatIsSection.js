@@ -28,17 +28,32 @@ export default function WhatIsSection({ data }) {
           </div>
 
           {/* CONTENT */}
-          <div className="p-10 lg:col-span-8 lg:p-14">
-            <div className="space-y-6">
-              {data.content.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="leading-8 text-[#052440]/70"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+          {/* Right Column: Scrolling Paragraphs */}
+          <div className="lg:col-span-7 space-y-8 p-10 lg:p-14">
+            {data.content.map((paragraph, index) => (
+              <motion.p
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+                className="text-lg md:text-xl text-gray-600 leading-relaxed font-light"
+              >
+                {paragraph}
+              </motion.p>
+            ))}
+
+            {/* DIAGRAM PLACEHOLDER */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              className="mt-12 w-full h-64 md:h-80 bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl flex flex-col items-center justify-center text-gray-400 gap-3"
+            >
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              <span className="font-medium">Diagram Placeholder</span>
+            </motion.div>
           </div>
 
         </div>

@@ -27,220 +27,59 @@ const challenges = [
 
 export default function BusinessChallenges() {
   return (
-    <section
-      className="
-        relative
-        overflow-x-clip
-        bg-[#080357]
-        py-32
-        text-white
-      "
-    >
-      {/* Grid Background */}
-      <div
-        className="
-          absolute inset-0
-          bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)]
-          bg-[size:90px_90px]
-        "
-      />
-
-      {/* Glow */}
-      <div
-        className="
-          absolute
-          left-[-10%]
-          top-[20%]
-          h-[450px]
-          w-[450px]
-          rounded-full
-          bg-[#B7F36B]/10
-          blur-3xl
-        "
-      />
+    <section className="relative overflow-x-clip bg-[#f7f9fc] py-32">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(5,8,73,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,8,73,0.03)_1px,transparent_1px)] bg-[size:90px_90px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        {/* 1. lg:items-start prevents columns from stretching to equal height
-        */}
-        <div
-          className="
-            grid
-            gap-20
-            lg:grid-cols-12
-            lg:items-start
-          "
-        >
-          {/* 2. lg:sticky and lg:top-32 lock the left column in place
-               self-start is added as a double-guarantee against stretching
-          */}
+        <div className="grid gap-20 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
-            <span
-              className="
-                inline-flex
-                rounded-full
-                border
-                border-white/10
-                bg-white/[0.03]
-                px-5
-                py-2
-                text-xs
-                font-semibold
-                uppercase
-                tracking-[0.22em]
-                text-white/70
-              "
-            >
+            <span className="clay-badge-light inline-flex rounded-full border border-[#050849]/5 bg-white px-5 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#050849]">
               Enterprise Challenges
             </span>
 
-            <h2
-              className="
-                mt-8
-                text-4xl
-                font-black
-                leading-[0.95]
-                tracking-[-0.05em]
-                text-white
-                md:text-6xl
-              "
-            >
+            <h2 className="mt-8 text-4xl font-black leading-[0.95] tracking-[-0.05em] text-[#050849] md:text-6xl">
               Business
               <br />
               Challenges
-              <span className="text-[#B7F36B]">
-                {" "}
-                We Solve
-              </span>
+              <span className="text-[#98c93c]"> We Solve</span>
             </h2>
 
-            <p
-              className="
-                mt-10
-                text-lg
-                leading-9
-                text-white/65
-              "
-            >
+            <p className="mt-10 text-lg font-medium leading-9 text-[#4c658a]">
               Network problems rarely show up as network
               problems. They show up as missed deadlines,
               frustrated users, and rising costs nobody
               can fully explain or track.
             </p>
 
-            <div
-              className="
-                mt-16
-                border-l
-                border-[#B7F36B]/30
-                pl-6
-              "
-            >
-              <p
-                className="
-                  text-2xl
-                  font-medium
-                  leading-relaxed
-                  tracking-[-0.03em]
-                  text-white
-                "
-              >
-                The network is rarely the thing people
-                complain about.
+            <div className="mt-16 border-l-2 border-[#98c93c] pl-6">
+              <p className="text-2xl font-bold leading-relaxed tracking-[-0.03em] text-[#050849]">
+                The network is rarely the thing people complain about.
               </p>
-
-              <p
-                className="
-                  mt-4
-                  text-white/55
-                  leading-8
-                "
-              >
-                It is the thing quietly creating every
-                complaint.
+              <p className="mt-4 text-[#4c658a] font-medium leading-8">
+                It is the thing quietly creating every complaint.
               </p>
             </div>
           </div>
 
-          {/* RIGHT: This column will scroll naturally past the pinned left column */}
-          <div
-            className="
-              lg:col-span-7
-              grid
-              gap-6
-            "
-          >
+          <div className="grid gap-6 lg:col-span-7">
             {challenges.map((item, index) => (
               <motion.div
                 key={item.title}
-                initial={{
-                  opacity: 0,
-                  x: 40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.08,
-                }}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[32px]
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  p-8
-                  backdrop-blur-xl
-                  transition-all
-                  duration-500
-                  hover:bg-white/[0.06]
-                "
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-white p-8 transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Number */}
-                <span
-                  className="
-                    absolute
-                    right-8
-                    top-8
-                    text-[60px]
-                    font-black
-                    leading-none
-                    text-white/[0.05]
-                  "
-                >
+                <span className="absolute right-8 top-8 text-[60px] font-black leading-none text-[#050849]/[0.03]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <h3
-                  className="
-                    relative
-                    z-10
-                    text-2xl
-                    font-bold
-                    tracking-[-0.03em]
-                    text-white
-                  "
-                >
+                <h3 className="relative z-10 text-2xl font-bold tracking-[-0.03em] text-[#050849]">
                   {item.title}
                 </h3>
 
-                <p
-                  className="
-                    relative
-                    z-10
-                    mt-5
-                    max-w-xl
-                    text-base
-                    leading-8
-                    text-white/60
-                  "
-                >
+                <p className="relative z-10 mt-5 max-w-xl text-base font-medium leading-8 text-[#4c658a]">
                   {item.desc}
                 </p>
               </motion.div>

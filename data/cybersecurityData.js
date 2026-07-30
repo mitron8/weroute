@@ -2251,6 +2251,7 @@ export const cybersecurityData = {
       "Zero Trust Architecture is a security model built on a single principle: never trust, always verify. Every access request is authenticated and authorized based on identity, device posture, and context, regardless of whether it originates inside or outside the network.",
       "Continuous verification, least privilege, and segmentation work together to replace implicit trust with explicit, ongoing validation.",
     ],
+    lottieUrl: "https://lottie.host/e11c51a4-ce86-4c10-b6a8-b5f2dff92895/Ur3WnIvyyC.lottie"
   },
 
   capabilities: {
