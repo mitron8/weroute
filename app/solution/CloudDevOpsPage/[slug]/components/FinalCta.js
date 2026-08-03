@@ -7,15 +7,15 @@ export default function FinalCta({ data }) {
   if (!data) return null;
 
   return (
-    <section className="relative py-32 px-6 lg:px-8 bg-[#070B19] overflow-hidden flex items-center justify-center border-t border-gray-800">
+    <section className="relative py-20 px-6 lg:px-8 bg-[#070B19] overflow-hidden flex items-center justify-center border-t border-gray-800">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#1a2350] rounded-full blur-[100px] opacity-40 pointer-events-none"></div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-6xl mx-auto text-center relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-6 text-white"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold mb-6 text-white text-balance"
         >
           {data.heading}
         </motion.h2>

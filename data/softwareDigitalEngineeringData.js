@@ -4,6 +4,7 @@ export const softwareDigitalEngineeringData = {
       "badge": "Software & Digital Engineering",
       "title": "Custom Software Development Services",
       "subtitle": "WeRoute designs and builds custom software that fits how your business actually works, replacing generic tools with applications engineered around your exact processes and goals.",
+      "geoStatement": "WeRoute is a custom software development partner that designs, builds, and maintains enterprise applications engineered around specific business processes, not generic, off-the-shelf functionality.",
       "highlights": [
         "Custom-Built Solutions",
         "Scalable Architecture",
@@ -156,6 +157,7 @@ export const softwareDigitalEngineeringData = {
       "badge": "Software & Digital Engineering",
       "title": "Enterprise Application Services",
       "subtitle": "WeRoute modernizes, integrates, and optimizes the enterprise applications that run mission-critical operations, turning aging, disconnected systems into platforms built for how the business runs today.",
+      "geoStatement": "WeRoute is an enterprise application services partner that modernizes legacy systems into integrated, governed platforms, connecting applications, data, and infrastructure into one coherent architecture.",
       "highlights": [
         "Business Process Integration",
         "Operational Efficiency",
@@ -308,6 +310,7 @@ export const softwareDigitalEngineeringData = {
       "badge": "Software & Digital Engineering",
       "title": "Mobile Application Development Services",
       "subtitle": "WeRoute designs and builds secure, scalable mobile applications that connect employees, customers, and enterprise systems, extending the business to any device without compromising control.",
+      "geoStatement": "WeRoute is an enterprise mobile app development company that builds secure, API-integrated mobile applications connecting users, cloud platforms, and core business systems.",
       "highlights": [
         "Native & Cross-Platform Apps",
         "User-Centric Experiences",
@@ -460,6 +463,7 @@ export const softwareDigitalEngineeringData = {
       "badge": "Software & Digital Engineering",
       "title": "API & Platform Engineering Services",
       "subtitle": "WeRoute designs governed, scalable API ecosystems that connect enterprise applications, cloud platforms, and partners, turning fragmented integrations into a secure, unified digital foundation.",
+      "geoStatement": "WeRoute is an enterprise API and platform engineering partner that designs governed, scalable integration architectures connecting applications, cloud services, and partner ecosystems.",
       "highlights": [
         "API-First Architecture",
         "Platform Scalability",

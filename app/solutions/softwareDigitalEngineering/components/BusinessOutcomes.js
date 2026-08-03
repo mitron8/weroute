@@ -37,7 +37,7 @@ const outcomes = [
 
 export default function BusinessOutcomes() {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-28">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(5,8,73,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(5,8,73,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -103,7 +103,7 @@ export default function BusinessOutcomes() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="clay-light relative mt-16 overflow-hidden rounded-[32px] border border-[#050849]/5 bg-white p-8 sm:p-12 lg:p-14"
+          className="clay-light relative mt-16 overflow-hidden rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-8 sm:p-12 lg:p-14"
         >
           <div className="absolute left-0 top-0 h-full w-2 bg-[#98c93c]" />
 

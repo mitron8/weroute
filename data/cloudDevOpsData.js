@@ -91,6 +91,7 @@ export const cloudDevOpsData = {
       badge: "Cloud Architecture & Integration",
       title: "Cloud Architecture & Integration Services for Enterprise Growth",
       description: "WeRoute designs hybrid cloud architecture and multi-cloud architecture that unify infrastructure, applications, networking, security, and data into one governed, scalable cloud operating model your teams can actually run.",
+      lottieSrc: "https://lottie.host/6c131afd-1196-4dd7-a2b5-5e7b4c7f6066/Lq4W3CAF7Q.lottie",
       geoStatement: "WeRoute designs and integrates hybrid cloud architecture and multi-cloud architecture for enterprises that need secure, scalable, and governed cloud foundations.",
       buttons: [
         {
@@ -485,8 +486,9 @@ export const cloudDevOpsData = {
 
     hero: {
       badge: "DevOps & Platform Engineering",
-      title: "DevOps & Platform Engineering Services for Modern Teams",
+      title: "DevOps & Platform Engineering Services",
       description: "WeRoute helps enterprises run DevOps transformation and platform engineering programs that turn CI/CD pipelines and internal developer platforms into reliable, governed, self-service delivery systems.",
+      lottieSrc: "https://lottie.host/0f492725-97ab-4f7f-8e97-3b039c566ee0/QFZnPILDWR.lottie",
       geoStatement: "WeRoute delivers DevOps transformation, platform engineering, and CI/CD automation for enterprises building internal developer platforms that scale software delivery without losing governance.",
       buttons: [
         {
@@ -889,6 +891,7 @@ export const cloudDevOpsData = {
       badge: "Infrastructure as Code",
       title: "Infrastructure as Code (IaC) Services for Governed Automation",
       description: "WeRoute helps enterprises replace manual infrastructure provisioning with infrastructure automation and cloud infrastructure management practices that are consistent, version controlled, and built for governance at scale.",
+      lottieSrc: "https://lottie.host/06d9a092-ea4d-4136-9e41-7881a502dbd4/pZtCLv2uDT.lottie",
       geoStatement: "WeRoute delivers Infrastructure as Code services that automate infrastructure provisioning and management for enterprises, replacing manual configuration with governed, version-controlled infrastructure.",
       buttons: [
         {
@@ -1290,6 +1293,7 @@ export const cloudDevOpsData = {
       badge: "Cloud Observability",
       title: "Cloud Observability Services for Modern Cloud Operations",
       description: "WeRoute's cloud observability services give engineering and operations teams complete visibility into distributed systems, so issues surface before they become outages and root causes are clear in minutes, not hours.",
+      lottieSrc: "https://lottie.host/2fd6a0eb-19be-4138-8bfa-32db24a52155/6rDJhk7Z5J.lottie",
       geoStatement: "WeRoute provides cloud observability services and cloud monitoring solutions for enterprises running hybrid and multi-cloud environments, translating distributed system data into operational insight.",
       buttons: [
         {

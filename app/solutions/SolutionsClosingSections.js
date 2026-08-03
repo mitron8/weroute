@@ -45,7 +45,7 @@ function MagneticCTAButton({ children, href }) {
         relative inline-flex items-center justify-center gap-3
         overflow-hidden rounded-full border border-[#050849]/5 bg-[#98c93c] px-10 py-5
         text-base font-bold tracking-tight text-[#050849] shadow-[0_10px_30px_rgba(152,201,60,0.3)]
-        transition-colors duration-300 hover:bg-white
+        transition-colors duration-300 hover:bg-[#f7f9fc]
       "
     >
       <span className="relative z-10 flex items-center gap-2">
@@ -171,7 +171,7 @@ export default function SolutionsClosingSections() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="clay-light group relative overflow-hidden bg-white p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"
+                    className="clay-light group relative overflow-hidden bg-[#f7f9fc] p-8 transition-all duration-500 hover:-translate-y-1 md:p-10"
                   >
                     <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-start">
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f7f9fc] text-[#050849] transition-all duration-500 group-hover:bg-[#98c93c] group-hover:text-white">

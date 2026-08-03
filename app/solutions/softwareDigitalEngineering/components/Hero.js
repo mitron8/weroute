@@ -6,7 +6,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-32 pb-20">
+    <section className="relative overflow-hidden bg-[#f7f9fc] pt-32 pb-20">
       {/* Decorative Light Glow */}
       <div className="absolute left-[-10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#050849]/[0.02] blur-[120px] pointer-events-none" />
 
@@ -91,7 +91,7 @@ export default function Hero() {
           >
             <div className="w-full max-w-[440px] aspect-square flex items-center justify-center mix-blend-multiply">
               <DotLottieReact
-                src="https://lottie.host/aed4ccb6-93bd-4545-b44c-9d75dfa39f5e/YGY9QXUG02.lottie"
+                src="https://lottie.host/0670f577-3a15-4b9f-9d5e-25e69dbb63e8/ACd1wdIKx6.lottie"
                 loop
                 autoplay
                 className="w-full h-full object-contain"

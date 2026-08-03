@@ -39,7 +39,7 @@ export default function NetworkFAQ() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-white py-32">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-32">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(5,8,73,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,8,73,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -132,7 +132,7 @@ export default function NetworkFAQ() {
               );
             })}
 
-            <div className="clay-light mt-10 rounded-[32px] border border-[#050849]/5 bg-white p-10">
+            <div className="clay-light mt-10 rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-10">
               <p className="text-xl font-bold leading-relaxed text-[#050849]">
                 Every enterprise environment is different.
                 If your software engineering requirements are unique,

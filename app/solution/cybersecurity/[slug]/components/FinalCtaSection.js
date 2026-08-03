@@ -6,17 +6,17 @@ export default function FinalCtaSection({ data }) {
   if (!data) return null;
 
   return (
-    <section className="relative w-full bg-[#080357] py-24 md:py-32 overflow-hidden text-center flex flex-col items-center justify-center">
+    <section className="relative w-full bg-[#080357] py-16 md:py-20 overflow-hidden text-center flex flex-col items-center justify-center">
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#B7F36B] opacity-[0.03] blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10 max-w-4xl">
+      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold text-white mb-6 tracking-tight leading-tight text-balance"
         >
           {data.heading}
         </motion.h2>

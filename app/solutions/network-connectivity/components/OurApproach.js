@@ -31,7 +31,7 @@ const pillars = [
 
 export default function OurApproach() {
   return (
-    <section className="relative overflow-hidden bg-white py-32">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-32">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(5,8,73,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(5,8,73,0.035)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">

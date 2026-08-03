@@ -70,7 +70,7 @@ export default function BusinessOutcomes() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="clay-light group relative flex flex-col justify-between overflow-hidden rounded-[24px] border border-[#050849]/5 bg-white p-8 transition-all duration-300 hover:-translate-y-1"
+              className="clay-light group relative flex flex-col justify-between overflow-hidden rounded-[24px] border border-[#050849]/5 bg-[#f7f9fc] p-8 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-[#98c93c] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -101,7 +101,7 @@ export default function BusinessOutcomes() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="clay-light relative mt-16 overflow-hidden rounded-[32px] border border-[#050849]/5 bg-white p-8 sm:p-12 lg:p-14"
+          className="clay-light relative mt-16 overflow-hidden rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-8 sm:p-12 lg:p-14"
         >
           <div className="absolute left-0 top-0 h-full w-2 bg-[#98c93c]" />
 

@@ -52,7 +52,7 @@ const cardVariants = {
 
 export default function WhyNetworkTransformation() {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-28">
       {/* Background Elements */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(5,8,73,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,8,73,0.03)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />

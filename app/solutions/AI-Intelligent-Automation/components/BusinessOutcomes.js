@@ -70,7 +70,7 @@ export default function BusinessOutcomes() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-white p-8"
+              className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-8"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-[#98c93c] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <div className="clay-badge-light flex h-12 w-12 items-center justify-center rounded-xl bg-[#f7f9fc] transition-colors duration-300 group-hover:bg-[#98c93c]/20">

@@ -180,7 +180,7 @@ export default function SolutionsListSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="clay-light group relative overflow-hidden mb-4 bg-white transition-all duration-500 hover:-translate-y-1 cursor-pointer"
+                className="clay-light group relative overflow-hidden mb-4 bg-[#f7f9fc] transition-all duration-500 hover:-translate-y-1 cursor-pointer"
                 onClick={() => toggleExpand(solution.id)}
               >
                 {/* ALWAYS VISIBLE HEADER ROW */}

@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const pillars = [
@@ -32,7 +32,7 @@ const pillars = [
 
 export default function OurApproach() {
   return (
-    <section className="relative overflow-hidden bg-white py-32">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-32">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(5,8,73,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(5,8,73,0.035)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -110,28 +110,22 @@ export default function OurApproach() {
           ))}
         </div>
 
-        {/* Diagram Placeholder */}
+        {/* Diagram */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-16 w-full h-[400px] rounded-[32px] border-2 border-dashed border-[#050849]/20 bg-[#f7f9fc] flex flex-col items-center justify-center p-8 text-center"
+          className="mt-16 w-full max-w-4xl mx-auto h-auto rounded-[32px] overflow-hidden shadow-lg border border-[#050849]/5 relative"
         >
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm mb-4">
-            <svg
-              className="w-8 h-8 text-[#050849]/40"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-bold text-[#050849] mb-2">Diagram Placeholder</h3>
-          <p className="text-[#4c658a] font-medium max-w-lg">
-            WeRoute's layered engineering approach, connecting applications, APIs, cloud, and AI, with security built into every layer.
-          </p>
+            <Image 
+              src="/images/software_engineering_diagram.jpg" 
+              alt="Software Engineering Layered Architecture Diagram" 
+              width={1280} 
+              height={720}
+              className="w-full h-auto object-cover"
+              priority
+            />
         </motion.div>
 
         <motion.div

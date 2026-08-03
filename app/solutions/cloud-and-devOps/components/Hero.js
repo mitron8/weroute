@@ -6,7 +6,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-32 pb-20">
+    <section className="relative overflow-hidden bg-[#f7f9fc] pt-32 pb-20">
       {/* Decorative Blob */}
       <div className="absolute left-[-10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#050849]/[0.02] blur-[120px] pointer-events-none" />
 
@@ -88,7 +88,7 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="lg:col-span-5 flex items-center justify-center w-full lg:-mt-20"
           >
-            <div className="w-full max-w-[440px] aspect-square flex items-center justify-center mix-blend-multiply">
+            <div className="w-full max-w-[600px] xl:max-w-[650px] lg:scale-110 aspect-square flex items-center justify-center mix-blend-multiply">
               <DotLottieReact
                 src="https://lottie.host/fa8a0c8f-90f0-4ea1-b5a3-eab06b53a3bc/PjlJ6bHKNK.lottie"
                 loop

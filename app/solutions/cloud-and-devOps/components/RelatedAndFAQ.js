@@ -49,10 +49,10 @@ export default function RelatedAndFAQ() {
   ];
 
   const relatedSolutions = [
-    "Cloud Architecture & Integration",
-    "DevOps & Platform Engineering",
-    "Infrastructure as Code",
-    "Cloud Observability",
+    { label: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
+    { label: "DevOps & Platform Engineering", href: "/solution/CloudDevOpsPage/devops-platform-engineering" },
+    { label: "Infrastructure as Code", href: "/solution/CloudDevOpsPage/infrastructure-as-code" },
+    { label: "Cloud Observability", href: "/solution/CloudDevOpsPage/cloud-observability" },
   ];
 
   return (
@@ -112,10 +112,10 @@ export default function RelatedAndFAQ() {
                 {relatedSolutions.map((link, i) => (
                   <li key={i}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="group flex items-center justify-between rounded-2xl bg-white p-4 text-sm font-medium text-[#050849] shadow-sm transition-all duration-300 hover:text-[#98c93c] hover:translate-x-1"
                     >
-                      <span>{link}</span>
+                      <span>{link.label}</span>
                       <ChevronRight size={18} className="text-[#4c658a] transition-colors group-hover:text-[#98c93c]" />
                     </a>
                   </li>

@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import {
   Shield,
   Key,
@@ -101,9 +101,15 @@ export default function NetworkCapabilities() {
         </div>
 
         {/* DIAGRAM PLACEHOLDER */}
-        <div className="mt-12 w-full h-64 md:h-80 bg-white/50 border-2 border-dashed border-[#050849]/10 rounded-2xl flex flex-col items-center justify-center text-[#4c658a] gap-3">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            <span className="font-medium">Diagram Placeholder</span>
+        <div className="mt-12 w-full h-auto md:h-auto rounded-2xl flex flex-col items-center justify-center overflow-hidden shadow-lg border border-[#050849]/5 relative">
+            <Image 
+              src="/images/cybersecurity_diagram.jpg" 
+              alt="Cybersecurity Ecosystem Diagram" 
+              width={1280} 
+              height={720}
+              className="w-full h-auto object-cover"
+              priority
+            />
         </div>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-12">

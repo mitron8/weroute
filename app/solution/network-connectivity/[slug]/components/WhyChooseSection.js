@@ -11,8 +11,21 @@ export default function WhyChooseSection({ data }) {
     return <IconComponent className="w-8 h-8 text-[#B7F36B]" />;
   };
 
+  const getGridSpan = (total, index) => {
+    if (total === 1) return "md:col-span-12 lg:col-span-12";
+    if (total === 2) return "md:col-span-6 lg:col-span-6";
+    if (total === 3) return "md:col-span-12 lg:col-span-4";
+    if (total === 4) return "md:col-span-6 lg:col-span-6";
+    if (total === 5) {
+      if (index < 3) return "md:col-span-12 lg:col-span-4";
+      return "md:col-span-6 lg:col-span-6";
+    }
+    if (total === 6) return "md:col-span-6 lg:col-span-4";
+    return "md:col-span-12 lg:col-span-4";
+  };
+
   return (
-    <section className="w-full bg-white py-24 md:py-32 border-t border-gray-100">
+    <section className="w-full bg-[#f7f9fc] py-24 md:py-32 border-t border-gray-100">
       <div className="container mx-auto px-6 max-w-7xl">
         
         <div className="mb-16 md:mb-24 text-center max-w-3xl mx-auto">
@@ -27,7 +40,7 @@ export default function WhyChooseSection({ data }) {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {data.cards.map((card, index) => (
             <motion.div
               key={index}
@@ -35,7 +48,7 @@ export default function WhyChooseSection({ data }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className={`group relative bg-white p-8 clay-light border border-[#050849]/5 hover:border-[#B7F36B]/50 hover:-translate-y-1 transition-all duration-300 overflow-hidden ${getGridSpan(data.cards.length, index)}`}
             >
               {/* Top Border Highlight on Hover */}
               <div className="absolute top-0 left-0 w-full h-1 bg-[#B7F36B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />

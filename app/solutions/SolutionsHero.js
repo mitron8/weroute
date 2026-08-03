@@ -96,7 +96,7 @@ export default function SolutionsHero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center bg-white overflow-hidden">
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center bg-[#f7f9fc] overflow-hidden">
       
       {/* Subtle Background Typography */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">

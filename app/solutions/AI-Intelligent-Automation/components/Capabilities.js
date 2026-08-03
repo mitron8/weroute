@@ -50,7 +50,7 @@ export default function Capabilities() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-28 text-[#050849]">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-28 text-[#050849]">
       {/* Ambient Glow */}
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 h-[400px] w-[800px] rounded-full bg-gradient-to-b from-[#98c93c]/10 to-transparent blur-3xl" />
 
@@ -159,7 +159,7 @@ export default function Capabilities() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-white p-8 lg:p-10 lg:col-span-12"
+            className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-8 lg:p-10 lg:col-span-12"
           >
             <div className="absolute inset-x-0 top-0 h-1 bg-[#98c93c] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             

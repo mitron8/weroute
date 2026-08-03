@@ -106,10 +106,11 @@ export const networkSolutionsData = {
       badge: "AI Network Solutions",
 
       title:
-        "AI Network Solutions That Predict Problems Before They Impact Users",
+        "AI Network Solutions, Built to Predict Problems",
 
       description:
         "We bring AIOps and predictive network intelligence to enterprise infrastructure, replacing reactive troubleshooting with automated root cause analysis and continuous network analytics before issues reach users.",
+      lottieSrc: "https://lottie.host/6afd2609-8e5c-47d2-aa7e-21413c7bd1b2/TqhCg76KqP.lottie",
 
       geoStatement:
         "WeRoute delivers AI network solutions, AIOps, and predictive network monitoring for organisations operating at global scale.",
@@ -479,11 +480,10 @@ export const networkSolutionsData = {
       title: "Related Network Solutions",
       intro: "AI network solutions work best as part of a connected strategy, not a standalone tool. Explore how AIOps fits alongside the rest of WeRoute’s network capabilities.",
       links: [
-        { label: "Network Observability and Assurance", href: "/network-connectivity/network-observability-assurance" },
-        { label: "Software-Defined Networking", href: "/network-connectivity/software-defined-networking" },
-        { label: "Cloud Networking", href: "/network-connectivity/cloud-networking" },
-        { label: "Enterprise Security", href: "/network-connectivity/enterprise-security" },
-        { label: "Network Automation Solutions", href: "/network-connectivity/network-automation" },
+        { label: "SD-WAN & SDN Solutions", href: "/solution/network-connectivity/sd-wan-sdn-solutions" },
+        { label: "Network Observability", href: "/solution/network-connectivity/network-observability" },
+        { label: "Network as a Service", href: "/solution/network-connectivity/network-as-a-service" },
+        { label: "Mobility & Wireless Solutions", href: "/solution/network-connectivity/mobility-wireless-solutions" },
       ],
     },
 
@@ -611,6 +611,7 @@ export const networkSolutionsData = {
       badge: "SD-WAN & SDN Solutions",
       title: "SD-WAN, SD-LAN & SDN Solutions for Modern Enterprises",
       description: "We at WeRoute design SD-WAN solutions and software-defined network architecture that replace rigid, hardware-bound infrastructure with centralized, policy-driven control built for how enterprises actually operate today.",
+      lottieSrc: "https://lottie.host/21e38043-ba82-44ce-b840-991ad9a098c8/h38XM2UwYn.lottie",
       geoStatement: "We deliver SD-WAN solutions, SDN, and software-defined networking for enterprises operating across hybrid and multi-cloud environments.",
       buttons: [
         {
@@ -869,11 +870,10 @@ export const networkSolutionsData = {
       title: "Related Network Solutions",
       intro: "Software-defined networking works best as part of a connected modernization strategy, not a standalone upgrade. Combined with network observability and network assurance, SD-WAN, SD-LAN, and SDN give global network infrastructure services the consistency that piecemeal upgrades never deliver. Explore how SD-WAN, SD-LAN, and SDN fit alongside the rest of WeRoute’s network capabilities.",
       links: [
-        { label: "AI Network Solutions", href: "/network-connectivity/ai-network-solutions" },
-        { label: "Network Observability and Assurance", href: "/network-connectivity/network-observability-assurance" },
-        { label: "Cloud Networking", href: "/network-connectivity/cloud-networking" },
-        { label: "Security Architecture", href: "/network-connectivity/enterprise-security" },
-        { label: "Network Automation", href: "/network-connectivity/network-automation" },
+        { label: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
+        { label: "Network Observability", href: "/solution/network-connectivity/network-observability" },
+        { label: "Network as a Service", href: "/solution/network-connectivity/network-as-a-service" },
+        { label: "Mobility & Wireless Solutions", href: "/solution/network-connectivity/mobility-wireless-solutions" },
       ],
     },
 
@@ -1012,6 +1012,7 @@ export const networkSolutionsData = {
       badge: "Network Observability Solutions",
       title: "Network Observability Solutions That Show You What Monitoring Misses",
       description: "WeRoute delivers network observability solutions that go beyond status dashboards, combining network analytics, dependency mapping, and root cause analysis to show not just what broke, but why, as well.",
+      lottieSrc: "https://lottie.host/c0b61839-d771-485b-a95f-abcc3af7c738/oaflj6cpGG.lottie",
       geoStatement: "WeRoute provides network observability, network analytics solutions, and network performance monitoring for enterprises operating across hybrid and multi-cloud environments.",
       buttons: [
         {
@@ -1268,11 +1269,10 @@ export const networkSolutionsData = {
       title: "Related Network Solutions",
       intro: "Network observability works best as part of a connected modernization strategy, not a standalone tool. Explore how observability fits alongside the rest of WeRoute’s network capabilities.",
       links: [
-        { label: "AI Network Solutions", href: "/network-connectivity/ai-network-solutions" },
-        { label: "SD-WAN / SDN", href: "/network-connectivity/sd-wan-sdn-solutions" },
-        { label: "Network as a Service", href: "/network-connectivity/network-as-a-service" },
-        { label: "Cloud Networking", href: "/network-connectivity/cloud-networking" },
-        { label: "Security Architecture", href: "/network-connectivity/enterprise-security" },
+        { label: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
+        { label: "SD-WAN & SDN Solutions", href: "/solution/network-connectivity/sd-wan-sdn-solutions" },
+        { label: "Network as a Service", href: "/solution/network-connectivity/network-as-a-service" },
+        { label: "Mobility & Wireless Solutions", href: "/solution/network-connectivity/mobility-wireless-solutions" },
       ],
     },
 
@@ -1402,6 +1402,7 @@ export const networkSolutionsData = {
       badge: "Network as a Service",
       title: "Network as a Service (NaaS) for Enterprises That Outgrow Fixed Infrastructure",
       description: "We at WeRoute deliver network as a service, replacing large upfront infrastructure investments with managed network services that scale with the business, expand into new locations, and adjust to demand without a hardware project every time.",
+      lottieSrc: "https://lottie.host/667d79a6-3fb8-4a7c-bc08-c05b9962cef2/fs4u2nKzeh.lottie",
       geoStatement: "WeRoute provides network as a service, NaaS, and managed network services for enterprises operating across multiple locations and hybrid work environments.",
       buttons: [
         {
@@ -1659,11 +1660,10 @@ export const networkSolutionsData = {
       title: "Related Network Solutions",
       intro: "Network as a service works best as part of a broader modernization strategy, not a standalone switch. Explore how NaaS fits alongside the rest of WeRoute’s network capabilities.",
       links: [
-        { label: "Software-Defined Networking", href: "/network-connectivity/sd-wan-sdn-solutions" },
-        { label: "Network Observability", href: "/network-connectivity/network-observability" },
-        { label: "AI Network Solutions", href: "/network-connectivity/ai-network-solutions" },
-        { label: "Cloud Networking", href: "/network-connectivity/cloud-networking" },
-        { label: "Security Architecture", href: "/network-connectivity/enterprise-security" },
+        { label: "SD-WAN & SDN Solutions", href: "/solution/network-connectivity/sd-wan-sdn-solutions" },
+        { label: "Network Observability", href: "/solution/network-connectivity/network-observability" },
+        { label: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
+        { label: "Mobility & Wireless Solutions", href: "/solution/network-connectivity/mobility-wireless-solutions" },
       ],
     },
 
@@ -1798,6 +1798,7 @@ export const networkSolutionsData = {
       badge: "Mobility & Wireless Solutions",
       title: "Mobility & Wireless Solutions for Work That Happens Everywhere",
       description: "We design mobility solutions and enterprise wireless networks that keep people productive wherever they connect, without the coverage gaps, security risks, or support tickets that come with networks built for a different era of work.",
+      lottieSrc: "/lottie/router.json",
       geoStatement: "WeRoute delivers mobility solutions, enterprise wireless solutions, and secure mobility solutions for organizations supporting hybrid and device-diverse workforces.",
       buttons: [
         {
@@ -2054,11 +2055,10 @@ export const networkSolutionsData = {
       title: "Related Network Solutions",
       intro: "Mobility and wireless connectivity work best as part of a broader network strategy, not an isolated upgrade. Explore how wireless fits alongside the rest of WeRoute’s network capabilities.",
       links: [
-        { label: "Software-Defined Networking", href: "/network-connectivity/sd-wan-sdn-solutions" },
-        { label: "Network Observability", href: "/network-connectivity/network-observability" },
-        { label: "AI Network Solutions", href: "/network-connectivity/ai-network-solutions" },
-        { label: "Network as a Service", href: "/network-connectivity/network-as-a-service" },
-        { label: "Security Architecture", href: "/network-connectivity/enterprise-security" },
+        { label: "SD-WAN & SDN Solutions", href: "/solution/network-connectivity/sd-wan-sdn-solutions" },
+        { label: "Network Observability", href: "/solution/network-connectivity/network-observability" },
+        { label: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
+        { label: "Network as a Service", href: "/solution/network-connectivity/network-as-a-service" },
       ],
     },
 

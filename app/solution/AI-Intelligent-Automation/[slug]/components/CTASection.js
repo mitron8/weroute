@@ -7,30 +7,30 @@ export default function CTASection({ data }) {
   if (!data) return null;
 
   return (
-    <section className="relative overflow-hidden py-28 text-[#050849]">
+    <section className="relative overflow-hidden py-20 text-[#050849]">
       <div className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="clay-light relative overflow-hidden rounded-[32px] p-8 md:p-12 lg:p-16"
+          className="clay-light relative overflow-hidden rounded-[32px] p-6 md:p-10 lg:p-14"
         >
           <div className="absolute inset-x-0 top-0 h-1 bg-[#98c93c]" />
 
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:justify-between">
-            <div className="lg:col-span-7">
+          <div className="grid gap-12 xl:grid-cols-12 xl:items-end xl:justify-between">
+            <div className="xl:col-span-8">
               <span className="clay-badge-light inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#050849] shadow-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#98c93c]" />
                 Next Steps
               </span>
 
-              <h2 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl text-[#050849]">
+              <h2 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-[54px] text-[#050849]">
                 {data.title}
               </h2>
             </div>
 
-            <div className="flex flex-col justify-end lg:col-span-5 lg:pl-6">
+            <div className="flex flex-col justify-end xl:col-span-4 xl:pl-6">
               <p className="text-base leading-relaxed text-[#4c658a] sm:text-lg">
                 {data.description}
               </p>

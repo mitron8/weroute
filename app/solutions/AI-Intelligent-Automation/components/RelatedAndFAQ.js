@@ -49,11 +49,10 @@ export default function RelatedAndFAQ() {
   ];
 
   const relatedSolutions = [
-    { name: "Network & Connectivity Solutions", href: "/solutions/network-connectivity" },
-    { name: "Cloud & DevOps Solutions", href: "/solutions/cloud-and-devOps" },
-    { name: "Cybersecurity Solutions", href: "/solutions/cybersecurity" },
-    { name: "Managed Services", href: "/managed-services" },
-    { name: "Digital Engineering", href: "/digital-engineering" },
+    { label: "AI Network Intelligence", href: "/solution/AI-Intelligent-Automation/ai-network-intelligence" },
+    { label: "AI-Driven Observability", href: "/solution/AI-Intelligent-Automation/ai-driven-observability" },
+    { label: "AI Software Services", href: "/solution/AI-Intelligent-Automation/ai-software-services" },
+    { label: "AI Cybersecurity Solutions", href: "/solution/AI-Intelligent-Automation/ai-cybersecurity-solutions" },
   ];
 
   return (
@@ -98,7 +97,7 @@ export default function RelatedAndFAQ() {
               </span>
 
               <h3 className="mt-6 text-2xl font-bold tracking-tight text-[#050849] sm:text-3xl">
-                Related WeRoute <br />
+                Related AI Automation <br />
                 <span className="text-[#98c93c]">Solutions</span>
               </h3>
 
@@ -113,7 +112,7 @@ export default function RelatedAndFAQ() {
                       href={link.href}
                       className="group flex items-center justify-between rounded-2xl bg-white p-4 text-sm font-medium text-[#050849] shadow-sm transition-all duration-300 hover:text-[#98c93c] hover:translate-x-1"
                     >
-                      <span>{link.name}</span>
+                      <span>{link.label}</span>
                       <ChevronRight size={18} className="text-[#4c658a] transition-colors group-hover:text-[#98c93c]" />
                     </a>
                   </li>

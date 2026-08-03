@@ -28,7 +28,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-white py-28 text-[#050849]">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-28 text-[#050849]">
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="flex flex-col lg:flex-row gap-16 lg:items-start">
           <div className="lg:w-1/3 lg:sticky lg:top-32">

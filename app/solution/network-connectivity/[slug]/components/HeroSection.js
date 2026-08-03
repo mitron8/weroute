@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function HeroSection({ data }) {
   const { breadcrumb, hero } = data;
@@ -64,7 +65,7 @@ export default function HeroSection({ data }) {
 
             {/* Badge */}
             <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#B7F36B]/40 bg-[#B7F36B]/5 text-[#B7F36B] text-xs font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(183,243,107,0.1)] backdrop-blur-sm">
+              <span className="clay-badge inline-block px-4 py-1.5 border border-white/10 bg-white/5 text-[#B7F36B] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
                 {hero.badge}
               </span>
             </motion.div>
@@ -72,7 +73,7 @@ export default function HeroSection({ data }) {
             {/* Title */}
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-300"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-[48px] font-extrabold tracking-tight leading-[1.15] mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-300"
             >
               {hero.title}
             </motion.h1>
@@ -80,7 +81,7 @@ export default function HeroSection({ data }) {
             {/* Description */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-gray-300/90 max-w-3xl mb-8 leading-relaxed font-light"
+              className="text-base sm:text-lg text-gray-300/90 max-w-3xl mb-8 leading-relaxed font-light"
             >
               {hero.description}
             </motion.p>
@@ -104,10 +105,10 @@ export default function HeroSection({ data }) {
                   <Link 
                     key={index} 
                     href={button.href}
-                    className={`group relative inline-flex items-center justify-center px-8 py-4 font-bold rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
+                    className={`group relative inline-flex items-center justify-center px-8 py-4 font-bold overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
                       isPrimary 
-                        ? "text-[#080357] bg-[#B7F36B] shadow-[0_8px_20px_rgba(183,243,107,0.2)]" 
-                        : "text-white border-2 border-white/20 bg-white/5 backdrop-blur-sm hover:border-white/40"
+                        ? "clay-btn-accent text-[#080357] bg-[#B7F36B]" 
+                        : "clay-btn-accent text-white border-2 border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20"
                     }`}
                   >
                     <span className="relative z-10 transition-colors duration-300">
@@ -127,21 +128,32 @@ export default function HeroSection({ data }) {
 
           {/* Decorative Right Column to balance layout */}
           <motion.div 
-            className="hidden lg:flex lg:col-span-5 xl:col-span-4 justify-end items-center"
+            className="hidden lg:flex lg:col-span-5 xl:col-span-4 justify-center lg:pr-8 xl:pr-16 items-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-             <div className="relative w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] rounded-full border border-white/5 flex items-center justify-center shadow-[0_0_80px_rgba(183,243,107,0.02)]">
-                <div className="absolute w-3/4 h-3/4 rounded-full border border-white/10 flex items-center justify-center">
-                   <div className="w-1/2 h-1/2 rounded-full bg-[#B7F36B]/5 flex items-center justify-center backdrop-blur-3xl">
-                      <div className="w-1/3 h-1/3 rounded-full bg-[#B7F36B]/20 blur-sm" />
-                   </div>
-                </div>
-                {/* Orbital dots */}
-                <div className="absolute top-0 right-[15%] w-3 h-3 rounded-full bg-white/20 shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
-                <div className="absolute bottom-[10%] left-[10%] w-4 h-4 rounded-full bg-[#B7F36B]/60 shadow-[0_0_15px_rgba(183,243,107,0.5)]" />
-             </div>
+            {hero.lottieSrc ? (
+              <div className="w-full max-w-[450px] aspect-square flex items-center justify-center">
+                <DotLottieReact
+                  src={hero.lottieSrc}
+                  loop
+                  autoplay
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            ) : (
+               <div className="relative w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] rounded-full border border-white/5 flex items-center justify-center shadow-[0_0_80px_rgba(183,243,107,0.02)]">
+                  <div className="absolute w-3/4 h-3/4 rounded-full border border-white/10 flex items-center justify-center">
+                     <div className="w-1/2 h-1/2 rounded-full bg-[#B7F36B]/5 flex items-center justify-center backdrop-blur-3xl">
+                        <div className="w-1/3 h-1/3 rounded-full bg-[#B7F36B]/20 blur-sm" />
+                     </div>
+                  </div>
+                  {/* Orbital dots */}
+                  <div className="absolute top-0 right-[15%] w-3 h-3 rounded-full bg-white/20 shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+                  <div className="absolute bottom-[10%] left-[10%] w-4 h-4 rounded-full bg-[#B7F36B]/60 shadow-[0_0_15px_rgba(183,243,107,0.5)]" />
+               </div>
+            )}
           </motion.div>
 
         </div>

@@ -9,7 +9,7 @@ export default function FAQSection({ data }) {
   if (!data || !data.items) return null;
 
   return (
-    <section className="w-full bg-white py-24 md:py-32">
+    <section className="w-full bg-[#f7f9fc] py-24 md:py-32">
       <div className="container mx-auto px-6 max-w-3xl">
         
         <motion.h2 
@@ -32,7 +32,7 @@ export default function FAQSection({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="border border-gray-200 rounded-xl overflow-hidden bg-[#F8F9FA]"
+                className="clay-light border border-[#050849]/5 bg-[#f7f9fc] overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}

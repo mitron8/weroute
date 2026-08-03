@@ -38,7 +38,7 @@ export default function Capabilities() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-28 text-[#050849]">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-28 text-[#050849]">
       {/* Subtle Architectural Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#05084908_1px,transparent_1px),linear-gradient(to_bottom,#05084908_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
@@ -150,7 +150,7 @@ export default function Capabilities() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-white p-8 lg:p-10 lg:col-span-12"
+            className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-8 lg:p-10 lg:col-span-12"
           >
             <div className="absolute inset-x-0 top-0 h-1 bg-[#98c93c] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             

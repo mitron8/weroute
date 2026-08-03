@@ -12,8 +12,21 @@ export default function BusinessChallengesSection({ data }) {
     return <IconComponent className="w-8 h-8 text-[#052440]" />;
   };
 
+  const getGridSpan = (total, index) => {
+    if (total === 1) return "md:col-span-12 lg:col-span-12";
+    if (total === 2) return "md:col-span-6 lg:col-span-6";
+    if (total === 3) return "md:col-span-12 lg:col-span-4";
+    if (total === 4) return "md:col-span-6 lg:col-span-6";
+    if (total === 5) {
+      if (index < 3) return "md:col-span-12 lg:col-span-4";
+      return "md:col-span-6 lg:col-span-6";
+    }
+    if (total === 6) return "md:col-span-6 lg:col-span-4";
+    return "md:col-span-12 lg:col-span-4";
+  };
+
   return (
-    <section className="w-full bg-white py-24 md:py-32 overflow-hidden">
+    <section className="w-full bg-[#f7f9fc] py-24 md:py-32 overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         
         {/* Header Section */}
@@ -38,11 +51,10 @@ export default function BusinessChallengesSection({ data }) {
           </motion.p>
         </div>
 
-        {/* Staggered Grid Architecture */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 lg:pb-12">
+        {/* Dynamic 12-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
           {data.cards.map((card, index) => {
-            // Apply a downward shift to the middle column on desktop for a staggered look
-            const isMiddleColumn = index % 3 === 1;
+            const colSpanClass = getGridSpan(data.cards.length, index);
             
             return (
               <motion.div
@@ -51,9 +63,7 @@ export default function BusinessChallengesSection({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group
-                  ${isMiddleColumn ? 'lg:translate-y-12' : ''} 
-                `}
+                className={`relative p-8 clay-light bg-white border border-[#050849]/5 hover:border-[#B7F36B]/50 hover:-translate-y-1 transition-all duration-300 group ${colSpanClass}`}
               >
                 {/* Animated Left Border Highlight */}
                 <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#B7F36B] rounded-l-2xl scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />

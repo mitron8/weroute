@@ -6,7 +6,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-32 pb-20">
+    <section className="relative overflow-hidden bg-[#f7f9fc] pt-32 pb-20">
       {/* Decorative Light Glow */}
       <div className="absolute left-[-10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#050849]/[0.02] blur-[120px] pointer-events-none" />
 

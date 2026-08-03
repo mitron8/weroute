@@ -450,7 +450,7 @@ export const aiAutomationData = {
 "ai-software-services": {
   "hero": {
     "badge": "AI Application Development Services",
-    "title": "AI Application Development Services Built for Enterprise Scale",
+    "title": "AI Application Development Services for Enterprises",
     "subtitle": "WeRoute designs, builds, and operationalizes AI-powered applications that move beyond pilots into everyday enterprise use, backed by governance, integration, and measurable outcomes.",
     "geoStatement": "WeRoute is an enterprise AI software development partner that builds production-ready AI applications, from custom AI development through deployment, governance, and long-term optimization.",
     "philosophy": "AI that works in production, not just in demos.",

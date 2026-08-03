@@ -62,7 +62,7 @@ export default function BusinessChallenges() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-white p-8 transition-all duration-500 hover:-translate-y-1 hover:bg-white/90"
+                className="clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-8 transition-all duration-500 hover:-translate-y-1 hover:bg-white/90"
               >
                 {/* Background Number Watermark */}
                 <span className="pointer-events-none absolute right-8 top-8 font-mono text-[60px] font-black leading-none text-[#050849]/[0.03] transition-colors group-hover:text-[#050849]/[0.06]">

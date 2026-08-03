@@ -43,22 +43,22 @@ export default function RelatedAndFAQ() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(5,8,73,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(5,8,73,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="clay-light mb-24 rounded-3xl border border-[#050849]/5 bg-white p-8 sm:p-10">
-          <h3 className="text-xl font-bold tracking-tight text-[#050849] mb-6">Cybersecurity Within Your Technology Strategy</h3>
+        <div className="clay-light mb-24 rounded-3xl border border-[#050849]/5 bg-[#f7f9fc] p-8 sm:p-10">
+          <h3 className="text-xl font-bold tracking-tight text-[#050849] mb-6">Related Cybersecurity Solutions</h3>
           <p className="text-[#4c658a] font-medium mb-8 max-w-3xl">
             Cybersecurity connects directly to networking, cloud, automation, and managed services. A strong security architecture supports every stage of enterprise digital transformation.
           </p>
           <div className="flex flex-wrap gap-4">
             {[
-              "Network & Connectivity",
-              "Cloud & DevOps",
-              "AI & Intelligent Automation",
-              "Managed Services",
-              "Digital Engineering"
+              { label: "Endpoint & Cloud Security", href: "/solution/cybersecurity/endpoint-and-cloud-security-services" },
+              { label: "Identity & Access Management", href: "/solution/cybersecurity/identity-access-management" },
+              { label: "SOC, SIEM & SOAR", href: "/solution/cybersecurity/soc-siem-soar" },
+              { label: "GRC & Vendor Risk", href: "/solution/cybersecurity/grc-vendor-risk-management" },
+              { label: "Zero Trust Architecture", href: "/solution/cybersecurity/zero-trust-architecture" }
             ].map(link => (
-              <span key={link} className="inline-flex cursor-pointer items-center justify-center rounded-full bg-[#f7f9fc] px-5 py-2.5 text-sm font-bold text-[#050849] transition-colors hover:bg-[#98c93c]">
-                {link}
-              </span>
+              <a href={link.href} key={link.label} className="inline-flex cursor-pointer items-center justify-center rounded-full bg-[#f7f9fc] px-5 py-2.5 text-sm font-bold text-[#050849] transition-colors hover:bg-[#98c93c]">
+                {link.label}
+              </a>
             ))}
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function RelatedAndFAQ() {
             const open = active === index;
 
             return (
-              <div key={faq.question} className="clay-light overflow-hidden rounded-[36px] border border-[#050849]/5 bg-white">
+              <div key={faq.question} className="clay-light overflow-hidden rounded-[36px] border border-[#050849]/5 bg-[#f7f9fc]">
                 <button
                   onClick={() => setActive(open ? null : index)}
                   className="flex w-full items-center justify-between gap-6 p-8 text-left"
@@ -121,7 +121,7 @@ export default function RelatedAndFAQ() {
           })}
         </div>
 
-        <div className="clay-light mt-20 rounded-[40px] border border-[#050849]/5 bg-white p-10">
+        <div className="clay-light mt-20 rounded-[40px] border border-[#050849]/5 bg-[#f7f9fc] p-10">
           <p className="max-w-4xl text-2xl font-bold leading-relaxed tracking-[-0.03em] text-[#050849]">
             Every enterprise environment is different. If your cybersecurity requirements are unique, our architects can help design a security strategy tailored to your operational goals.
           </p>

@@ -13,6 +13,19 @@ export default function WhyNetworkingSection({ data }) {
     return <IconComponent className="w-6 h-6 text-[#B7F36B]" />;
   };
 
+  const getGridSpan = (total, index) => {
+    if (total === 1) return "md:col-span-12 lg:col-span-12";
+    if (total === 2) return "md:col-span-6 lg:col-span-6";
+    if (total === 3) return "md:col-span-12 lg:col-span-4";
+    if (total === 4) return "md:col-span-6 lg:col-span-6";
+    if (total === 5) {
+      if (index < 3) return "md:col-span-12 lg:col-span-4";
+      return "md:col-span-6 lg:col-span-6";
+    }
+    if (total === 6) return "md:col-span-6 lg:col-span-4";
+    return "md:col-span-12 lg:col-span-4";
+  };
+
   return (
     <section className="w-full bg-[#F8F9FA] py-24 md:py-32">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -39,14 +52,10 @@ export default function WhyNetworkingSection({ data }) {
           </motion.p>
         </div>
 
-        {/* Bento Box Grid (6 Column Architecture) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+        {/* Dynamic 12-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {data.cards.map((card, index) => {
-            // Determine column span based on index for the 3-top, 2-bottom layout
-            const isTopRow = index < 3;
-            const colSpanClass = isTopRow 
-              ? "lg:col-span-2 md:col-span-1" // 3 across on desktop
-              : "lg:col-span-3 md:col-span-1"; // 2 across on desktop
+            const colSpanClass = getGridSpan(data.cards.length, index);
 
             return (
               <motion.div
@@ -55,7 +64,7 @@ export default function WhyNetworkingSection({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group flex flex-col bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#B7F36B]/50 transition-all duration-300 ${colSpanClass}`}
+                className={`group flex flex-col bg-white p-8 clay-light border border-[#050849]/5 hover:border-[#B7F36B]/50 hover:-translate-y-1 transition-all duration-300 ${colSpanClass}`}
               >
                 {/* Icon Wrapper */}
                 <div className="w-14 h-14 rounded-xl bg-[#052440] flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">

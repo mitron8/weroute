@@ -15,58 +15,72 @@ export default function UseCasesSection({ data }) {
   const total = data.cards.length;
 
   const getBentoLayout = (index, total) => {
-    const base = "flex flex-col p-8 md:p-10 rounded-[2rem] bg-white border border-gray-100 hover:border-[#B7F36B]/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden relative";
+    const base = "flex flex-col p-8 md:p-10 hover:border-[#B7F36B]/50 hover:-translate-y-1 transition-all duration-300 group overflow-hidden relative";
     
     if (total === 5) {
       const layouts = [
-        { span: "md:col-span-2 lg:col-span-2", bg: "bg-[#052440]", text: "text-white", desc: "text-gray-300", iconStyle: "bg-white/10 text-[#B7F36B]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "md:col-span-2 lg:col-span-1", bg: "bg-[#B7F36B]", text: "text-[#052440]", desc: "text-[#052440]/80", iconStyle: "bg-white/40 text-[#052440]" },
+        { span: "md:col-span-12 lg:col-span-8", bg: "clay-dark bg-[#052440] border border-transparent", text: "text-white", desc: "text-gray-300", iconStyle: "bg-white/10 text-[#B7F36B]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-[#B7F36B] border border-[#050849]/5", text: "text-[#052440]", desc: "text-[#052440]/80", iconStyle: "bg-white/40 text-[#052440]" },
       ];
+      // Note: for 5 cards, 8+4=12, 4+4+4=12. Total 24.
       return { className: `${base} ${layouts[index].span} ${layouts[index].bg}`, styles: layouts[index] };
     }
 
     if (total === 4) {
       const layouts = [
-        { span: "md:col-span-2 lg:col-span-2", bg: "bg-[#052440]", text: "text-white", desc: "text-gray-300", iconStyle: "bg-white/10 text-[#B7F36B]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "md:col-span-2 lg:col-span-2", bg: "bg-[#B7F36B]", text: "text-[#052440]", desc: "text-[#052440]/80", iconStyle: "bg-white/40 text-[#052440]" },
+        { span: "md:col-span-12 lg:col-span-8", bg: "clay-dark bg-[#052440] border border-transparent", text: "text-white", desc: "text-gray-300", iconStyle: "bg-white/10 text-[#B7F36B]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-12 lg:col-span-8", bg: "clay-light bg-[#B7F36B] border border-[#050849]/5", text: "text-[#052440]", desc: "text-[#052440]/80", iconStyle: "bg-white/40 text-[#052440]" },
       ];
+      // 8+4=12, 4+8=12. Total 24.
       return { className: `${base} ${layouts[index].span} ${layouts[index].bg}`, styles: layouts[index] };
     }
 
     if (total === 6) {
       const layouts = [
-        { span: "md:col-span-2 lg:col-span-2", bg: "bg-[#052440]", text: "text-white", desc: "text-gray-300", iconStyle: "bg-white/10 text-[#B7F36B]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "col-span-1", bg: "bg-white", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
-        { span: "md:col-span-2 lg:col-span-3", bg: "bg-[#B7F36B]", text: "text-[#052440]", desc: "text-[#052440]/80", iconStyle: "bg-white/40 text-[#052440]" },
+        { span: "md:col-span-12 lg:col-span-8", bg: "clay-dark bg-[#052440] border border-transparent", text: "text-white", desc: "text-gray-300", iconStyle: "bg-white/10 text-[#B7F36B]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-6 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-12 lg:col-span-4", bg: "clay-light bg-white border border-[#050849]/5", text: "text-[#052440]", desc: "text-gray-600", iconStyle: "bg-gray-50 text-[#052440]" },
+        { span: "md:col-span-12 lg:col-span-12", bg: "clay-light bg-[#B7F36B] border border-[#050849]/5", text: "text-[#052440]", desc: "text-[#052440]/80", iconStyle: "bg-white/40 text-[#052440]" },
       ];
+      // 8+4=12, 4+4+4=12, 12=12. Total 36.
       return { className: `${base} ${layouts[index].span} ${layouts[index].bg}`, styles: layouts[index] };
     }
 
-    // Default fallback layout for any other number
-    const isWide = index % 4 === 0 || index % 4 === 3;
+    // Default fallback layout for any other number (uses standard symmetrical filling)
+    const getGridSpan = (total, idx) => {
+      if (total === 1) return "md:col-span-12 lg:col-span-12";
+      if (total === 2) return "md:col-span-6 lg:col-span-6";
+      if (total === 3) return "md:col-span-12 lg:col-span-4";
+      if (total === 7) {
+        if (idx < 3) return "md:col-span-12 lg:col-span-4";
+        return "md:col-span-6 lg:col-span-3";
+      }
+      if (total === 8) return "md:col-span-6 lg:col-span-3";
+      return "md:col-span-12 lg:col-span-4";
+    };
+
     const isDark = index % 4 === 0;
     const isAccent = index % 4 === 3;
     
-    let bg = "bg-white";
+    let bg = "clay-light bg-white border border-[#050849]/5";
     let text = "text-[#052440]";
     let desc = "text-gray-600";
     let iconStyle = "bg-gray-50 text-[#052440]";
 
     if (isDark) {
-      bg = "bg-[#052440]"; text = "text-white"; desc = "text-gray-300"; iconStyle = "bg-white/10 text-[#B7F36B]";
+      bg = "clay-dark bg-[#052440] border border-transparent"; text = "text-white"; desc = "text-gray-300"; iconStyle = "bg-white/10 text-[#B7F36B]";
     } else if (isAccent) {
-      bg = "bg-[#B7F36B]"; text = "text-[#052440]"; desc = "text-[#052440]/80"; iconStyle = "bg-white/40 text-[#052440]";
+      bg = "clay-light bg-[#B7F36B] border border-[#050849]/5"; text = "text-[#052440]"; desc = "text-[#052440]/80"; iconStyle = "bg-white/40 text-[#052440]";
     }
 
-    const span = isWide ? 'md:col-span-2 lg:col-span-2' : 'col-span-1';
+    const span = getGridSpan(total, index);
     
     return { 
       className: `${base} ${span} ${bg}`, 
@@ -99,7 +113,7 @@ export default function UseCasesSection({ data }) {
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-fr">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 auto-rows-fr">
           {data.cards.map((card, index) => {
             const { className, styles } = getBentoLayout(index, total);
             

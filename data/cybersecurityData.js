@@ -105,7 +105,7 @@ export const cybersecurityData = {
   hero: {
     badge: "Endpoint & Cloud Security Services",
 
-    title: "Endpoint & Cloud Security Services for Modern Enterprises",
+    title: "Endpoint & Cloud Security Services",
 
     description:
       "We at WeRoute, help enterprises protect users, endpoints, and cloud workloads through a single, unified security architecture built for hybrid and multi-cloud environments.",

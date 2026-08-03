@@ -6,7 +6,7 @@ export default function WhatIsSection({ data }) {
   if (!data || !data.content) return null;
 
   return (
-    <section className="w-full bg-white py-24 md:py-32 border-t border-gray-100">
+    <section className="w-full bg-[#f7f9fc] py-24 md:py-32 border-t border-gray-100">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
@@ -48,7 +48,7 @@ export default function WhatIsSection({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="mt-12 w-full h-64 md:h-80 bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex items-center justify-center"
+                className="mt-12 w-full h-64 md:h-80 clay-light bg-[#f7f9fc] border border-[#050849]/5 flex items-center justify-center overflow-hidden"
               >
                 <DotLottieReact
                   src={data.lottieUrl}
@@ -63,7 +63,7 @@ export default function WhatIsSection({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="mt-12 w-full h-64 md:h-80 bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl flex flex-col items-center justify-center text-gray-400 gap-3"
+                className="mt-12 w-full h-64 md:h-80 clay-light bg-[#f7f9fc] border border-[#050849]/5 border-dashed flex flex-col items-center justify-center text-gray-400 gap-3"
               >
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                 <span className="font-medium">Diagram Placeholder</span>

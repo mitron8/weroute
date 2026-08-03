@@ -12,6 +12,19 @@ export default function OutcomesSection({ data }) {
     return <IconComponent className="w-8 h-8 text-[#B7F36B]" />;
   };
 
+  const getGridSpan = (total, index) => {
+    if (total === 1) return "md:col-span-12 lg:col-span-12";
+    if (total === 2) return "md:col-span-6 lg:col-span-6";
+    if (total === 3) return "md:col-span-12 lg:col-span-4";
+    if (total === 4) return "md:col-span-6 lg:col-span-6";
+    if (total === 5) {
+      if (index < 3) return "md:col-span-12 lg:col-span-4";
+      return "md:col-span-6 lg:col-span-6";
+    }
+    if (total === 6) return "md:col-span-6 lg:col-span-4";
+    return "md:col-span-12 lg:col-span-4";
+  };
+
   return (
     <section className="w-full bg-[#080357] relative overflow-hidden py-24 md:py-32">
       
@@ -44,8 +57,8 @@ export default function OutcomesSection({ data }) {
           </motion.p>
         </div>
 
-        {/* 3x2 Symmetrical Grid with Glassmorphism */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Dynamic 12-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {data.cards.map((card, index) => (
             <motion.div
               key={index}
@@ -53,7 +66,7 @@ export default function OutcomesSection({ data }) {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/30 transition-all duration-300 group shadow-2xl"
+              className={`flex flex-col p-8 clay-dark bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/30 hover:-translate-y-1 transition-all duration-300 group ${getGridSpan(data.cards.length, index)}`}
             >
               {/* Icon */}
               <div className="mb-6 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">

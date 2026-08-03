@@ -40,7 +40,7 @@ export default function RelatedSolutionsSection({ data }) {
             >
               <Link 
                 href={link.href}
-                className="group flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 rounded-full text-[#052440] font-medium hover:border-[#B7F36B] hover:shadow-md transition-all duration-300"
+                className="group flex items-center gap-2 px-6 py-3 clay-light bg-[#f7f9fc] border border-[#050849]/5 rounded-full text-[#052440] font-medium hover:border-[#B7F36B] hover:-translate-y-1 transition-all duration-300"
               >
                 {link.label}
                 <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#B7F36B] group-hover:translate-x-1 transition-all duration-300" />

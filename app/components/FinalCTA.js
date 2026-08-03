@@ -44,7 +44,7 @@ export default function FinalCTA({
   return (
     <section
       id="cta"
-      className="relative overflow-hidden bg-[#f7f9fc] py-32 text-[#080357]"
+      className="relative overflow-hidden bg-[#f7f9fc] py-20 md:py-24 text-[#080357]"
     >
       {/* BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none">
@@ -69,13 +69,12 @@ export default function FinalCTA({
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="relative overflow-hidden rounded-[40px] border border-[#052440]/10 bg-white/90 px-8 py-20 shadow-[0_20px_80px_rgba(5,36,64,0.06)] backdrop-blur-2xl md:px-16 lg:px-24"
+          className="relative overflow-hidden clay-light bg-[#f7f9fc] border border-[#050849]/5 px-5 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-24"
         >
           {/* TOP SECTION */}
-          <div className="flex flex-col gap-16 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-16 xl:flex-row xl:items-center xl:justify-between">
             {/* LEFT CONTENT */}
-            <div className="max-w-3xl">
+            <div className="max-w-5xl flex-1 xl:pr-8">
               {/* BADGE */}
               <motion.div variants={itemVariants}>
                 <div className="inline-flex items-center gap-3 rounded-full border border-[#052440]/10 bg-[#080357]/5 px-5 py-2.5">
@@ -90,15 +89,17 @@ export default function FinalCTA({
 
               {/* HEADING */}
               <motion.div variants={itemVariants}>
-                <h2 className="mt-5 text-3xl font-normal leading-tight md:text-4xl lg:text-5xl">
+                <h2 className="mt-5 text-[26px] font-normal leading-tight sm:text-3xl md:text-4xl lg:text-[46px] tracking-tight">
                   {titleLine1 && (
-                    <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+                    <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
                       {titleLine1}
                     </span>
                   )}
                   {titleLine1 && titleLine2 && <br />}
                   {titleLine2 && (
-                    <span className="text-[#080357]">{titleLine2}</span>
+                    <span className="inline-block whitespace-nowrap text-[#080357]">
+                      {titleLine2}
+                    </span>
                   )}
                 </h2>
               </motion.div>
@@ -114,7 +115,7 @@ export default function FinalCTA({
             {/* RIGHT CONTENT (BUTTONS) */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col gap-5 lg:min-w-[340px]"
+              className="flex flex-col gap-5 xl:min-w-[340px]"
             >
               {/* PRIMARY BUTTON */}
               {primaryButtonText && (
@@ -140,7 +141,7 @@ export default function FinalCTA({
               {secondaryButtonText && (
                 <a
                   href="#services"
-                  className="group flex items-center justify-between rounded-3xl border border-[#052440]/10 bg-white px-8 py-6 transition-all duration-300 hover:border-[#080357]/20 hover:bg-[#080357]/[0.02]"
+                  className="group flex items-center justify-between clay-light bg-[#f7f9fc] px-8 py-6 transition-all duration-300 hover:border-[#080357]/20 hover:bg-[#080357]/[0.02] hover:-translate-y-1"
                 >
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#080357]/50">

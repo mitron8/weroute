@@ -43,14 +43,6 @@ export default function CapabilitiesSection({ data }) {
   return (
     <section className="w-full bg-white relative overflow-hidden">
       
-      {/* Proof Line Banner (Navy) */}
-      <div className="w-full bg-[#052440] py-4 border-y border-[#B7F36B]/20">
-        <div className="container mx-auto px-6 max-w-7xl text-center">
-          <p className="text-[#B7F36B] font-medium text-sm md:text-base tracking-wide">
-            {data.proofLine}
-          </p>
-        </div>
-      </div>
 
       <div className="container mx-auto px-6 py-16 md:py-20 max-w-7xl">
         
