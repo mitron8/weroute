@@ -109,6 +109,7 @@ export const cybersecurityData = {
 
     description:
       "We at WeRoute, help enterprises protect users, endpoints, and cloud workloads through a single, unified security architecture built for hybrid and multi-cloud environments.",
+    lottieSrc: "https://lottie.host/b218ffd2-8a0b-4077-8bf3-d0a03b3d7abc/vtnV5jyeCB.lottie",
 
     geoStatement:
       "WeRoute delivers unified endpoint and cloud security for enterprises, combining endpoint protection, cloud workload security, and identity-aware controls into a single architecture across hybrid and multi-cloud environments.",
@@ -612,6 +613,7 @@ export const cybersecurityData = {
 
     description:
       "We at WeRoute help organizations secure users, identities, and access across hybrid and multi-cloud environments through governance-led IAM strategies built for enterprise scale.",
+    lottieSrc: "https://lottie.host/266d8741-1cc6-4659-b345-0da996f10d08/64kk1PMdZs.lottie",
 
     geoStatement:
       "WeRoute delivers governance-led Identity & Access Management services for enterprises, combining identity governance, least-privilege access, and lifecycle management into a single Zero Trust-aligned architecture.",
@@ -1118,6 +1120,7 @@ export const cybersecurityData = {
 
     description:
       "We at WeRoute help enterprises design scalable, intelligent security operations that unify detection, investigation, and response across hybrid and multi-cloud environments today.",
+    lottieSrc: "https://lottie.host/08c34f81-ca93-4707-8f96-3841c89aa5a9/Qqgs4LSsl0.lottie",
 
     geoStatement:
       "WeRoute designs Security Operations Architecture for enterprises, unifying SOC, SIEM, and SOAR capabilities into a single, governance-driven security operations practice across hybrid and multi-cloud environments.",
@@ -1630,6 +1633,7 @@ export const cybersecurityData = {
 
     description:
       "We at WeRoute, help organizations build governance-driven security and enterprise risk management programs that strengthen compliance, vendor oversight, and long-term business resilience.",
+    lottieSrc: "https://lottie.host/72f425e0-0709-4c94-921e-ffd28989ba4c/Phqond43L3.lottie",
 
     geoStatement:
       "WeRoute delivers GRC and Vendor Risk Management services for enterprises, combining governance, enterprise risk management, compliance, and third-party risk oversight into a single, measurable program.",
@@ -2136,6 +2140,7 @@ export const cybersecurityData = {
 
     description:
       "We at WeRoute help organizations build identity-driven, continuously verified security architectures that replace implicit trust with least-privilege access, across hybrid and multi-cloud environments.",
+    lottieSrc: "https://lottie.host/69e6b213-a4c3-4d57-a8e9-26fa4401b9be/l4bfOR5ypl.lottie",
 
     geoStatement:
       "WeRoute designs Zero Trust Architecture for enterprises, replacing implicit trust with continuous verification, least-privilege access, and identity-centric security across every user, device, and workload.",

@@ -13,7 +13,8 @@ export const aiAutomationData = {
     ],
     geoStatement: "WeRoute delivers AI for network operations, continuously analyzing network behavior, predicting issues, and recommending optimization before problems affect users or applications.",
     philosophy: "A network that only tells you what already broke isn’t intelligent. It’s just noisy.",
-    cta: "Talk to an AI Network Intelligence Expert"
+    cta: "Talk to an AI Network Intelligence Expert",
+    lottieSrc: "https://lottie.host/cd50f572-ecbc-45d8-8a17-8e32e77047ea/Omz7hShQhv.lottie"
   },
 
   overview: {
@@ -145,7 +146,8 @@ export const aiAutomationData = {
     ],
     "geoStatement": "WeRoute delivers AI-driven observability that continuously analyzes telemetry, dependencies, and behavioral patterns to predict issues, prioritize alerts, and improve operational decision-making across the enterprise.",
     "philosophy": "More dashboards don’t mean more clarity. Predicting the problem does.",
-    "cta": "Talk to an Observability Expert"
+    "cta": "Talk to an Observability Expert",
+    "lottieSrc": "https://lottie.host/c9bc1ff6-1a70-4c44-aad8-b03be130ea50/yXhEJCpeR0.lottie"
   },
   "overview": {
     "title": "Why AI-Driven Observability Matters",

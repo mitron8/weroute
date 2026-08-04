@@ -96,6 +96,7 @@ export default async function Page({ params }) {
       title: rawSolution.hero?.title,
       description: rawSolution.hero?.subtitle,
       geoStatement: rawSolution.hero?.geoStatement,
+      lottieSrc: rawSolution.hero?.lottieSrc,
       buttons: [
         { label: rawSolution.hero?.cta || rawSolution.cta?.button || "Talk to an Expert", href: "/contact", variant: "primary" }
       ]
