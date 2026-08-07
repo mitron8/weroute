@@ -74,10 +74,7 @@ export default function CapabilitiesSection({ data }) {
                 {item.description}
               </p>
 
-              <div className="mt-6 flex items-center gap-2 text-sm text-[#080357] font-semibold opacity-0 transition group-hover:opacity-100">
-                Learn More
-                <ArrowRight size={14} />
-              </div>
+
 
             </motion.div>
           );

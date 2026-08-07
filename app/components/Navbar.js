@@ -105,11 +105,11 @@ const MENU = {
         href:"managed-services",
         desc: "Run, monitor, secure, and optimize critical IT environments.",
         features: [
-          { title: "Managed Data Center Services", href: "/services/managed-data-center" },
-          { title: "Managed Cloud and Hybrid Environments", href: "/services/managed-cloud-hybrid" },
-          { title: "Network and Infrastructure Observability", href: "/services/network-infrastructure-observability" },
-          { title: "Managed Cybersecurity", href: "/services/managed-cybersecurity" },
-          { title: "SOC Operations", href: "/services/soc-operations" },
+          { title: "Managed IT Services", href: "/services/managed-it-services" },
+          { title: "Managed Data Centre Services", href: "/services/managed-data-centre-services" },
+          { title: "Managed Network Services", href: "/services/managed-network-services" },
+          { title: "Managed Cloud & Hybrid Environments", href: "/services/managed-cloud-hybrid-environment-services" },
+          { title: "Managed Cybersecurity & SOC Services", href: "/services/managed-cybersecurity-soc-services" },
         ],
       },
       {
@@ -119,24 +119,24 @@ const MENU = {
         desc: "Strategic guidance for architecture and modernization.",
         features: [
           {
-            title: "Managed Data Center Services",
-            href: "/services/managed-data-center",
+            title: "Managed IT Services",
+            href: "/services/managed-it-services",
           },
           {
-            title: "Managed Cloud and Hybrid Environments",
-            href: "/services/managed-cloud-hybrid-environments",
+            title: "Managed Data Centre Services",
+            href: "/services/managed-data-centre-services",
           },
           {
-            title: "Network and Infrastructure Observability",
-            href: "/services/network-infrastructure-observability",
+            title: "Managed Network Services",
+            href: "/services/managed-network-services",
           },
           {
-            title: "Managed Cybersecurity",
-            href: "/services/managed-cybersecurity",
+            title: "Managed Cloud & Hybrid Environments",
+            href: "/services/managed-cloud-hybrid-environment-services",
           },
           {
-            title: "SOC Operations",
-            href: "/services/soc-operations",
+            title: "Managed Cybersecurity & SOC Services",
+            href: "/services/managed-cybersecurity-soc-services",
           },
         ],
       },

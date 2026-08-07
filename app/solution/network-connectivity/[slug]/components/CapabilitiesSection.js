@@ -122,15 +122,7 @@ export default function CapabilitiesSection({ data }) {
                       {card.description}
                     </p>
                     
-                    {card.button && (
-                      <Link 
-                        href={card.button.href}
-                        className="group flex items-center gap-2 text-[#052440] font-bold text-base hover:text-[#98c93c] transition-colors duration-300 mt-auto"
-                      >
-                        {card.button.label}
-                        <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
-                      </Link>
-                    )}
+
                   </div>
 
                   {/* Visual / Icon Block */}

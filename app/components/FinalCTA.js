@@ -39,7 +39,8 @@ export default function FinalCTA({
     ["99.99%", "Infrastructure Uptime"],
     ["24/7", "Operational Support"],
     ["40+", "Technology Experts"],
-  ]
+  ],
+  stacked = false
 }) {
   return (
     <section
@@ -72,9 +73,9 @@ export default function FinalCTA({
           className="relative overflow-hidden clay-light bg-[#f7f9fc] border border-[#050849]/5 px-5 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-24"
         >
           {/* TOP SECTION */}
-          <div className="flex flex-col gap-16 xl:flex-row xl:items-center xl:justify-between">
+          <div className={`flex flex-col gap-16 ${stacked ? '' : 'xl:flex-row xl:items-center xl:justify-between'}`}>
             {/* LEFT CONTENT */}
-            <div className="max-w-5xl flex-1 xl:pr-8">
+            <div className={`max-w-5xl flex-1 ${stacked ? '' : 'xl:pr-8'}`}>
               {/* BADGE */}
               <motion.div variants={itemVariants}>
                 <div className="inline-flex items-center gap-3 rounded-full border border-[#052440]/10 bg-[#080357]/5 px-5 py-2.5">

@@ -38,7 +38,7 @@ const solutionsData = [
     title: "Cloud & DevOps",
     icon: Cloud,
     desc: "Moving to cloud requires more than lift-and-shift. We design and deliver cloud migration services and enterprise cloud services that reduce risk, improve consistency, and accelerate your development velocity.",
-    link: "/solutions/cloud-devops",
+    link: "/solutions/cloud-and-devOps",
     problems: [
       "Slow infrastructure provisioning blocking deployments",
       "Operational risk and cost overruns during migration",
@@ -76,7 +76,7 @@ const solutionsData = [
     title: "AI & Intelligent Automation",
     icon: Cpu,
     desc: "Manual operations create risk and slow teams down. We apply intelligent automation and AI-driven observability to help enterprises detect problems earlier, resolve them faster, and run leaner.",
-    link: "/solutions/ai-automation",
+    link: "/solutions/AI-Intelligent-Automation",
     problems: [
       "Manual, error-prone operations slowing response times",
       "No predictive insight into infrastructure behaviour",
@@ -95,7 +95,7 @@ const solutionsData = [
     title: "Software & Digital Engineering",
     icon: Code,
     desc: "Software that cannot scale is a liability. We deliver enterprise application development services for organisations that need platforms built for complexity, performance, and long-term maintainability.",
-    link: "/solutions/software-engineering",
+    link: "/solutions/softwareDigitalEngineering",
     problems: [
       "Legacy systems limiting product development velocity",
       "Poor application scalability under growing loads",

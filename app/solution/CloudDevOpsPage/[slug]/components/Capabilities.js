@@ -62,13 +62,7 @@ export default function Capabilities({ data }) {
                 <h3 className="text-2xl font-bold mb-2 text-white">{card.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{card.description}</p>
               </div>
-              {card.button && (
-                <div className="shrink-0 mt-4 md:mt-0">
-                  <Link href={card.button.href} className="text-[#A3D133] hover:text-white flex items-center gap-2 font-medium transition-colors">
-                    {card.button.label} <Icons.ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              )}
+
             </motion.div>
           ))}
         </div>

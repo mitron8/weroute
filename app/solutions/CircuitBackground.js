@@ -50,7 +50,7 @@ export default function CircuitBackground({ className = "" }) {
         </defs>
 
         {/* --- CIRCUIT PATH TRACES --- */}
-        <g stroke="url(#circuit-line-grad)" strokeWidth="2" fill="none" strokeDasharray="6 6">
+        <g stroke="url(#circuit-line-grad)" strokeWidth="2" fill="none">
           <path d="M -50 140 L 280 140 L 380 240 L 720 240 L 840 360 L 1300 360 L 1650 360" />
           <path d="M -50 480 L 180 480 L 300 360 L 600 360 L 720 520 L 1150 520 L 1300 360 L 1650 360" />
           <path d="M -50 780 L 350 780 L 480 640 L 880 640 L 1000 780 L 1650 780" />
