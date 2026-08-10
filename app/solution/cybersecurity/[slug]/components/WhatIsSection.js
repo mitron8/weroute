@@ -1,9 +1,15 @@
 "use client"
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useParams } from 'next/navigation';
 
 export default function WhatIsSection({ data }) {
+  const [imgError, setImgError] = useState(false);
+  const params = useParams();
+  const slug = params?.slug;
+
   if (!data || !data.content) return null;
 
   return (
@@ -59,16 +65,25 @@ export default function WhatIsSection({ data }) {
                 />
               </motion.div>
             ) : (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="mt-12 w-full h-64 md:h-80 bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl flex flex-col items-center justify-center text-gray-400 gap-3"
-              >
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                <span className="font-medium">Diagram Placeholder</span>
-              </motion.div>
+              /* DIAGRAM PLACEHOLDER OR IMAGE */
+              !imgError && slug && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                  className="mt-12 w-full overflow-hidden rounded-2xl shadow-sm border border-gray-200"
+                  suppressHydrationWarning
+                >
+                  <img 
+                    src={`/images/solution digram/${slug}.jpg`} 
+                    alt={`${data.title} Diagram`}
+                    className="w-full h-auto object-cover"
+                    onError={() => setImgError(true)}
+                    suppressHydrationWarning
+                  />
+                </motion.div>
+              )
             )}
           </div>
 
