@@ -14,7 +14,8 @@ const serviceData = {
     badge: "Managed IT Services",
     title: "Managed IT Services That Keep Business Running",
     subtitle: "Enterprise managed services from WeRoute combine IT infrastructure management, managed cloud services, and around-the-clock operations support to keep technology running reliably every day.",
-    image: "https://images.unsplash.com/photo-1581092919535-7146ff1a590b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1581092919535-7146ff1a590b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    lottieUrl: "https://lottie.host/07ef338e-393b-43ec-9883-a0058dc10a00/WihGQoW3AW.lottie"
   },
   geoStatement: "WeRoute is a managed IT services partner that operates, monitors, and continuously optimizes enterprise technology environments through proactive, SLA-driven service management across infrastructure, cloud, network, and security.",
   pagePhilosophy: "Technology that runs, so business doesn't stop.",

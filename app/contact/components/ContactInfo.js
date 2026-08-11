@@ -7,25 +7,25 @@ export default function ContactInfo() {
   const contactDetails = [
     {
       id: 1,
-      icon: <Phone className="w-6 h-6 text-[#080357]" />,
+      icon: <Phone className="w-7 h-7" />,
       title: "Phone",
       details: ["8097486432"],
     },
     {
       id: 2,
-      icon: <MapPin className="w-6 h-6 text-[#080357]" />,
+      icon: <MapPin className="w-7 h-7" />,
       title: "Head Office",
       details: ["Bangalore, India"],
     },
     {
       id: 3,
-      icon: <Globe className="w-6 h-6 text-[#080357]" />,
+      icon: <Globe className="w-7 h-7" />,
       title: "Global Presence",
       details: ["Washington, USA", "Sydney, Australia"],
     },
     {
       id: 4,
-      icon: <Building2 className="w-6 h-6 text-[#080357]" />,
+      icon: <Building2 className="w-7 h-7" />,
       title: "Sister Branch",
       details: ["Weroute Technologies Pvt Ltd", "Delhi, NCR"],
     }
@@ -39,15 +39,15 @@ export default function ContactInfo() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 * index }}
-          className="clay-light bg-[#f7f9fc] p-6 border border-[#050849]/5 hover:-translate-y-2 hover:border-[#B7F36B]/50 transition-all duration-300 flex flex-col h-full group"
+          className="clay-light bg-white p-8 border border-[#050849]/5 hover:-translate-y-2 hover:border-[#B7F36B] transition-all duration-300 flex flex-col h-full group rounded-[2rem] shadow-sm hover:shadow-[0_15px_40px_-10px_rgba(8,3,87,0.1)]"
         >
-          <div className="w-14 h-14 clay-badge-light bg-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <div className="w-16 h-16 rounded-2xl bg-[#f7f9fc] text-[#080357] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300">
             {item.icon}
           </div>
-          <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
-          <div className="flex-grow flex flex-col justify-center">
+          <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">{item.title}</h4>
+          <div className="flex-grow flex flex-col justify-start">
             {item.details.map((detail, idx) => (
-              <p key={idx} className="text-gray-600 font-medium">
+              <p key={idx} className="text-[#080357] text-lg font-semibold leading-relaxed">
                 {detail}
               </p>
             ))}

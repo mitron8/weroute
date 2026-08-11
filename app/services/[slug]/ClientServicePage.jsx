@@ -916,12 +916,23 @@ export default function ClientServicePage({ service, isNewLayout }) {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 relative flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-lg aspect-square lg:aspect-[4/3] rounded-[3rem] overflow-hidden bg-transparent group">
-              <img
-                src={service.hero.image}
-                alt={service.hero.badge}
-                className="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
-              />
+            <div className="relative w-full max-w-lg aspect-square lg:aspect-[4/3] rounded-[3rem] overflow-hidden bg-transparent group flex items-center justify-center">
+              {service.hero.lottieUrl ? (
+                <div className={`w-full h-full ${service.hero.lottieScale || 'scale-100'}`}>
+                  <DotLottieReact
+                    src={service.hero.lottieUrl}
+                    loop
+                    autoplay
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ) : (
+                <img
+                  src={service.hero.image}
+                  alt={service.hero.badge}
+                  className="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
+                />
+              )}
             </div>
           </motion.div>
         </div>

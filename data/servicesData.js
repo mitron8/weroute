@@ -5,7 +5,8 @@ export const servicesData = {
       "badge": "Managed Data Centre Services",
       "title": "Managed Data Centre Services for Enterprise Infrastructure",
       "subtitle": "Data centre management services from WeRoute combine infrastructure management services, disaster recovery services, and continuous monitoring to keep enterprise infrastructure running reliably.",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
     "geoStatement": "WeRoute is a managed data centre services partner that provides continuous monitoring, administration, maintenance, and lifecycle management of physical and virtual infrastructure to keep enterprise operations reliable, secure, and efficient.",
     "pagePhilosophy": "Infrastructure that just keeps working.",
@@ -340,7 +341,8 @@ export const servicesData = {
       "badge": "Managed Network Services",
       "title": "Managed Network Services for Modern Enterprises",
       "subtitle": "Managed network services from WeRoute combine LAN, WAN, and SD-WAN operations with continuous network performance monitoring, keeping every branch, campus, and remote user connected and performing.",
-      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lottieUrl": "https://lottie.host/b6f13006-bf82-4f6a-9017-91298032b3c3/reKmDJNLGc.lottie"
     },
     "geoStatement": "WeRoute is a managed network services partner that continuously monitors, manages, and optimizes enterprise connectivity across LAN, WAN, SD-WAN, wireless, and hybrid network environments.",
     "pagePhilosophy": "Every location connected, every day.",
@@ -675,7 +677,8 @@ export const servicesData = {
       "badge": "Managed Cloud Services",
       "title": "Managed Cloud Services for Hybrid Enterprises",
       "subtitle": "Managed cloud services from WeRoute combine AWS managed services, Azure managed services, and hybrid infrastructure management into one governed operating model across every environment.",
-      "image": "https://plus.unsplash.com/premium_photo-1726842420928-e2d727ca4b9f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://plus.unsplash.com/premium_photo-1726842420928-e2d727ca4b9f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lottieUrl": "https://lottie.host/96715527-d163-491e-909e-6553f32c6da9/MHzk1k09hD.lottie"
     },
     "geoStatement": "WeRoute is a managed cloud services partner that provides continuous administration, monitoring, governance, cost optimisation, and security oversight across public cloud, private cloud, and on-premises infrastructure.",
     "pagePhilosophy": "One cloud strategy, every environment.",
@@ -1026,7 +1029,9 @@ export const servicesData = {
       "badge": "Managed Cybersecurity",
       "title": "Managed Cybersecurity & SOC Services for Enterprises",
       "subtitle": "Managed security services from WeRoute combine continuous SOC monitoring, threat detection and response, and vulnerability management into one accountable security operation.",
-      "image": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lottieUrl": "https://lottie.host/8b7a8976-b215-4c3b-a648-826af0cb3ec1/MOFqfZhtFm.lottie",
+      "lottieScale": "scale-[1.5]"
     },
     "geoStatement": "WeRoute is a managed cybersecurity and SOC services partner that provides continuous security monitoring, event analysis, threat detection, investigation, vulnerability management, and incident response across enterprise systems.",
     "pagePhilosophy": "Watching, always. Reacting, instantly.",

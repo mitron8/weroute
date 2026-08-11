@@ -1,11 +1,17 @@
 "use client";
 
+import { useRef } from 'react';
 import Logo from "./Logo";
+import { Phone, MapPin, Globe, Building2 } from 'lucide-react';
+import WaterRippleCanvas from './WaterRippleCanvas';
 
 export default function Footer() {
+  const footerRef = useRef(null);
+  
   return (
     <footer
       id="footer"
+      ref={footerRef}
       className="
         relative
         overflow-hidden
@@ -15,9 +21,11 @@ export default function Footer() {
         text-white
       "
     >
+      {/* REACTIVE WATER RIPPLE CANVAS */}
+      <WaterRippleCanvas />
 
-      {/* BACKGROUND */}
-      <div className="absolute inset-0">
+      {/* Background elements preserved under the wave */}
+      <div className="absolute inset-0 pointer-events-none z-0">
 
         <div
           className="
@@ -122,7 +130,7 @@ export default function Footer() {
             gap-12
             py-16
             sm:grid-cols-2
-            lg:grid-cols-3
+            lg:grid-cols-4
           "
         >
 
@@ -303,6 +311,72 @@ export default function Footer() {
 
           </div>
 
+          {/* CONTACT INFO */}
+          <div>
+
+            <h4
+              className="
+                text-lg
+                font-semibold
+                text-white
+              "
+            >
+              Contact
+            </h4>
+
+            <div
+              className="
+                mt-6
+                flex
+                flex-col
+                gap-6
+              "
+            >
+              
+              <div className="flex items-start gap-4">
+                <div className="mt-1 shrink-0 text-[#B7F36B]">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-widest text-white/45 mb-1">Phone</span>
+                  <span className="text-white/80 text-sm">8097486432</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="mt-1 shrink-0 text-[#B7F36B]">
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-widest text-white/45 mb-1">Head Office</span>
+                  <span className="text-white/80 text-sm">Bangalore, India</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="mt-1 shrink-0 text-[#B7F36B]">
+                  <Globe size={20} />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-widest text-white/45 mb-1">Global Presence</span>
+                  <span className="text-white/80 text-sm">Washington, USA<br/>Sydney, Australia</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="mt-1 shrink-0 text-[#B7F36B]">
+                  <Building2 size={20} />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-widest text-white/45 mb-1">Sister Branch</span>
+                  <span className="text-white/80 text-sm">Weroute Technologies Pvt Ltd<br/>Delhi, NCR</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
         {/* BOTTOM */}
@@ -367,7 +441,6 @@ export default function Footer() {
         </div>
 
       </div>
-
     </footer>
   );
 }
