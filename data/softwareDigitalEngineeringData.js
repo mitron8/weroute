@@ -10,7 +10,8 @@ export const softwareDigitalEngineeringData = {
         "Scalable Architecture",
         "Secure & Compliant",
         "Business-Driven Innovation"
-      ]
+      ],
+      "lottieSrc": "https://lottie.host/8ab91f50-bfe4-4b05-91a3-2dbcc5f7e1ff/2vpejChJp6.lottie"
     },
     "overview": {
       "title": "The best software fits the business, not the other way around.",
@@ -163,7 +164,8 @@ export const softwareDigitalEngineeringData = {
         "Operational Efficiency",
         "Enterprise Scalability",
         "Digital Transformation"
-      ]
+      ],
+      "lottieSrc": "https://lottie.host/ec197529-9f8c-45ab-910c-e94dcbc73b52/h5HTYmCNZa.lottie"
     },
     "overview": {
       "title": "The systems running the business should not be the reason it can't move faster.",
@@ -316,7 +318,8 @@ export const softwareDigitalEngineeringData = {
         "User-Centric Experiences",
         "Scalable Mobile Architecture",
         "Business-Driven Mobility"
-      ]
+      ],
+      "lottieSrc": "https://lottie.host/1fd81d70-149f-440b-a09b-c5f6df323143/HCUoKe1qSn.lottie"
     },
     "overview": {
       "title": "Mobile should extend the business, not create a separate one to maintain.",
@@ -469,7 +472,8 @@ export const softwareDigitalEngineeringData = {
         "Platform Scalability",
         "Enterprise Integration",
         "Developer Enablement"
-      ]
+      ],
+      "lottieSrc": "https://lottie.host/4dec0382-7ec3-44dd-af59-613d0ef22473/oCqhqnXMd1.lottie"
     },
     "overview": {
       "title": "Integration should scale the business, not multiply its complexity.",

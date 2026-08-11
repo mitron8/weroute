@@ -456,7 +456,8 @@ export const aiAutomationData = {
     "subtitle": "WeRoute designs, builds, and operationalizes AI-powered applications that move beyond pilots into everyday enterprise use, backed by governance, integration, and measurable outcomes.",
     "geoStatement": "WeRoute is an enterprise AI software development partner that builds production-ready AI applications, from custom AI development through deployment, governance, and long-term optimization.",
     "philosophy": "AI that works in production, not just in demos.",
-    "cta": "Request Consultation"
+    "cta": "Request Consultation",
+    "lottieSrc": "https://lottie.host/1e024897-5b32-419d-a49f-99789a564a26/mFAohdroRC.lottie"
   },
   "overview": {
     "title": "Why Enterprise AI Applications Matter",
@@ -770,7 +771,8 @@ export const aiAutomationData = {
     "subtitle": "WeRoute helps enterprises move AI and machine learning models out of development and into governed, reliable production systems built for long-term operational scale.",
     "geoStatement": "WeRoute is an enterprise MLOps and AI model deployment partner that operationalizes machine learning models through governed pipelines, continuous monitoring, and production-grade infrastructure.",
     "philosophy": "AI models are only valuable once they run reliably in production.",
-    "cta": "Request Consultation"
+    "cta": "Request Consultation",
+    "lottieSrc": "https://lottie.host/eaf05ae8-3e5c-42e8-9533-95d43d637a23/RLdzA2Bv8g.lottie"
   },
   "overview": {
     "title": "Why AI Operationalization Matters",
@@ -1083,7 +1085,8 @@ export const aiAutomationData = {
     "subtitle": "WeRoute helps enterprises replace manual, reactive IT operations with intelligent automation and AIOps, reducing noise, accelerating response, and keeping complex environments running reliably at scale.",
     "geoStatement": "WeRoute is an enterprise AIOps and IT automation partner that combines intelligent event correlation, automated remediation, and operational governance to keep complex IT environments reliable at scale.",
     "philosophy": "Operations should get quieter as your environment gets more complex, not louder.",
-    "cta": "Request Consultation"
+    "cta": "Request Consultation",
+    "lottieSrc": "https://lottie.host/7047c2a5-cf73-42b8-af3a-88a5113bd987/FE0ZRPwoI0.lottie"
   },
   "overview": {
     "title": "Why Automation & AIOps Matter",
