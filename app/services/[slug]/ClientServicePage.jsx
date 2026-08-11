@@ -127,11 +127,11 @@ function CarouselSection({ section }) {
           {section.items.map((item, itemIdx) => (
             <motion.div
               key={itemIdx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: itemIdx * 0.05 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              transition={{ duration: 0.6, delay: itemIdx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
               className="snap-start shrink-0 clay-light bg-[#f7f9fc] border border-[#050849]/5 p-8 md:p-10 flex flex-col w-[85vw] md:w-[450px] lg:w-[500px] cursor-pointer"
             >
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm text-[#080357] font-bold text-xl clay-badge-light">
@@ -226,11 +226,11 @@ function BentoGridSection({ section, theme = "light" }) {
           return (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              whileHover={{ y: -5, scale: 1.01, transition: { duration: 0.2 } }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
               className={`${spanClass} rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-center relative group overflow-hidden cursor-pointer ${
                 isHighlight ? "bg-[#080357] text-white clay-dark border border-white/5 shadow-xl" : "bg-white clay-light border border-[#080357]/5"
               }`}
@@ -372,11 +372,11 @@ function StandardGridSection({ section }) {
         {section.items.map((item, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
             className="bg-white clay-light border border-[#080357]/5 rounded-[2rem] p-8 cursor-pointer shadow-sm hover:shadow-lg transition-shadow"
           >
             <div className="w-12 h-12 bg-[#f7f9fc] rounded-xl flex items-center justify-center mb-6 text-[#080357]">
@@ -864,22 +864,32 @@ export default function ClientServicePage({ service, isNewLayout }) {
             className="lg:col-span-7 flex flex-col justify-center"
           >
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }} 
-              animate={{ opacity: 1, scale: 1 }} 
-              transition={{ duration: 0.5, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.5, y: -20 }} 
+              animate={{ opacity: 1, scale: 1, y: 0 }} 
+              transition={{ type: "spring", stiffness: 120, damping: 10, delay: 0.1 }}
               className="inline-flex items-center gap-2 self-start rounded-full bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#080357] shadow-sm border border-[#080357]/5 mb-8"
             >
               <div className="w-2 h-2 rounded-full bg-[#B7F36B] animate-pulse" />
               {service.hero.badge}
             </motion.div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-[#080357] mb-6 relative">
+            <motion.h1 
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-[#080357] mb-6 relative"
+            >
               {service.hero.title || service.seo.h1 || service.hero.badge}
-            </h1>
+            </motion.h1>
             
-            <p className="max-w-2xl text-lg md:text-xl font-light leading-relaxed text-gray-600">
+            <motion.p 
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="max-w-2xl text-lg md:text-xl font-light leading-relaxed text-gray-600"
+            >
               {service.hero.subtitle}
-            </p>
+            </motion.p>
             
             {/* Added CTA in the Hero Section for better conversion */}
             <motion.div 
@@ -901,9 +911,9 @@ export default function ClientServicePage({ service, isNewLayout }) {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, scale: 0.97 }} 
-            animate={{ opacity: 1, scale: 1 }} 
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+            initial={{ opacity: 0, scale: 0.85, rotate: -2 }} 
+            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 relative flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-lg aspect-square lg:aspect-[4/3] rounded-[3rem] overflow-hidden bg-transparent group">

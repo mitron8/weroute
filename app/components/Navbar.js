@@ -102,10 +102,9 @@ const MENU = {
       {
         icon: <Headphones size={18} />,
         title: "Managed Services",
-        href:"managed-services",
+        href: "/services/managed-services",
         desc: "Run, monitor, secure, and optimize critical IT environments.",
         features: [
-          { title: "Managed IT Services", href: "/services/managed-it-services" },
           { title: "Managed Data Centre Services", href: "/services/managed-data-centre-services" },
           { title: "Managed Network Services", href: "/services/managed-network-services" },
           { title: "Managed Cloud & Hybrid Environments", href: "/services/managed-cloud-hybrid-environment-services" },
@@ -118,10 +117,6 @@ const MENU = {
         href:"consulting-&-advisory-services",
         desc: "Strategic guidance for architecture and modernization.",
         features: [
-          {
-            title: "Managed IT Services",
-            href: "/services/managed-it-services",
-          },
           {
             title: "Managed Data Centre Services",
             href: "/services/managed-data-centre-services",
@@ -474,12 +469,12 @@ export default function Navbar() {
 
         {/* RIGHT SIDE */}
         <div className="hidden items-center gap-8 lg:flex">
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="text-[16px] font-medium text-white/80 transition hover:text-white"
           >
             Contact
-          </a>
+          </Link>
           <button className="rounded-2xl border border-white/15 bg-white/[0.05] px-8 py-4 text-[16px] font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:scale-[1.03]">
             Get Started →
           </button>
@@ -593,9 +588,13 @@ export default function Navbar() {
             <button className="rounded-2xl bg-white px-6 py-4 text-[15px] font-semibold text-black">
               Get Started
             </button>
-            <button className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 text-[15px] font-medium text-white">
+            <Link 
+              href="/contact"
+              onClick={() => setMobileOpen(false)}
+              className="flex justify-center items-center rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 text-[15px] font-medium text-white"
+            >
               Contact
-            </button>
+            </Link>
           </div>
         </div>
       </div>
