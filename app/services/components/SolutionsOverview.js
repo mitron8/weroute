@@ -160,7 +160,7 @@ export default function SolutionsOverview() {
                      <h3 className="text-3xl font-bold text-[#080357]">{solution.title}</h3>
                   </div>
                   
-                  <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  <p className="text-lg text-[#080357]/80 leading-relaxed mb-8">
                     {solution.description}
                   </p>
 
@@ -170,7 +170,7 @@ export default function SolutionsOverview() {
                         {solution.problems.map((problem, i) => (
                            <li key={i} className="flex items-start">
                               <span className="text-blue-500 mr-3 mt-1">•</span>
-                              <span className="text-gray-600 font-medium">{problem}</span>
+                              <span className="text-[#080357]/80 font-medium">{problem}</span>
                            </li>
                         ))}
                      </ul>
@@ -182,7 +182,7 @@ export default function SolutionsOverview() {
                         {solution.capabilities.map((cap, i) => (
                            <li key={i} className="flex items-start">
                               <span className="text-[#080357] mr-3 mt-1">•</span>
-                              <span className="text-gray-600 font-medium">{cap}</span>
+                              <span className="text-[#080357]/80 font-medium">{cap}</span>
                            </li>
                         ))}
                      </ul>
@@ -211,7 +211,7 @@ export default function SolutionsOverview() {
                         </svg>
                      </div>
                      <h4 className="text-xl font-bold text-gray-700 mb-2">Diagram Placeholder</h4>
-                     <p className="text-gray-500 font-medium text-sm">
+                     <p className="text-[#080357]/80 font-medium text-sm">
                         A visual architecture or workflow diagram for {solution.title} will be placed here.
                      </p>
                   </div>

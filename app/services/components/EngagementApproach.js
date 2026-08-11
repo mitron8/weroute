@@ -45,7 +45,7 @@ export default function EngagementApproach() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6">
               How We Approach Every Engagement
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium">
+            <p className="text-lg text-[#080357]/80 leading-relaxed font-medium">
               Every engagement follows the same structured path, regardless of size or service category. It keeps delivery consistent, makes progress visible, and gives leadership a clear view of what happens at each stage.
             </p>
           </motion.div>
@@ -70,7 +70,7 @@ export default function EngagementApproach() {
                   </div>
                   <div className="clay-light bg-white/80 border border-[#050849]/5 p-6 w-full h-full hover:border-[#B7F36B]/50 transition-colors duration-300 relative z-20">
                      <h3 className="text-xl font-bold text-[#080357] mb-3">{step.title}</h3>
-                     <p className="text-gray-600 text-sm leading-relaxed font-medium">
+                     <p className="text-[#080357]/80 text-sm leading-relaxed font-medium">
                         {step.description}
                      </p>
                   </div>

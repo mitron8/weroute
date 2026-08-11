@@ -28,7 +28,7 @@ export default function ServicesPhilosophy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="prose prose-lg prose-blue mx-auto text-gray-600 font-medium leading-relaxed"
+              className="prose prose-lg prose-blue mx-auto text-[#080357]/80 font-medium leading-relaxed"
            >
               <p className="mb-6">
                  Most enterprises work with a patchwork of vendors: one firm for infrastructure, another for security, a third for staffing, and an internal team left to hold it all together. WeRoute was built around a different idea.

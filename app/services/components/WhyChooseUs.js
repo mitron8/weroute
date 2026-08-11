@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6">
               Why Organizations Choose WeRoute
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium">
+            <p className="text-lg text-[#080357]/80 leading-relaxed font-medium">
               Differentiation matters before the services do. Before choosing a service category, most organizations want to know how a partner actually works: what gets decided first, how flexible the engagement can be, and whether the relationship holds up past the initial project.
             </p>
           </motion.div>
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                 {card.icon}
               </div>
               <h3 className="text-2xl font-bold text-[#080357] mb-4">{card.title}</h3>
-              <p className="text-gray-600 leading-relaxed font-medium">
+              <p className="text-[#080357]/80 leading-relaxed font-medium">
                 {card.description}
               </p>
             </motion.div>

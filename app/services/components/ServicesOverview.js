@@ -57,7 +57,7 @@ export default function ServicesOverview() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6">
               Services We Deliver
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium">
+            <p className="text-lg text-[#080357]/80 leading-relaxed font-medium">
               Five service categories, one accountable partner. Each one is also its own dedicated page with the full detail behind it.
             </p>
           </motion.div>
@@ -82,7 +82,7 @@ export default function ServicesOverview() {
                  {service.title}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed font-medium mb-6 flex-grow">
+              <p className="text-[#080357]/80 leading-relaxed font-medium mb-6 flex-grow">
                  {service.description}
               </p>
 

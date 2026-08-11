@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function ServicesHero() {
   const containerVariants = {
@@ -38,6 +39,14 @@ export default function ServicesHero() {
             initial="hidden"
             animate="visible"
           >
+            <motion.span
+              variants={itemVariants}
+              className="clay-badge-light mb-6 inline-flex items-center gap-2 rounded-full border border-[#050849]/5 bg-[#f7f9fc] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#050849]"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-[#98c93c]" />
+              Enterprise Services
+            </motion.span>
+
             <motion.h1 
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-[56px] font-extrabold tracking-tight leading-[1.15] mb-6 text-[#080357]"
@@ -47,7 +56,7 @@ export default function ServicesHero() {
 
             <motion.p 
               variants={itemVariants}
-              className="text-lg sm:text-xl text-gray-600 max-w-3xl mb-8 leading-relaxed font-medium"
+              className="text-lg sm:text-xl text-[#080357]/80 max-w-3xl mb-8 leading-relaxed font-medium"
             >
               Consulting-led technology services that design, implement, secure, operate, and optimize infrastructure, cloud, cybersecurity, AI, and software platforms, delivered through one accountable enterprise technology partner.
             </motion.p>
@@ -57,7 +66,7 @@ export default function ServicesHero() {
               variants={itemVariants}
               className="mb-10 border-l-[3px] border-[#A7BF73] pl-5 py-1"
             >
-              <p className="text-sm md:text-base text-gray-500 max-w-2xl font-medium leading-relaxed">
+              <p className="text-sm md:text-base text-[#080357]/80 max-w-2xl font-medium leading-relaxed">
                 WeRoute is an enterprise technology services partner that helps organizations plan, implement, secure, operate, and continuously optimize modern technology environments through consulting-led delivery and engineering excellence.
               </p>
             </motion.div>
@@ -91,28 +100,13 @@ export default function ServicesHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <div className="relative w-[300px] h-[300px] xl:w-[450px] xl:h-[450px] flex items-center justify-center clay-light bg-[#f7f9fc] border border-[#050849]/5">
-               <div className="absolute w-[70%] h-[70%] flex items-center justify-center clay-light bg-white border border-[#050849]/5">
-                  <div className="w-1/2 h-1/2 flex items-center justify-center clay-light bg-gradient-to-br from-[#080357]/5 to-[#A7BF73]/10">
-                     <div className="w-1/3 h-1/3 rounded-full bg-[#080357]/20 blur-sm" />
-                  </div>
-               </div>
-               {/* Animated orbiting dots */}
-               <motion.div 
-                 animate={{ rotate: 360 }} 
-                 transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-                 className="absolute inset-0 rounded-full border border-dashed border-gray-200"
-               >
-                  <div className="absolute top-0 right-[15%] w-3 h-3 clay-badge-light bg-[#080357]/80 transform translate-x-1/2 -translate-y-1/2" />
-               </motion.div>
-               
-               <motion.div 
-                 animate={{ rotate: -360 }} 
-                 transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-                 className="absolute inset-[15%] rounded-full border border-dashed border-gray-200/60"
-               >
-                  <div className="absolute bottom-[10%] left-[10%] w-4 h-4 clay-badge-light bg-[#A7BF73] transform -translate-x-1/2 translate-y-1/2" />
-               </motion.div>
+            <div className="relative w-full aspect-square flex items-center justify-center">
+              <DotLottieReact
+                src="https://lottie.host/124333a6-dce6-49c5-bddf-bd521654a3cf/3Na07qHFW6.lottie"
+                loop
+                autoplay
+                className="w-full h-full object-contain scale-[1.25]"
+              />
             </div>
           </motion.div>
 

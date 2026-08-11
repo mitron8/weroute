@@ -41,7 +41,7 @@ export default function WaysToEngage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6">
               Ways to Engage With WeRoute
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium">
+            <p className="text-lg text-[#080357]/80 leading-relaxed font-medium">
               Not every organization needs the same relationship. Some engagements are scoped and finite, others extend a team long term, and some hand over full day-to-day ownership. WeRoute supports all three.
             </p>
           </motion.div>
@@ -61,7 +61,7 @@ export default function WaysToEngage() {
                 {way.icon}
               </div>
               <h3 className="text-xl font-bold text-[#080357] mb-4">{way.title}</h3>
-              <p className="text-gray-600 font-medium leading-relaxed">
+              <p className="text-[#080357]/80 font-medium leading-relaxed">
                 {way.description}
               </p>
             </motion.div>

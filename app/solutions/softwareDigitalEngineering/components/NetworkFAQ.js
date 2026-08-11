@@ -132,14 +132,6 @@ export default function NetworkFAQ() {
               );
             })}
 
-            <div className="clay-light mt-10 rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-10">
-              <p className="text-xl font-bold leading-relaxed text-[#050849]">
-                Every enterprise environment is different.
-                If your software engineering requirements are unique,
-                our architects can help design a solution
-                tailored to your operational goals.
-              </p>
-            </div>
 
           </div>
 

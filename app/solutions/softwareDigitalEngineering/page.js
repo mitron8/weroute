@@ -93,6 +93,21 @@ const page = () => {
       <NetworkCapabilities/>
       <BusinessOutcomes/>
       <WhyChooseWeRoute/>
+      
+      {/* Moved Content Block */}
+      <section className="bg-[#f7f9fc] px-6 py-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="clay-light rounded-[32px] border border-[#050849]/5 bg-[#f7f9fc] p-10 lg:p-14 text-center">
+            <p className="text-xl font-bold leading-relaxed text-[#050849] md:text-2xl max-w-4xl mx-auto">
+              Every enterprise environment is different.
+              If your software engineering requirements are unique,
+              our architects can help design a solution
+              tailored to your operational goals.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <NetworkCTA/>
       <NetworkFAQ/>
     </div>

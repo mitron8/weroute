@@ -66,7 +66,7 @@ export default function WhyWeRoute() {
                 {reason.icon}
               </div>
               <h3 className="text-xl font-bold text-[#080357] mb-4">{reason.title}</h3>
-              <p className="text-gray-600 font-medium leading-relaxed">
+              <p className="text-[#080357]/80 font-medium leading-relaxed">
                 {reason.description}
               </p>
             </motion.div>

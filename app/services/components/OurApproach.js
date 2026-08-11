@@ -43,7 +43,7 @@ export default function OurApproach() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6">
               How WeRoute Approaches Solutions
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#080357]/80 max-w-3xl mx-auto leading-relaxed">
               While most technology providers deploy and move on. We at WeRoute - start with strategy. Every engagement begins with consulting to understand business outcomes, then moves to architecture design, and only then to its implementation.
             </p>
           </motion.div>
@@ -65,7 +65,7 @@ export default function OurApproach() {
                 {pillar.icon}
               </div>
               <h3 className="text-xl font-bold text-[#080357] mb-4">{pillar.title}</h3>
-              <p className="text-gray-600 leading-relaxed font-medium">
+              <p className="text-[#080357]/80 leading-relaxed font-medium">
                 {pillar.description}
               </p>
             </motion.div>

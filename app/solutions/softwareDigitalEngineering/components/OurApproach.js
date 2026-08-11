@@ -110,23 +110,6 @@ export default function OurApproach() {
           ))}
         </div>
 
-        {/* Diagram */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-16 w-full max-w-4xl mx-auto h-auto rounded-[32px] overflow-hidden shadow-lg border border-[#050849]/5 relative"
-        >
-            <Image 
-              src="/images/software_engineering_diagram.jpg" 
-              alt="Software Engineering Layered Architecture Diagram" 
-              width={1280} 
-              height={720}
-              className="w-full h-auto object-cover"
-              priority
-            />
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -103,7 +103,7 @@ export default function ServicesFAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-8 pb-6 text-gray-600 font-medium leading-relaxed border-t border-gray-50 pt-4">
+                    <div className="px-8 pb-6 text-[#080357]/80 font-medium leading-relaxed border-t border-gray-50 pt-4">
                       {faq.answer}
                     </div>
                   </motion.div>

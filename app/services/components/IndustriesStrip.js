@@ -30,7 +30,7 @@ export default function IndustriesStrip() {
              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6">
                Industries We Support
              </h2>
-             <p className="text-lg text-gray-600 leading-relaxed font-medium">
+             <p className="text-lg text-[#080357]/80 leading-relaxed font-medium">
                WeRoute works across sectors with different regulatory demands, technical environments, and growth pressures, applying the same consulting-led approach to every industry it serves.
              </p>
           </motion.div>
@@ -50,7 +50,7 @@ export default function IndustriesStrip() {
               <div className="text-[#080357] group-hover:text-[#A7BF73] transition-colors duration-300 mb-4 bg-white p-4 clay-badge-light group-hover:bg-[#080357]">
                 {ind.icon}
               </div>
-              <span className="text-sm font-bold text-gray-600 group-hover:text-[#080357] transition-colors duration-300 text-center">
+              <span className="text-sm font-bold text-[#080357]/80 group-hover:text-[#080357] transition-colors duration-300 text-center">
                 {ind.name}
               </span>
             </motion.div>

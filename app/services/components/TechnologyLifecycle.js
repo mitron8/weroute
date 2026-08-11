@@ -40,7 +40,7 @@ export default function TechnologyLifecycle() {
              </div>
              
              <h3 className="text-2xl font-bold text-gray-800 mb-4">Lifecycle Diagram Placeholder</h3>
-             <p className="text-gray-500 font-medium max-w-lg mx-auto">
+             <p className="text-[#080357]/80 font-medium max-w-lg mx-auto">
                 A visual diagram illustrating WeRoute's end-to-end involvement across the full technology lifecycle will be placed here.
              </p>
           </div>
