@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import Logo from "./Logo";
 import { Phone, MapPin, Globe, Building2 } from 'lucide-react';
 import WaterRippleCanvas from './WaterRippleCanvas';
@@ -55,7 +56,13 @@ export default function Footer() {
 
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 mx-auto max-w-7xl px-6"
+      >
 
         {/* TOP */}
         <div
@@ -440,7 +447,7 @@ export default function Footer() {
 
         </div>
 
-      </div>
+      </motion.div>
     </footer>
   );
 }

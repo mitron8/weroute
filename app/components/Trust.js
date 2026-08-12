@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { PARTNERS } from "./data";
 
 export default function Trust() {
@@ -18,7 +19,13 @@ export default function Trust() {
       {/* TOP CONTENT */}
       <div className="relative z-10 mx-auto max-w-7xl px-6">
 
-        <div className="text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center"
+        >
 
           {/* BADGE */}
           <span
@@ -79,7 +86,7 @@ export default function Trust() {
             networking and AI platforms.
           </p>
 
-        </div>
+        </motion.div>
 
       </div>
 
@@ -188,9 +195,13 @@ export default function Trust() {
           "AI Infrastructure",
           "Enterprise Security",
           "Scalable Systems",
-        ].map((item) => (
-          <div
+        ].map((item, i) => (
+          <motion.div
             key={item}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="
               rounded-full
               border border-white/10
@@ -204,7 +215,7 @@ export default function Trust() {
             "
           >
             {item}
-          </div>
+          </motion.div>
         ))}
 
       </div>

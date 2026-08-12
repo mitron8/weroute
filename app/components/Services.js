@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { SVCS } from "./data";
@@ -88,7 +89,13 @@ export default function Services() {
         >
 
           {/* LEFT */}
-          <div className="max-w-3xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-3xl"
+          >
 
             {/* BADGE */}
             <span
@@ -156,7 +163,7 @@ export default function Services() {
               infrastructure.
             </p>
 
-          </div>
+          </motion.div>
 
           {/* ARROWS */}
           <div className="flex items-center gap-4">
@@ -222,8 +229,12 @@ export default function Services() {
         >
 
           {SVCS.map((s, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="
                 group
                 relative
@@ -370,7 +381,7 @@ export default function Services() {
 
               </div>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>

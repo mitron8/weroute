@@ -2,14 +2,13 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-
 import { ArrowRight } from "lucide-react";
 
 const WORDS = [
-  "Scalable",
-  "Intelligent",
-  "Secure",
-  "Resilient",
+  "Scalability",
+  "Intelligence",
+  "Resilience",
+  "Innovation"
 ];
 
 export default function Hero() {
@@ -18,7 +17,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % WORDS.length);
-    }, 2200);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, []);
@@ -27,301 +26,108 @@ export default function Hero() {
     <section
       className="
         relative
+        flex
+        min-h-screen
+        items-center
+        justify-center
         overflow-hidden
-        bg-cover
-        bg-center
-        bg-no-repeat
-        text-white
+        bg-[#fafafa]
+        text-[#050849]
+        pt-20
       "
-      style={{
-        backgroundImage: "url('/weroutehero.png')",
-      }}
     >
+      {/* SUBTLE GRAIN / NOISE */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+        style={{ backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png')" }} 
+      />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#080357] to-[#FFFFFD]/10" />
-
-      {/* CONTENT */}
-      <div
-        className="
-          relative z-10
-          mx-auto
-          flex
-          min-h-screen
-          max-w-7xl
-          items-center
-          px-6
-          pt-32
-          pb-20
-        "
-      >
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.9,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="max-w-4xl"
-        >
-
-          {/* BADGE */}
-          <div
-            className="
-              mb-8
-              inline-flex
-              items-center
-              gap-3
-              rounded-full
-              border border-white/10
-              bg-white/[0.03]
-              px-5
-              py-2.5
-              backdrop-blur-xl
-            "
+      <div className="relative z-10 w-full h-[100vh] flex flex-col justify-center items-center px-6 lg:px-12 text-center overflow-hidden">
+        
+        <div className="flex flex-col items-center justify-center max-w-6xl w-full">
+          
+          {/* THE INTERACTIVE SENTENCE */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="text-[36px] sm:text-[50px] md:text-[70px] lg:text-[90px] leading-[1.2] md:leading-[1.1] font-medium tracking-tight text-[#050849] flex flex-wrap justify-center items-center gap-x-3 gap-y-4 md:gap-x-6"
           >
-
-            <div className="h-2 w-2 rounded-full bg-[#B7F36B]" />
-
-            <span
-              className="
-                text-[11px]
-                font-medium
-                uppercase
-                tracking-[0.24em]
-                text-white/65
-              "
-            >
-              AI-Driven IT Transformation
-            </span>
-
-          </div>
-
-          {/* HEADING */}
-          <h1
-            className="
-              text-[36px]
-              font-normal
-              leading-[1.1]
-              tracking-[-0.02em]
-              text-white
-              sm:text-[46px]
-              lg:text-[54px]
-            "
-          >
-
-            AI-Driven
-            <br />
-
-            Optimization
-            <br />
-
-            for{" "}
-
-            <span
-              className="
-                inline-flex
-                min-w-[360px]
-                text-[#B7F36B]
-              "
-            >
-
-              <AnimatePresence mode="wait">
-
+            <span>We</span>
+            <span>Engineer</span>
+            
+            {/* INLINE ANIMATED BADGE */}
+            <span className="relative overflow-hidden h-[50px] sm:h-[65px] md:h-[90px] lg:h-[110px] w-[200px] sm:w-[280px] md:w-[400px] lg:w-[500px] bg-[#050849]/5 rounded-full flex items-center justify-center border border-[#050849]/10 shadow-inner">
+              <AnimatePresence mode="popLayout">
                 <motion.span
                   key={WORDS[index]}
-                  initial={{
-                    opacity: 0,
-                    y: 20,
-                    filter: "blur(10px)",
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    filter: "blur(0px)",
-                  }}
-                  exit={{
-                    opacity: 0,
-                    y: -20,
-                    filter: "blur(10px)",
-                  }}
-                  transition={{
-                    duration: 0.35,
-                  }}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute text-[#050849]/60 italic font-light whitespace-nowrap text-[32px] sm:text-[45px] md:text-[65px] lg:text-[85px] tracking-tight pb-1 md:pb-2"
                 >
                   {WORDS[index]}
                 </motion.span>
-
               </AnimatePresence>
-
             </span>
+            
+            <span>At</span>
+            <span>Scale.</span>
+          </motion.h1>
 
-            <br />
-
-            Enterprise IT
-
-          </h1>
-
-          {/* DESCRIPTION */}
-          <p
-            className="
-              mt-6
-              max-w-2xl
-              text-sm
-              leading-9
-              text-white/60
-              sm:text-xl
-              lg:text-[16px]
-            "
+          {/* SUBTEXT */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-8 md:mt-12 max-w-2xl text-sm md:text-lg leading-relaxed text-[#050849]/60 font-medium"
           >
-            WeRoute empowers enterprises with intelligent,
-            secure and resilient technology solutions that
-            drive operational excellence, scalability and
-            AI-powered digital transformation.
-          </p>
+            We build secure, scalable, and intelligent digital infrastructure for modern enterprises ready for the future.
+          </motion.p>
 
-          {/* BUTTONS */}
-          <div
-            className="
-              mt-10
-              flex
-              flex-wrap
-              items-center
-              gap-5
-            "
+          {/* CTA BUTTON */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-10 md:mt-12"
           >
-
-            {/* PRIMARY */}
             <a
-              href="#"
+              href="#contact"
               className="
                 group
                 flex
                 items-center
-                gap-3
-                rounded-2xl
-                bg-white
-                px-8
-                py-4
-                text-[15px]
-                font-semibold
-                text-black
-                transition-all
-                duration-300
-                hover:scale-[1.03]
-              "
-            >
-
-              Explore Solutions
-
-              <ArrowRight
-                size={18}
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
-              />
-
-            </a>
-
-            {/* SECONDARY */}
-            <a
-              href="#"
-              className="
-                group
-                flex
-                items-center
-                gap-3
-                rounded-2xl
-                border border-white/15
-                bg-white/[0.03]
-                px-8
-                py-4
-                text-[15px]
-                font-medium
+                gap-6
+                rounded-full
+                bg-[#050849]
+                pl-8
+                pr-3
+                py-3
+                text-sm
+                font-bold
+                uppercase
+                tracking-[0.1em]
                 text-white
-                backdrop-blur-xl
+                shadow-[0_20px_40px_rgba(5,8,73,0.15)]
                 transition-all
-                duration-300
-                hover:bg-white/[0.06]
+                duration-500
+                hover:bg-black
+                hover:text-white
+                hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
+                hover:-translate-y-1
               "
             >
-
-              Talk to an Expert
-
-              <ArrowRight
-                size={18}
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
-              />
-
-            </a>
-
-          </div>
-
-          {/* STATS */}
-          <div
-            className="
-              mt-20
-              grid
-              grid-cols-2
-              gap-8
-              border-t
-              border-white/10
-              pt-8
-              sm:grid-cols-4
-            "
-          >
-
-            {[
-              ["99.99%", "System Uptime"],
-              ["24/7", "Managed Operations"],
-              ["500+", "Enterprise Clients"],
-              ["Global", "Presence"],
-            ].map(([value, label]) => (
-              <div key={label}>
-
-                <h3
-                  className="
-                    text-3xl
-                    font-semibold
-                    tracking-[-0.04em]
-                    text-white
-                  "
-                >
-                  {value}
-                </h3>
-
-                <p
-                  className="
-                    mt-2
-                    text-sm
-                    text-white/45
-                  "
-                >
-                  {label}
-                </p>
-
+              Start Project
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 transition-transform duration-500 group-hover:bg-white/30 group-hover:translate-x-1">
+                <ArrowRight size={18} />
               </div>
-            ))}
+            </a>
+          </motion.div>
 
-          </div>
-
-        </motion.div>
-
+        </div>
       </div>
-
     </section>
   );
 }

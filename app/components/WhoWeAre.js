@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   IcoGlobe,
   IcoTgt,
@@ -64,7 +65,12 @@ export default function WhoWeAre() {
         >
 
           {/* LEFT */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
 
             {/* LABEL */}
             <span
@@ -151,7 +157,7 @@ export default function WhoWeAre() {
               them with precision.
             </p>
 
-          </div>
+          </motion.div>
 
           {/* RIGHT */}
           <div
@@ -178,9 +184,13 @@ export default function WhoWeAre() {
                 t: "Single Accountability",
                 d: "One partner from strategy and design to deployment.",
               },
-            ].map((item) => (
-              <div
+            ].map((item, index) => (
+              <motion.div
                 key={item.n}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="
                   group
                   relative
@@ -266,7 +276,7 @@ export default function WhoWeAre() {
 
                 </div>
 
-              </div>
+              </motion.div>
             ))}
 
           </div>
@@ -301,8 +311,12 @@ export default function WhoWeAre() {
               desc: "Integrity, precision, partnership, and long-term trust.",
             },
           ].map((card, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="
                 group
                 relative
@@ -402,7 +416,7 @@ export default function WhoWeAre() {
 
               </div>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>

@@ -182,7 +182,7 @@ export default function SolutionsHero() {
         >
           <div className="w-full max-w-[480px] aspect-square flex items-center justify-center">
             <DotLottieReact
-              src="https://lottie.host/63b96167-8c9b-4a52-b72b-a0f7d5b58e26/kaDB6VgG3v.lottie"
+              src="/lottie/router.json"
               loop
               autoplay
               className="w-full h-full object-contain"

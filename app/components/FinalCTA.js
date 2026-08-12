@@ -70,6 +70,7 @@ export default function FinalCTA({
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           className="relative overflow-hidden clay-light bg-[#f7f9fc] border border-[#050849]/5 px-5 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-24"
         >
           {/* TOP SECTION */}

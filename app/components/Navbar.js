@@ -13,6 +13,7 @@ import {
   FileText,
   HelpCircle,
   Menu,
+  ArrowRight,
   X,Cpu,Code
 } from "lucide-react";
 import Link from "next/link";
@@ -283,19 +284,20 @@ export default function Navbar() {
   const [mobileActive, setMobileActive] = useState(null);
 
   return (
-    <header className="fixed left-0 top-0 z-[999] w-full border-b border-white/10 bg-[#080357]/95 backdrop-blur-xl">
-      <div className="mx-auto  flex h-[88px] max-w-[1500px] items-center justify-between px-8">
+    <header className="fixed left-0 top-0 z-[999] w-full border-b border-[#050849]/5 bg-[#fafafa]/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-[80px] max-w-7xl items-center justify-between px-6 lg:px-12">
         {/* LOGO */}
         <a href="/" className="flex shrink-0 items-center">
           <img
-            className="h-8 md:px-15"
+            className="h-7"
             src={"/images/logo/weroute.png"}
+            style={{ filter: "brightness(0) saturate(100%) invert(8%) sepia(26%) saturate(6383%) hue-rotate(209deg) brightness(88%) contrast(97%)" }} // Force dark navy color
             alt="WeRoute"
           />
         </a>
 
         {/* NAVIGATION */}
-        <nav className="relative hidden xl:flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 backdrop-blur-xl">
+        <nav className="relative hidden xl:flex items-center gap-2 rounded-full border border-[#050849]/10 bg-white/60 px-2 py-1.5 backdrop-blur-md shadow-sm">
           {NAV_ITEMS.map((item) => (
             <div
               key={item.label}
@@ -305,19 +307,15 @@ export default function Navbar() {
                 setActiveSub(0);
               }}
             >
-              {/* Updated to Link to support landing page routing */}
               <Link
                 href={item.href}
-                className={`relative block rounded-xl px-5 py-3 text-[15px] font-semibold transition-all duration-300 ${
+                className={`relative block rounded-full px-5 py-2 text-[14px] font-semibold transition-all duration-300 ${
                   active === item.label
-                    ? "bg-white/10 text-white"
-                    : "text-white/75 hover:text-white"
+                    ? "bg-[#050849]/5 text-[#050849]"
+                    : "text-[#050849]/60 hover:text-[#050849] hover:bg-[#050849]/5"
                 }`}
               >
                 {item.label}
-                {active === item.label && (
-                  <span className="absolute bottom-1 left-1/2 h-[2px] w-[38px] -translate-x-1/2 rounded-full bg-white" />
-                )}
               </Link>
             </div>
           ))}
@@ -330,27 +328,27 @@ export default function Navbar() {
                 setActive(null);
                 setActiveSub(0);
               }}
-              className="absolute left-1/2 top-[88px] w-[920px] -translate-x-1/2 overflow-hidden rounded-[28px] border border-white/10 bg-[#030b18]/98 shadow-[0_40px_120px_rgba(0,0,0,0.75)] backdrop-blur-2xl transition-all duration-300 animate-in fade-in zoom-in-95"
+              className="absolute left-1/2 top-[60px] w-[900px] -translate-x-1/2 overflow-hidden rounded-[24px] border border-[#050849]/10 bg-white/95 shadow-[0_40px_100px_rgba(5,8,73,0.1)] backdrop-blur-3xl transition-all duration-300 animate-in fade-in zoom-in-95"
             >
               {/* GRID TYPE */}
               {MENU[active].type === "grid" ? (
-                <div className="grid grid-cols-[1.2fr_340px]">
+                <div className="grid grid-cols-[1.2fr_300px]">
                   {/* LEFT */}
-                  <div className="grid grid-cols-2 gap-x-10 gap-y-12 p-12">
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-10 p-10">
                     {MENU[active].items.map((item, i) => (
                       <Link
                         href={item.href}
                         key={i}
                         className="group flex gap-4"
                       >
-                        <div className="mt-1 text-[#73a8ff] transition-transform duration-300 group-hover:scale-110">
+                        <div className="mt-1 text-[#050849]/40 transition-all duration-300 group-hover:scale-110 group-hover:text-[#050849]">
                           {item.icon}
                         </div>
                         <div>
-                          <h4 className="text-[21px] font-semibold text-white transition-colors duration-300 group-hover:text-[#84b6ff]">
+                          <h4 className="text-[17px] font-semibold text-[#050849] transition-colors duration-300">
                             {item.title}
                           </h4>
-                          <p className="mt-2 text-[15px] leading-8 text-white/45">
+                          <p className="mt-2 text-[14px] leading-relaxed text-[#050849]/60">
                             {item.desc}
                           </p>
                         </div>
@@ -359,92 +357,90 @@ export default function Navbar() {
                   </div>
 
                   {/* RIGHT */}
-                  <div className="border-l border-white/10 p-10 bg-white/[0.02]">
-                    <span className="text-[12px] font-semibold tracking-[0.22em] text-[#79afff]">
+                  <div className="border-l border-[#050849]/10 p-10 bg-[#fafafa]/50">
+                    <span className="text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
                       {MENU[active].badge}
                     </span>
-                    <h3 className="mt-5 text-[34px] font-bold leading-[1.15] text-white">
+                    <h3 className="mt-4 text-[26px] font-bold leading-[1.2] text-[#050849]">
                       {MENU[active].title}
                     </h3>
-                    <p className="mt-5 text-[16px] leading-8 text-white/45">
+                    <p className="mt-4 text-[15px] leading-relaxed text-[#050849]/60">
                       {MENU[active].desc}
                     </p>
                   </div>
                 </div>
               ) : (
-                <div className="grid grid-cols-[300px_1fr]">
+                <div className="grid grid-cols-[280px_1fr]">
                   {/* LEFT MENU */}
-                  <div className="border-r border-white/10 p-10">
-                    <span className="mb-6 block text-[12px] font-semibold tracking-[0.22em] text-[#6ea6ff]">
-                      {active.toUpperCase()}
+                  <div className="border-r border-[#050849]/10 p-8 bg-[#fafafa]/30">
+                    <span className="mb-6 block text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
+                      {active}
                     </span>
 
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       {MENU[active].groups.map((group, i) => (
-                        <Link  key={i}
-                            href={group.href || "#"}>
-                        <button
-                        
-                          
-                          onMouseEnter={() => setActiveSub(i)}
-                          className={`flex w-full items-center justify-between rounded-2xl px-5 py-4 text-left transition-all duration-300 ${
-                            activeSub === i
-                              ? "bg-white/10"
-                              : "hover:bg-white/[0.05]"
-                          }`}
-                        >
-                          <div className="flex items-center gap-4">
-                            <span className="text-[#73a8ff]">
-                              {group.icon}
-                            </span>
-                            <span className="text-[18px] font-semibold leading-tight text-white">
-                              {group.title}
-                            </span>
-                          </div>
-                          <ChevronRight
-                            size={18}
-                            className={`transition-transform duration-300 ${
+                        <Link key={i} href={group.href || "#"}>
+                          <button
+                            onMouseEnter={() => setActiveSub(i)}
+                            className={`flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-left transition-all duration-300 ${
                               activeSub === i
-                                ? "translate-x-1 text-white"
-                                : "text-white/60"
+                                ? "bg-white shadow-sm border border-[#050849]/5"
+                                : "hover:bg-white/50 border border-transparent"
                             }`}
-                          />
-                        </button></Link>
+                          >
+                            <div className="flex items-center gap-3">
+                              <span className={`transition-colors ${activeSub === i ? "text-[#050849]" : "text-[#050849]/40"}`}>
+                                {group.icon}
+                              </span>
+                              <span className="text-[15px] font-semibold leading-tight text-[#050849]">
+                                {group.title}
+                              </span>
+                            </div>
+                            <ChevronRight
+                              size={16}
+                              className={`transition-all duration-300 ${
+                                activeSub === i
+                                  ? "translate-x-1 text-[#050849]"
+                                  : "text-[#050849]/20"
+                              }`}
+                            />
+                          </button>
+                        </Link>
                       ))}
                     </div>
                   </div>
 
                   {/* RIGHT CONTENT */}
-                  <div className="p-10">
+                  <div className="p-10 bg-white">
                     <div className="flex items-start gap-5">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-[#79afff]">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#050849]/10 bg-[#fafafa] text-[#050849]">
                         {MENU[active].groups[activeSub].icon}
                       </div>
                       <div>
-                        <span className="text-[12px] font-semibold tracking-[0.22em] text-white/30">
-                          {active.toUpperCase()}
+                        <span className="text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
+                          {active}
                         </span>
-                        <h3 className="mt-2 text-[34px] font-bold leading-tight text-white">
+                        <h3 className="mt-1 text-[26px] font-bold leading-tight text-[#050849]">
                           {MENU[active].groups[activeSub].title}
                         </h3>
-                        <p className="mt-3 text-[16px] text-white/45">
+                        <p className="mt-2 text-[15px] text-[#050849]/60">
                           {MENU[active].groups[activeSub].desc}
                         </p>
                       </div>
                     </div>
 
-                    <div className="mt-12 grid grid-cols-2 gap-x-14 gap-y-10">
+                    <div className="mt-10 grid grid-cols-2 gap-x-10 gap-y-8">
                       {MENU[active].groups[activeSub].features.map(
                         (feature, i) => (
-                          <div key={i} className="group flex gap-5">
+                          <div key={i} className="group flex gap-4">
                             <Link
                               href={feature.href || "#"}
-                              className="group flex gap-5"
+                              className="group flex gap-4 items-start"
                             >
-                              <span className="text-[24px] font-bold text-white/20">
+                              <span className="text-[18px] font-bold text-[#050849]/20 group-hover:text-[#050849]/40 transition-colors">
                                 {String(i + 1).padStart(2, "0")}
                               </span>
-                              <span className="text-[18px] font-medium leading-8 text-white/80 transition-colors group-hover:text-white">
+                              <span className="text-[15px] font-semibold leading-relaxed text-[#050849]/70 transition-colors group-hover:text-[#050849]">
                                 {feature.title}
                               </span>
                             </Link>
@@ -462,28 +458,54 @@ export default function Navbar() {
         {/* MOBILE MENU BUTTON */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] text-white xl:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#050849]/10 bg-white text-[#050849] xl:hidden shadow-sm"
         >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
 
         {/* RIGHT SIDE */}
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           <Link
             href="/contact"
-            className="text-[16px] font-medium text-white/80 transition hover:text-white"
+            className="text-[13px] font-bold uppercase tracking-[0.1em] text-[#050849]/60 transition-colors hover:text-[#050849]"
           >
             Contact
           </Link>
-          <button className="rounded-2xl border border-white/15 bg-white/[0.05] px-8 py-4 text-[16px] font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:scale-[1.03]">
-            Get Started →
-          </button>
+          <a
+            href="#contact"
+            className="
+              group
+              flex
+              items-center
+              gap-3
+              rounded-full
+              bg-[#050849]
+              pl-6
+              pr-2
+              py-2
+              text-[12px]
+              font-bold
+              uppercase
+              tracking-[0.1em]
+              text-white
+              shadow-[0_10px_20px_rgba(5,8,73,0.15)]
+              transition-all
+              duration-500
+              hover:bg-black
+              hover:-translate-y-0.5
+            "
+          >
+            Start Project
+            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform duration-500 group-hover:bg-white/30 group-hover:translate-x-1">
+              <ArrowRight size={14} />
+            </div>
+          </a>
         </div>
       </div>
 
       {/* MOBILE MENU */}
       <div
-        className={`overflow-y-auto border-t border-white/10 bg-[#041120]/98 backdrop-blur-2xl transition-all duration-500 xl:hidden ${
+        className={`overflow-y-auto border-t border-[#050849]/10 bg-[#fafafa]/98 backdrop-blur-2xl transition-all duration-500 xl:hidden ${
           mobileOpen ? "max-h-screen opacity-100 pb-20" : "max-h-0 opacity-0"
         }`}
       >
@@ -496,23 +518,21 @@ export default function Navbar() {
               return (
                 <div
                   key={item.label}
-                  className="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors"
+                  className="flex flex-col overflow-hidden rounded-2xl border border-[#050849]/10 bg-white/50 transition-colors shadow-sm"
                 >
                   <div className="flex items-center justify-between">
-                    {/* Link to the landing page */}
                     <Link
                       href={item.href}
-                      onClick={() => setMobileOpen(false)} // close menu on navigate
-                      className="flex-1 px-5 py-4 text-left text-[15px] font-semibold text-white/80 transition-colors hover:text-white"
+                      onClick={() => setMobileOpen(false)}
+                      className="flex-1 px-5 py-4 text-left text-[15px] font-semibold text-[#050849]/80 transition-colors hover:text-[#050849]"
                     >
                       {item.label}
                     </Link>
 
-                    {/* Toggle button for mega menu contents */}
                     {menuData && (
                       <button
                         onClick={() => setMobileActive(isExpanded ? null : item.label)}
-                        className="flex items-center justify-center border-l border-white/10 px-5 py-4 text-white/60 transition-colors hover:text-white"
+                        className="flex items-center justify-center border-l border-[#050849]/10 px-5 py-4 text-[#050849]/60 transition-colors hover:text-[#050849]"
                       >
                         <ChevronRight
                           size={18}
@@ -526,24 +546,24 @@ export default function Navbar() {
 
                   {/* Mega Menu Content Expansion */}
                   {isExpanded && menuData && (
-                    <div className="flex flex-col gap-5 border-t border-white/5 bg-white/[0.02] px-5 py-5">
+                    <div className="flex flex-col gap-5 border-t border-[#050849]/5 bg-[#fafafa]/50 px-5 py-5">
                       {menuData.type === "grid" ? (
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-5">
                           {menuData.items.map((subItem, i) => (
                             <Link
                               key={i}
                               href={subItem.href || "#"}
                               onClick={() => setMobileOpen(false)}
-                              className="flex items-start gap-3"
+                              className="flex items-start gap-4"
                             >
-                              <div className="mt-0.5 text-[#73a8ff]">
+                              <div className="mt-0.5 text-[#050849]/50">
                                 {subItem.icon}
                               </div>
                               <div className="flex flex-col">
-                                <span className="text-sm font-semibold text-white/90">
+                                <span className="text-[15px] font-semibold text-[#050849]">
                                   {subItem.title}
                                 </span>
-                                <span className="text-xs text-white/50">
+                                <span className="text-[13px] text-[#050849]/60 mt-0.5">
                                   {subItem.desc}
                                 </span>
                               </div>
@@ -554,19 +574,19 @@ export default function Navbar() {
                         <div className="flex flex-col gap-6">
                           {menuData.groups.map((group, i) => (
                             <div key={i} className="flex flex-col gap-3">
-                              <div className="flex items-center gap-2 text-[#73a8ff]">
+                              <div className="flex items-center gap-3 text-[#050849]/60">
                                 {group.icon}
-                                <span className="text-sm font-semibold text-white/90">
+                                <span className="text-[15px] font-semibold text-[#050849]">
                                   {group.title}
                                 </span>
                               </div>
-                              <div className="ml-2 flex flex-col gap-2.5 border-l border-white/10 pl-4">
+                              <div className="ml-2.5 flex flex-col gap-3 border-l-2 border-[#050849]/10 pl-5">
                                 {group.features.map((feature, j) => (
                                   <Link
                                     key={j}
                                     href={feature.href || "#"}
                                     onClick={() => setMobileOpen(false)}
-                                    className="text-[13px] text-white/60 transition-colors hover:text-white"
+                                    className="text-[14px] font-medium text-[#050849]/70 transition-colors hover:text-[#050849]"
                                   >
                                     {feature.title}
                                   </Link>
@@ -585,15 +605,15 @@ export default function Navbar() {
 
           {/* MOBILE CTA */}
           <div className="mt-8 flex flex-col gap-3">
-            <button className="rounded-2xl bg-white px-6 py-4 text-[15px] font-semibold text-black">
-              Get Started
+            <button className="rounded-2xl bg-[#050849] px-6 py-4 text-[15px] font-semibold text-white shadow-lg">
+              Start Project
             </button>
             <Link 
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="flex justify-center items-center rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 text-[15px] font-medium text-white"
+              className="flex justify-center items-center rounded-2xl border border-[#050849]/10 bg-white px-6 py-4 text-[15px] font-semibold text-[#050849]"
             >
-              Contact
+              Contact Us
             </Link>
           </div>
         </div>

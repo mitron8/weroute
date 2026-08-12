@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { WHY } from "./data";
 
 export default function WhyWeRoute() {
@@ -50,7 +51,11 @@ export default function WhyWeRoute() {
       <div className="relative z-10 mx-auto max-w-7xl px-6">
 
         {/* SECTION HEADER */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="
             mx-auto
             max-w-3xl
@@ -128,23 +133,28 @@ export default function WhyWeRoute() {
             execution, and long-term operational excellence.
           </p>
 
-        </div>
+        </motion.div>
 
-        {/* GRID */}
+        {/* BENTO GRID */}
         <div
           className="
             mt-20
             grid
             gap-6
+            grid-cols-1
             md:grid-cols-2
-            xl:grid-cols-3
+            lg:grid-cols-6
           "
         >
 
           {WHY.map((c, i) => (
-            <div
+            <motion.div
               key={i}
-              className="
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className={`
                 group
                 relative
                 overflow-hidden
@@ -155,10 +165,12 @@ export default function WhyWeRoute() {
                 shadow-[0_10px_40px_rgba(5,36,64,0.05)]
                 backdrop-blur-xl
                 transition-all duration-500
-                hover:-translate-y-3
+                hover:-translate-y-2
                 hover:border-[#052440]/20
                 hover:shadow-[0_20px_60px_rgba(5,36,64,0.08)]
-              "
+                ${i === 0 || i === 1 ? 'lg:col-span-3' : 'lg:col-span-2'}
+                ${i === 4 ? 'md:col-span-2 lg:col-span-2' : ''}
+              `}
             >
 
               {/* HOVER GLOW */}
@@ -176,68 +188,69 @@ export default function WhyWeRoute() {
                 "
               />
 
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col h-full">
 
-                {/* NUMBER */}
-                <div
-                  className="
-                    text-sm
-                    font-bold
-                    tracking-[0.22em]
-                    text-[#0d5ea8]
-                  "
-                >
-                  {c.n}
+                <div className="flex justify-between items-start">
+                  {/* ICON */}
+                  <div
+                    className="
+                      flex
+                      h-16
+                      w-16
+                      items-center
+                      justify-center
+                      rounded-2xl
+                      border border-[#052440]/10
+                      bg-[#080357]
+                      text-white
+                      transition-all duration-500
+                      group-hover:scale-110
+                    "
+                  >
+                    {c.icon}
+                  </div>
+                  
+                  {/* NUMBER */}
+                  <div
+                    className="
+                      text-sm
+                      font-bold
+                      tracking-[0.22em]
+                      text-[#0d5ea8]
+                    "
+                  >
+                    {c.n}
+                  </div>
                 </div>
 
-                {/* ICON */}
-                <div
-                  className="
-                    mt-6
-                    flex
-                    h-16
-                    w-16
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    border border-[#052440]/10
-                    bg-[#080357]
-                    text-white
-                    transition-all duration-500
-                    group-hover:scale-110
-                  "
-                >
-                  {c.icon}
+                <div className="mt-auto pt-10">
+                  {/* TITLE */}
+                  <h3
+                    className="
+                      text-2xl
+                      font-bold
+                      leading-snug
+                      text-[#052440]
+                    "
+                  >
+                    {c.t}
+                  </h3>
+
+                  {/* TEXT */}
+                  <p
+                    className="
+                      mt-4
+                      text-base
+                      leading-7
+                      text-[#052440]/60
+                    "
+                  >
+                    {c.b}
+                  </p>
                 </div>
-
-                {/* TITLE */}
-                <h3
-                  className="
-                    mt-8
-                    text-2xl
-                    font-bold
-                    leading-snug
-                    text-[#052440]
-                  "
-                >
-                  {c.t}
-                </h3>
-
-                {/* TEXT */}
-                <p
-                  className="
-                    mt-5
-                    text-base
-                    leading-7
-                    text-[#052440]/60
-                  "
-                >
-                  {c.b}
-                </p>
-
               </div>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>
