@@ -11,35 +11,40 @@ export default function ServicesOverview() {
       icon: <Server className="w-8 h-8 text-[#080357]" />,
       description: "Managed services keep enterprise infrastructure, cloud, and security running day to day, with proactive monitoring and continuous support that catches problems before they affect the business.",
       outcomes: "Reduced downtime, predictable IT spend, faster incident response, stronger security posture, and more internal time for strategic work.",
-      link: "/services/managed-services"
+      link: "/services/managed-services",
+      className: "md:col-span-1 lg:col-span-2"
     },
     {
       title: "Professional Services",
       icon: <Settings className="w-8 h-8 text-[#080357]" />,
       description: "Professional services design, deploy, and integrate enterprise technology environments, covering cloud migration, network engineering, and systems integration through structured, milestone-driven implementation.",
       outcomes: "Faster deployments, cleaner integrations, modernized legacy systems, reduced project risk, and infrastructure that is ready to scale.",
-      link: "/services/professional-services"
+      link: "/services/professional-services",
+      className: "md:col-span-1 lg:col-span-2"
     },
     {
       title: "Consulting & Advisory Services",
       icon: <Users className="w-8 h-8 text-[#080357]" />,
       description: "Consulting and advisory services help leadership teams make informed technology decisions through assessments, enterprise architecture planning, cybersecurity consulting, and clear strategic roadmaps for transformation.",
       outcomes: "Clearer technology strategy, validated architecture decisions, reduced project risk, better vendor choices, and a roadmap leadership can act on.",
-      link: "/services/consulting-advisory"
+      link: "/services/consulting-advisory",
+      className: "md:col-span-2 lg:col-span-2"
     },
     {
       title: "Manpower & Staffing Services",
       icon: <Users className="w-8 h-8 text-[#080357]" />,
       description: "Experienced technology professionals join internal teams through staff augmentation and dedicated staffing arrangements, adding capacity exactly where projects and daily operations need it most.",
       outcomes: "Faster hiring, lower recruitment overhead, access to specialized skills, flexible scaling up or down, and continuity when internal teams are stretched thin.",
-      link: "/services/staffing"
+      link: "/services/staffing",
+      className: "md:col-span-1 lg:col-span-3"
     },
     {
       title: "Software & AI Development Services",
       icon: <BrainCircuit className="w-8 h-8 text-[#080357]" />,
       description: "Enterprise software, AI applications, and intelligent automation are built and deployed around actual business requirements, spanning custom platforms, enterprise application development services, and APIs that connect existing systems.",
       outcomes: "Faster time to market, software built for real workflows, reduced manual effort, systems that scale with demand, and a foundation ready for future AI capability.",
-      link: "/services/software-ai-development"
+      link: "/services/software-ai-development",
+      className: "md:col-span-1 lg:col-span-3"
     }
   ];
 
@@ -63,7 +68,7 @@ export default function ServicesOverview() {
           </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -71,8 +76,8 @@ export default function ServicesOverview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="clay-light bg-[#f7f9fc] border border-[#050849]/5 flex flex-col h-full p-8
-                         transition-all duration-300 group hover:-translate-y-2 hover:border-[#B7F36B]/50"
+              className={`clay-light bg-[#f7f9fc] border border-[#050849]/5 flex flex-col h-full p-8
+                         transition-all duration-300 group hover:-translate-y-2 hover:border-[#B7F36B]/50 ${service.className}`}
             >
               <div className="w-16 h-16 bg-white flex items-center justify-center mb-6 clay-badge-light group-hover:scale-110 transition-transform duration-300 text-[#080357]">
                 {service.icon}

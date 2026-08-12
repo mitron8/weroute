@@ -246,7 +246,7 @@ export const servicesData = {
           },
           {
             "title": "INTERNAL LINKS",
-            "description": "/services/managed-network-services  |  /services/managed-cloud-hybrid-services  |  /services/network-observability-services  |  /solutions/data-centre-solutions"
+            "description": "/services/managed-network-services  |  /services  |  /solution/network-connectivity/network-observability  |  /services/managed-data-centre-services"
           }
         ]
       },
@@ -582,7 +582,7 @@ export const servicesData = {
           },
           {
             "title": "INTERNAL LINKS",
-            "description": "/solutions/network-connectivity  |  /solutions/sd-wan-solutions  |  /services/network-observability-services  |  /services/managed-cloud-hybrid-services  |  /services/managed-cybersecurity-soc-services"
+            "description": "/solutions/network-connectivity  |  /solution/network-connectivity/sd-wan-sdn-solutions  |  /solution/network-connectivity/network-observability  |  /services  |  /services/managed-cybersecurity-soc-services"
           }
         ]
       },
@@ -926,7 +926,7 @@ export const servicesData = {
           },
           {
             "title": "INTERNAL LINKS",
-            "description": "/solutions/cloud-devops  |  /solutions/cloud-architecture-integration  |  /solutions/cloud-observability  |  /solutions/infrastructure-as-code  |  /services/managed-network-services  |  /services/managed-cybersecurity-soc-services"
+            "description": "/solutions/cloud-and-devOps  |  /solution/CloudDevOpsPage/cloud-architecture-integration  |  /solution/CloudDevOpsPage/cloud-observability  |  /solution/CloudDevOpsPage/infrastructure-as-code  |  /services/managed-network-services  |  /services/managed-cybersecurity-soc-services"
           }
         ]
       },
@@ -1291,7 +1291,7 @@ export const servicesData = {
           },
           {
             "title": "INTERNAL LINKS",
-            "description": "/solutions/cybersecurity  |  /solutions/security-operations-architecture  |  /solutions/endpoint-cloud-security  |  /solutions/identity-access-management  |  /solutions/zero-trust-architecture  |  /services/managed-cloud-hybrid-services  |  /services/managed-network-services"
+            "description": "/solutions/cybersecurity  |  /solution/cybersecurity/soc-siem-soar  |  /solution/cybersecurity/endpoint-and-cloud-security-services  |  /solution/cybersecurity/identity-access-management  |  /solution/cybersecurity/zero-trust-architecture  |  /services  |  /services/managed-network-services"
           }
         ]
       },

@@ -23,7 +23,7 @@ export const networkSolutionsData = {
         "Intelligent Operations",
       ],
 
-      canonical: "/network-connectivity/ai-network-solutions",
+      canonical: "/solution/network-connectivity/ai-network-solutions",
 
       robots: {
         index: true,
@@ -37,7 +37,7 @@ export const networkSolutionsData = {
         description:
           "WeRoute’s AI network solutions bring AIOps, predictive monitoring, and automated root cause analysis to enterprise networks.",
 
-        url: "/network-connectivity/ai-network-solutions",
+        url: "/solution/network-connectivity/ai-network-solutions",
 
         siteName: "WeRoute",
 
@@ -90,7 +90,7 @@ export const networkSolutionsData = {
     breadcrumb: [
       {
         title: "Solutions",
-        href: "/solutions",
+        href: "/solution/network-connectivity/ai-network-solutions",
       },
       {
         title: "Network Connectivity",
@@ -547,7 +547,7 @@ export const networkSolutionsData = {
         "enterprise connectivity solutions",
         "network transformation services"
       ],
-      canonical: "/network-connectivity/sd-wan-sdn-solutions",
+      canonical: "/solution/network-connectivity/sd-wan-sdn-solutions",
       robots: {
         index: true,
         follow: true,
@@ -555,7 +555,7 @@ export const networkSolutionsData = {
       openGraph: {
         title: "SD-WAN Solutions and Software-Defined Networking | WeRoute",
         description: "WeRoute delivers SD-WAN solutions, SDN, and software-defined network architecture for enterprises across hybrid and multi-cloud environments.",
-        url: "/network-connectivity/sd-wan-sdn-solutions",
+        url: "/solution/network-connectivity/sd-wan-sdn-solutions",
         siteName: "WeRoute",
         type: "website",
         images: [
@@ -595,7 +595,7 @@ export const networkSolutionsData = {
     breadcrumb: [
        {
         title: "Solutions",
-        href: "/solutions",
+        href: "/solution/network-connectivity/ai-network-solutions",
       },
       {
         title: "Network Connectivity",
@@ -948,7 +948,7 @@ export const networkSolutionsData = {
         "network assurance",
         "enterprise network monitoring"
       ],
-      canonical: "/network-connectivity/network-observability",
+      canonical: "/solution/network-connectivity/network-observability",
       robots: {
         index: true,
         follow: true,
@@ -956,7 +956,7 @@ export const networkSolutionsData = {
       openGraph: {
         title: "Network Observability Solutions | Network Analytics | WeRoute",
         description: "WeRoute delivers network observability solutions, network analytics, and performance monitoring for enterprises across hybrid and multi-cloud environments.",
-        url: "/network-connectivity/network-observability",
+        url: "/solution/network-connectivity/network-observability",
         siteName: "WeRoute",
         type: "website",
         images: [
@@ -996,7 +996,7 @@ export const networkSolutionsData = {
     breadcrumb: [
       {
         title: "Solutions",
-        href: "/solutions",
+        href: "/solution/network-connectivity/ai-network-solutions",
       },
       {
         title: "Network Connectivity",
@@ -1338,7 +1338,7 @@ export const networkSolutionsData = {
         "enterprise NaaS",
         "managed connectivity services"
       ],
-      canonical: "/network-connectivity/network-as-a-service",
+      canonical: "/solution/network-connectivity/network-as-a-service",
       robots: {
         index: true,
         follow: true,
@@ -1346,7 +1346,7 @@ export const networkSolutionsData = {
       openGraph: {
         title: "Network as a Service (NaaS) | Managed Network Services | WeRoute",
         description: "WeRoute delivers network as a service, NaaS, and managed network services for enterprises scaling across multiple locations and hybrid work environments.",
-        url: "/network-connectivity/network-as-a-service",
+        url: "/solution/network-connectivity/network-as-a-service",
         siteName: "WeRoute",
         type: "website",
         images: [
@@ -1386,7 +1386,7 @@ export const networkSolutionsData = {
     breadcrumb: [
        {
         title: "Solutions",
-        href: "/solutions",
+        href: "/solution/network-connectivity/ai-network-solutions",
       },
       {
         title: "Network Connectivity",
@@ -1734,7 +1734,7 @@ export const networkSolutionsData = {
         "wireless network management",
         "enterprise mobility management"
       ],
-      canonical: "/network-connectivity/mobility-wireless-solutions",
+      canonical: "/solution/network-connectivity/mobility-wireless-solutions",
       robots: {
         index: true,
         follow: true,
@@ -1742,7 +1742,7 @@ export const networkSolutionsData = {
       openGraph: {
         title: "Mobility & Wireless Solutions | Enterprise Wi-Fi | WeRoute",
         description: "WeRoute delivers mobility solutions, enterprise wireless networks, and secure Wi-Fi for hybrid, device-diverse workforces.",
-        url: "/network-connectivity/mobility-wireless-solutions",
+        url: "/solution/network-connectivity/mobility-wireless-solutions",
         siteName: "WeRoute",
         type: "website",
         images: [
@@ -1782,7 +1782,7 @@ export const networkSolutionsData = {
     breadcrumb: [
        {
         title: "Solutions",
-        href: "/solutions",
+        href: "/solution/network-connectivity/ai-network-solutions",
       },
       {
         title: "Network Connectivity",

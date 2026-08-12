@@ -75,7 +75,7 @@ export const cloudDevOpsData = {
     breadcrumb: [
       {
         title: "Solutions",
-        href: "/solutions",
+        href: "/solution/network-connectivity/ai-network-solutions",
       },
       {
         title: "Cloud Services",

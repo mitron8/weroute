@@ -419,7 +419,7 @@ export const aiAutomationData = {
       "MTTR Reduction",
       "Reduce MTTR"
     ],
-    "canonical": "/solutions/AI-Intelligent-Automation/ai-driven-observability",
+    "canonical": "/solution/AI-Intelligent-Automation/ai-driven-observability",
     "robots": {
       "index": true,
       "follow": true
@@ -427,7 +427,7 @@ export const aiAutomationData = {
     "openGraph": {
       "title": "AI-Driven Observability Services | WeRoute",
       "description": "WeRoute delivers AI-driven observability that continuously analyzes telemetry to predict issues, prioritize alerts, and improve operational decision-making.",
-      "url": "/solutions/AI-Intelligent-Automation/ai-driven-observability",
+      "url": "/solution/AI-Intelligent-Automation/ai-driven-observability",
       "siteName": "WeRoute",
       "type": "website",
       "images": [
@@ -734,7 +734,7 @@ export const aiAutomationData = {
       "AI-Powered Business Solutions",
       "Agentic AI Solutions"
     ],
-    "canonical": "/solutions/AI-Intelligent-Automation/ai-software-services",
+    "canonical": "/services",
     "robots": {
       "index": true,
       "follow": true
@@ -742,7 +742,7 @@ export const aiAutomationData = {
     "openGraph": {
       "title": "AI Application Development Services | WeRoute",
       "description": "WeRoute designs and builds AI-powered applications that move beyond pilots into everyday enterprise use.",
-      "url": "/solutions/AI-Intelligent-Automation/ai-software-services",
+      "url": "/services",
       "siteName": "WeRoute",
       "type": "website",
       "images": [
@@ -1048,7 +1048,7 @@ export const aiAutomationData = {
       "AI Maturity Assessment",
       "Predictive Analytics"
     ],
-    "canonical": "/solutions/AI-Intelligent-Automation/ai-ml-model-deployment",
+    "canonical": "/solution/AI-Intelligent-Automation/ai-ml-model-deployment",
     "robots": {
       "index": true,
       "follow": true
@@ -1056,7 +1056,7 @@ export const aiAutomationData = {
     "openGraph": {
       "title": "AI/ML Model Deployment & MLOps Services | WeRoute",
       "description": "WeRoute helps enterprises move AI models into governed, reliable production systems.",
-      "url": "/solutions/AI-Intelligent-Automation/ai-ml-model-deployment",
+      "url": "/solution/AI-Intelligent-Automation/ai-ml-model-deployment",
       "siteName": "WeRoute",
       "type": "website",
       "images": [
@@ -1371,7 +1371,7 @@ export const aiAutomationData = {
       "Intelligent Process Automation",
       "Enterprise AI Transformation"
     ],
-    "canonical": "/solutions/AI-Intelligent-Automation/automation-aiops",
+    "canonical": "/solution/AI-Intelligent-Automation/automation-aiops",
     "robots": {
       "index": true,
       "follow": true
@@ -1379,7 +1379,7 @@ export const aiAutomationData = {
     "openGraph": {
       "title": "Automation & AIOps Services | WeRoute",
       "description": "WeRoute helps enterprises replace manual, reactive IT operations with intelligent automation and AIOps.",
-      "url": "/solutions/AI-Intelligent-Automation/automation-aiops",
+      "url": "/solution/AI-Intelligent-Automation/automation-aiops",
       "siteName": "WeRoute",
       "type": "website",
       "images": [

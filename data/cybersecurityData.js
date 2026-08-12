@@ -90,7 +90,7 @@ export const cybersecurityData = {
   breadcrumb: [
     {
       title: "Solution",
-      href: "/solutions",
+      href: "/solution/network-connectivity/ai-network-solutions",
     },
     {
       title: "Cybersecurity",
@@ -423,23 +423,23 @@ export const cybersecurityData = {
     links: [
       {
         label: "Identity & Access Management",
-        href: "/enterprise-security/identity-access-management",
+        href: "/solution/cybersecurity/identity-access-management",
       },
       {
         label: "Zero Trust Architecture",
-        href: "/enterprise-security/zero-trust-architecture",
+        href: "/solution/cybersecurity/zero-trust-architecture",
       },
       {
         label: "SOC / SIEM / SOAR",
-        href: "/enterprise-security/soc-siem-soar",
+        href: "/solution/cybersecurity/soc-siem-soar",
       },
       {
         label: "Cloud & DevOps",
-        href: "/network-connectivity/cloud-devops",
+        href: "/solutions/cloud-and-devOps",
       },
       {
         label: "Network Security",
-        href: "/network-connectivity/enterprise-security",
+        href: "/solutions/cybersecurity",
       },
     ],
   },
@@ -526,7 +526,7 @@ export const cybersecurityData = {
       "Non-Human Identity Governance",
     ],
 
-    canonical: "/enterprise-security/identity-access-management",
+    canonical: "/solution/cybersecurity/identity-access-management",
 
     robots: {
       index: true,
@@ -540,7 +540,7 @@ export const cybersecurityData = {
       description:
         "WeRoute delivers governance-led Identity & Access Management services for enterprises, combining identity governance, least-privilege access, and lifecycle management into a single Zero Trust-aligned architecture.",
 
-      url: "/enterprise-security/identity-access-management",
+      url: "/solution/cybersecurity/identity-access-management",
 
       siteName: "WeRoute",
 
@@ -594,7 +594,7 @@ export const cybersecurityData = {
   breadcrumb: [
     {
       title: "Solution",
-      href: "/solutions",
+      href: "/solution/network-connectivity/ai-network-solutions",
     },
     {
       title: "Cybersecurity",
@@ -927,23 +927,23 @@ export const cybersecurityData = {
     links: [
       {
         label: "Zero Trust Architecture",
-        href: "/enterprise-security/zero-trust-architecture",
+        href: "/solution/cybersecurity/zero-trust-architecture",
       },
       {
         label: "Endpoint & Cloud Security",
-        href: "/enterprise-security/endpoint-and-cloud-security-services",
+        href: "/solution/cybersecurity/endpoint-and-cloud-security-services",
       },
       {
         label: "SOC / SIEM / SOAR",
-        href: "/enterprise-security/soc-siem-soar",
+        href: "/solution/cybersecurity/soc-siem-soar",
       },
       {
         label: "GRC & Vendor Risk Management",
-        href: "/enterprise-security/grc-vendor-risk-management",
+        href: "/solution/cybersecurity/grc-vendor-risk-management",
       },
       {
         label: "Cloud Security",
-        href: "/network-connectivity/cloud-security",
+        href: "/solution/cybersecurity/endpoint-and-cloud-security-services",
       },
     ],
   },
@@ -1101,7 +1101,7 @@ export const cybersecurityData = {
   breadcrumb: [
     {
       title: "Solution",
-      href: "/solutions",
+      href: "/solution/network-connectivity/ai-network-solutions",
     },
     {
       title: "Cybersecurity",
@@ -1442,23 +1442,23 @@ export const cybersecurityData = {
     links: [
       {
         label: "Endpoint & Cloud Security",
-        href: "/enterprise-security/endpoint-and-cloud-security-services",
+        href: "/solution/cybersecurity/endpoint-and-cloud-security-services",
       },
       {
         label: "Identity & Access Management",
-        href: "/enterprise-security/identity-access-management",
+        href: "/solution/cybersecurity/identity-access-management",
       },
       {
         label: "Zero Trust Architecture",
-        href: "/enterprise-security/zero-trust-architecture",
+        href: "/solution/cybersecurity/zero-trust-architecture",
       },
       {
         label: "GRC & Vendor Risk Management",
-        href: "/enterprise-security/grc-vendor-risk-management",
+        href: "/solution/cybersecurity/grc-vendor-risk-management",
       },
       {
         label: "AI-Driven Security",
-        href: "/enterprise-security/ai-driven-security",
+        href: "/solution/cybersecurity/endpoint-and-cloud-security-services",
       },
     ],
   },
@@ -1545,7 +1545,7 @@ export const cybersecurityData = {
       "Compliance Maturity",
     ],
 
-    canonical: "/enterprise-security/grc-vendor-risk-management",
+    canonical: "/solution/cybersecurity/grc-vendor-risk-management",
 
     robots: {
       index: true,
@@ -1559,7 +1559,7 @@ export const cybersecurityData = {
       description:
         "WeRoute delivers GRC and Vendor Risk Management services for enterprises, combining governance, enterprise risk management, compliance, and third-party risk oversight into a single, measurable program.",
 
-      url: "/enterprise-security/grc-vendor-risk-management",
+      url: "/solution/cybersecurity/grc-vendor-risk-management",
 
       siteName: "WeRoute",
 
@@ -1614,7 +1614,7 @@ export const cybersecurityData = {
   breadcrumb: [
    {
       title: "Solution",
-      href: "/solutions",
+      href: "/solution/network-connectivity/ai-network-solutions",
     },
     {
       title: "Cybersecurity",
@@ -1948,23 +1948,23 @@ export const cybersecurityData = {
     links: [
       {
         label: "Identity & Access Management",
-        href: "/enterprise-security/identity-access-management",
+        href: "/solution/cybersecurity/identity-access-management",
       },
       {
         label: "Security Operations Architecture",
-        href: "/enterprise-security/soc-siem-soar",
+        href: "/solution/cybersecurity/soc-siem-soar",
       },
       {
         label: "Zero Trust Architecture",
-        href: "/enterprise-security/zero-trust-architecture",
+        href: "/solution/cybersecurity/zero-trust-architecture",
       },
       {
         label: "Endpoint & Cloud Security",
-        href: "/enterprise-security/endpoint-and-cloud-security-services",
+        href: "/solution/cybersecurity/endpoint-and-cloud-security-services",
       },
       {
         label: "Enterprise Risk Management",
-        href: "/enterprise-security/enterprise-risk-management",
+        href: "/solution/cybersecurity/grc-vendor-risk-management",
       },
     ],
   },
@@ -2052,7 +2052,7 @@ export const cybersecurityData = {
       "Continuous Verification",
     ],
 
-    canonical: "/enterprise-security/zero-trust-architecture",
+    canonical: "/solution/cybersecurity/zero-trust-architecture",
 
     robots: {
       index: true,
@@ -2066,7 +2066,7 @@ export const cybersecurityData = {
       description:
         "WeRoute designs Zero Trust Architecture for enterprises, replacing implicit trust with continuous verification, least-privilege access, and identity-centric security across every user, device, and workload.",
 
-      url: "/enterprise-security/zero-trust-architecture",
+      url: "/solution/cybersecurity/zero-trust-architecture",
 
       siteName: "WeRoute",
 
@@ -2121,7 +2121,7 @@ export const cybersecurityData = {
   breadcrumb: [
     {
       title: "Solution",
-      href: "/solutions",
+      href: "/solution/network-connectivity/ai-network-solutions",
     },
     {
       title: "Cybersecurity",
@@ -2456,23 +2456,23 @@ export const cybersecurityData = {
     links: [
       {
         label: "Identity & Access Management",
-        href: "/enterprise-security/identity-access-management",
+        href: "/solution/cybersecurity/identity-access-management",
       },
       {
         label: "Endpoint & Cloud Security",
-        href: "/enterprise-security/endpoint-and-cloud-security-services",
+        href: "/solution/cybersecurity/endpoint-and-cloud-security-services",
       },
       {
         label: "Security Operations Architecture",
-        href: "/enterprise-security/soc-siem-soar",
+        href: "/solution/cybersecurity/soc-siem-soar",
       },
       {
         label: "GRC & Vendor Risk Management",
-        href: "/enterprise-security/grc-vendor-risk-management",
+        href: "/solution/cybersecurity/grc-vendor-risk-management",
       },
       {
         label: "Network Security",
-        href: "/network-connectivity/enterprise-security",
+        href: "/solutions/cybersecurity",
       },
     ],
   },
