@@ -737,16 +737,25 @@ export default function ClientServicePage({ service, isNewLayout }) {
     );
   }
 
+  const getDiagramForService = (id) => {
+    switch (id) {
+      case 'managed-data-centre-services': return '/services%20digram/infra%20stack.jpg';
+      case 'managed-network-services': return '/services%20digram/network%20op.jpg';
+      case 'managed-cloud-hybrid-environment-services': return '/services%20digram/cloud%20op.jpg';
+      case 'managed-cybersecurity-soc-services': return '/services%20digram/managed%20soc.jpg';
+      default: return '/services%20digram/slc.jpg';
+    }
+  };
+
   // Prevent consecutive carousels to improve UX
   let previousLayoutType = null;
+  const renderSection = (section, index, totalSections) => {
+    const isFirst = index === 0;
+    const isDeliver = section.title.toLowerCase().includes("what we deliver");
+    const isProcess = section.title.toLowerCase().includes("delivery approach") || section.title.toLowerCase().includes("process") || section.title.toLowerCase().includes("approach");
+    const isPortfolio = section.title.toLowerCase().includes("portfolio");
+    const isIndustries = section.title.toLowerCase().includes("industries");
 
-  // Dynamic Component Mapper
-  const renderDynamicSection = (section, idx) => {
-    const isProcess = section.title && (section.title.toLowerCase().includes("approach") || section.title.toLowerCase().includes("process"));
-    const isDeliver = section.title && section.title.toLowerCase().includes("what we deliver");
-    const isPortfolio = section.title && section.title.toLowerCase().includes("portfolio");
-    const isIndustries = section.title && section.title.toLowerCase().includes("industries we support");
-    
     if (!section.items || section.items.length === 0) {
       previousLayoutType = "text";
       return <TextGraphicSection key={section.id} section={section} />;
@@ -774,28 +783,21 @@ export default function ClientServicePage({ service, isNewLayout }) {
         <React.Fragment key={section.id}>
           <ProcessSection section={section} />
           {/* Diagram Placeholder */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full mt-32 h-[500px] bg-[#080357] rounded-[3rem] clay-dark flex flex-col items-center justify-center relative overflow-hidden border border-white/10"
-          >
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
-            
-            {/* Abstract background graphics */}
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#B7F36B] rounded-full mix-blend-multiply filter blur-[80px] opacity-20"></div>
-            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#0d5ea8] rounded-full mix-blend-multiply filter blur-[80px] opacity-40"></div>
-
-            <div className="w-24 h-24 mb-8 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl relative z-10 backdrop-blur-sm">
-              <Workflow size={40} className="text-[#B7F36B]" />
-            </div>
-            
-            <h3 className="text-3xl font-bold text-white mb-4 relative z-10 tracking-tight">Process Architecture</h3>
-            <p className="text-white/60 relative z-10 text-lg max-w-lg text-center font-light">
-              [Diagram Placeholder] Replace this section with a technical architecture or workflow visualization graphic.
-            </p>
-          </motion.div>
+          <div className="flex justify-center mt-24">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="w-fit relative overflow-hidden rounded-[2rem] clay-dark border border-[#050849]/10 shadow-xl p-4 sm:p-6 bg-[#080357]"
+            >
+              <img 
+                src={getDiagramForService(service.id)}
+                alt="Service Delivery Approach Diagram" 
+                className="max-h-[400px] w-auto object-contain rounded-xl"
+              />
+            </motion.div>
+          </div>
         </React.Fragment>
       );
     }
@@ -1008,7 +1010,7 @@ export default function ClientServicePage({ service, isNewLayout }) {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               >
-                 {renderDynamicSection(section, idx)}
+                 {renderSection(section, idx, service.sections.length)}
               </motion.div>
             );
           })}
