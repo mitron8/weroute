@@ -121,8 +121,8 @@ const serviceData = {
         { title: "Financial Services", description: "ManufacturingHealthcare" },
         { title: "Retail", description: "TelecommunicationsGovernment Education Technology" },
         { title: "Logistics", description: "Energy & Utilities" },
-        { title: "RELATED MANAGED SERVICES", description: "/services/managed-data-center-services  |  /services/managed-network-services  |  /services/managed-cloud-hybrid-services  |  /services/managed-cybersecurity-soc-services  |  /services/network-observability-services" },
-        { title: "INTERNAL LINKS", description: "/solutions/network-connectivity  |  /solutions/cloud-devops  |  /solutions/cybersecurity  |  /solutions/ai-intelligent-automation  |  /solutions/software-digital-engineering" }
+        { title: "RELATED MANAGED SERVICES", description: "/services/managed-data-centre-services  |  /services/managed-network-services  |  /services/managed-cloud-hybrid-environment-services  |  /services/managed-cybersecurity-soc-services  |  /solution/network-connectivity/network-observability" },
+        { title: "INTERNAL LINKS", description: "/solutions/network-connectivity  |  /solutions/cloud-and-devOps  |  /solutions/cybersecurity  |  /solutions/AI-Intelligent-Automation  |  /solutions/softwareDigitalEngineering" }
       ]
     },
     {

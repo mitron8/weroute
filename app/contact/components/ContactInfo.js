@@ -41,7 +41,7 @@ export default function ContactInfo() {
           transition={{ duration: 0.5, delay: 0.1 * index }}
           className="clay-light bg-white p-8 border border-[#050849]/5 hover:-translate-y-2 hover:border-[#B7F36B] transition-all duration-300 flex flex-col h-full group rounded-[2rem] shadow-sm hover:shadow-[0_15px_40px_-10px_rgba(8,3,87,0.1)]"
         >
-          <div className="w-16 h-16 rounded-2xl bg-[#f7f9fc] text-[#080357] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300">
+          <div className="w-16 h-16 rounded-2xl clay-soft-light bg-[#f7f9fc] text-[#080357] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300">
             {item.icon}
           </div>
           <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">{item.title}</h4>

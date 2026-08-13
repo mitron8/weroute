@@ -66,7 +66,7 @@ export default function PartnersSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block px-4 py-1.5 border border-[#080357]/10 bg-[#080357]/5 text-[#080357] text-xs font-bold uppercase tracking-wider backdrop-blur-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 clay-badge-light bg-[#f7f9fc] text-[#080357] text-xs font-bold uppercase tracking-wider backdrop-blur-sm rounded-full mb-4">
               Our Network
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#080357] mb-4">Trusted Partners</h2>
@@ -78,7 +78,7 @@ export default function PartnersSection() {
 
         {/* Custom Tabs */}
         <div className="flex flex-col items-center mb-12">
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 bg-gray-50 p-2 rounded-2xl border border-gray-100">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 bg-[#f7f9fc] clay-soft-light p-2 rounded-2xl border border-[#080357]/5">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -111,7 +111,7 @@ export default function PartnersSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6"
+              className="flex flex-wrap justify-center gap-4 sm:gap-6"
             >
               {getPartnerList().map((partner, index) => (
                 <motion.div
@@ -119,7 +119,7 @@ export default function PartnersSection() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="bg-white border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] rounded-2xl p-6 flex items-center justify-center text-center h-28 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:border-blue-100 transition-all duration-300 group"
+                  className="w-[calc(50%-8px)] sm:w-[calc(33.333%-16px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] bg-white border border-[#080357]/5 clay-soft-light rounded-2xl p-6 flex items-center justify-center text-center h-28 hover:-translate-y-1 hover:border-[#B7F36B] transition-all duration-300 group"
                 >
                   <span className="font-semibold text-gray-700 group-hover:text-[#080357] transition-colors duration-300">
                     {partner}

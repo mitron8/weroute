@@ -50,15 +50,15 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="clay-light bg-white border border-[#050849]/5 p-8 sm:p-10 relative overflow-hidden h-full">
+    <div className="clay-light bg-white border border-[#050849]/5 p-6 sm:p-8 relative overflow-hidden h-full">
       {/* Decorative background blur */}
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-100/50 rounded-full blur-3xl pointer-events-none" />
       
       <h3 className="text-2xl sm:text-3xl font-bold text-[#080357] mb-2 relative z-10">Get in Touch</h3>
-      <p className="text-gray-500 mb-8 text-sm sm:text-base relative z-10">We'd love to hear from you. Fill out the form below.</p>
+      <p className="text-gray-500 mb-5 text-sm sm:text-base relative z-10">We'd love to hear from you. Fill out the form below.</p>
       
-      <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+      <form onSubmit={handleSubmit} className="space-y-3 relative z-10">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">Full Name</label>
           <div className="relative">
@@ -72,7 +72,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="block w-full pl-11 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
+              className="block w-full pl-11 pr-4 py-2.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
               placeholder="John Doe"
             />
           </div>
@@ -91,7 +91,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="block w-full pl-11 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
+              className="block w-full pl-11 pr-4 py-2.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
               placeholder="you@company.com"
             />
           </div>
@@ -109,7 +109,7 @@ export default function ContactForm() {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="block w-full pl-11 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
+              className="block w-full pl-11 pr-4 py-2.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
               placeholder="Your Organization"
             />
           </div>
@@ -127,8 +127,8 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               required
-              rows={4}
-              className="block w-full pl-11 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm resize-none"
+              rows={3}
+              className="block w-full pl-11 pr-4 py-2.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm resize-none"
               placeholder="How can we help you?"
             />
           </div>
