@@ -2,7 +2,34 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, CheckCircle2, ChevronDown, Workflow, ArrowRight, Sparkles, Building2, Factory, HeartPulse, Store, Antenna, Landmark, GraduationCap, Cpu, Truck, Zap, Briefcase, Globe2, MessageSquare } from "lucide-react";
+import { 
+  ChevronLeft, 
+  ChevronRight, 
+  CheckCircle2, 
+  ChevronDown, 
+  Workflow, 
+  ArrowRight, 
+  Sparkles, 
+  Building2, 
+  Factory, 
+  HeartPulse, 
+  Store, 
+  Antenna, 
+  Landmark, 
+  GraduationCap, 
+  Cpu, 
+  Truck, 
+  Zap, 
+  Briefcase, 
+  Globe2, 
+  MessageSquare,
+  ShieldCheck,
+  Activity,
+  Server,
+  Layers,
+  Lock,
+  Terminal
+} from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import FinalCTA from "@/app/components/FinalCTA";
 import Link from "next/link";
@@ -71,15 +98,24 @@ function CarouselSection({ section }) {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-8">
         <div className="max-w-3xl">
           {section.title && (
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6 tracking-tight"
-            >
-              {section.title}
-            </motion.h2>
+            <>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6 tracking-tight"
+              >
+                {section.title}
+              </motion.h2>
+              <motion.div 
+                initial={{ opacity: 0, width: 0 }}
+                whileInView={{ opacity: 1, width: "3rem" }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="h-1.5 bg-[#B7F36B] mb-8 rounded-full" 
+              />
+            </>
           )}
           {section.intro && (
             <motion.p
@@ -87,40 +123,35 @@ function CarouselSection({ section }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg md:text-xl text-gray-600 leading-relaxed font-light whitespace-pre-wrap"
+              className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl font-light"
             >
               {section.intro}
             </motion.p>
           )}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="flex items-center gap-4 shrink-0 hidden md:flex"
-        >
-          <button
+        
+        {/* Navigation Buttons */}
+        <div className="flex gap-4 self-end md:self-auto mb-4 md:mb-0">
+          <button 
             onClick={() => scrollByAmount(-1)}
-            disabled={!canScrollLeft}
-            className="w-14 h-14 rounded-full border-2 border-gray-100 flex items-center justify-center text-[#080357] hover:bg-gray-50 hover:border-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            className="p-3 md:p-4 rounded-full bg-white border border-[#050849]/10 text-[#080357] hover:bg-[#080357] hover:text-white transition-all shadow-sm hover:shadow-md clay-badge-light"
+            aria-label="Scroll left"
           >
-            <ChevronLeft size={24} strokeWidth={2.5} />
+            <ChevronLeft size={24} className="md:w-7 md:h-7" />
           </button>
-          <button
+          <button 
             onClick={() => scrollByAmount(1)}
-            disabled={!canScrollRight}
-            className="w-14 h-14 rounded-full border-2 border-gray-100 flex items-center justify-center text-[#080357] hover:bg-gray-50 hover:border-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            className="p-3 md:p-4 rounded-full bg-[#080357] text-white hover:bg-[#052440] transition-all shadow-sm hover:shadow-md clay-badge-dark"
+            aria-label="Scroll right"
           >
-            <ChevronRight size={24} strokeWidth={2.5} />
+            <ChevronRight size={24} className="md:w-7 md:h-7" />
           </button>
-        </motion.div>
+        </div>
       </div>
 
       <div className="relative -mx-6 px-6 md:mx-0 md:px-0">
         <div
           ref={scrollRef}
-          onScroll={checkScroll}
           className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 hide-scrollbar"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
@@ -132,13 +163,14 @@ function CarouselSection({ section }) {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: itemIdx * 0.08, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
-              className="snap-start shrink-0 clay-light bg-[#f7f9fc] border border-[#050849]/5 p-8 md:p-10 flex flex-col w-[85vw] md:w-[450px] lg:w-[500px] cursor-pointer"
+              className="group snap-start shrink-0 clay-light bg-white border border-[#050849]/5 p-8 md:p-10 flex flex-col w-[85vw] md:w-[450px] lg:w-[500px] cursor-pointer hover:shadow-xl hover:border-[#B7F36B]/50 transition-all duration-300 relative overflow-hidden rounded-[2rem]"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm text-[#080357] font-bold text-xl clay-badge-light">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-[#B7F36B]/5 rounded-full blur-3xl -z-10 group-hover:bg-[#B7F36B]/20 transition-all duration-300" />
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f7f9fc] shadow-sm text-[#080357] font-bold text-xl clay-badge-light group-hover:bg-[#B7F36B]/20 transition-colors">
                 {itemIdx + 1}
               </div>
-              <h3 className="text-2xl font-bold text-[#080357] mb-4 leading-tight">
-                {item.title.replace(/\(Target:.*?\)/, "").trim()}
+              <h3 className="text-2xl font-bold text-[#080357] mb-4 leading-tight group-hover:text-[#052440] transition-colors">
+                {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
               </h3>
               <div className="text-base md:text-lg text-gray-600 leading-relaxed font-light flex-grow">
                 {renderFormattedDescription(item.description)}
@@ -231,16 +263,17 @@ function BentoGridSection({ section, theme = "light" }) {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
-              className={`${spanClass} rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-center relative group overflow-hidden cursor-pointer ${
-                isHighlight ? "bg-[#080357] text-white clay-dark border border-white/5 shadow-xl" : "bg-white clay-light border border-[#080357]/5"
+              className={`group ${spanClass} min-h-[280px] rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-center relative overflow-hidden cursor-pointer transition-all duration-300 ${
+                isHighlight ? "bg-[#080357] text-white clay-dark border border-white/5 shadow-xl hover:border-[#B7F36B]/40" : "bg-white clay-light border border-[#080357]/5 hover:shadow-xl hover:border-[#B7F36B]/50"
               }`}
             >
-              <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center flex-shrink-0 ${isHighlight ? 'bg-white/10 text-[#B7F36B]' : 'bg-[#f7f9fc] text-[#080357] clay-badge-light'}`}>
+              <div className={`absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl -z-10 transition-all duration-300 ${isHighlight ? 'bg-[#B7F36B]/5 group-hover:bg-[#B7F36B]/15' : 'bg-[#B7F36B]/5 group-hover:bg-[#B7F36B]/20'}`} />
+              <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center flex-shrink-0 transition-colors ${isHighlight ? 'bg-white/10 text-[#B7F36B] group-hover:bg-[#B7F36B]/20' : 'bg-[#f7f9fc] text-[#080357] clay-badge-light group-hover:bg-[#B7F36B]/20 group-hover:text-[#080357]'}`}>
                  <CheckCircle2 size={24} />
               </div>
               <div>
-                <h3 className={`text-2xl font-bold mb-4 ${isHighlight ? "text-white" : "text-[#080357]"}`}>
-                  {item.title.replace(/\(Target:.*?\)/, "").trim()}
+                <h3 className={`text-2xl font-bold mb-4 transition-colors ${isHighlight ? "text-white" : "text-[#080357] group-hover:text-[#052440]"}`}>
+                  {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
                 </h3>
                 <div className={`${isHighlight ? "text-white/80" : "text-gray-600"} leading-relaxed font-light text-lg`}>
                   {renderFormattedDescription(item.description, isHighlight)}
@@ -324,7 +357,7 @@ function ProcessSection({ section }) {
                 </div>
                 
                 <h3 className="text-xl font-bold text-white mb-3">
-                  {item.title.replace(/\(Target:.*?\)/, "").trim()}
+                  {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
                 </h3>
                 <div className="text-gray-400 leading-relaxed font-light group-hover:text-gray-300 transition-colors duration-300">
                    {renderFormattedDescription(item.description)}
@@ -339,6 +372,184 @@ function ProcessSection({ section }) {
 }
 
 // ==========================================
+// 3.5 Checklist Section (For items with no descriptions)
+// ==========================================
+function ChecklistSection({ section }) {
+  return (
+    <div className="w-full">
+      <div className="max-w-3xl mb-12">
+        {section.title && (
+          <>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-extrabold text-[#080357] mb-6"
+            >
+              {section.title}
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: "3rem" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="h-1.5 bg-[#B7F36B] mb-8 rounded-full" 
+            />
+          </>
+        )}
+        {section.intro && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-xl text-gray-600 leading-relaxed font-light"
+          >
+            {section.intro}
+          </motion.p>
+        )}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+        {section.items.map((item, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, delay: idx * 0.05 }}
+            className="flex items-start gap-4 group"
+          >
+            <div className="mt-1 w-6 h-6 rounded-full bg-[#B7F36B]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#B7F36B] transition-colors">
+              <CheckCircle2 size={14} className="text-[#080357]" />
+            </div>
+            <p className="text-gray-700 leading-relaxed font-medium group-hover:text-[#080357] transition-colors">
+              {item.title}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 3.6 Deliverables Section
+// ==========================================
+function DeliverablesSection({ section }) {
+  const groups = [];
+  let currentGroup = null;
+  
+  section.items.forEach(item => {
+    const isCategory = item.title.split(' ').length <= 3 && 
+                      !item.title.includes('Document') && 
+                      !item.title.includes('Framework') && 
+                      !item.title.includes('Matrix') && 
+                      !item.title.includes('Scorecard') && 
+                      !item.title.includes('Assessment') && 
+                      !item.title.includes('Register') && 
+                      !item.title.includes('Plan') && 
+                      !item.title.includes('Report') && 
+                      !item.title.includes('Summary') &&
+                      !item.title.includes('Roadmap');
+                      
+    if (isCategory) {
+      currentGroup = { category: item.title, deliverables: [] };
+      groups.push(currentGroup);
+    } else {
+      if (currentGroup) {
+        currentGroup.deliverables.push(item.title);
+      } else {
+        // Fallback if no category was found yet
+        groups.push({ category: item.title, deliverables: [] });
+      }
+    }
+  });
+
+  // Filter out empty groups that were just single items matching isCategory (e.g., if parsing failed)
+  // Actually, if it's an empty group, it means it's a category with no deliverables yet, which is fine, 
+  // but if all groups are empty, then it means it failed.
+  const hasDeliverables = groups.some(g => g.deliverables.length > 0);
+
+  return (
+    <div className="w-full">
+      <div className="max-w-3xl mb-12">
+        {section.title && (
+          <>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-extrabold text-[#080357] mb-6"
+            >
+              {section.title}
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: "3rem" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="h-1.5 bg-[#B7F36B] mb-8 rounded-full" 
+            />
+          </>
+        )}
+        {section.intro && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-xl text-gray-600 leading-relaxed font-light"
+          >
+            {section.intro}
+          </motion.p>
+        )}
+      </div>
+
+      {!hasDeliverables ? (
+        // Fallback to simple grid if grouping failed
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {section.items.map((item, idx) => (
+            <motion.div key={idx} className="clay-light bg-white border border-[#080357]/5 p-6 rounded-2xl flex items-center gap-3 shadow-sm hover:border-[#B7F36B] hover:-translate-y-1 transition-all duration-300">
+              <CheckCircle2 size={20} className="text-[#B7F36B] flex-shrink-0" />
+              <span className="text-[#080357] font-semibold">{item.title}</span>
+            </motion.div>
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {groups.filter(g => g.category || g.deliverables.length > 0).map((group, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className="clay-light bg-white border border-[#080357]/10 p-8 rounded-3xl hover:border-[#B7F36B]/50 hover:shadow-xl transition-all duration-300"
+            >
+              <h3 className="text-xl font-bold text-[#080357] mb-6 flex items-center gap-3">
+                 <div className="w-8 h-8 rounded-full bg-[#B7F36B]/20 flex items-center justify-center text-[#080357]">
+                    <Sparkles size={16} />
+                 </div>
+                 {group.category}
+              </h3>
+              <ul className="space-y-4">
+                {group.deliverables.map((d, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 size={16} className="text-[#B7F36B] mt-1 flex-shrink-0" />
+                    <span className="text-gray-600 font-medium leading-relaxed text-sm">{d}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ==========================================
 // 4. Standard Grid Section (For remaining lists)
 // ==========================================
 function StandardGridSection({ section }) {
@@ -346,14 +557,23 @@ function StandardGridSection({ section }) {
     <div className="w-full">
       <div className="max-w-3xl mb-12">
         {section.title && (
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-extrabold text-[#080357] mb-6"
-          >
-            {section.title}
-          </motion.h2>
+          <>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-extrabold text-[#080357] mb-6"
+            >
+              {section.title}
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: "3rem" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="h-1.5 bg-[#B7F36B] mb-8 rounded-full" 
+            />
+          </>
         )}
         {section.intro && (
           <motion.p
@@ -377,13 +597,14 @@ function StandardGridSection({ section }) {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
-            className="bg-white clay-light border border-[#080357]/5 rounded-[2rem] p-8 cursor-pointer shadow-sm hover:shadow-lg transition-shadow"
+            className="group bg-white clay-light border border-[#080357]/5 rounded-[2rem] p-8 cursor-pointer shadow-sm hover:shadow-xl hover:border-[#B7F36B]/50 transition-all duration-300 relative overflow-hidden"
           >
-            <div className="w-12 h-12 bg-[#f7f9fc] rounded-xl flex items-center justify-center mb-6 text-[#080357]">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#B7F36B]/10 rounded-full blur-3xl -z-10 group-hover:bg-[#B7F36B]/20 transition-all duration-300" />
+            <div className="w-12 h-12 bg-[#f7f9fc] rounded-xl flex items-center justify-center mb-6 text-[#080357] group-hover:bg-[#B7F36B]/20 group-hover:text-[#080357] transition-colors">
               <CheckCircle2 size={24} />
             </div>
-            <h3 className="text-xl font-bold text-[#080357] mb-4">
-              {item.title.replace(/\(Target:.*?\)/, "").trim()}
+            <h3 className="text-xl font-bold text-[#080357] mb-4 group-hover:text-[#052440] transition-colors">
+              {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
             </h3>
             <div className="text-gray-600 font-light leading-relaxed">
               {renderFormattedDescription(item.description)}
@@ -396,32 +617,173 @@ function StandardGridSection({ section }) {
 }
 
 // ==========================================
-// 5. Text & Graphic Split (For 0 Items)
+// 5. Redesigned What Are Section (Enterprise Architecture & Scope with Claymorphism)
 // ==========================================
-function TextGraphicSection({ section }) {
+function WhatAreSection({ section }) {
   return (
-    <div className="w-full clay-light bg-white rounded-[3rem] p-10 md:p-16 border border-[#080357]/5 overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-gradient-to-bl from-[#f7f9fc] to-transparent rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-      <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#080357] mb-6 leading-tight">
+    <div className="w-full clay-light bg-white rounded-[3rem] p-8 sm:p-12 md:p-16 border border-[#080357]/5 overflow-hidden relative shadow-[0_20px_50px_rgba(8,3,87,0.04)]">
+      {/* Background Decorative Glow Orbs */}
+      <div className="absolute top-0 right-0 w-[35rem] h-[35rem] bg-gradient-to-bl from-blue-50/70 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-gradient-to-tr from-[#B7F36B]/15 to-transparent rounded-full translate-y-1/2 -translate-x-1/4 pointer-events-none" />
+
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
+        
+        {/* Left Column: Scope & Definition Narrative */}
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-7 flex flex-col items-start"
+        >
+          <div className="clay-badge-light inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#080357] mb-6 border border-[#080357]/5">
+            <Sparkles size={13} className="text-[#B7F36B]" />
+            <span>Service Scope &amp; Architecture</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#080357] mb-6 tracking-tight leading-[1.12]">
             {section.title}
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed whitespace-pre-wrap">
+
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed mb-8">
             {section.intro}
           </p>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex justify-center lg:justify-end">
-           <div className="w-full max-w-sm aspect-square rounded-[2rem] bg-gradient-to-tr from-[#080357] to-[#0d5ea8] clay-dark p-8 flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
-              <div className="text-center text-white relative z-10">
-                 <div className="w-20 h-20 mx-auto border-4 border-white/20 rounded-full flex items-center justify-center mb-6 text-[#B7F36B]">
-                    <CheckCircle2 size={40} />
-                 </div>
-                 <h3 className="text-2xl font-bold">Strategic Value</h3>
+
+          {/* 3 Claymorphic Value Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full pt-4 border-t border-[#080357]/10">
+            <div className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
+              <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+                <ShieldCheck size={16} />
               </div>
-           </div>
+              <div className="min-w-0">
+                <p className="text-xs font-bold text-[#080357] truncate">SLA-Guaranteed</p>
+                <p className="text-[10px] text-slate-500 truncate">99.99% Uptime</p>
+              </div>
+            </div>
+
+            <div className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
+              <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <Activity size={16} />
+              </div>
+              <div className="min-w-0">
+                <p className="text-xs font-bold text-[#080357] truncate">24/7 Telemetry</p>
+                <p className="text-[10px] text-slate-500 truncate">Observability</p>
+              </div>
+            </div>
+
+            <div className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
+              <div className="w-8 h-8 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center flex-shrink-0">
+                <Layers size={16} />
+              </div>
+              <div className="min-w-0">
+                <p className="text-xs font-bold text-[#080357] truncate">Vendor Agnostic</p>
+                <p className="text-[10px] text-slate-500 truncate">Zero Lock-in</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
+
+        {/* Right Column: Interactive macOS Architecture Console Card with Claymorphism */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.94, y: 20 }} 
+          whileInView={{ opacity: 1, scale: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 w-full flex justify-center"
+        >
+          <div className="clay-light w-full max-w-md rounded-[2.5rem] bg-white border border-[#080357]/5 overflow-hidden">
+            
+            {/* macOS Titlebar */}
+            <div className="px-5 py-3.5 bg-[#f7f8fc]/80 border-b border-[#080357]/5 flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+              </div>
+              <span className="text-[11px] font-mono font-semibold text-slate-500">
+                weroute-scope-manifest
+              </span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            </div>
+
+            {/* Console Body */}
+            <div className="p-6 space-y-3.5 bg-white">
+              
+              {/* Feature Box 1 */}
+              <div className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#080357] text-[#B7F36B] flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <Server size={18} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
+                      Continuous Lifecycle Governance
+                    </p>
+                    <p className="text-[10px] text-slate-500">
+                      Provisioning &amp; optimization
+                    </p>
+                  </div>
+                </div>
+                <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
+                  Active
+                </span>
+              </div>
+
+              {/* Feature Box 2 */}
+              <div className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <Zap size={18} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
+                      Automated Incident Response
+                    </p>
+                    <p className="text-[10px] text-slate-500">
+                      &lt; 4 min MTTR &amp; triage
+                    </p>
+                  </div>
+                </div>
+                <span className="text-[10px] font-mono font-bold text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-md">
+                  &lt; 4m
+                </span>
+              </div>
+
+              {/* Feature Box 3 */}
+              <div className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <ShieldCheck size={18} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
+                      Zero-Trust Compliance
+                    </p>
+                    <p className="text-[10px] text-slate-500">
+                      SOC 2 &amp; ISO 27001 enforced
+                    </p>
+                  </div>
+                </div>
+                <span className="text-[10px] font-mono font-bold text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded-md">
+                  Enforced
+                </span>
+              </div>
+
+              {/* Bottom Quick Callout */}
+              <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500 font-medium border-t border-[#080357]/5">
+                <span className="flex items-center gap-1.5 text-emerald-600 font-bold">
+                  <CheckCircle2 size={13} />
+                  Enterprise-Grade Delivery
+                </span>
+                <span className="font-mono text-[10px] text-slate-400">
+                  v2.4
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </div>
   );
@@ -477,9 +839,9 @@ function PortfolioSection({ section }) {
             }
 
             // Extract title carefully so we don't end up with an empty string
-            let displayTitle = item.title.replace(/\(Target:.*?\)/, "").trim();
+            let displayTitle = (item.title || "").replace(/\(Target:.*?\)/, "").trim();
             if (!displayTitle) {
-              const match = item.title.match(/\(Target:\s*(.*?)\)/);
+              const match = (item.title || "").match(/\(Target:\s*(.*?)\)/);
               displayTitle = match ? match[1] : item.title;
             }
 
@@ -570,7 +932,7 @@ function PortfolioSection({ section }) {
 function IndustriesSection({ section }) {
   // Normalize the weird scraped data into a clean list of industries
   const extractIndustries = () => {
-    const rawText = section.items.map(item => `${item.title} ${item.description}`).join(" ");
+    const rawText = section.items.map(item => `${item.title || ""} ${item.description}`).join(" ");
     
     // Ignore internal links or related services text
     if (rawText.includes("INTERNAL LINKS") || rawText.includes("RELATED")) {
@@ -751,19 +1113,33 @@ export default function ClientServicePage({ service, isNewLayout }) {
   let previousLayoutType = null;
   const renderSection = (section, index, totalSections) => {
     const isFirst = index === 0;
-    const isDeliver = section.title.toLowerCase().includes("what we deliver");
-    const isProcess = section.title.toLowerCase().includes("delivery approach") || section.title.toLowerCase().includes("process") || section.title.toLowerCase().includes("approach");
-    const isPortfolio = section.title.toLowerCase().includes("portfolio");
-    const isIndustries = section.title.toLowerCase().includes("industries");
+    const isDeliver = (section.title || "").toLowerCase().includes("what we deliver");
+    const isProcess = (section.title || "").toLowerCase().includes("delivery approach") || (section.title || "").toLowerCase().includes("process") || (section.title || "").toLowerCase().includes("approach");
+    const isPortfolio = (section.title || "").toLowerCase().includes("portfolio");
+    const isIndustries = (section.title || "").toLowerCase().includes("industries");
+    const isChecklist = section.items && section.items.length > 5 && section.items.every(item => !item.description || item.description.trim() === "");
+    const isDeliverables = (section.title || "").toLowerCase().includes("deliverables");
 
-    if (!section.items || section.items.length === 0) {
-      previousLayoutType = "text";
-      return <TextGraphicSection key={section.id} section={section} />;
+    const isWhatAre = (section.title || "").toLowerCase().includes("what are");
+
+    if (isWhatAre || !section.items || section.items.length === 0) {
+      previousLayoutType = "what-are";
+      return <WhatAreSection key={section.id} section={section} />;
     }
     
     if (isPortfolio) {
       previousLayoutType = "portfolio";
       return <PortfolioSection key={section.id} section={section} />;
+    }
+    
+    if (isDeliverables) {
+      previousLayoutType = "deliverables";
+      return <DeliverablesSection key={section.id} section={section} />;
+    }
+    
+    if (isChecklist) {
+      previousLayoutType = "checklist";
+      return <ChecklistSection key={section.id} section={section} />;
     }
     
     if (isIndustries) {
@@ -827,7 +1203,7 @@ export default function ClientServicePage({ service, isNewLayout }) {
     const newSection = { ...section, items: section.items ? [...section.items] : [] };
     if (newSection.items.length > 0) {
       const linkItems = newSection.items.filter(item => 
-        item.title.toUpperCase().includes("RELATED") || item.title.toUpperCase().includes("INTERNAL LINKS")
+        item.title && (item.title.toUpperCase().includes("RELATED") || item.title.toUpperCase().includes("INTERNAL LINKS"))
       );
       
       linkItems.forEach(item => {
@@ -843,10 +1219,13 @@ export default function ClientServicePage({ service, isNewLayout }) {
       });
 
       newSection.items = newSection.items.filter(item => 
-        !item.title.toUpperCase().includes("RELATED") && !item.title.toUpperCase().includes("INTERNAL LINKS")
+        !(item.title && (item.title.toUpperCase().includes("RELATED") || item.title.toUpperCase().includes("INTERNAL LINKS")))
       );
     }
-    cleanedSections.push(newSection);
+    // Only push the section if it's not the internal links section itself
+    if (!(newSection.title && newSection.title.toUpperCase().includes("INTERNAL LINKS"))) {
+        cleanedSections.push(newSection);
+    }
   });
 
   return (
@@ -988,7 +1367,7 @@ export default function ClientServicePage({ service, isNewLayout }) {
                    Philosophy
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#080357]">
-                  "{service.pagePhilosophy}"
+                  &quot;{service.pagePhilosophy}&quot;
                 </h2>
               </motion.div>
             )}

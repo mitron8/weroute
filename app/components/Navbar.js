@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import {
   ChevronRight,
   Headphones,
@@ -14,7 +15,11 @@ import {
   HelpCircle,
   Menu,
   ArrowRight,
-  X,Cpu,Code
+  X,
+  Cpu,
+  Code,
+  Users,
+  Briefcase
 } from "lucide-react";
 import Link from "next/link";
 
@@ -115,110 +120,116 @@ const MENU = {
       {
         icon: <Activity size={18} />,
         title: "Consulting & Advisory Services",
-        href:"consulting-&-advisory-services",
+        href: "/sub-services#consulting",
         desc: "Strategic guidance for architecture and modernization.",
         features: [
-          {
-            title: "Managed Data Centre Services",
-            href: "/services/managed-data-centre-services",
-          },
-          {
-            title: "Managed Network Services",
-            href: "/services/managed-network-services",
-          },
-          {
-            title: "Managed Cloud & Hybrid Environments",
-            href: "/services/managed-cloud-hybrid-environment-services",
-          },
-          {
-            title: "Managed Cybersecurity & SOC Services",
-            href: "/services/managed-cybersecurity-soc-services",
-          },
+          { title: "Enterprise Technology Consulting", href: "/services/enterprise-technology-consulting-and-advisory" },
+          { title: "IT Strategy & Optimization", href: "/services/it-strategy-and-optimization" },
+          { title: "Network & Security Assessments", href: "/services/network-and-security-assessments" },
+          { title: "Cloud Readiness & Migration Strategy", href: "/services/cloud-readiness-and-migration-strategy" },
+          { title: "AI & Automation Advisory", href: "/services/ai-and-automation-advisory" },
+          { title: "Technology Selection & Roadmaps", href: "/services/technology-selection-and-roadmaps" },
         ],
       },
       {
-        icon: <Code2 size={18} />,
-        title: "Software & AI Development",
-        href:"software-&-ai-development",
-        desc: "Custom applications, AI services, and deployment pipelines.",
+        icon: <Users size={18} />,
+        title: "Manpower & Staffing Services",
+        href: "/sub-services#staffing",
+        desc: "Scale your capabilities with specialized IT and engineering talent.",
         features: [
-          { title: "AI and ML Development Services", href: "/services/ai-ml-development" },
-          { title: "Custom Software Development", href: "/services/custom-software" },
-          { title: "Mobile Application Development", href: "/services/mobile-development" },
-          { title: "Model Deployment and MLOps", href: "/services/mlops" },
+          { title: "Network Integration & Modernization", href: "/services/network-integration-and-modernization" },
+          { title: "Cloud & DevOps Implementation", href: "/services/cloud-and-devops-implementation" },
+          { title: "Infrastructure Automation & Standardization", href: "/services/infrastructure-automation-and-standardization" },
+          { title: "Network & Security Architecture Design", href: "/services/network-and-security-architecture-design" },
+          { title: "Converged Communications Deployment", href: "/services/converged-communications-deployment" },
+          { title: "Mobility & Wireless Implementation", href: "/services/enterprise-mobility-and-wireless-implementation" },
+        ],
+      },
+      {
+        icon: <Briefcase size={18} />,
+        title: "Professional Services",
+        href: "/sub-services#professional",
+        desc: "End-to-end implementation and project delivery.",
+        features: [
+          { title: "Network Integration & Modernization", href: "/services/network-integration-and-modernization" },
+          { title: "Cloud & DevOps Implementation", href: "/services/cloud-and-devops-implementation" },
+          { title: "Infrastructure Automation & Standardization", href: "/services/infrastructure-automation-and-standardization" },
+          { title: "Network & Security Architecture Design", href: "/services/network-and-security-architecture-design" },
+          { title: "Converged Communications Deployment", href: "/services/converged-communications-deployment" },
+          { title: "Mobility & Wireless Implementation", href: "/services/enterprise-mobility-and-wireless-implementation" },
         ],
       },
     ],
   },
 
-Solutions: {
-  type: "list",
-  groups: [
-    {
-      icon: <Network size={18} />,
-      title: "Network & Connectivity",
-      href: "/solutions/network-connectivity", // <-- Added heading route
-      desc: "Build resilient, intelligent, and scalable enterprise networks.",
-      features: [
-        { title: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
-        { title: "SD-WAN / SD-LAN / SDN", href: "/solution/network-connectivity/sd-wan-sdn-solutions" },
-        { title: "Network Observability & Assurance", href: "/solution/network-connectivity/network-observability" },
-        { title: "Network as a Service (NaaS)", href: "/solution/network-connectivity/network-as-a-service" },
-        { title: "Mobility & Wireless Solutions", href: "/solution/network-connectivity/mobility-wireless-solutions" },
-      ],
-    },
-    {
-      icon: <Cloud size={18} />,
-      title: "Cloud & DevOps",
-      href: "/solutions/cloud-and-devOps", // <-- Added heading route
-      desc: "Enable agility and governance across cloud and hybrid IT environments.",
-      features: [
-        { title: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
-        { title: "DevOps & Platform Engineering", href: "/solution/CloudDevOpsPage/devops-platform-engineering" },
-        { title: "Infrastructure as Code (IaC)", href: "/solution/CloudDevOpsPage/infrastructure-as-code" },
-        { title: "Cloud Observability", href: "/solution/CloudDevOpsPage/cloud-observability" },
-      ],
-    },
-    {
-      icon: <Shield size={18} />,
-      title: "Cybersecurity",
-      href: "/solutions/cybersecurity", // <-- Added heading route
-      desc: "Protect users and infrastructure with enterprise-ready security architectures.",
-      features: [
-        { title: "Endpoint & Cloud Security", href: "/solution/cybersecurity/endpoint-and-cloud-security-services" },
-        { title: "Identity & Access Management", href: "/solution/cybersecurity/identity-access-management" },
-        { title: "SOC / SIEM / SOAR", href: "/solution/cybersecurity/soc-siem-soar" },
-        { title: "GRC & Vendor Risk Management", href: "/solution/cybersecurity/grc-vendor-risk-management" },
-        { title: "Zero Trust Architecture", href: "/solution/cybersecurity/zero-trust-architecture" },
-      ],
-    },
-    {
-      icon: <Cpu size={18} />, 
-      title: "AI & Intelligent Automation",
-      href: "/solutions/AI-Intelligent-Automation", // <-- Added heading route
-      desc: "Apply intelligence to improve operational visibility and decision-making.",
-      features: [
-        { title: "AI Network Intelligence", href: "/solution/AI-Intelligent-Automation/ai-network-intelligence" },
-        { title: "AI-Driven Observability", href: "/solution/AI-Intelligent-Automation/ai-driven-observability" },
-        { title: "AI Software Services", href: "/solution/AI-Intelligent-Automation/ai-software-services" },
-        { title: "AI/ML Model Deployment", href: "/solution/AI-Intelligent-Automation/ai-ml-model-deployment" },
-        { title: "Automation & AIOps", href: "/solution/AI-Intelligent-Automation/automation-aiops" },
-      ],
-    },
-    {
-      icon: <Code size={18} />,
-      title: "Software & Digital Engineering",
-      href: "/solutions/softwareDigitalEngineering", // <-- Added heading route
-      desc: "Design and modernize digital platforms that scale seamlessly.",
-      features: [
-        { title: "Custom Software Development", href: "/solution/softwareDigitalEngineering/custom-software-development" },
-        { title: "Enterprise Applications", href: "/solution/softwareDigitalEngineering/enterprise-applications" },
-        { title: "Mobile Application Development", href: "/solution/softwareDigitalEngineering/mobile-application-development" },
-        { title: "API & Platform Engineering", href: "/solution/softwareDigitalEngineering/api-platform-engineering" },
-      ],
-    },
-  ],
-},
+  Solutions: {
+    type: "list",
+    groups: [
+      {
+        icon: <Wifi size={18} />,
+        title: "Network & Connectivity",
+        href: "/solutions/network-connectivity",
+        desc: "Enterprise network design, modernization, and hybrid connectivity.",
+        features: [
+          { title: "AI Network Solutions", href: "/solution/network-connectivity/ai-network-solutions" },
+          { title: "SD-WAN / SD-LAN / SDN", href: "/solution/network-connectivity/sd-wan-sdn-solutions" },
+          { title: "Network Observability & Assurance", href: "/solution/network-connectivity/network-observability" },
+          { title: "Network as a Service (NaaS)", href: "/solution/network-connectivity/network-as-a-service" },
+          { title: "Mobility & Wireless Solutions", href: "/solution/network-connectivity/mobility-wireless-solutions" },
+        ],
+      },
+      {
+        icon: <Cloud size={18} />,
+        title: "Cloud & DevOps",
+        href: "/solutions/cloud-and-devOps",
+        desc: "Enable agility and governance across cloud and hybrid IT environments.",
+        features: [
+          { title: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
+          { title: "DevOps & Platform Engineering", href: "/solution/CloudDevOpsPage/devops-platform-engineering" },
+          { title: "Infrastructure as Code (IaC)", href: "/solution/CloudDevOpsPage/infrastructure-as-code" },
+          { title: "Cloud Observability", href: "/solution/CloudDevOpsPage/cloud-observability" },
+        ],
+      },
+      {
+        icon: <Shield size={18} />,
+        title: "Cybersecurity",
+        href: "/solutions/cybersecurity",
+        desc: "Protect users and infrastructure with enterprise-ready security architectures.",
+        features: [
+          { title: "Endpoint & Cloud Security", href: "/solution/cybersecurity/endpoint-and-cloud-security-services" },
+          { title: "Identity & Access Management", href: "/solution/cybersecurity/identity-access-management" },
+          { title: "SOC / SIEM / SOAR", href: "/solution/cybersecurity/soc-siem-soar" },
+          { title: "GRC & Vendor Risk Management", href: "/solution/cybersecurity/grc-vendor-risk-management" },
+          { title: "Zero Trust Architecture", href: "/solution/cybersecurity/zero-trust-architecture" },
+        ],
+      },
+      {
+        icon: <Cpu size={18} />, 
+        title: "AI & Intelligent Automation",
+        href: "/solutions/AI-Intelligent-Automation",
+        desc: "Apply intelligence to improve operational visibility and decision-making.",
+        features: [
+          { title: "AI Network Intelligence", href: "/solution/AI-Intelligent-Automation/ai-network-intelligence" },
+          { title: "AI-Driven Observability", href: "/solution/AI-Intelligent-Automation/ai-driven-observability" },
+          { title: "AI Software Services", href: "/solution/AI-Intelligent-Automation/ai-software-services" },
+          { title: "AI/ML Model Deployment", href: "/solution/AI-Intelligent-Automation/ai-ml-model-deployment" },
+          { title: "Automation & AIOps", href: "/solution/AI-Intelligent-Automation/automation-aiops" },
+        ],
+      },
+      {
+        icon: <Code size={18} />,
+        title: "Software & Digital Engineering",
+        href: "/solutions/softwareDigitalEngineering",
+        desc: "Design and modernize digital platforms that scale seamlessly.",
+        features: [
+          { title: "Custom Software Development", href: "/solution/softwareDigitalEngineering/custom-software-development" },
+          { title: "Enterprise Applications", href: "/solution/softwareDigitalEngineering/enterprise-applications" },
+          { title: "Mobile Application Development", href: "/solution/softwareDigitalEngineering/mobile-application-development" },
+          { title: "API & Platform Engineering", href: "/solution/softwareDigitalEngineering/api-platform-engineering" },
+        ],
+      },
+    ],
+  },
 
   Capabilities: {
     type: "grid",
@@ -266,7 +277,6 @@ Solutions: {
   },
 };
 
-// Updated: Array of objects with labels and dedicated landing page links
 const NAV_ITEMS = [
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Why WeRoute", href: "/why-weroute" },
@@ -276,6 +286,10 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/" || pathname === "";
+
+  const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState(null);
   const [activeSub, setActiveSub] = useState(0);
   
@@ -283,21 +297,55 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileActive, setMobileActive] = useState(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Dark hero theme applies when on homepage AND not scrolled down
+  const isHeroTheme = isHomePage && !scrolled;
+
   return (
-    <header className="fixed left-0 top-0 z-[999] w-full border-b border-[#050849]/5 bg-[#fafafa]/80 backdrop-blur-xl">
+    <header 
+      className={`fixed left-0 top-0 z-[999] w-full transition-all duration-500 ${
+        isHeroTheme
+          ? "bg-transparent border-b border-white/10"
+          : "border-b border-[#050849]/10 bg-white/90 backdrop-blur-xl shadow-xs"
+      }`}
+    >
       <div className="mx-auto flex h-[80px] max-w-7xl items-center justify-between px-6 lg:px-12">
+        
         {/* LOGO */}
-        <a href="/" className="flex shrink-0 items-center">
+        <Link href="/" className="flex shrink-0 items-center">
           <img
-            className="h-7"
+            className="h-7 transition-all duration-500"
             src={"/images/logo/weroute.png"}
-            style={{ filter: "brightness(0) saturate(100%) invert(8%) sepia(26%) saturate(6383%) hue-rotate(209deg) brightness(88%) contrast(97%)" }} // Force dark navy color
+            style={
+              !isHeroTheme
+                ? { filter: "brightness(0) saturate(100%) invert(8%) sepia(26%) saturate(6383%) hue-rotate(209deg) brightness(88%) contrast(97%)" } // Dark navy when navbar is white
+                : { filter: "none" } // Original logo colors at top
+            }
             alt="WeRoute"
           />
-        </a>
+        </Link>
 
-        {/* NAVIGATION */}
-        <nav className="relative hidden xl:flex items-center gap-2 rounded-full border border-[#050849]/10 bg-white/60 px-2 py-1.5 backdrop-blur-md shadow-sm">
+        {/* NAVIGATION PILL */}
+        <nav 
+          className={`relative hidden xl:flex items-center gap-2 rounded-full px-2 py-1.5 backdrop-blur-md transition-all duration-500 ${
+            isHeroTheme
+              ? "border border-white/15 bg-white/[0.08] shadow-lg shadow-black/10 text-white"
+              : "border border-[#050849]/10 bg-white/60 shadow-sm text-[#050849]"
+          }`}
+        >
           {NAV_ITEMS.map((item) => (
             <div
               key={item.label}
@@ -310,9 +358,13 @@ export default function Navbar() {
               <Link
                 href={item.href}
                 className={`relative block rounded-full px-5 py-2 text-[14px] font-semibold transition-all duration-300 ${
-                  active === item.label
-                    ? "bg-[#050849]/5 text-[#050849]"
-                    : "text-[#050849]/60 hover:text-[#050849] hover:bg-[#050849]/5"
+                  isHeroTheme
+                    ? active === item.label
+                      ? "bg-white/20 text-white"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                    : active === item.label
+                      ? "bg-[#050849]/5 text-[#050849]"
+                      : "text-[#050849]/70 hover:text-[#050849] hover:bg-[#050849]/5"
                 }`}
               >
                 {item.label}
@@ -328,7 +380,7 @@ export default function Navbar() {
                 setActive(null);
                 setActiveSub(0);
               }}
-              className="absolute left-1/2 top-[60px] w-[900px] -translate-x-1/2 overflow-hidden rounded-[24px] border border-[#050849]/10 bg-white/95 shadow-[0_40px_100px_rgba(5,8,73,0.1)] backdrop-blur-3xl transition-all duration-300 animate-in fade-in zoom-in-95"
+              className="absolute left-1/2 top-[60px] w-[900px] -translate-x-1/2 overflow-hidden rounded-[24px] border border-[#050849]/10 bg-white/98 shadow-[0_40px_100px_rgba(5,8,73,0.18)] backdrop-blur-3xl transition-all duration-300 animate-in fade-in zoom-in-95 text-[#050849]"
             >
               {/* GRID TYPE */}
               {MENU[active].type === "grid" ? (
@@ -458,28 +510,35 @@ export default function Navbar() {
         {/* MOBILE MENU BUTTON */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#050849]/10 bg-white text-[#050849] xl:hidden shadow-sm"
+          className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 xl:hidden shadow-sm ${
+            isHeroTheme
+              ? "border border-white/20 bg-white/10 text-white"
+              : "border border-[#050849]/10 bg-white text-[#050849]"
+          }`}
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT SIDE CTA */}
         <div className="hidden items-center gap-6 lg:flex">
           <Link
             href="/contact"
-            className="text-[13px] font-bold uppercase tracking-[0.1em] text-[#050849]/60 transition-colors hover:text-[#050849]"
+            className={`text-[13px] font-bold uppercase tracking-[0.1em] transition-colors ${
+              isHeroTheme 
+                ? "text-white/80 hover:text-white" 
+                : "text-[#050849]/70 hover:text-[#050849]"
+            }`}
           >
             Contact
           </Link>
           <a
             href="#contact"
-            className="
+            className={`
               group
               flex
               items-center
               gap-3
               rounded-full
-              bg-[#050849]
               pl-6
               pr-2
               py-2
@@ -487,16 +546,23 @@ export default function Navbar() {
               font-bold
               uppercase
               tracking-[0.1em]
-              text-white
-              shadow-[0_10px_20px_rgba(5,8,73,0.15)]
+              shadow-lg
               transition-all
               duration-500
-              hover:bg-black
               hover:-translate-y-0.5
-            "
+              ${
+                isHeroTheme
+                  ? "bg-white text-[#080357] hover:bg-[#B7F36B]"
+                  : "bg-[#050849] text-white hover:bg-[#052440]"
+              }
+            `}
           >
             Start Project
-            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform duration-500 group-hover:bg-white/30 group-hover:translate-x-1">
+            <div 
+              className={`flex h-7 w-7 items-center justify-center rounded-full transition-transform duration-500 group-hover:translate-x-1 ${
+                isHeroTheme ? "bg-[#080357]/10" : "bg-white/20"
+              }`}
+            >
               <ArrowRight size={14} />
             </div>
           </a>

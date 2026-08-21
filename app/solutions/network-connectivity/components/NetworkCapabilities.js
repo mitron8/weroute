@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   BrainCircuit,
   Network,
@@ -13,6 +14,7 @@ const capabilities = [
   {
     number: "01",
     title: "AI Network Solutions",
+    href: "/solution/network-connectivity/ai-network-solutions",
     description:
       "AI network solutions use predictive intelligence to catch problems before users notice them, turning your connectivity solution from reactive to genuinely proactive.",
     icon: <BrainCircuit size={24} className="text-[#050849]" />,
@@ -20,7 +22,8 @@ const capabilities = [
   },
   {
     number: "02",
-    title: "Software-Defined Networking",
+    title: "SD-WAN / SD-LAN / SDN",
+    href: "/solution/network-connectivity/sd-wan-sdn-solutions",
     description:
       "WeRoute SD-WAN solutions and SDN architecture replace rigid, expensive infrastructure with software-defined control that adapts as fast as your business does.",
     icon: <Network size={24} className="text-[#050849]" />,
@@ -28,7 +31,8 @@ const capabilities = [
   },
   {
     number: "03",
-    title: "Network Observability and Assurance",
+    title: "Network Observability & Assurance",
+    href: "/solution/network-connectivity/network-observability",
     description:
       "Network observability gives you the full picture, not just alerts after something breaks. See performance and health across every connected site before it costs you.",
     icon: <Eye size={24} className="text-[#050849]" />,
@@ -36,7 +40,8 @@ const capabilities = [
   },
   {
     number: "04",
-    title: "Network as a Service",
+    title: "Network as a Service (NaaS)",
+    href: "/solution/network-connectivity/network-as-a-service",
     description:
       "Our enterprise connectivity solutions shift the operational burden off your team. WeRoute manages the infrastructure so your engineers focus on what moves the business.",
     icon: <CloudCog size={24} className="text-[#050849]" />,
@@ -44,7 +49,8 @@ const capabilities = [
   },
   {
     number: "05",
-    title: "Mobility and Wireless Solutions",
+    title: "Mobility & Wireless Solutions",
+    href: "/solution/network-connectivity/mobility-wireless-solutions",
     description:
       "Enterprise mobility and wireless solutions built on Wi-Fi 6 and Zero Trust Network Access principles, for a workforce that is rarely at one desk.",
     icon: <Wifi size={24} className="text-[#050849]" />,
@@ -141,13 +147,16 @@ export default function NetworkCapabilities() {
                       ))}
                     </div>
 
-                    <button className="group/btn inline-flex items-center gap-2 text-sm font-bold text-[#050849] transition-colors hover:text-[#98c93c] shrink-0">
+                    <Link 
+                      href={item.href}
+                      className="group/btn inline-flex items-center gap-2 text-sm font-bold text-[#050849] transition-colors hover:text-[#98c93c] shrink-0"
+                    >
                       <span>Learn More</span>
                       <ArrowRight
                         size={16}
                         className="transition-transform duration-300 group-hover/btn:translate-x-1"
                       />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
