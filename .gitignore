@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch and local temporary files
+scratch/
+*.patch
+temp*.json
+missing_*.json
+updated_doc.txt
+append_*.js
+fix_*.js
+reparse_*.js
+update_services*.js

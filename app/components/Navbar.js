@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import {
   ChevronRight,
@@ -59,45 +59,6 @@ const MENU = {
         title: "Governance",
         desc: "Scalability, structure, and measurable outcomes.",
         href: "/governance",
-      },
-    ],
-  },
-
-  "Why WeRoute": {
-    type: "grid",
-    badge: "WHY CHOOSE US",
-    title: "Architecture, execution, and security working together.",
-    desc: "WeRoute combines consulting, implementation, and managed operations into one accountable delivery model.",
-    items: [
-      {
-        icon: <Activity size={18} />,
-        title: "Enterprise Delivery",
-        desc: "Structured governance and SLA-driven execution.",
-        href: "/enterprise-delivery",
-      },
-      {
-        icon: <Code2 size={18} />,
-        title: "Vendor-Agnostic",
-        desc: "Technology chosen for outcomes, not lock-in.",
-        href: "/vendor-agnostic",
-      },
-      {
-        icon: <Shield size={18} />,
-        title: "Secure by Design",
-        desc: "Security and compliance embedded from day one.",
-        href: "/secure-design",
-      },
-      {
-        icon: <Wifi size={18} />,
-        title: "Operational Clarity",
-        desc: "Visibility, monitoring, and optimization.",
-        href: "/operational-clarity",
-      },
-      {
-        icon: <Cloud size={18} />,
-        title: "Scalable Systems",
-        desc: "Built for growth, performance, and resilience.",
-        href: "/scalable-systems",
       },
     ],
   },
@@ -230,50 +191,6 @@ const MENU = {
     ],
   },
 
-  Capabilities: {
-    type: "grid",
-    badge: "CAPABILITIES",
-    title: "Interconnected capabilities for enterprise transformation.",
-    desc: "A capability model across networks, cloud, cybersecurity, software, and AI.",
-    items: [
-      {
-        icon: <Wifi size={18} />,
-        title: "Network Observability",
-        desc: "Real-time visibility and root-cause analysis.",
-        href: "/capabilities/network-observability",
-      },
-      {
-        icon: <Code2 size={18} />,
-        title: "Infrastructure as Code",
-        desc: "Repeatable infrastructure using automation.",
-        href: "/capabilities/infrastructure-as-code",
-      },
-      {
-        icon: <Shield size={18} />,
-        title: "Security Operations",
-        desc: "SIEM, SOAR, detection, and response workflows.",
-        href: "/capabilities/security-operations",
-      },
-      {
-        icon: <Cloud size={18} />,
-        title: "Cloud Optimization",
-        desc: "Cost, governance, uptime, and compliance.",
-        href: "/capabilities/cloud-optimization",
-      },
-      {
-        icon: <FileText size={18} />,
-        title: "Documentation",
-        desc: "Clear architecture and operational knowledge.",
-        href: "/capabilities/documentation",
-      },
-      {
-        icon: <HelpCircle size={18} />,
-        title: "Help Center",
-        desc: "Support workflows and operational enablement.",
-        href: "/capabilities/help-center",
-      },
-    ],
-  },
 };
 
 const NAV_ITEMS = [
@@ -281,7 +198,6 @@ const NAV_ITEMS = [
   { label: "Why WeRoute", href: "/why-weroute" },
   { label: "Services", href: "/services" },
   { label: "Solutions", href: "/solutions" },
-  { label: "Capabilities", href: "/capabilities" },
 ];
 
 export default function Navbar() {
@@ -291,10 +207,43 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState(null);
   const [activeSub, setActiveSub] = useState(0);
+  const timeoutRef = useRef(null);
   
   // Mobile states
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileActive, setMobileActive] = useState(null);
+
+  const clearCloseTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  const handleMouseEnterItem = (label) => {
+    clearCloseTimeout();
+    if (MENU[label]) {
+      setActive(label);
+      setActiveSub(0);
+    } else {
+      setActive(null);
+      setActiveSub(0);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    clearCloseTimeout();
+    timeoutRef.current = setTimeout(() => {
+      setActive(null);
+      setActiveSub(0);
+    }, 200);
+  };
+
+  const closeMenuImmediately = () => {
+    clearCloseTimeout();
+    setActive(null);
+    setActiveSub(0);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -307,7 +256,10 @@ export default function Navbar() {
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearCloseTimeout();
+    };
   }, []);
 
   // Dark hero theme applies when on homepage AND not scrolled down
@@ -339,169 +291,175 @@ export default function Navbar() {
 
         {/* NAVIGATION PILL */}
         <nav 
+          onMouseEnter={clearCloseTimeout}
+          onMouseLeave={handleMouseLeave}
           className={`relative hidden xl:flex items-center gap-2 rounded-full px-2 py-1.5 backdrop-blur-md transition-all duration-500 ${
             isHeroTheme
               ? "border border-white/15 bg-white/[0.08] shadow-lg shadow-black/10 text-white"
               : "border border-[#050849]/10 bg-white/60 shadow-sm text-[#050849]"
           }`}
         >
-          {NAV_ITEMS.map((item) => (
-            <div
-              key={item.label}
-              className="relative"
-              onMouseEnter={() => {
-                setActive(item.label);
-                setActiveSub(0);
-              }}
-            >
-              <Link
-                href={item.href}
-                className={`relative block rounded-full px-5 py-2 text-[14px] font-semibold transition-all duration-300 ${
-                  isHeroTheme
-                    ? active === item.label
-                      ? "bg-white/20 text-white"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
-                    : active === item.label
-                      ? "bg-[#050849]/5 text-[#050849]"
-                      : "text-[#050849]/70 hover:text-[#050849] hover:bg-[#050849]/5"
-                }`}
+          {NAV_ITEMS.map((item) => {
+            const hasMenu = Boolean(MENU[item.label]);
+            const isCurrent = pathname === item.href || (item.href !== "/" && pathname?.startsWith(item.href));
+
+            return (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => handleMouseEnterItem(item.label)}
               >
-                {item.label}
-              </Link>
-            </div>
-          ))}
+                <Link
+                  href={item.href}
+                  onClick={closeMenuImmediately}
+                  className={`relative block rounded-full px-5 py-2 text-[14px] font-semibold transition-all duration-300 ${
+                    isHeroTheme
+                      ? active === item.label || (!active && isCurrent)
+                        ? "bg-white/20 text-white"
+                        : "text-white/80 hover:text-white hover:bg-white/10"
+                      : active === item.label || (!active && isCurrent)
+                        ? "bg-[#050849]/5 text-[#050849]"
+                        : "text-[#050849]/70 hover:text-[#050849] hover:bg-[#050849]/5"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </div>
+            );
+          })}
 
           {/* MEGA MENU */}
-          {active && (
+          {active && MENU[active] && (
             <div
-              onMouseEnter={() => setActive(active)}
-              onMouseLeave={() => {
-                setActive(null);
-                setActiveSub(0);
-              }}
-              className="absolute left-1/2 top-[60px] w-[900px] -translate-x-1/2 overflow-hidden rounded-[24px] border border-[#050849]/10 bg-white/98 shadow-[0_40px_100px_rgba(5,8,73,0.18)] backdrop-blur-3xl transition-all duration-300 animate-in fade-in zoom-in-95 text-[#050849]"
+              onMouseEnter={clearCloseTimeout}
+              onMouseLeave={handleMouseLeave}
+              className="absolute left-1/2 top-full -translate-x-1/2 pt-3 w-[900px] z-50 before:absolute before:-top-4 before:left-0 before:right-0 before:h-4 before:content-['']"
             >
-              {/* GRID TYPE */}
-              {MENU[active].type === "grid" ? (
-                <div className="grid grid-cols-[1.2fr_300px]">
-                  {/* LEFT */}
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-10 p-10">
-                    {MENU[active].items.map((item, i) => (
-                      <Link
-                        href={item.href}
-                        key={i}
-                        className="group flex gap-4"
-                      >
-                        <div className="mt-1 text-[#050849]/40 transition-all duration-300 group-hover:scale-110 group-hover:text-[#050849]">
-                          {item.icon}
-                        </div>
-                        <div>
-                          <h4 className="text-[17px] font-semibold text-[#050849] transition-colors duration-300">
-                            {item.title}
-                          </h4>
-                          <p className="mt-2 text-[14px] leading-relaxed text-[#050849]/60">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-
-                  {/* RIGHT */}
-                  <div className="border-l border-[#050849]/10 p-10 bg-[#fafafa]/50">
-                    <span className="text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
-                      {MENU[active].badge}
-                    </span>
-                    <h3 className="mt-4 text-[26px] font-bold leading-[1.2] text-[#050849]">
-                      {MENU[active].title}
-                    </h3>
-                    <p className="mt-4 text-[15px] leading-relaxed text-[#050849]/60">
-                      {MENU[active].desc}
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="grid grid-cols-[280px_1fr]">
-                  {/* LEFT MENU */}
-                  <div className="border-r border-[#050849]/10 p-8 bg-[#fafafa]/30">
-                    <span className="mb-6 block text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
-                      {active}
-                    </span>
-
-                    <div className="space-y-1">
-                      {MENU[active].groups.map((group, i) => (
-                        <Link key={i} href={group.href || "#"}>
-                          <button
-                            onMouseEnter={() => setActiveSub(i)}
-                            className={`flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-left transition-all duration-300 ${
-                              activeSub === i
-                                ? "bg-white shadow-sm border border-[#050849]/5"
-                                : "hover:bg-white/50 border border-transparent"
-                            }`}
-                          >
-                            <div className="flex items-center gap-3">
-                              <span className={`transition-colors ${activeSub === i ? "text-[#050849]" : "text-[#050849]/40"}`}>
-                                {group.icon}
-                              </span>
-                              <span className="text-[15px] font-semibold leading-tight text-[#050849]">
-                                {group.title}
-                              </span>
-                            </div>
-                            <ChevronRight
-                              size={16}
-                              className={`transition-all duration-300 ${
-                                activeSub === i
-                                  ? "translate-x-1 text-[#050849]"
-                                  : "text-[#050849]/20"
-                              }`}
-                            />
-                          </button>
+              <div className="overflow-hidden rounded-[24px] border border-[#050849]/10 bg-white/98 shadow-[0_40px_100px_rgba(5,8,73,0.18)] backdrop-blur-3xl transition-all duration-300 animate-in fade-in zoom-in-95 text-[#050849]">
+                {/* GRID TYPE */}
+                {MENU[active].type === "grid" ? (
+                  <div className="grid grid-cols-[1.2fr_300px]">
+                    {/* LEFT */}
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-10 p-10">
+                      {MENU[active].items.map((item, i) => (
+                        <Link
+                          href={item.href}
+                          key={i}
+                          onClick={closeMenuImmediately}
+                          className="group flex gap-4"
+                        >
+                          <div className="mt-1 text-[#050849]/40 transition-all duration-300 group-hover:scale-110 group-hover:text-[#050849]">
+                            {item.icon}
+                          </div>
+                          <div>
+                            <h4 className="text-[17px] font-semibold text-[#050849] transition-colors duration-300">
+                              {item.title}
+                            </h4>
+                            <p className="mt-2 text-[14px] leading-relaxed text-[#050849]/60">
+                              {item.desc}
+                            </p>
+                          </div>
                         </Link>
                       ))}
                     </div>
-                  </div>
 
-                  {/* RIGHT CONTENT */}
-                  <div className="p-10 bg-white">
-                    <div className="flex items-start gap-5">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#050849]/10 bg-[#fafafa] text-[#050849]">
-                        {MENU[active].groups[activeSub].icon}
-                      </div>
-                      <div>
-                        <span className="text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
-                          {active}
-                        </span>
-                        <h3 className="mt-1 text-[26px] font-bold leading-tight text-[#050849]">
-                          {MENU[active].groups[activeSub].title}
-                        </h3>
-                        <p className="mt-2 text-[15px] text-[#050849]/60">
-                          {MENU[active].groups[activeSub].desc}
-                        </p>
-                      </div>
+                    {/* RIGHT */}
+                    <div className="border-l border-[#050849]/10 p-10 bg-[#fafafa]/50">
+                      <span className="text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
+                        {MENU[active].badge}
+                      </span>
+                      <h3 className="mt-4 text-[26px] font-bold leading-[1.2] text-[#050849]">
+                        {MENU[active].title}
+                      </h3>
+                      <p className="mt-4 text-[15px] leading-relaxed text-[#050849]/60">
+                        {MENU[active].desc}
+                      </p>
                     </div>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-[280px_1fr]">
+                    {/* LEFT MENU */}
+                    <div className="border-r border-[#050849]/10 p-8 bg-[#fafafa]/30">
+                      <span className="mb-6 block text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
+                        {active}
+                      </span>
 
-                    <div className="mt-10 grid grid-cols-2 gap-x-10 gap-y-8">
-                      {MENU[active].groups[activeSub].features.map(
-                        (feature, i) => (
-                          <div key={i} className="group flex gap-4">
-                            <Link
-                              href={feature.href || "#"}
-                              className="group flex gap-4 items-start"
+                      <div className="space-y-1">
+                        {MENU[active].groups.map((group, i) => (
+                          <Link key={i} href={group.href || "#"} onClick={closeMenuImmediately}>
+                            <button
+                              onMouseEnter={() => setActiveSub(i)}
+                              className={`flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-left transition-all duration-300 ${
+                                activeSub === i
+                                  ? "bg-white shadow-sm border border-[#050849]/5"
+                                  : "hover:bg-white/50 border border-transparent"
+                              }`}
                             >
-                              <span className="text-[18px] font-bold text-[#050849]/20 group-hover:text-[#050849]/40 transition-colors">
-                                {String(i + 1).padStart(2, "0")}
-                              </span>
-                              <span className="text-[15px] font-semibold leading-relaxed text-[#050849]/70 transition-colors group-hover:text-[#050849]">
-                                {feature.title}
-                              </span>
-                            </Link>
-                          </div>
-                        )
-                      )}
+                              <div className="flex items-center gap-3">
+                                <span className={`transition-colors ${activeSub === i ? "text-[#050849]" : "text-[#050849]/40"}`}>
+                                  {group.icon}
+                                </span>
+                                <span className="text-[15px] font-semibold leading-tight text-[#050849]">
+                                  {group.title}
+                                </span>
+                              </div>
+                              <ChevronRight
+                                size={16}
+                                className={`transition-all duration-300 ${
+                                  activeSub === i
+                                    ? "translate-x-1 text-[#050849]"
+                                    : "text-[#050849]/20"
+                                }`}
+                              />
+                            </button>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* RIGHT CONTENT */}
+                    <div className="p-10 bg-white">
+                      <div className="flex items-start gap-5">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#050849]/10 bg-[#fafafa] text-[#050849]">
+                          {MENU[active].groups[activeSub].icon}
+                        </div>
+                        <div>
+                          <span className="text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
+                            {active}
+                          </span>
+                          <h3 className="mt-1 text-[26px] font-bold leading-tight text-[#050849]">
+                            {MENU[active].groups[activeSub].title}
+                          </h3>
+                          <p className="mt-2 text-[15px] text-[#050849]/60">
+                            {MENU[active].groups[activeSub].desc}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mt-10 grid grid-cols-2 gap-x-10 gap-y-8">
+                        {MENU[active].groups[activeSub].features.map(
+                          (feature, i) => (
+                            <div key={i} className="group flex gap-4">
+                              <Link
+                                href={feature.href || "#"}
+                                onClick={closeMenuImmediately}
+                                className="group flex gap-4 items-start"
+                              >
+                                <span className="text-[18px] font-bold text-[#050849]/20 group-hover:text-[#050849]/40 transition-colors">
+                                  {String(i + 1).padStart(2, "0")}
+                                </span>
+                                <span className="text-[15px] font-semibold leading-relaxed text-[#050849]/70 transition-colors group-hover:text-[#050849]">
+                                  {feature.title}
+                                </span>
+                              </Link>
+                            </div>
+                          )
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           )}
         </nav>
