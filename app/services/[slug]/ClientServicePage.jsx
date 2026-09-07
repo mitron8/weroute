@@ -9,6 +9,7 @@ import {
   ChevronDown, 
   Workflow, 
   ArrowRight, 
+  ArrowDown,
   Sparkles, 
   Building2, 
   Factory, 
@@ -27,12 +28,35 @@ import {
   Activity,
   Server,
   Layers,
-  Lock,
-  Terminal
+  Lock
 } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import FinalCTA from "@/app/components/FinalCTA";
 import Link from "next/link";
+
+// Safe DotLottie wrapper to suppress AbortError on fast tab switching / unmounts
+const SafeDotLottie = ({ src, loop = true, autoplay = true, className = "", ...props }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError || !src) return null;
+
+  return (
+    <DotLottieReact
+      src={src}
+      loop={loop}
+      autoplay={autoplay}
+      className={className}
+      onError={(err) => {
+        // AbortError is normal during component unmounting / tab switching
+        if (err?.name === "AbortError" || String(err?.message || "").includes("aborted")) {
+          return;
+        }
+        setHasError(true);
+      }}
+      {...props}
+    />
+  );
+};
 
 // ==========================================
 // Helper: Text Formatter
@@ -179,6 +203,19 @@ function CarouselSection({ section }) {
           ))}
         </div>
       </div>
+      {(section.outro || section.footer) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-8 max-w-4xl"
+        >
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light">
+            {section.outro || section.footer}
+          </p>
+        </motion.div>
+      )}
     </div>
   );
 }
@@ -283,6 +320,20 @@ function BentoGridSection({ section, theme = "light" }) {
           );
         })}
       </div>
+
+      {(section.outro || section.footer) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-14 max-w-4xl mx-auto text-center"
+        >
+          <p className={`text-base md:text-lg leading-relaxed font-light ${isDarkTheme ? 'text-white/80' : 'text-gray-600'}`}>
+            {section.outro || section.footer}
+          </p>
+        </motion.div>
+      )}
       </div>
     </div>
   );
@@ -292,17 +343,19 @@ function BentoGridSection({ section, theme = "light" }) {
 // 3. Process Section (For "Approach" / "Process")
 // ==========================================
 function ProcessSection({ section }) {
+  const total = section.items.length;
+
   return (
     <div 
       className="relative w-full py-24 md:py-32 my-20 bg-[#080357] overflow-hidden"
       style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
     >
       {/* Subtle Background Glows */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#B7F36B] opacity-[0.02] blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#B7F36B] opacity-[0.02] blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#B7F36B] opacity-[0.03] blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#B7F36B] opacity-[0.03] blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-24">
+        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#B7F36B] mb-6">
             Delivery Model
           </span>
@@ -327,45 +380,70 @@ function ProcessSection({ section }) {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {section.items.map((item, idx) => {
-            const total = section.items.length;
-            
-            // Dynamic Grid Span logic from OutcomesSection
-            let spanClass = "md:col-span-12 lg:col-span-4";
-            if (total === 1) spanClass = "md:col-span-12 lg:col-span-12";
-            else if (total === 2) spanClass = "md:col-span-6 lg:col-span-6";
-            else if (total === 3) spanClass = "md:col-span-12 lg:col-span-4";
-            else if (total === 4) spanClass = "md:col-span-6 lg:col-span-6";
-            else if (total === 5) {
-              if (idx < 3) spanClass = "md:col-span-12 lg:col-span-4";
-              else spanClass = "md:col-span-6 lg:col-span-6";
-            }
-            else if (total === 6) spanClass = "md:col-span-6 lg:col-span-4";
+        {/* Step Progression Timeline Indicator */}
+        {total > 1 && (
+          <div className="flex items-center gap-3 overflow-x-auto hide-scrollbar max-w-5xl mx-auto mb-14 px-6 sm:px-8 py-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm justify-between">
+            {section.items.map((item, idx) => {
+              const cleanTitle = (item.title || "").replace(/^[0-9]+\.\s*/, "").replace(/\(Target:.*?\)/, "").trim();
+              return (
+                <React.Fragment key={idx}>
+                  <div className="flex items-center gap-2.5 flex-shrink-0 group">
+                    <span className="w-7 h-7 rounded-full bg-[#B7F36B]/20 border border-[#B7F36B]/40 text-[#B7F36B] text-xs font-bold flex items-center justify-center">
+                      {idx + 1}
+                    </span>
+                    <span className="text-sm font-semibold text-white/90 group-hover:text-[#B7F36B] transition-colors whitespace-nowrap">
+                      {cleanTitle}
+                    </span>
+                  </div>
+                  {idx < total - 1 && (
+                    <div className="flex items-center gap-1 text-[#B7F36B]/60 flex-shrink-0">
+                      <div className="h-[1px] w-4 sm:w-6 bg-gradient-to-r from-[#B7F36B]/40 to-[#B7F36B]" />
+                      <ArrowRight size={14} className="text-[#B7F36B]" />
+                    </div>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
+        )}
 
-            return (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`flex flex-col p-8 md:p-10 clay-dark bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/30 hover:-translate-y-2 transition-all duration-300 group rounded-[2rem] ${spanClass}`}
-              >
-                <div className="mb-6 w-14 h-14 rounded-2xl flex items-center justify-center bg-white/10 border border-white/5 text-[#B7F36B] font-black text-2xl flex-shrink-0 transform group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300 shadow-lg">
-                  {idx + 1}
-                </div>
-                
-                <h3 className="text-xl font-bold text-white mb-3">
-                  {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
-                </h3>
-                <div className="text-gray-400 leading-relaxed font-light group-hover:text-gray-300 transition-colors duration-300">
-                   {renderFormattedDescription(item.description)}
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {section.items.map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="flex flex-col p-8 md:p-10 clay-dark bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/40 hover:-translate-y-2 transition-all duration-300 group rounded-[2.5rem] shadow-xl"
+            >
+              <div className="mb-6 w-14 h-14 rounded-2xl flex items-center justify-center bg-white/10 border border-white/5 text-[#B7F36B] font-black text-2xl flex-shrink-0 transform group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300 shadow-lg">
+                {idx + 1}
+              </div>
+              
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#B7F36B] transition-colors">
+                {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
+              </h3>
+              <div className="text-gray-300 leading-relaxed font-light flex-grow">
+                 {renderFormattedDescription(item.description)}
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {(section.outro || section.footer) && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-14 max-w-4xl mx-auto text-center"
+          >
+            <p className="text-base md:text-lg leading-relaxed font-light text-white/80">
+              {section.outro || section.footer}
+            </p>
+          </motion.div>
+        )}
       </div>
     </div>
   );
@@ -429,6 +507,19 @@ function ChecklistSection({ section }) {
           </motion.div>
         ))}
       </div>
+      {(section.outro || section.footer) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-12 max-w-4xl"
+        >
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light">
+            {section.outro || section.footer}
+          </p>
+        </motion.div>
+      )}
     </div>
   );
 }
@@ -438,38 +529,72 @@ function ChecklistSection({ section }) {
 // ==========================================
 function DeliverablesSection({ section }) {
   const groups = [];
-  let currentGroup = null;
   
-  section.items.forEach(item => {
-    const isCategory = item.title.split(' ').length <= 3 && 
-                      !item.title.includes('Document') && 
-                      !item.title.includes('Framework') && 
-                      !item.title.includes('Matrix') && 
-                      !item.title.includes('Scorecard') && 
-                      !item.title.includes('Assessment') && 
-                      !item.title.includes('Register') && 
-                      !item.title.includes('Plan') && 
-                      !item.title.includes('Report') && 
-                      !item.title.includes('Summary') &&
-                      !item.title.includes('Roadmap');
-                      
-    if (isCategory) {
-      currentGroup = { category: item.title, deliverables: [] };
-      groups.push(currentGroup);
-    } else {
-      if (currentGroup) {
-        currentGroup.deliverables.push(item.title);
-      } else {
-        // Fallback if no category was found yet
-        groups.push({ category: item.title, deliverables: [] });
+  if (section.groups && Array.isArray(section.groups)) {
+    groups.push(...section.groups);
+  } else if (section.items && section.items.some(item => item.category && Array.isArray(item.deliverables))) {
+    section.items.forEach(item => {
+      if (item.category) {
+        groups.push({
+          category: item.category,
+          deliverables: Array.isArray(item.deliverables) ? item.deliverables : []
+        });
       }
-    }
-  });
+    });
+  } else {
+    let currentGroup = null;
+    section.items.forEach(item => {
+      if (item.category && item.deliverables) {
+        groups.push(item);
+        return;
+      }
+
+      const title = (item.title || "").trim();
+      if (!title) return;
+
+      const isKnownCategory = [
+        "Executive Deliverables",
+        "Assessment & Analysis",
+        "Architecture & Technology",
+        "Governance & Cost",
+        "Roadmap & Implementation"
+      ].some(cat => title.toLowerCase() === cat.toLowerCase());
+
+      const isCategory = isKnownCategory || (
+        title.split(' ').length <= 3 && 
+        !title.includes('Document') && 
+        !title.includes('Framework') && 
+        !title.includes('Matrix') && 
+        !title.includes('Scorecard') && 
+        !title.includes('Assessment') && 
+        !title.includes('Register') && 
+        !title.includes('Plan') && 
+        !title.includes('Report') && 
+        !title.includes('Summary') &&
+        !title.includes('Roadmap') &&
+        !title.includes('Presentation') &&
+        !title.includes('Review') &&
+        !title.includes('Analysis') &&
+        !title.includes('Recommendations') &&
+        !title.includes('Options')
+      );
+      
+      if (isCategory) {
+        currentGroup = { category: title, deliverables: [] };
+        groups.push(currentGroup);
+      } else {
+        if (currentGroup) {
+          currentGroup.deliverables.push(title);
+        } else {
+          currentGroup = { category: title, deliverables: [] };
+          groups.push(currentGroup);
+        }
+      }
+    });
+  }
 
   // Filter out empty groups that were just single items matching isCategory (e.g., if parsing failed)
-  // Actually, if it's an empty group, it means it's a category with no deliverables yet, which is fine, 
-  // but if all groups are empty, then it means it failed.
-  const hasDeliverables = groups.some(g => g.deliverables.length > 0);
+  const hasDeliverables = groups.some(g => g.deliverables && g.deliverables.length > 0);
 
   return (
     <div className="w-full">
@@ -545,6 +670,19 @@ function DeliverablesSection({ section }) {
           ))}
         </div>
       )}
+      {(section.outro || section.footer) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-12 max-w-4xl"
+        >
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light">
+            {section.outro || section.footer}
+          </p>
+        </motion.div>
+      )}
     </div>
   );
 }
@@ -612,6 +750,19 @@ function StandardGridSection({ section }) {
           </motion.div>
         ))}
       </div>
+      {(section.outro || section.footer) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-12 max-w-4xl"
+        >
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light">
+            {section.outro || section.footer}
+          </p>
+        </motion.div>
+      )}
     </div>
   );
 }
@@ -1300,7 +1451,7 @@ export default function ClientServicePage({ service, isNewLayout }) {
             <div className="relative w-full max-w-lg aspect-square lg:aspect-[4/3] rounded-[3rem] overflow-hidden bg-transparent group flex items-center justify-center">
               {service.hero.lottieUrl ? (
                 <div className={`w-full h-full ${service.hero.lottieScale || 'scale-100'}`}>
-                  <DotLottieReact
+                  <SafeDotLottie
                     src={service.hero.lottieUrl}
                     loop
                     autoplay
@@ -1378,7 +1529,6 @@ export default function ClientServicePage({ service, isNewLayout }) {
       {/* 3. Dynamic Sections Map */}
       <div className="mt-32 space-y-32">
         {cleanedSections
-          .filter(section => section.id !== 'section-9' && section.id !== 'section-10')
           .map((section, idx) => {
             if (!section.title && !section.intro && (!section.items || section.items.length === 0)) return null;
             return (
@@ -1508,7 +1658,7 @@ export default function ClientServicePage({ service, isNewLayout }) {
                 className="lg:col-span-5 flex items-center justify-center w-full mt-10 lg:mt-0"
               >
                 <div className="w-full max-w-[240px] md:max-w-[270px] aspect-square flex items-center justify-center">
-                  <DotLottieReact
+                  <SafeDotLottie
                     src="https://lottie.host/bc42f255-0c6a-458c-a02b-02f75d3c8509/1HCUwb6Dat.lottie"
                     loop
                     autoplay

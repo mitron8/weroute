@@ -120,10 +120,9 @@ const MENU = {
       {
         icon: <Activity size={18} />,
         title: "Consulting & Advisory Services",
-        href: "/sub-services#consulting",
+        href: "/services/consulting-advisory",
         desc: "Strategic guidance for architecture and modernization.",
         features: [
-          { title: "Enterprise Technology Consulting", href: "/services/enterprise-technology-consulting-and-advisory" },
           { title: "IT Strategy & Optimization", href: "/services/it-strategy-and-optimization" },
           { title: "Network & Security Assessments", href: "/services/network-and-security-assessments" },
           { title: "Cloud Readiness & Migration Strategy", href: "/services/cloud-readiness-and-migration-strategy" },
@@ -134,7 +133,7 @@ const MENU = {
       {
         icon: <Users size={18} />,
         title: "Manpower & Staffing Services",
-        href: "/sub-services#staffing",
+        href: "/contact",
         desc: "Scale your capabilities with specialized IT and engineering talent.",
         features: [
           { title: "Network Integration & Modernization", href: "/services/network-integration-and-modernization" },
@@ -148,7 +147,7 @@ const MENU = {
       {
         icon: <Briefcase size={18} />,
         title: "Professional Services",
-        href: "/sub-services#professional",
+        href: "/services/professional-services",
         desc: "End-to-end implementation and project delivery.",
         features: [
           { title: "Network Integration & Modernization", href: "/services/network-integration-and-modernization" },
@@ -640,12 +639,16 @@ export default function Navbar() {
                         <div className="flex flex-col gap-6">
                           {menuData.groups.map((group, i) => (
                             <div key={i} className="flex flex-col gap-3">
-                              <div className="flex items-center gap-3 text-[#050849]/60">
-                                {group.icon}
+                              <Link
+                                href={group.href || "#"}
+                                onClick={() => setMobileOpen(false)}
+                                className="flex items-center gap-3 text-[#050849] hover:text-[#080357] transition-colors"
+                              >
+                                <span className="text-[#050849]/60">{group.icon}</span>
                                 <span className="text-[15px] font-semibold text-[#050849]">
                                   {group.title}
                                 </span>
-                              </div>
+                              </Link>
                               <div className="ml-2.5 flex flex-col gap-3 border-l-2 border-[#050849]/10 pl-5">
                                 {group.features.map((feature, j) => (
                                   <Link

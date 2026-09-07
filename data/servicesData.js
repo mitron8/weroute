@@ -4262,12 +4262,9 @@ export const servicesData = {
           {
             "title": "Cross-Domain Technology Expertise",
             "description": "WeRoute combines strategy, architecture, cost, and operating model expertise together in a single advisory engagement."
-          },
-          {
-            "title": "WeRoute has supported 40+ enterprise deployments, backed by 99.9% system reliability across the technology environments we help strategize and optimize.",
-            "description": ""
           }
         ],
+        "outro": "WeRoute has supported 40+ enterprise deployments, backed by 99.9% system reliability across the technology environments we help strategize and optimize.",
         "targetKeywords": "(Target: Technology Investment Planning, IT Governance Consulting, Enterprise Architecture Consulting)"
       },
       {
@@ -4772,12 +4769,9 @@ export const servicesData = {
           {
             "title": "Business-Impact Focus",
             "description": "Findings are framed around what matters to the business, not just technical detail buried in a report."
-          },
-          {
-            "title": "WeRoute has supported 40+ enterprise deployments, backed by 99.9% system reliability across the environments we help assess and improve.",
-            "description": ""
           }
         ],
+        "outro": "WeRoute has supported 40+ enterprise deployments, backed by 99.9% system reliability across the environments we help assess and improve.",
         "targetKeywords": "(Target: Enterprise Security Assessment, Network Security Audit, Enterprise Network Assessment)"
       },
       {
@@ -6959,12 +6953,9 @@ export const servicesData = {
           {
             "title": "Implementation-Aware Strategy",
             "description": "Strategy is shaped with delivery in mind, so roadmaps translate cleanly into real execution work."
-          },
-          {
-            "title": "WeRoute has supported 40+ enterprise deployments, backed by 99.9% system reliability across the technology environments we help advise and transform.",
-            "description": ""
           }
         ],
+        "outro": "WeRoute has supported 40+ enterprise deployments, backed by 99.9% system reliability across the technology environments we help advise and transform.",
         "targetKeywords": "(Target: Technology Advisory Services, Vendor-Agnostic Technology Consulting, Enterprise Architecture Advisory)"
       },
       {
@@ -7165,88 +7156,45 @@ export const servicesData = {
         "intro": "Every engagement ends with a defined set of deliverables, not just a conversation. Here is what you can expect to receive, grouped by how most teams put them to use.",
         "items": [
           {
-            "title": "Executive Deliverables",
-            "description": ""
+            "category": "Executive Deliverables",
+            "deliverables": [
+              "Executive Assessment Summary",
+              "Executive Presentation"
+            ]
           },
           {
-            "title": "Executive Assessment Summary",
-            "description": ""
+            "category": "Assessment & Analysis",
+            "deliverables": [
+              "Current-State Environment Analysis",
+              "Technology Maturity Assessment",
+              "Risk & Gap Register",
+              "Cloud or AI Readiness Report"
+            ]
           },
           {
-            "title": "Executive Presentation",
-            "description": ""
+            "category": "Architecture & Technology",
+            "deliverables": [
+              "Architecture Review",
+              "Future-State Architecture",
+              "Technology Recommendations",
+              "Use-Case Prioritization Matrix"
+            ]
           },
           {
-            "title": "Assessment & Analysis",
-            "description": ""
+            "category": "Governance & Cost",
+            "deliverables": [
+              "Cost & Optimization Analysis",
+              "Governance Recommendations",
+              "Decision Framework"
+            ]
           },
           {
-            "title": "Current-State Environment Analysis",
-            "description": ""
-          },
-          {
-            "title": "Technology Maturity Assessment",
-            "description": ""
-          },
-          {
-            "title": "Risk & Gap Register",
-            "description": ""
-          },
-          {
-            "title": "Cloud or AI Readiness Report",
-            "description": ""
-          },
-          {
-            "title": "Architecture & Technology",
-            "description": ""
-          },
-          {
-            "title": "Architecture Review",
-            "description": ""
-          },
-          {
-            "title": "Future-State Architecture",
-            "description": ""
-          },
-          {
-            "title": "Technology Recommendations",
-            "description": ""
-          },
-          {
-            "title": "Use-Case Prioritization Matrix",
-            "description": ""
-          },
-          {
-            "title": "Governance & Cost",
-            "description": ""
-          },
-          {
-            "title": "Cost & Optimization Analysis",
-            "description": ""
-          },
-          {
-            "title": "Governance Recommendations",
-            "description": ""
-          },
-          {
-            "title": "Decision Framework",
-            "description": ""
-          },
-          {
-            "title": "Roadmap & Implementation",
-            "description": ""
-          },
-          {
-            "title": "Implementation Options",
-            "description": ""
-          },
-          {
-            "title": "Phased Transformation Roadmap",
-            "description": ""
-          },
-          {
-            "title": "Technical Documentation",
-            "description": ""
+            "category": "Roadmap & Implementation",
+            "deliverables": [
+              "Implementation Options",
+              "Phased Transformation Roadmap",
+              "Technical Documentation"
+            ]
           }
         ],
         "targetKeywords": "(Target: Digital Transformation Consulting, Enterprise Technology Consulting)"

@@ -103,10 +103,10 @@ export default function HeroLeopolda() {
               </Link>
 
               <Link
-                href="/sub-services"
+                href="/services"
                 className="px-7 py-3.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-xl border border-white/20 hover:border-white/35 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
               >
-                <span>Explore Solutions</span>
+                <span>Explore Services</span>
               </Link>
             </motion.div>
 
