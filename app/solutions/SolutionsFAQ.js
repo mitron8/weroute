@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Plus } from "lucide-react";
+import { motion } from "framer-motion";
+import { FAQItem } from "@/app/components/ui/FAQAccordion";
 
 const faqData = [
   {
@@ -75,73 +75,16 @@ export default function SolutionsFAQ() {
 
           {/* RIGHT COLUMN: Accordion */}
           <div className="flex flex-col gap-4 lg:col-span-7 lg:pl-10">
-            {faqData.map((faq, index) => {
-              const isOpen = activeIndex === index;
-
-              return (
-                <motion.div
-                  layout // This ensures the container smoothly animates its overall height
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`clay-light group relative overflow-hidden border border-[#050849]/5 bg-[#f7f9fc] transition-all duration-500 ${
-                    isOpen ? "border-[#050849]/20" : ""
-                  }`}
-                >
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050849]/[0.02] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                  {/* Header / Click Target */}
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    className="relative z-10 flex w-full items-start justify-between gap-6 px-6 py-6 text-left md:px-8 md:py-8"
-                  >
-                    <motion.h3
-                      layout="position"
-                      className={`mt-1 text-lg font-bold tracking-tight transition-colors duration-300 md:text-xl ${
-                        isOpen ? "text-[#050849]" : "text-[#050849] group-hover:text-[#050849]"
-                      }`}
-                    >
-                      {faq.question}
-                    </motion.h3>
-                    
-                    {/* Toggle Icon */}
-                    <motion.div
-                      layout="position"
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-500 ease-in-out ${
-                        isOpen
-                          ? "rotate-45 border-[#98c93c] bg-[#98c93c]/10 text-[#98c93c]"
-                          : "border-[#050849]/10 bg-transparent text-[#050849]/40 group-hover:border-[#050849]/20 group-hover:bg-[#050849]/5 group-hover:text-[#050849]"
-                      }`}
-                    >
-                      <Plus size={18} strokeWidth={2.5} />
-                    </motion.div>
-                  </button>
-
-                  {/* Expandable Body */}
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        layout
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="px-6 pb-6 md:px-8 md:pb-8"
-                      >
-                        {/* Perfect Alignment: No left padding, perfectly flush with the question */}
-                        <div className="border-t border-[#050849]/10 pt-6">
-                          <p className="text-base leading-relaxed text-[#050849]/75 md:text-lg text-justify sm:text-left">
-                            {faq.answer}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              );
-            })}
+            {faqData.map((faq, index) => (
+              <FAQItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={activeIndex === index}
+                onToggle={() => toggleFAQ(index)}
+                index={index}
+              />
+            ))}
           </div>
 
         </div>

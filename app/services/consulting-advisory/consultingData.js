@@ -4,6 +4,10 @@ export const consultingData = {
     badge: "Consulting & Advisory Services",
     title: "Enterprise Technology Consulting & Advisory Services",
     subtitle: "WeRoute combines business context, architecture expertise, and vendor-agnostic advisory to help you assess your environment, define future-state direction, and prioritize transformation investment.",
+    ctaText: "Talk to Our Technology Consultants",
+    ctaHref: "#contact",
+    secondaryCtaText: "Explore Our Solutions",
+    secondaryCtaHref: "/solutions",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
     lottieUrl: "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
   },
@@ -78,27 +82,32 @@ export const consultingData = {
       id: "section-4",
       title: "Consulting & Advisory Services Portfolio",
       targetKeywords: "(Target: Technology Roadmap Consulting, Automation Advisory Services, Enterprise Technology Strategy)",
-      intro: "WeRoute's consulting and advisory work spans five core service areas, each addressing a distinct set of business challenges and producing its own deliverables. Explore the area most relevant to where you are today.",
+      intro: "WeRoute's consulting and advisory work spans across five core service areas, each addressing a distinct set of business challenges and producing its own deliverables. Explore the area most relevant to where you are today.",
       items: [
         {
           title: "IT Strategy & Optimization",
-          description: "This service aligns enterprise technology investment, operating models, modernization priorities, and governance with business strategy, replacing fragmented decisions with a single, prioritized direction. Business Challenges: misaligned technology investments, fragmented environments, high operational costs, legacy dependencies, and unclear modernization priorities. Core Capabilities: current-state technology assessment, IT strategy development, technology portfolio review, and a transformation roadmap."
+          description: "This service aligns enterprise technology investment, operating models, modernization priorities, and governance with business strategy, replacing fragmented decisions with a single, prioritized direction. Common triggers: misaligned technology investments, fragmented environments, high operational costs, legacy dependencies, and unclear modernization priorities. Core deliverables: current-state technology assessment, IT strategy development, technology portfolio review, and a transformation roadmap.",
+          link: "/services/it-strategy-and-optimization"
         },
         {
           title: "Network & Security Assessments",
-          description: "This service evaluates network and security environments to identify risk, performance gaps, architecture weaknesses, and modernization opportunities across the enterprise estate. Business Challenges: limited network visibility, security architecture gaps, operational risk, performance issues, and compliance concerns. Core Capabilities: network health assessments, security posture assessments, architecture reviews, and remediation roadmaps."
+          description: "This service evaluates network and security environments to identify risk, performance gaps, architecture weaknesses, and modernization opportunities across the enterprise estate. Common triggers: limited network visibility, security architecture gaps, operational risk, performance issues, and compliance concerns. Core deliverables: network health assessments, security posture assessments, architecture reviews, and remediation roadmaps.",
+          link: "/services/network-and-security-assessments"
         },
         {
           title: "Cloud Readiness & Migration Strategy",
-          description: "This service helps organizations determine what should move to cloud, when, how, and under what governance model, reducing migration risk and cost uncertainty. Business Challenges: unclear cloud direction, legacy application dependencies, migration risk, governance concerns, and hybrid complexity. Core Capabilities: cloud readiness assessment, migration strategy, cloud architecture recommendations, and migration roadmaps."
+          description: "This service helps organizations determine what should move to cloud, when, how, and under what governance model, reducing migration risk and cost uncertainty. Common triggers: unclear cloud direction, legacy application dependencies, migration risk, governance concerns, and hybrid complexity. Core deliverables: cloud readiness assessment, migration strategy, cloud architecture recommendations, and migration roadmaps.",
+          link: "/services/cloud-readiness-and-migration-strategy"
         },
         {
           title: "AI & Automation Advisory",
-          description: "This service helps enterprises identify, prioritize, govern, and operationalize AI and automation opportunities with clear, measurable business value rather than experimentation. Business Challenges: unclear AI use cases, difficulty demonstrating ROI, fragmented automation, data readiness issues, and governance risk. Core Capabilities: AI opportunity assessment, use-case prioritization, AI readiness assessment, and an AI and automation roadmap."
+          description: "This service helps enterprises identify, prioritize, govern, and operationalize AI and automation opportunities with clear, measurable business value rather than experimentation. Common triggers: unclear AI use cases, difficulty demonstrating ROI, fragmented automation, data readiness issues, and governance risk. Core deliverables: AI opportunity assessment, use-case prioritization, AI readiness assessment, and an AI and automation roadmap.",
+          link: "/services/ai-and-automation-advisory"
         },
         {
           title: "Technology Selection & Roadmaps",
-          description: "This service provides structured evaluation and comparison of technology platforms, vendors, and architecture patterns, delivering clear recommendations and sequenced transformation roadmaps. Business Challenges: vendor lock-in risk, overlapping technology tools, evaluation fatigue, and lack of clear selection criteria. Core Capabilities: vendor and platform evaluation, architecture pattern comparison, proof-of-concept design, and technology roadmap development."
+          description: "This service helps organizations make objective platform and vendor decisions and sequence implementation realistically, reducing lock-in risk and procurement complexity. Common triggers: too many technology options, vendor lock-in concerns, procurement complexity, tool duplication, and unclear sequencing. Core deliverables: technology evaluation, vendor and platform comparison, architecture fit assessment, and a phased technology roadmap.",
+          link: "/services/technology-selection-and-roadmaps"
         }
       ]
     },
@@ -129,7 +138,7 @@ export const consultingData = {
     {
       id: "section-6",
       title: "Our Consulting Approach",
-      targetKeywords: "(Target: Technology Assessment Framework, IT Advisory Process)",
+      targetKeywords: "(Target: Enterprise Technology Consulting, Technology Consulting Services)",
       intro: "WeRoute turns complex information into practical decisions using a structured six-stage approach, moving from initial discovery through to implementation-ready direction.",
       items: [
         {
@@ -160,78 +169,199 @@ export const consultingData = {
     },
     {
       id: "section-7",
-      title: "Business Benefits of WeRoute Advisory",
-      targetKeywords: "(Target: IT Advisory ROI, Strategic Technology Planning)",
-      intro: "Advisory engagements deliver measurable clarity, lower risk, and better financial returns on enterprise technology investments.",
-      items: [
+      title: "Typical Engagement Deliverables",
+      targetKeywords: "(Target: Digital Transformation Consulting, Enterprise Technology Consulting)",
+      intro: "Every engagement ends with a defined set of deliverables, not just a conversation. Here is what you can expect to receive, grouped by how most teams put them to use.",
+      groups: [
         {
-          title: "Clear, Prioritized Technology Strategy",
-          description: "Move from reactive IT spend to proactive, structured investment aligned with corporate growth."
+          category: "Executive Deliverables",
+          deliverables: [
+            "Executive Assessment Summary",
+            "Executive Presentation"
+          ]
         },
         {
-          title: "De-Risked Digital Transformation",
-          description: "Validate architecture decisions and assess dependencies before investing significant budget."
+          category: "Assessment & Analysis",
+          deliverables: [
+            "Current-State Environment Analysis",
+            "Technology Maturity Assessment",
+            "Risk & Gap Register",
+            "Cloud or AI Readiness Report"
+          ]
         },
         {
-          title: "Unbiased Vendor Selection",
-          description: "Avoid costly vendor lock-in and tool duplication through objective, requirements-led analysis."
+          category: "Architecture & Technology",
+          deliverables: [
+            "Architecture Review",
+            "Future-State Architecture",
+            "Technology Recommendations",
+            "Use-Case Prioritization Matrix"
+          ]
         },
         {
-          title: "Execution-Ready Roadmaps",
-          description: "Receive practical, sequenced blueprints that internal teams or implementation partners can deliver immediately."
+          category: "Governance & Cost",
+          deliverables: [
+            "Cost & Optimization Analysis",
+            "Governance Recommendations",
+            "Decision Framework"
+          ]
         },
         {
-          title: "Optimized Technology Spend",
-          description: "Eliminate redundant licenses, optimize cloud architectures, and redirect budget to high-impact initiatives."
+          category: "Roadmap & Implementation",
+          deliverables: [
+            "Implementation Options",
+            "Phased Transformation Roadmap",
+            "Technical Documentation"
+          ]
         }
+      ],
+      items: [
+        { title: "Executive Deliverables", description: "" },
+        { title: "Executive Assessment Summary", description: "" },
+        { title: "Executive Presentation", description: "" },
+        { title: "Assessment & Analysis", description: "" },
+        { title: "Current-State Environment Analysis", description: "" },
+        { title: "Technology Maturity Assessment", description: "" },
+        { title: "Risk & Gap Register", description: "" },
+        { title: "Cloud or AI Readiness Report", description: "" },
+        { title: "Architecture & Technology", description: "" },
+        { title: "Architecture Review", description: "" },
+        { title: "Future-State Architecture", description: "" },
+        { title: "Technology Recommendations", description: "" },
+        { title: "Use-Case Prioritization Matrix", description: "" },
+        { title: "Governance & Cost", description: "" },
+        { title: "Cost & Optimization Analysis", description: "" },
+        { title: "Governance Recommendations", description: "" },
+        { title: "Decision Framework", description: "" },
+        { title: "Roadmap & Implementation", description: "" },
+        { title: "Implementation Options", description: "" },
+        { title: "Phased Transformation Roadmap", description: "" },
+        { title: "Technical Documentation", description: "" }
       ]
     },
     {
       id: "section-8",
-      title: "Industries We Advise",
-      targetKeywords: "(Target: Financial Services IT Consulting, Healthcare Technology Advisory)",
-      intro: "WeRoute delivers technology consulting and advisory services across sectors with complex regulatory, security, and infrastructure demands.",
+      title: "Business Benefits",
+      targetKeywords: "(Target: IT Consulting Services, Technology Advisory Services)",
+      intro: "Advisory work should change how you decide, invest, and modernize, not just describe your current state. Here is the value WeRoute's engagements typically deliver.",
       items: [
         {
-          title: "Financial Services & Banking",
-          description: "Modernize core infrastructure, enhance cybersecurity posture, and meet strict compliance standards."
+          title: "Greater Decision Clarity",
+          description: "Move forward with confidence instead of uncertainty around technology direction."
         },
         {
-          title: "Healthcare & Life Sciences",
-          description: "Secure patient data, architect compliant hybrid cloud environments, and streamline clinical systems."
+          title: "Better Business & IT Alignment",
+          description: "Connect technology decisions directly to business priorities and expected outcomes."
         },
         {
-          title: "Manufacturing & Supply Chain",
-          description: "Integrate IT/OT networks, deploy edge computing architectures, and drive smart automation."
+          title: "Reduced Transformation Risk",
+          description: "Avoid costly missteps by validating direction before making major investment."
         },
         {
-          title: "Retail & E-Commerce",
-          description: "Build resilient multi-cloud architectures for peak scalability, omnichannel experiences, and zero downtime."
+          title: "Improved Investment Prioritization",
+          description: "Direct budget toward the initiatives that create the most value."
         },
         {
-          title: "Telecommunications & Technology",
-          description: "Architect scalable next-generation networks, cloud-native services, and automated operations."
+          title: "Objective Technology Recommendations",
+          description: "Get vendor-agnostic guidance grounded in your actual environment and goals."
+        },
+        {
+          title: "Clearer Modernization Pathways",
+          description: "Know exactly which modernization steps matter most and in what order."
+        },
+        {
+          title: "Stronger Governance",
+          description: "Build consistent, accountable technology decision-making practices across the whole organization."
+        },
+        {
+          title: "Improved Operational Efficiency",
+          description: "Streamline operating models so technology teams work faster and more effectively."
+        },
+        {
+          title: "Better Stakeholder Alignment",
+          description: "Build shared understanding and commitment across leadership and technical teams."
+        },
+        {
+          title: "Faster Strategy-to-Execution",
+          description: "Move from advisory recommendation to action faster with a practical roadmap."
+        },
+        {
+          title: "Reduced Technology Duplication",
+          description: "Cut overlapping tools and platforms that add cost without adding value."
+        },
+        {
+          title: "More Predictable Transformation Outcomes",
+          description: "Sequence change carefully, reducing surprises across timelines and project dependencies."
         }
       ]
     },
     {
       id: "section-9",
+      title: "Engagement Models",
+      targetKeywords: "(Target: Enterprise Technology Consulting, Technology Advisory Services)",
+      intro: "Consulting engagements can be structured around scope and complexity. Here are the models WeRoute typically uses, depending on what you need.",
+      items: [
+        {
+          title: "Assessment-Based Engagements",
+          description: "Focused evaluations designed to identify gaps, risks, maturity, and improvement opportunities within a defined technology domain, delivered as a standalone engagement."
+        },
+        {
+          title: "Strategy & Roadmap Engagements",
+          description: "Structured advisory programs that establish future-state direction, priorities, governance, investment sequencing, and a practical, phased transformation plan for the business."
+        },
+        {
+          title: "Architecture Advisory",
+          description: "Specialist support for reviewing, validating, defining, or evolving enterprise technology architectures, often alongside a broader strategy engagement."
+        },
+        {
+          title: "Retained Advisory Services",
+          description: "Ongoing access to senior consultants and architects for strategic guidance, decision support, governance, and transformation oversight over an extended period."
+        },
+        {
+          title: "Workshop-Led Engagements",
+          description: "Collaborative sessions designed to align stakeholders, identify opportunities, clarify priorities, and accelerate important technology decisions in a short, focused timeframe."
+        }
+      ]
+    },
+    {
+      id: "section-10",
+      title: "Industries We Support",
+      intro: "WeRoute advises organizations across complex, regulated, and technology-intensive environments, including Financial Services, Healthcare, Manufacturing, Retail & E-Commerce, Telecommunications, Government & Public Sector, Education, Technology & SaaS, Logistics & Supply Chain, and Energy & Utilities.",
+      items: [
+        { title: "Financial Services", description: "" },
+        { title: "Healthcare", description: "" },
+        { title: "Manufacturing", description: "" },
+        { title: "Retail & E-Commerce", description: "" },
+        { title: "Telecommunications", description: "" },
+        { title: "Government & Public Sector", description: "" },
+        { title: "Education", description: "" },
+        { title: "Technology & SaaS", description: "" },
+        { title: "Logistics & Supply Chain", description: "" },
+        { title: "Energy & Utilities", description: "" }
+      ]
+    },
+    {
+      id: "section-11",
       title: "Frequently Asked Questions",
       intro: "",
       items: []
     },
     {
-      id: "section-10",
+      id: "section-12",
       title: "INTERNAL LINKS",
       intro: "",
       items: [
         {
-          title: "Related Consulting Services",
-          description: "IT Strategy & Optimization | /services/it-strategy-and-optimization | Network & Security Assessments | /services/network-and-security-assessments | Cloud Readiness & Migration Strategy | /services/cloud-readiness-and-migration-strategy | AI & Automation Advisory | /services/ai-and-automation-advisory | Technology Selection & Roadmaps | /services/technology-selection-and-roadmaps"
+          title: "INTERNAL LINKS: CONSULTING & ADVISORY SERVICES",
+          description: "IT Strategy & Optimization Services | /services/it-strategy-and-optimization | Network & Security Assessment Services | /services/network-and-security-assessments | Cloud Readiness & Migration Strategy Services | /services/cloud-readiness-and-migration-strategy | AI & Automation Advisory Services | /services/ai-and-automation-advisory | Technology Selection & Roadmap Services | /services/technology-selection-and-roadmaps"
         },
         {
-          title: "Implementation & Operations Services",
-          description: "Professional Services | /services/professional-services | Managed Services | /services/managed-services | Network Connectivity Solutions | /solutions/network-connectivity | Cloud & DevOps Solutions | /solutions/cloud-and-devOps | Cybersecurity Solutions | /solutions/cybersecurity"
+          title: "INTERNAL LINKS: PROFESSIONAL & MANAGED SERVICES",
+          description: "Network & Security Architecture Services | /services/network-and-security-architecture-design | Cloud & DevOps Implementation Services | /services/cloud-and-devops-implementation | Enterprise Network Integration Services | /services/network-integration-and-modernization | Managed IT Services | /services/managed-services"
+        },
+        {
+          title: "INTERNAL LINKS: SOLUTIONS",
+          description: "Network & Connectivity Solutions | /solutions/network-connectivity | Cloud & DevOps Solutions | /solutions/cloud-and-devOps | Cybersecurity Solutions | /solutions/cybersecurity | AI & Intelligent Automation Solutions | /solutions/ai-automation | Software & Digital Engineering Solutions | /solutions/software-engineering"
         }
       ]
     }
@@ -294,5 +424,10 @@ export const consultingData = {
     title: "Turn Complexity into a Clear Technology Roadmap",
     description: "Talk to WeRoute about your technology environment and get clear, vendor-agnostic guidance on the right next step for your transformation.",
     button: "Talk to Our Technology Consultants"
+  },
+  seo: {
+    h1: "Enterprise Technology Consulting & Advisory Services",
+    primaryKeywords: "Enterprise Technology Consulting, IT Consulting Services, Technology Advisory Services, Enterprise IT Strategy, Digital Transformation Consulting, Technology Consulting Services, Enterprise Technology Strategy",
+    secondaryKeywords: "IT Strategy Consulting, Network Assessment Services, Cybersecurity Assessment Services, Cloud Readiness Assessment, Cloud Migration Consulting, AI Consulting Services, Automation Advisory Services, Technology Roadmap Consulting, Vendor-Agnostic Technology Consulting, Enterprise Architecture Advisory, Technology Modernization Consulting, IT Transformation Strategy"
   }
 };

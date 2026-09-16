@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { motion } from "framer-motion";
+import { FAQItem } from "@/app/components/ui/FAQAccordion";
 
 const faqs = [
   {
@@ -65,60 +65,34 @@ export default function RelatedAndFAQ() {
 
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-4xl">
-            <span className="clay-badge-light inline-flex rounded-full border border-[#050849]/5 bg-white px-5 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#050849]">
-              Frequently Asked Questions
+            <span className="clay-badge-light inline-flex rounded-full border border-[#050849]/5 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#050849]">
+              Support & Clarity
             </span>
 
-            <h2 className="mt-8 text-4xl font-black leading-[0.95] tracking-[-0.05em] text-[#050849] md:text-6xl lg:text-7xl">
-              Questions <br />
-              Enterprises
-              <span className="text-[#98c93c]"> Ask Most</span>
+            <h2 className="mt-8 text-4xl font-normal leading-tight text-[#050849] md:text-6xl lg:text-7xl tracking-tight">
+              Frequently Asked{" "}
+              <span className="bg-gradient-to-r from-[#050849] to-[#4c658a] bg-clip-text text-transparent font-medium">
+                Questions
+              </span>
             </h2>
           </div>
 
-          <p className="max-w-xl text-lg font-medium leading-9 text-[#4c658a]">
+          <p className="max-w-xl text-lg font-normal leading-relaxed text-[#050849]/65">
             Answers to the most common questions about enterprise cybersecurity solutions, architectures, and managed security services.
           </p>
         </div>
 
-        <div className="mt-24 space-y-5">
-          {faqs.map((faq, index) => {
-            const open = active === index;
-
-            return (
-              <div key={faq.question} className="clay-light overflow-hidden rounded-[36px] border border-[#050849]/5 bg-[#f7f9fc]">
-                <button
-                  onClick={() => setActive(open ? null : index)}
-                  className="flex w-full items-center justify-between gap-6 p-8 text-left"
-                >
-                  <h3 className="text-xl font-bold leading-relaxed tracking-[-0.03em] text-[#050849]">
-                    {faq.question}
-                  </h3>
-
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#f7f9fc] text-[#050849] transition-colors duration-300 hover:bg-[#98c93c]">
-                    {open ? <Minus size={18} /> : <Plus size={18} />}
-                  </div>
-                </button>
-
-                <AnimatePresence>
-                  {open && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="border-t border-[#050849]/5 px-8 py-8">
-                        <p className="max-w-4xl text-base font-medium leading-8 text-[#4c658a]">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+        <div className="mt-16 flex flex-col gap-4">
+          {faqs.map((faq, index) => (
+            <FAQItem
+              key={faq.question || index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={active === index}
+              onToggle={() => setActive(active === index ? null : index)}
+              index={index}
+            />
+          ))}
         </div>
 
         <div className="clay-light mt-20 rounded-[40px] border border-[#050849]/5 bg-[#f7f9fc] p-10">

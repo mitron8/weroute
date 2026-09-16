@@ -19,7 +19,8 @@ import {
   Cpu,
   Code,
   Users,
-  Briefcase
+  Briefcase,
+  BrainCircuit
 } from "lucide-react";
 import Link from "next/link";
 
@@ -94,15 +95,14 @@ const MENU = {
       {
         icon: <Users size={18} />,
         title: "Manpower & Staffing Services",
-        href: "/contact",
+        href: "/services/staffing",
         desc: "Scale your capabilities with specialized IT and engineering talent.",
         features: [
-          { title: "Network Integration & Modernization", href: "/services/network-integration-and-modernization" },
-          { title: "Cloud & DevOps Implementation", href: "/services/cloud-and-devops-implementation" },
-          { title: "Infrastructure Automation & Standardization", href: "/services/infrastructure-automation-and-standardization" },
-          { title: "Network & Security Architecture Design", href: "/services/network-and-security-architecture-design" },
-          { title: "Converged Communications Deployment", href: "/services/converged-communications-deployment" },
-          { title: "Mobility & Wireless Implementation", href: "/services/enterprise-mobility-and-wireless-implementation" },
+          { title: "Network & Infrastructure Staffing", href: "/services/network-and-infrastructure-staffing" },
+          { title: "Cybersecurity & SOC Staffing", href: "/services/cybersecurity-and-soc-staffing" },
+          { title: "Cloud, DevOps & Automation Staffing", href: "/services/cloud-devops-and-automation-staffing" },
+          { title: "Software & Application Staffing", href: "/services/software-and-application-staffing" },
+          { title: "AI / ML & Emerging Technology Staffing", href: "/services/ai-ml-and-emerging-technology-staffing" },
         ],
       },
       {
@@ -117,6 +117,30 @@ const MENU = {
           { title: "Network & Security Architecture Design", href: "/services/network-and-security-architecture-design" },
           { title: "Converged Communications Deployment", href: "/services/converged-communications-deployment" },
           { title: "Mobility & Wireless Implementation", href: "/services/enterprise-mobility-and-wireless-implementation" },
+        ],
+      },
+      {
+        icon: <BrainCircuit size={18} />,
+        title: "Software & AI Development Services",
+        href: "/services/software-ai-development",
+        desc: "Enterprise software, AI applications, and intelligent automation built for scale.",
+        features: [
+          { 
+            title: "Model Deployment, MLOps & LLMOps Services", 
+            href: "/services/model-deployment-and-mlops" 
+          },
+          { 
+            title: "Enterprise AI & Machine Learning Development Services", 
+            href: "/services/ai-ml-development-services" 
+          },
+          { 
+            title: "Enterprise Mobile Application Development Services", 
+            href: "/services/mobile-application-development" 
+          },
+          { 
+            title: "Enterprise API Development & Integration Services", 
+            href: "/services/enterprise-api-development-and-integration-services" 
+          },
         ],
       },
     ],
@@ -333,7 +357,7 @@ export default function Navbar() {
             <div
               onMouseEnter={clearCloseTimeout}
               onMouseLeave={handleMouseLeave}
-              className="absolute left-1/2 top-full -translate-x-1/2 pt-3 w-[900px] z-50 before:absolute before:-top-4 before:left-0 before:right-0 before:h-4 before:content-['']"
+              className="absolute left-1/2 top-full -translate-x-1/2 pt-3 w-[940px] z-50 before:absolute before:-top-4 before:left-0 before:right-0 before:h-4 before:content-['']"
             >
               <div className="overflow-hidden rounded-[24px] border border-[#050849]/10 bg-white/98 shadow-[0_40px_100px_rgba(5,8,73,0.18)] backdrop-blur-3xl transition-all duration-300 animate-in fade-in zoom-in-95 text-[#050849]">
                 {/* GRID TYPE */}
@@ -377,10 +401,10 @@ export default function Navbar() {
                     </div>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-[280px_1fr]">
+                  <div className="grid grid-cols-[305px_1fr]">
                     {/* LEFT MENU */}
-                    <div className="border-r border-[#050849]/10 p-8 bg-[#fafafa]/30">
-                      <span className="mb-6 block text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
+                    <div className="border-r border-[#050849]/10 p-6 bg-[#fafafa]/30">
+                      <span className="mb-5 block text-[11px] font-bold tracking-[0.2em] text-[#050849]/40 uppercase">
                         {active}
                       </span>
 
@@ -389,7 +413,7 @@ export default function Navbar() {
                           <Link key={i} href={group.href || "#"} onClick={closeMenuImmediately}>
                             <button
                               onMouseEnter={() => setActiveSub(i)}
-                              className={`flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-left transition-all duration-300 ${
+                              className={`flex w-full items-center justify-between rounded-xl px-3.5 py-3 text-left transition-all duration-300 ${
                                 activeSub === i
                                   ? "bg-white shadow-sm border border-[#050849]/5"
                                   : "hover:bg-white/50 border border-transparent"
@@ -489,7 +513,7 @@ export default function Navbar() {
             Contact
           </Link>
           <a
-            href="#contact"
+            href="mailto:sales@weroute.ai"
             className={`
               group
               flex
@@ -632,9 +656,13 @@ export default function Navbar() {
 
           {/* MOBILE CTA */}
           <div className="mt-8 flex flex-col gap-3">
-            <button className="rounded-2xl bg-[#050849] px-6 py-4 text-[15px] font-semibold text-white shadow-lg">
+            <a
+              href="mailto:sales@weroute.ai"
+              onClick={() => setMobileOpen(false)}
+              className="flex justify-center items-center rounded-2xl bg-[#050849] px-6 py-4 text-[15px] font-semibold text-white shadow-lg"
+            >
               Start Project
-            </button>
+            </a>
             <Link 
               href="/contact"
               onClick={() => setMobileOpen(false)}

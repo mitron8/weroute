@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -81,7 +81,7 @@ export default function FinalCTA({
               <motion.div variants={itemVariants}>
                 <div className="inline-flex items-center gap-3 rounded-full border border-[#052440]/10 bg-[#080357]/5 px-5 py-2.5">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#080357] text-white shadow-sm">
-                    <Sparkles size={15} />
+                    <ArrowRight size={15} />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#080357]">
                     {badgeText}

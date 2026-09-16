@@ -4,18 +4,27 @@ import { consultingData } from "./consultingData";
 
 export const metadata = {
   title: "Enterprise Technology Consulting & Advisory Services | WeRoute",
-  description: "WeRoute provides independent enterprise technology consulting and advisory services, combining architecture expertise, risk analysis, and vendor-agnostic roadmaps to guide digital transformation.",
+  description: "WeRoute combines business context, architecture expertise, and vendor-agnostic advisory to help you assess your environment, define future-state direction, and prioritize transformation investment.",
   keywords: [
     "Enterprise Technology Consulting",
+    "IT Consulting Services",
     "Technology Advisory Services",
     "Enterprise IT Strategy",
     "Digital Transformation Consulting",
-    "IT Consulting Services",
+    "Technology Consulting Services",
+    "Enterprise Technology Strategy",
+    "IT Strategy Consulting",
+    "Network Assessment Services",
+    "Cybersecurity Assessment Services",
+    "Cloud Readiness Assessment",
+    "Cloud Migration Consulting",
+    "AI Consulting Services",
+    "Automation Advisory Services",
+    "Technology Roadmap Consulting",
     "Vendor-Agnostic Technology Consulting",
     "Enterprise Architecture Advisory",
-    "Cloud Migration Strategy",
-    "AI Advisory Services",
-    "IT Optimization"
+    "Technology Modernization Consulting",
+    "IT Transformation Strategy"
   ],
 };
 

@@ -7,7 +7,7 @@ import {
   TrendingUp, 
   ShieldCheck, 
   Zap, 
-  Sparkles, 
+  Activity, 
   Cloud
 } from "lucide-react";
 import Link from "next/link";
@@ -242,8 +242,8 @@ export default function HeroLeopolda() {
                 {/* Sub-card 3: Action Ribbon */}
                 <div className="flex items-center justify-between pt-1.5 border-t border-white/10 text-xs">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-5 h-5 rounded-md bg-pink-500/30 border border-pink-500/40 flex items-center justify-center text-pink-300">
-                      <Sparkles size={11} />
+                    <div className="w-5 h-5 rounded-md bg-[#B7F36B]/20 border border-[#B7F36B]/30 flex items-center justify-center text-[#B7F36B]">
+                      <Activity size={11} />
                     </div>
                     <span className="text-white/80 font-medium text-[10px]">AI Autonomous Healing</span>
                   </div>

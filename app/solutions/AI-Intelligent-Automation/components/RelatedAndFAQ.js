@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Plus, Minus, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
+import { FAQItem } from "@/app/components/ui/FAQAccordion";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -62,20 +63,18 @@ export default function RelatedAndFAQ() {
         <div className="mb-20 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-4xl">
             <span className="clay-badge-light inline-flex rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#050849]">
-              Intelligent Automation FAQ
+              Support & Clarity
             </span>
 
-            <h2 className="mt-8 text-4xl font-black leading-[0.95] tracking-[-0.05em] text-[#050849] md:text-6xl lg:text-7xl">
-              Frequently <br />
-              Asked
-              <span className="text-[#98c93c]">
-                {" "}
+            <h2 className="mt-8 text-4xl font-normal leading-tight text-[#050849] md:text-6xl lg:text-7xl tracking-tight">
+              Frequently Asked{" "}
+              <span className="bg-gradient-to-r from-[#050849] to-[#4c658a] bg-clip-text text-transparent font-medium">
                 Questions
               </span>
             </h2>
           </div>
 
-          <p className="max-w-xl text-lg leading-9 text-[#4c658a]">
+          <p className="max-w-xl text-lg font-normal leading-relaxed text-[#050849]/65">
             Everything you need to know about our coordinated approach to AI strategy, intelligent automation, and AIOps solutions for the enterprise.
           </p>
         </div>
@@ -122,55 +121,18 @@ export default function RelatedAndFAQ() {
           </motion.div>
 
           {/* FAQs Accordion List (7 Columns) */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="space-y-5 lg:col-span-7"
-          >
-            {faqs.map((faq, index) => {
-              const open = active === index;
-
-              return (
-                <motion.div
-                  key={faq.q}
-                  variants={fadeInUp}
-                  className="clay-light overflow-hidden rounded-[36px] transition-all duration-300"
-                >
-                  <button
-                    onClick={() => setActive(open ? null : index)}
-                    className="flex w-full items-center justify-between gap-6 p-8 text-left sm:p-10"
-                  >
-                    <h3 className="text-xl font-bold leading-relaxed tracking-[-0.03em] text-[#050849]">
-                      {faq.q}
-                    </h3>
-
-                    <div className="clay-badge-light flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-[#050849] transition-transform duration-300">
-                      {open ? <Minus size={18} /> : <Plus size={18} />}
-                    </div>
-                  </button>
-
-                  <AnimatePresence>
-                    {open && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <div className="border-t border-[#4c658a]/10 px-8 py-8 sm:px-10">
-                          <p className="max-w-3xl text-base leading-8 text-[#4c658a]">
-                            {faq.a}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+          <div className="flex flex-col gap-4 lg:col-span-7">
+            {faqs.map((faq, index) => (
+              <FAQItem
+                key={faq.q || index}
+                question={faq.q}
+                answer={faq.a}
+                isOpen={active === index}
+                onToggle={() => setActive(active === index ? null : index)}
+                index={index}
+              />
+            ))}
+          </div>
 
         </div>
       </div>

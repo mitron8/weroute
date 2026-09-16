@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { FAQAccordion } from '@/app/components/ui/FAQAccordion';
 
 export default function ServicesFAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
-
   const faqs = [
     {
       question: "What technology services does WeRoute provide?",
@@ -53,66 +50,57 @@ export default function ServicesFAQ() {
   };
 
   return (
-    <section className="py-24 bg-[#f7f9fc] border-t border-gray-100">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-28 lg:py-32 border-t border-[#050849]/5">
+      {/* Background ambient light */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-[-10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#050849]/[0.02] blur-[120px]" />
+        <div className="absolute right-[-10%] bottom-[10%] h-[400px] w-[400px] rounded-full bg-[#98c93c]/[0.03] blur-[100px]" />
+      </div>
+
       {/* Inject JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <div className="mx-auto max-w-[1500px] px-8">
-        
-        <div className="text-center mb-16 max-w-4xl mx-auto">
+      <div className="relative z-10 mx-auto max-w-4xl px-6">
+        <div className="text-center mb-14 md:mb-16">
           <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="clay-badge-light inline-block border border-[#050849]/5 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#050849]">
+              Support & Clarity
+            </span>
+          </motion.div>
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-6 text-3xl font-normal leading-tight text-[#050849] md:text-4xl lg:text-[44px] tracking-tight"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6">
-              Frequently Asked Questions
-            </h2>
-          </motion.div>
+            Frequently Asked{" "}
+            <span className="bg-gradient-to-r from-[#050849] to-[#4c658a] bg-clip-text text-transparent font-medium">
+              Questions
+            </span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-5 text-base md:text-lg leading-relaxed text-[#050849]/65 max-w-2xl mx-auto"
+          >
+            Find clarity on how our technology services are structured, delivered, and integrated into your enterprise environment.
+          </motion.p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="clay-light bg-white border border-[#050849]/5 overflow-hidden"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none hover:bg-gray-50 transition-colors"
-              >
-                <span className="text-lg font-bold text-[#080357] pr-8">{faq.question}</span>
-                <ChevronDown 
-                  className={`w-6 h-6 text-gray-400 shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`} 
-                />
-              </button>
-              
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="px-8 pb-6 text-[#080357]/80 font-medium leading-relaxed border-t border-gray-50 pt-4">
-                      {faq.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </div>
-        
+        <FAQAccordion items={faqs} initialOpenIndex={0} />
       </div>
     </section>
   );

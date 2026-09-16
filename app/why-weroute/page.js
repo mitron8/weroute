@@ -14,7 +14,6 @@ import {
   TrendingUp,
   Cpu,
   Target,
-  Sparkles,
   ChevronRight
 } from "lucide-react";
 
@@ -181,7 +180,7 @@ export default function WhyWeRoutePage() {
         {/* ================= HERO SECTION ================= */}
         <div className="pt-10 pb-16 text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#050849]/10 bg-white/80 px-5 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#080357] shadow-sm backdrop-blur-md">
-            <Sparkles className="h-3.5 w-3.5 text-[#0d5ea8]" />
+            <Shield className="h-3.5 w-3.5 text-[#0d5ea8]" />
             Why Choose WeRoute
           </div>
 

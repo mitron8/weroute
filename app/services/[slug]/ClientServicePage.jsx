@@ -9,8 +9,7 @@ import {
   ChevronDown, 
   Workflow, 
   ArrowRight, 
-  ArrowDown,
-  Sparkles, 
+  ArrowDown, 
   Building2, 
   Factory, 
   HeartPulse, 
@@ -28,10 +27,12 @@ import {
   Activity,
   Server,
   Layers,
-  Lock
+  Lock,
+  Code2
 } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import FinalCTA from "@/app/components/FinalCTA";
+import FAQSection from "@/app/components/ui/FAQAccordion";
 import Link from "next/link";
 
 // Safe DotLottie wrapper to suppress AbortError on fast tab switching / unmounts
@@ -64,28 +65,78 @@ const SafeDotLottie = ({ src, loop = true, autoplay = true, className = "", ...p
 const renderFormattedDescription = (text, isDark = false) => {
   if (!text) return null;
   
-  if (text.includes("Business Challenges:") && text.includes("Core Capabilities:")) {
-    const parts = text.split(/Business Challenges:|Core Capabilities:/);
+  const hasChallenges = text.includes("Business Challenges:") || text.includes("Common triggers:");
+  const hasCapabilities = text.includes("Core Capabilities:") || text.includes("Example Roles:") || text.includes("Core deliverables:");
+
+  if (hasChallenges && hasCapabilities) {
+    const parts = text.split(/Business Challenges:|Core Capabilities:|Example Roles:|Common triggers:|Core deliverables:/);
     const intro = parts[0].trim();
     const challenges = parts[1].trim();
     const capabilities = parts[2].trim();
+    const isRoles = text.includes("Example Roles:");
+    const isChallenges = text.includes("Business Challenges:");
     
     return (
       <div className="space-y-4">
-        <p>{intro}</p>
+        <p className="leading-relaxed">{intro}</p>
         <div className={`p-4 rounded-xl ${isDark ? 'bg-white/5 border border-white/10' : 'bg-[#f7f9fc] border border-[#080357]/5'}`}>
-          <strong className={`block font-bold mb-1 text-xs uppercase tracking-wider ${isDark ? 'text-[#B7F36B]' : 'text-[#080357]'}`}>Business Challenges</strong>
+          <strong className={`block font-bold mb-1 text-xs uppercase tracking-wider ${isDark ? 'text-[#B7F36B]' : 'text-[#080357]'}`}>
+            {isChallenges ? "Business Challenges" : "Common Triggers"}
+          </strong>
           <p className={`text-sm ${isDark ? 'text-white/80' : 'text-gray-600'}`}>{challenges}</p>
         </div>
         <div className={`p-4 rounded-xl ${isDark ? 'bg-white/5 border border-white/10' : 'bg-[#f7f9fc] border border-[#080357]/5'}`}>
-          <strong className={`block font-bold mb-1 text-xs uppercase tracking-wider ${isDark ? 'text-[#B7F36B]' : 'text-[#080357]'}`}>Core Capabilities</strong>
+          <strong className={`block font-bold mb-1 text-xs uppercase tracking-wider ${isDark ? 'text-[#B7F36B]' : 'text-[#080357]'}`}>
+            {isRoles ? "Example Roles" : "Core Capabilities"}
+          </strong>
           <p className={`text-sm ${isDark ? 'text-white/80' : 'text-gray-600'}`}>{capabilities}</p>
         </div>
       </div>
     );
   }
+
+  // Handle structured text with bullets or key focus areas
+  if (text.includes("\n") || text.includes("•")) {
+    const lines = text.split("\n").map(l => l.trim()).filter(Boolean);
+    const regularLines = [];
+    const bulletLines = [];
+    let heading = null;
+
+    lines.forEach(l => {
+      if (l.startsWith("•") || l.startsWith("-")) {
+        bulletLines.push(l.replace(/^[•\-]\s*/, ""));
+      } else if (l.endsWith(":") || l.toLowerCase().includes("focus areas") || l.toLowerCase().includes("deliverables") || l.toLowerCase().includes("includes")) {
+        heading = l;
+      } else {
+        regularLines.push(l);
+      }
+    });
+
+    if (bulletLines.length > 0) {
+      return (
+        <div className="space-y-3">
+          {regularLines.map((p, i) => (
+            <p key={i} className={`leading-relaxed text-sm md:text-base ${isDark ? 'text-white/90' : 'text-gray-600'}`}>{p}</p>
+          ))}
+          {heading && (
+            <div className={`inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider mt-2 px-2.5 py-1 rounded-md ${isDark ? 'bg-white/10 text-[#B7F36B]' : 'bg-[#080357]/5 text-[#080357]'}`}>
+              <span>{heading}</span>
+            </div>
+          )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+            {bulletLines.map((bullet, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${isDark ? 'bg-[#B7F36B]' : 'bg-[#080357]'}`} />
+                <span className={`text-xs md:text-sm font-medium ${isDark ? 'text-white/95' : 'text-gray-700'}`}>{bullet}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+  }
   
-  return <p>{text}</p>;
+  return <p className={`leading-relaxed ${isDark ? 'text-white/90' : 'text-gray-600'}`}>{text}</p>;
 };
 
 // ==========================================
@@ -380,52 +431,49 @@ function ProcessSection({ section }) {
           </motion.p>
         </div>
 
-        {/* Step Progression Timeline Indicator */}
+        {/* Step Progression Timeline Indicator - All items visible without horizontal scrollbar */}
         {total > 1 && (
-          <div className="flex items-center gap-3 overflow-x-auto hide-scrollbar max-w-5xl mx-auto mb-14 px-6 sm:px-8 py-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm justify-between">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-6xl mx-auto mb-16 p-4 sm:p-5 rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur-md">
             {section.items.map((item, idx) => {
               const cleanTitle = (item.title || "").replace(/^[0-9]+\.\s*/, "").replace(/\(Target:.*?\)/, "").trim();
               return (
-                <React.Fragment key={idx}>
-                  <div className="flex items-center gap-2.5 flex-shrink-0 group">
-                    <span className="w-7 h-7 rounded-full bg-[#B7F36B]/20 border border-[#B7F36B]/40 text-[#B7F36B] text-xs font-bold flex items-center justify-center">
+                <div key={idx} className="flex items-center gap-2 sm:gap-3 group">
+                  <div className="flex items-center gap-2.5 bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl group-hover:border-[#B7F36B]/60 group-hover:bg-white/10 transition-all duration-300">
+                    <span className="w-6 h-6 rounded-lg bg-[#B7F36B] text-[#080357] text-xs font-black flex items-center justify-center shadow-sm flex-shrink-0">
                       {idx + 1}
                     </span>
-                    <span className="text-sm font-semibold text-white/90 group-hover:text-[#B7F36B] transition-colors whitespace-nowrap">
+                    <span className="text-xs sm:text-sm font-semibold text-white group-hover:text-[#B7F36B] transition-colors whitespace-nowrap">
                       {cleanTitle}
                     </span>
                   </div>
                   {idx < total - 1 && (
-                    <div className="flex items-center gap-1 text-[#B7F36B]/60 flex-shrink-0">
-                      <div className="h-[1px] w-4 sm:w-6 bg-gradient-to-r from-[#B7F36B]/40 to-[#B7F36B]" />
-                      <ArrowRight size={14} className="text-[#B7F36B]" />
-                    </div>
+                    <ArrowRight size={14} className="text-[#B7F36B]/50 hidden lg:inline-block flex-shrink-0" />
                   )}
-                </React.Fragment>
+                </div>
               );
             })}
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {section.items.map((item, idx) => (
             <motion.div 
               key={idx}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="flex flex-col p-8 md:p-10 clay-dark bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/40 hover:-translate-y-2 transition-all duration-300 group rounded-[2.5rem] shadow-xl"
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="flex flex-col p-8 clay-dark bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/50 hover:-translate-y-2 transition-all duration-300 group rounded-[2.5rem] shadow-xl"
             >
-              <div className="mb-6 w-14 h-14 rounded-2xl flex items-center justify-center bg-white/10 border border-white/5 text-[#B7F36B] font-black text-2xl flex-shrink-0 transform group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300 shadow-lg">
+              <div className="mb-6 w-14 h-14 rounded-2xl flex items-center justify-center bg-white/10 border border-white/10 text-[#B7F36B] font-black text-2xl flex-shrink-0 transform group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300 shadow-lg">
                 {idx + 1}
               </div>
               
               <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#B7F36B] transition-colors">
                 {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
               </h3>
-              <div className="text-gray-300 leading-relaxed font-light flex-grow">
-                 {renderFormattedDescription(item.description)}
+              <div className="text-white/95 text-base leading-relaxed font-normal flex-grow">
+                 {renderFormattedDescription(item.description, true)}
               </div>
             </motion.div>
           ))}
@@ -654,7 +702,7 @@ function DeliverablesSection({ section }) {
             >
               <h3 className="text-xl font-bold text-[#080357] mb-6 flex items-center gap-3">
                  <div className="w-8 h-8 rounded-full bg-[#B7F36B]/20 flex items-center justify-center text-[#080357]">
-                    <Sparkles size={16} />
+                    <Layers size={16} />
                  </div>
                  {group.category}
               </h3>
@@ -771,6 +819,60 @@ function StandardGridSection({ section }) {
 // 5. Redesigned What Are Section (Enterprise Architecture & Scope with Claymorphism)
 // ==========================================
 function WhatAreSection({ section }) {
+  const defaultPillars = [
+    { title: "SLA-Guaranteed", subtitle: "99.99% Uptime", icon: "shield", color: "blue" },
+    { title: "24/7 Telemetry", subtitle: "Observability", icon: "activity", color: "emerald" },
+    { title: "Vendor Agnostic", subtitle: "Zero Lock-in", icon: "layers", color: "purple" }
+  ];
+
+  const defaultFeatures = [
+    { title: "Continuous Lifecycle Governance", subtitle: "Provisioning & optimization", tag: "Active", icon: "server", color: "navy" },
+    { title: "Automated Incident Response", subtitle: "< 4 min MTTR & triage", tag: "< 4m", icon: "zap", color: "blue" },
+    { title: "Zero-Trust Compliance", subtitle: "SOC 2 & ISO 27001 enforced", tag: "Enforced", icon: "shield", color: "emerald" }
+  ];
+
+  const pillars = section.pillars && section.pillars.length > 0 ? section.pillars : defaultPillars;
+  const features = section.features && section.features.length > 0 ? section.features : defaultFeatures;
+  const consoleTitle = section.consoleTitle || "weroute-scope-manifest";
+  const consoleTag = section.consoleTag || "v2.4";
+
+  const getPillarIcon = (iconName) => {
+    switch (iconName) {
+      case "code": return <Code2 size={16} />;
+      case "activity": return <Activity size={16} />;
+      case "layers": return <Layers size={16} />;
+      case "zap": return <Zap size={16} />;
+      case "server": return <Server size={16} />;
+      default: return <ShieldCheck size={16} />;
+    }
+  };
+
+  const getPillarColors = (color) => {
+    switch (color) {
+      case "emerald": return "bg-emerald-50 text-emerald-600";
+      case "purple": return "bg-purple-50 text-purple-600";
+      default: return "bg-blue-50 text-blue-600";
+    }
+  };
+
+  const getFeatureIcon = (iconName, color) => {
+    let bgClass = "bg-[#080357] text-[#B7F36B]";
+    if (color === "blue") bgClass = "bg-blue-600 text-white";
+    if (color === "emerald") bgClass = "bg-emerald-600 text-white";
+    if (color === "purple") bgClass = "bg-purple-600 text-white";
+
+    let iconComp = <Server size={18} />;
+    if (iconName === "zap") iconComp = <Zap size={18} />;
+    if (iconName === "shield") iconComp = <ShieldCheck size={18} />;
+    if (iconName === "code") iconComp = <Code2 size={18} />;
+
+    return (
+      <div className={`w-10 h-10 rounded-xl ${bgClass} flex items-center justify-center flex-shrink-0 shadow-sm`}>
+        {iconComp}
+      </div>
+    );
+  };
+
   return (
     <div className="w-full clay-light bg-white rounded-[3rem] p-8 sm:p-12 md:p-16 border border-[#080357]/5 overflow-hidden relative shadow-[0_20px_50px_rgba(8,3,87,0.04)]">
       {/* Background Decorative Glow Orbs */}
@@ -788,7 +890,7 @@ function WhatAreSection({ section }) {
           className="lg:col-span-7 flex flex-col items-start"
         >
           <div className="clay-badge-light inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#080357] mb-6 border border-[#080357]/5">
-            <Sparkles size={13} className="text-[#B7F36B]" />
+            <Workflow size={13} className="text-[#080357]" />
             <span>Service Scope &amp; Architecture</span>
           </div>
 
@@ -802,39 +904,21 @@ function WhatAreSection({ section }) {
 
           {/* 3 Claymorphic Value Pillars */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full pt-4 border-t border-[#080357]/10">
-            <div className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
-              <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
-                <ShieldCheck size={16} />
+            {pillars.map((pillar, pIdx) => (
+              <div key={pIdx} className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
+                <div className={`w-8 h-8 rounded-xl ${getPillarColors(pillar.color)} flex items-center justify-center flex-shrink-0`}>
+                  {getPillarIcon(pillar.icon)}
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-bold text-[#080357] truncate">{pillar.title}</p>
+                  <p className="text-[10px] text-slate-500 truncate">{pillar.subtitle}</p>
+                </div>
               </div>
-              <div className="min-w-0">
-                <p className="text-xs font-bold text-[#080357] truncate">SLA-Guaranteed</p>
-                <p className="text-[10px] text-slate-500 truncate">99.99% Uptime</p>
-              </div>
-            </div>
-
-            <div className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
-              <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                <Activity size={16} />
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-bold text-[#080357] truncate">24/7 Telemetry</p>
-                <p className="text-[10px] text-slate-500 truncate">Observability</p>
-              </div>
-            </div>
-
-            <div className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
-              <div className="w-8 h-8 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center flex-shrink-0">
-                <Layers size={16} />
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-bold text-[#080357] truncate">Vendor Agnostic</p>
-                <p className="text-[10px] text-slate-500 truncate">Zero Lock-in</p>
-              </div>
-            </div>
+            ))}
           </div>
         </motion.div>
 
-        {/* Right Column: Interactive macOS Architecture Console Card with Claymorphism */}
+        {/* Right Column: Interactive Architecture Console Card with Claymorphism */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.94, y: 20 }} 
           whileInView={{ opacity: 1, scale: 1, y: 0 }} 
@@ -852,73 +936,31 @@ function WhatAreSection({ section }) {
                 <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
               </div>
               <span className="text-[11px] font-mono font-semibold text-slate-500">
-                weroute-scope-manifest
+                {consoleTitle}
               </span>
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             </div>
 
             {/* Console Body */}
             <div className="p-6 space-y-3.5 bg-white">
-              
-              {/* Feature Box 1 */}
-              <div className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#080357] text-[#B7F36B] flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <Server size={18} />
+              {features.map((feat, fIdx) => (
+                <div key={fIdx} className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
+                  <div className="flex items-center gap-3">
+                    {getFeatureIcon(feat.icon, feat.color)}
+                    <div>
+                      <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
+                        {feat.title}
+                      </p>
+                      <p className="text-[10px] text-slate-500">
+                        {feat.subtitle}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
-                      Continuous Lifecycle Governance
-                    </p>
-                    <p className="text-[10px] text-slate-500">
-                      Provisioning &amp; optimization
-                    </p>
-                  </div>
+                  <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
+                    {feat.tag}
+                  </span>
                 </div>
-                <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
-                  Active
-                </span>
-              </div>
-
-              {/* Feature Box 2 */}
-              <div className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <Zap size={18} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
-                      Automated Incident Response
-                    </p>
-                    <p className="text-[10px] text-slate-500">
-                      &lt; 4 min MTTR &amp; triage
-                    </p>
-                  </div>
-                </div>
-                <span className="text-[10px] font-mono font-bold text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-md">
-                  &lt; 4m
-                </span>
-              </div>
-
-              {/* Feature Box 3 */}
-              <div className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <ShieldCheck size={18} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
-                      Zero-Trust Compliance
-                    </p>
-                    <p className="text-[10px] text-slate-500">
-                      SOC 2 &amp; ISO 27001 enforced
-                    </p>
-                  </div>
-                </div>
-                <span className="text-[10px] font-mono font-bold text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded-md">
-                  Enforced
-                </span>
-              </div>
+              ))}
 
               {/* Bottom Quick Callout */}
               <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500 font-medium border-t border-[#080357]/5">
@@ -927,7 +969,7 @@ function WhatAreSection({ section }) {
                   Enterprise-Grade Delivery
                 </span>
                 <span className="font-mono text-[10px] text-slate-400">
-                  v2.4
+                  {consoleTag}
                 </span>
               </div>
 
@@ -952,7 +994,7 @@ function PortfolioSection({ section }) {
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mb-16">
           <span className="inline-flex items-center gap-2 rounded-full bg-[#f7f9fc] px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#080357] mb-6 border border-[#080357]/5">
-            <Sparkles size={14} className="text-[#B7F36B]" /> Portfolio
+            <Briefcase size={14} className="text-[#080357]" /> Portfolio
           </span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -981,9 +1023,16 @@ function PortfolioSection({ section }) {
             let cleanDesc = item.description;
             let challenges = "";
             let capabilities = "";
-            
-            if (cleanDesc.includes("Business Challenges:") && cleanDesc.includes("Core Capabilities:")) {
-              const parts = cleanDesc.split(/Business Challenges:|Core Capabilities:/);
+            const isRoles = cleanDesc.includes("Example Roles:");
+            const isChallenges = cleanDesc.includes("Business Challenges:");
+
+            if (cleanDesc.includes("Business Challenges:") && (cleanDesc.includes("Core Capabilities:") || cleanDesc.includes("Example Roles:"))) {
+              const parts = cleanDesc.split(/Business Challenges:|Core Capabilities:|Example Roles:/);
+              cleanDesc = parts[0].trim();
+              challenges = parts[1].trim();
+              capabilities = parts[2].trim();
+            } else if (cleanDesc.includes("Common triggers:") && cleanDesc.includes("Core deliverables:")) {
+              const parts = cleanDesc.split(/Common triggers:|Core deliverables:/);
               cleanDesc = parts[0].trim();
               challenges = parts[1].trim();
               capabilities = parts[2].trim();
@@ -1029,7 +1078,7 @@ function PortfolioSection({ section }) {
                     
                     <div className={`grid transition-all duration-500 overflow-hidden ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-6' : 'grid-rows-[0fr] opacity-0'}`}>
                       <div className="min-h-0">
-                        <p className="text-lg leading-relaxed font-light text-white/80 max-w-3xl mb-8">
+                        <p className="text-lg leading-relaxed font-light text-white/90 max-w-3xl mb-8">
                           {cleanDesc}
                         </p>
                         
@@ -1040,9 +1089,11 @@ function PortfolioSection({ section }) {
                                   <div className="w-8 h-8 rounded-full bg-[#B7F36B]/20 flex items-center justify-center">
                                      <div className="w-2 h-2 rounded-full bg-[#B7F36B]" />
                                   </div>
-                                  <h4 className="text-sm font-bold uppercase tracking-widest text-[#B7F36B]">Challenges</h4>
+                                  <h4 className="text-sm font-bold uppercase tracking-widest text-[#B7F36B]">
+                                    {isChallenges ? "Business Challenges" : "Common Triggers"}
+                                  </h4>
                                </div>
-                               <p className="text-white/70 font-light text-sm leading-relaxed">{challenges}</p>
+                               <p className="text-white/80 font-light text-sm leading-relaxed">{challenges}</p>
                             </div>
                           )}
                           {capabilities && (
@@ -1051,12 +1102,27 @@ function PortfolioSection({ section }) {
                                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
                                      <CheckCircle2 size={16} className="text-white" />
                                   </div>
-                                  <h4 className="text-sm font-bold uppercase tracking-widest text-white">Capabilities</h4>
+                                  <h4 className="text-sm font-bold uppercase tracking-widest text-white">
+                                    {isRoles ? "Example Roles" : "Core Deliverables"}
+                                  </h4>
                                </div>
-                               <p className="text-white/70 font-light text-sm leading-relaxed">{capabilities}</p>
+                               <p className="text-white/80 font-light text-sm leading-relaxed">{capabilities}</p>
                             </div>
                           )}
                         </div>
+
+                        {item.link && (
+                          <div className="mt-8">
+                            <Link
+                              href={item.link}
+                              onClick={(e) => e.stopPropagation()}
+                              className="inline-flex items-center gap-2 rounded-full bg-[#B7F36B] px-6 py-3 text-xs font-bold uppercase tracking-[0.1em] text-[#080357] transition-all hover:bg-white hover:shadow-lg"
+                            >
+                              <span>Explore {displayTitle}</span>
+                              <ArrowRight size={14} />
+                            </Link>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -1081,31 +1147,43 @@ function PortfolioSection({ section }) {
 // 7. Industries Section (Custom Premium UI for Industries We Support)
 // ==========================================
 function IndustriesSection({ section }) {
-  // Normalize the weird scraped data into a clean list of industries
+  const getIndustryIcon = (name) => {
+    const n = (name || "").toLowerCase();
+    if (n.includes("finan") || n.includes("bank")) return <Building2 size={32} />;
+    if (n.includes("health") || n.includes("life")) return <HeartPulse size={32} />;
+    if (n.includes("manufac") || n.includes("indust")) return <Factory size={32} />;
+    if (n.includes("retail") || n.includes("commerce")) return <Store size={32} />;
+    if (n.includes("telecom")) return <Antenna size={32} />;
+    if (n.includes("gov") || n.includes("public")) return <Landmark size={32} />;
+    if (n.includes("edu")) return <GraduationCap size={32} />;
+    if (n.includes("tech") || n.includes("saas")) return <Cpu size={32} />;
+    if (n.includes("logist") || n.includes("supply")) return <Truck size={32} />;
+    if (n.includes("energy") || n.includes("util")) return <Zap size={32} />;
+    return <Briefcase size={32} />;
+  };
+
   const extractIndustries = () => {
     const rawText = section.items.map(item => `${item.title || ""} ${item.description}`).join(" ");
     
     // Ignore internal links or related services text
-    if (rawText.includes("INTERNAL LINKS") || rawText.includes("RELATED")) {
-      // Just hardcode the known industries if we detect the garbage data
+    if (rawText.includes("INTERNAL LINKS") || rawText.includes("RELATED") || section.items.length === 0) {
       return [
         { name: "Financial Services", icon: <Building2 size={32} /> },
         { name: "Manufacturing", icon: <Factory size={32} /> },
-        { name: "Healthcare", icon: <HeartPulse size={32} /> },
-        { name: "Retail", icon: <Store size={32} /> },
+        { name: "Healthcare & Life Sciences", icon: <HeartPulse size={32} /> },
+        { name: "Retail & E-Commerce", icon: <Store size={32} /> },
         { name: "Telecommunications", icon: <Antenna size={32} /> },
-        { name: "Government", icon: <Landmark size={32} /> },
-        { name: "Education", icon: <GraduationCap size={32} /> },
-        { name: "Technology", icon: <Cpu size={32} /> },
-        { name: "Logistics", icon: <Truck size={32} /> },
+        { name: "Government & Public Sector", icon: <Landmark size={32} /> },
+        { name: "Education & EdTech", icon: <GraduationCap size={32} /> },
+        { name: "Technology & SaaS", icon: <Cpu size={32} /> },
+        { name: "Logistics & Supply Chain", icon: <Truck size={32} /> },
         { name: "Energy & Utilities", icon: <Zap size={32} /> },
       ];
     }
     
-    // Fallback if data is clean
     return section.items.map(item => ({
       name: item.title,
-      icon: <Briefcase size={32} />
+      icon: getIndustryIcon(item.title)
     }));
   };
 
@@ -1270,8 +1348,13 @@ export default function ClientServicePage({ service, isNewLayout }) {
     const isIndustries = (section.title || "").toLowerCase().includes("industries");
     const isChecklist = section.items && section.items.length > 5 && section.items.every(item => !item.description || item.description.trim() === "");
     const isDeliverables = (section.title || "").toLowerCase().includes("deliverables");
-
     const isWhatAre = (section.title || "").toLowerCase().includes("what are");
+
+    // Deliverables section must be checked before empty items fallback
+    if (isDeliverables) {
+      previousLayoutType = "deliverables";
+      return <DeliverablesSection key={section.id} section={section} />;
+    }
 
     if (isWhatAre || !section.items || section.items.length === 0) {
       previousLayoutType = "what-are";
@@ -1281,11 +1364,6 @@ export default function ClientServicePage({ service, isNewLayout }) {
     if (isPortfolio) {
       previousLayoutType = "portfolio";
       return <PortfolioSection key={section.id} section={section} />;
-    }
-    
-    if (isDeliverables) {
-      previousLayoutType = "deliverables";
-      return <DeliverablesSection key={section.id} section={section} />;
     }
     
     if (isChecklist) {
@@ -1306,25 +1384,31 @@ export default function ClientServicePage({ service, isNewLayout }) {
 
     if (isProcess) {
       previousLayoutType = "process";
+      const isDiagramSuppressed = 
+        service.id === 'software-ai-development' || 
+        service.id === 'enterprise-api-development-and-integration-services' ||
+        (service.id && service.id.includes('staffing'));
       return (
         <React.Fragment key={section.id}>
           <ProcessSection section={section} />
-          {/* Diagram Placeholder */}
-          <div className="flex justify-center mt-24">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-fit relative overflow-hidden rounded-[2rem] clay-dark border border-[#050849]/10 shadow-xl p-4 sm:p-6 bg-[#080357]"
-            >
-              <img 
-                src={getDiagramForService(service.id)}
-                alt="Service Delivery Approach Diagram" 
-                className="max-h-[400px] w-auto object-contain rounded-xl"
-              />
-            </motion.div>
-          </div>
+          {/* Diagram Placeholder - suppressed for software & staffing services */}
+          {!isDiagramSuppressed && (
+            <div className="flex justify-center mt-24">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="w-fit relative overflow-hidden rounded-[2rem] clay-dark border border-[#050849]/10 shadow-xl p-4 sm:p-6 bg-[#080357]"
+              >
+                <img 
+                  src={getDiagramForService(service.id)}
+                  alt="Service Delivery Approach Diagram" 
+                  className="max-h-[400px] w-auto object-contain rounded-xl"
+                />
+              </motion.div>
+            </div>
+          )}
         </React.Fragment>
       );
     }
@@ -1346,11 +1430,27 @@ export default function ClientServicePage({ service, isNewLayout }) {
     return <StandardGridSection key={section.id} section={section} />;
   };
 
-  // --- Data Cleaning for Internal Links ---
+  // --- Data Cleaning for Internal Links & FAQ ---
   const cleanedSections = [];
   const relatedLinks = [];
+  let extractedFaq = service.faq && service.faq.length > 0 ? service.faq : null;
 
   service.sections.forEach(section => {
+    const isFaqSection = section.title && (
+      section.title.trim().toLowerCase() === "faq" ||
+      section.title.toLowerCase().includes("frequently asked questions")
+    );
+
+    if (isFaqSection) {
+      if (!extractedFaq && section.items && section.items.length > 0) {
+        extractedFaq = section.items.map(i => ({
+          question: i.title || i.question,
+          answer: i.description || i.answer
+        }));
+      }
+      return; // Do NOT push to cleanedSections so it doesn't render twice!
+    }
+
     const newSection = { ...section, items: section.items ? [...section.items] : [] };
     if (newSection.items.length > 0) {
       const linkItems = newSection.items.filter(item => 
@@ -1358,15 +1458,18 @@ export default function ClientServicePage({ service, isNewLayout }) {
       );
       
       linkItems.forEach(item => {
-        const urls = item.description.split("|").map(s => s.trim()).filter(Boolean);
-        urls.forEach(url => {
-          let name = url.split('/').pop().replace(/-/g, ' ');
-          name = name.replace(/\b\w/g, l => l.toUpperCase());
-          name = name.replace(/ Services$/i, ''); // Clean up name
-          if (!relatedLinks.find(r => r.href === url)) {
-            relatedLinks.push({ label: name, href: url });
+        const parts = item.description.split("|").map(s => s.trim()).filter(Boolean);
+        for (let i = 0; i < parts.length; i++) {
+          const part = parts[i];
+          if (part.startsWith("/")) {
+            const label = (i > 0 && !parts[i - 1].startsWith("/"))
+              ? parts[i - 1]
+              : part.split('/').pop().replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).replace(/ Services$/i, '');
+            if (!relatedLinks.find(r => r.href === part)) {
+              relatedLinks.push({ label, href: part });
+            }
           }
-        });
+        }
       });
 
       newSection.items = newSection.items.filter(item => 
@@ -1431,14 +1534,22 @@ export default function ClientServicePage({ service, isNewLayout }) {
               className="mt-10 flex flex-wrap gap-4"
             >
               <Link
-                href="#contact"
+                href={service.hero?.ctaHref || "#contact"}
                 className="group relative inline-flex items-center justify-center gap-4 rounded-full bg-[#080357] px-8 py-4 font-bold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-[#B7F36B] hover:text-[#080357] hover:shadow-[0_10px_40px_rgba(183,243,107,0.3)] hover:-translate-y-1 active:scale-95"
               >
-                <span>Get Started</span>
+                <span>{service.hero?.ctaText || "Get Started"}</span>
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#080357]/10">
                   <ArrowRight size={16} strokeWidth={2.5} />
                 </div>
               </Link>
+              {service.hero?.secondaryCtaText && (
+                <Link
+                  href={service.hero?.secondaryCtaHref || "#section-5"}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#080357]/15 bg-white px-8 py-4 font-bold text-xs uppercase tracking-[0.15em] text-[#080357] hover:bg-[#f7f9fc] hover:border-[#080357]/30 transition-all duration-300 clay-badge-light shadow-sm"
+                >
+                  <span>{service.hero.secondaryCtaText}</span>
+                </Link>
+              )}
             </motion.div>
           </motion.div>
 
@@ -1492,7 +1603,7 @@ export default function ClientServicePage({ service, isNewLayout }) {
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
               >
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#f7f9fc] px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#080357] mb-6 border border-[#080357]/5">
-                   <Sparkles size={14} className="text-[#B7F36B]" /> Our Commitment
+                   <ShieldCheck size={14} className="text-[#080357]" /> Our Commitment
                 </div>
                 <p className="text-xl md:text-2xl leading-relaxed text-gray-700 font-light mb-8">{service.geoStatement}</p>
                 <Link
@@ -1672,70 +1783,15 @@ export default function ClientServicePage({ service, isNewLayout }) {
         </section>
       )}
 
-      {/* 5. FAQ Section (Section 9) - MOVED BELOW CTA */}
-      {service.faq && service.faq.length > 0 && (
-        <motion.section 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-16 w-full bg-[#f7f9fc] py-24 md:py-32 rounded-[3rem] border border-[#080357]/5"
-        >
-          <div className="container mx-auto px-6 max-w-3xl">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-extrabold text-[#080357] mb-12 text-center tracking-tight"
-            >
-              Frequently Asked Questions
-            </motion.h2>
-
-            <div className="space-y-4">
-              {service.faq.map((item, index) => {
-                const isOpen = openFaqIndex === index;
-
-                return (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="clay-light border border-[#080357]/5 bg-[#f7f9fc] overflow-hidden rounded-2xl"
-                  >
-                    <button
-                      onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                      className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-                    >
-                      <span className="text-lg font-semibold text-[#080357]">
-                        {item.question}
-                      </span>
-                      <ChevronDown 
-                        className={`w-5 h-5 text-[#B7F36B] transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`} 
-                      />
-                    </button>
-                    
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                        >
-                          <div className="px-6 pb-6 text-gray-600 font-light leading-relaxed border-t border-gray-100 pt-4">
-                            {item.answer}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </motion.section>
+      {/* 5. FAQ Section (Section 9) - Standardized WeRoute Claymorphic Design */}
+      {extractedFaq && extractedFaq.length > 0 && (
+        <FAQSection
+          data={extractedFaq}
+          badge="Support & Clarity"
+          title="Frequently Asked Questions"
+          subtitle="Find clarity on how our staffing models, engagement process, and technical services are structured and delivered."
+          className="mt-16 rounded-[3rem] border border-[#080357]/5"
+        />
       )}
 
       </div>

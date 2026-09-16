@@ -1,3 +1,15 @@
+import { softwareDigitalEngineeringData } from "./softwareDigitalEngineeringData.js";
+import { softwareAiDevelopmentData } from "./softwareAiDevelopmentData.js";
+import { enterpriseApiDevelopmentData } from "./enterpriseApiDevelopmentData.js";
+import { modelDeploymentMlopsData } from "./modelDeploymentMlopsData.js";
+import { enterpriseAiMlDevelopmentData } from "./enterpriseAiMlDevelopmentData.js";
+import { enterpriseMobileApplicationData } from "./enterpriseMobileApplicationData.js";
+import { manpowerStaffingData } from "./manpowerStaffingData.js";
+import { networkInfrastructureStaffingData } from "./networkInfrastructureStaffingData.js";
+import { cloudDevOpsStaffingData } from "./cloudDevOpsStaffingData.js";
+import { softwareApplicationStaffingData } from "./softwareApplicationStaffingData.js";
+import { aiMlEmergingTechnologyStaffingData } from "./aiMlEmergingTechnologyStaffingData.js";
+
 export const servicesData = {
   "managed-data-centre-services": {
     "id": "managed-data-centre-services",
@@ -7287,13 +7299,18 @@ export const servicesData = {
         "id": "section-10",
         "title": "Industries We Support",
         "intro": "WeRoute advises organizations across complex, regulated, and technology-intensive environments, including Financial Services, Healthcare, Manufacturing, Retail & E-Commerce, Telecommunications, Government & Public Sector, Education, Technology & SaaS, Logistics & Supply Chain, and Energy & Utilities.",
-        "items": []
-      },
-      {
-        "id": "section-11",
-        "title": "",
-        "intro": "",
-        "items": []
+        "items": [
+          { "title": "Financial Services", "description": "" },
+          { "title": "Healthcare", "description": "" },
+          { "title": "Manufacturing", "description": "" },
+          { "title": "Retail & E-Commerce", "description": "" },
+          { "title": "Telecommunications", "description": "" },
+          { "title": "Government & Public Sector", "description": "" },
+          { "title": "Education", "description": "" },
+          { "title": "Technology & SaaS", "description": "" },
+          { "title": "Logistics & Supply Chain", "description": "" },
+          { "title": "Energy & Utilities", "description": "" }
+        ]
       },
       {
         "id": "section-12",
@@ -7627,541 +7644,44 @@ export const servicesData = {
     ]
   },
 
-  "mobile-application-development": {
-    "id": "mobile-application-development",
-    "hero": {
-      "badge": "Mobile Application Development Services",
-      "title": "Mobile Application Development Services",
-      "subtitle": "WeRoute designs and builds secure, scalable mobile applications that connect employees, customers, and enterprise systems, extending the business to any device without compromising control.",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
-      "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
-    },
-    "geoStatement": "WeRoute is an enterprise mobile app development company that builds secure, API-integrated mobile applications connecting users, cloud platforms, and core business systems.",
-    "pagePhilosophy": "Mobile should extend the business, not create a separate one to maintain.",
-    "sections": [
-      {
-        "title": "Why Enterprise Mobility Matters",
-        "description": "Mobile applications have moved beyond a customer channel into a core business capability. Employees expect to work from anywhere, customers expect instant access, and operations increasingly happen in real time. Enterprise mobility now determines how well a business can engage its people and customers, not just how modern it looks.",
-        "items": [
-          "Employees increasingly expect to do their jobs from any location, on any device.",
-          "Customers expect fast, mobile-first experiences from every business they interact with.",
-          "Operations that depend on real-time data need mobile access to keep pace.",
-          "Mobile access has to be convenient and secure at the same time.",
-          "Mobile apps have become a primary channel for ongoing digital engagement."
-        ],
-        "id": "section-1"
-      },
-      {
-        "title": "What Is Enterprise Mobile Application Development?",
-        "description": "Enterprise mobile application development is the design and engineering of mobile apps that connect users to business processes, APIs, cloud services, and enterprise systems. Unlike consumer apps, these applications are built with security, governance, and scalability in mind from the start, so they can support real operations, not just individual convenience.",
-        "caption": "How WeRoute connects enterprise mobile applications to users, APIs, cloud platforms, and core systems.",
-        "id": "section-2"
-      },
-      {
-        "title": "Business Challenges We Solve",
-        "description": "Enterprises building mobile applications run into the same recurring obstacles, across nearly every industry and team.",
-        "items": [
-          "Without a unified strategy, mobile efforts end up scattered across disconnected apps.",
-          "Mobile devices expand the attack surface if security is not built in from the start.",
-          "Connecting mobile apps to backend systems often takes more effort than expected.",
-          "Apps that perform well in testing can still slow down under real usage.",
-          "Inconsistent experiences across devices and platforms erode user trust over time."
-        ],
-        "id": "section-3"
-      },
-      {
-        "title": "How WeRoute Delivers Mobile Application Development",
-        "subtitle": "WeRoute builds mobile applications the way enterprise systems demand: secure, integrated, and engineered to perform.",
-        "description": "WeRoute has delivered mobile application development across 40+ enterprise deployments, built on infrastructure engineered for 99.9% system reliability.",
-        "items": [
-          "We design mobile architecture with security built in from the start, protecting data across devices and networks.",
-          "We integrate mobile apps with enterprise APIs and backend systems, so data stays accurate and current everywhere.",
-          "We optimize performance for real-world conditions, so apps stay fast and responsive under actual daily usage.",
-          "We engineer user experience with the same rigor as backend architecture, so adoption does not become a barrier.",
-          "We build governance and compliance into every mobile application, so deployed apps remain secure and auditable."
-        ],
-        "id": "section-4"
-      },
-      {
-        "title": "Where Mobile Applications Create Business Value",
-        "description": "Mobile applications support critical work across the enterprise, not just customer-facing use cases.",
-        "items": [
-          "Employee productivity apps put daily tools and workflows directly in employees' hands.",
-          "Customer self-service portals let users manage accounts and requests without waiting on support.",
-          "Field service management apps give technicians real-time access to jobs, data, and updates.",
-          "Sales and operations mobility keeps teams connected to data while working from anywhere.",
-          "Executive dashboards put real-time business performance in front of leaders wherever they are."
-        ],
-        "id": "section-5"
-      },
-      {
-        "title": "Business Outcomes",
-        "items": [
-          "Well-built mobile experiences keep users engaged instead of abandoning the app early.",
-          "Employees complete more work from the field, without waiting to reach a desk.",
-          "Secure mobile access lets people work from anywhere without exposing business data.",
-          "New digital services reach users faster once mobile becomes part of the delivery plan.",
-          "Operations run more efficiently when mobile access removes everyday delays.",
-          "Mobile platforms scale with usage instead of needing to be rebuilt later."
-        ],
-        "id": "section-6"
-      },
-      {
-        "title": "Why Choose WeRoute",
-        "items": [
-          "WeRoute brings deep enterprise mobility expertise to every engagement, built on real delivery experience, not theory.",
-          "We engineer mobile applications security-first, so protection is built in rather than added after launch.",
-          "Our applications integrate through APIs from day one, connecting cleanly to the systems you already run.",
-          "We build mobile applications that scale across platforms and user volume without a costly rebuild.",
-          "Our relationship continues well past launch, with a long-term focus on digital evolution as your business changes."
-        ],
-        "id": "section-7"
-      },
-      {
-        "id": "section-8",
-        "title": "Why Choose WeRoute",
-        "intro": "WeRoute brings deep enterprise mobility expertise to every engagement, built on real delivery experience, not theory.",
-        "items": [
-          {
-            "title": "Security-First Architecture",
-            "description": "We engineer mobile applications security-first, so protection is built in rather than added after launch."
-          },
-          {
-            "title": "API & Backend Integration",
-            "description": "Our applications integrate through APIs from day one, connecting cleanly to the systems you already run."
-          },
-          {
-            "title": "Scalable Mobile Platforms",
-            "description": "We build mobile applications that scale across platforms and user volume without a costly rebuild."
-          },
-          {
-            "title": "Long-Term Digital Evolution",
-            "description": "Our relationship continues well past launch, with a long-term focus on digital evolution as your business changes."
-          }
-        ]
-      },
-      {
-        "id": "section-9",
-        "title": "INTERNAL LINKS",
-        "intro": "Mobile application development connects to WeRoute's broader digital strategy, working alongside enterprise applications, API and platform engineering, cloud, and AI so every system supports one coherent architecture.",
-        "items": [
-          {
-            "title": "",
-            "description": "Enterprise Applications | /services/enterprise-applications | API & Platform Engineering | /services/api-platform-engineering | Cloud & DevOps | /services/cloud-devops | AI & Intelligent Automation | /services/ai-intelligent-automation | Cybersecurity Solutions | /services/cybersecurity-solutions"
-          }
-        ]
-      }
-    ],
-    "faq": [
-      {
-        "question": "What is enterprise mobile application development?",
-        "answer": "Enterprise mobile application development is the design and build of mobile apps created specifically for business use, connecting employees, customers, and enterprise systems securely."
-      },
-      {
-        "question": "How do mobile applications support digital transformation?",
-        "answer": "Mobile applications support digital transformation by extending digital initiatives to any device, giving employees and customers access to systems and services wherever they are."
-      },
-      {
-        "question": "Why are secure mobile applications important?",
-        "answer": "Secure mobile applications matter because mobile devices expand the ways business data can be accessed, so security has to be built into the application rather than added afterward."
-      },
-      {
-        "question": "How do enterprise mobile apps integrate with backend systems?",
-        "answer": "Enterprise mobile apps integrate with backend systems through APIs and defined integration points, allowing data to move accurately between the app and core business systems."
-      },
-      {
-        "question": "What industries benefit from enterprise mobility?",
-        "answer": "Industries with distributed workforces or high customer interaction, such as field services, retail, logistics, and financial services, tend to benefit most from enterprise mobility, though most businesses can gain value from it."
-      },
-      {
-        "question": "How can mobile applications improve workforce productivity?",
-        "answer": "Mobile applications improve workforce productivity by putting everyday tools and information directly into employees' hands, reducing the time spent waiting for access to a desk or system."
-      },
-      {
-        "question": "How do mobile apps support customer engagement?",
-        "answer": "Mobile apps support customer engagement by giving customers a direct, convenient channel to interact with a business, access services, and get support without extra friction."
-      }
-    ]
-  },
-
-  "ai-ml-development-services": {
-    "id": "ai-ml-development-services",
-    "hero": {
-      "badge": "AI Software Services",
-      "title": "AI Application Development Services Built for Enterprise Scale",
-      "subtitle": "WeRoute designs, builds, and operationalizes AI-powered applications that move beyond pilots into everyday enterprise use, backed by governance, integration, and measurable outcomes.",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
-      "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
-    },
-    "geoStatement": "WeRoute is an enterprise AI software development partner that builds production-ready AI applications, from custom AI development through deployment, governance, and long-term optimization.",
-    "pagePhilosophy": "AI that works in production, not just in demos.",
-    "sections": [
-      {
-        "title": "Why Enterprise AI Applications Matter",
-        "description": "Most enterprises have experimented with AI, but few have moved it into daily operations. The gap between a promising pilot and a dependable production system is where digital transformation efforts stall, and where competitive advantage is won or lost across decision-making, automation, and customer experience.",
-        "items": [
-          "AI applications anchor broader digital transformation, connecting legacy systems to new intelligent workflows.",
-          "Repetitive, rules-based work shifts to intelligent automation, freeing teams for higher-value decisions.",
-          "Enterprise applications increasingly need to reason over data, not just display it.",
-          "Customers expect faster, more personalized responses, and AI-enabled applications deliver both at scale.",
-          "Embedding AI into core workflows removes manual steps and shortens time to resolution."
-        ],
-        "id": "section-1"
-      },
-      {
-        "title": "What Are AI Software Services?",
-        "description": "AI software services cover the design, engineering, and deployment of applications that embed AI capabilities, including generative AI, directly into enterprise workflows, decision engines, and digital platforms. Rather than isolated models, these are complete, intelligent software solutions built to integrate with existing systems and deliver measurable business value in production.",
-        "items": [
-          "The AI application lifecycle, from initial design through continuous optimization in production."
-        ],
-        "id": "section-2"
-      },
-      {
-        "title": "Business Challenges We Solve",
-        "description": "Enterprises adopting AI consistently face recurring obstacles that stall projects long before they ever reach production.",
-        "items": [
-          "Promising AI proof-of-concept and pilots often stall, never advancing into dependable production systems.",
-          "Connecting AI applications with existing workflows and legacy tools is harder than building the model.",
-          "Inconsistent or incomplete data undermines the accuracy AI applications need to earn user trust.",
-          "Without governance, AI applications risk compliance gaps, bias, and unpredictable behavior at scale.",
-          "Scaling AI across departments requires standards most enterprises have not yet defined."
-        ],
-        "id": "section-3"
-      },
-      {
-        "title": "How WeRoute Delivers AI Software Services",
-        "description": "WeRoute is an AI development company that engineers AI-powered applications the way enterprise software should be built: deliberately, securely, and for the long term.",
-        "items": [
-          "WeRoute has delivered AI-enabled applications across 40+ enterprise deployments, engineered on infrastructure built for 99.9% system reliability.",
-          "We design applications with AI embedded from the start, including generative AI development services, aligned to real needs.",
-          "Our AI integration services connect applications securely to existing enterprise systems, data sources, and cloud environments.",
-          "We build governance into every application, covering data quality, model versioning, access control, and audit visibility.",
-          "From design through deployment and monitoring, we manage the full AI application lifecycle as one continuous process.",
-          "We integrate AI responsibly, with safeguards for bias, transparency, and accountability built into every deployed application."
-        ],
-        "id": "section-4"
-      },
-      {
-        "title": "Where AI Software Creates Business Value",
-        "description": "AI-enabled applications create value across the enterprise, not just within a single department.",
-        "items": [
-          "Custom AI solutions turn core business applications intelligent, adapting to context instead of static rules.",
-          "AI copilots support employees directly inside their existing tools and daily workflows.",
-          "Customer service automation resolves routine queries instantly while routing complex cases to humans.",
-          "Workflow automation removes manual handoffs, cutting delays across approvals, records, and reporting.",
-          "Decision support systems surface the right data at the right moment for faster calls."
-        ],
-        "id": "section-5"
-      },
-      {
-        "title": "Business Outcomes",
-        "description": "AI engineering only matters if it changes what the business can do.",
-        "items": [
-          "Teams ship new AI-powered features faster, without rebuilding core systems each time.",
-          "Leaders make sharper decisions, backed by applications that reason over live data.",
-          "Employees spend less time on repetitive tasks and more time on judgment-driven work.",
-          "AI moves from isolated pilots to dependable systems running in daily production.",
-          "Customers experience faster, more relevant responses across every touchpoint in the relationship.",
-          "Sustainable AI adoption keeps pace with the business instead of outpacing its controls."
-        ],
-        "id": "section-6"
-      },
-      {
-        "title": "Why Choose WeRoute",
-        "description": "WeRoute brings enterprise AI development discipline to every application, treating each one as production infrastructure, not an experiment.",
-        "items": [
-          "We build architectures designed for production from day one, not proofs of concept retrofitted later.",
-          "Every application we deliver includes governance controls for data, models, and access, built in rather than added on.",
-          "We design applications that work across your existing cloud, data, and AI model providers, without locking you in.",
-          "Our engagement continues past launch, so applications keep improving as your data, models, and needs evolve."
-        ],
-        "id": "section-7"
-      },
-      {
-        "id": "section-8",
-        "title": "Why Choose WeRoute",
-        "intro": "WeRoute brings enterprise AI development discipline to every application, treating each one as production infrastructure, not an experiment.",
-        "items": [
-          {
-            "title": "Production Architecture",
-            "description": "We build architectures designed for production from day one, not proofs of concept retrofitted later."
-          },
-          {
-            "title": "Built-In Controls",
-            "description": "Every application we deliver includes governance controls for data, models, and access, built in rather than added on."
-          },
-          {
-            "title": "Vendor-Agnostic Design",
-            "description": "We design applications that work across your existing cloud, data, and AI model providers, without locking you in."
-          },
-          {
-            "title": "Continuous Improvement",
-            "description": "Our engagement continues past launch, so applications keep improving as your data, models, and needs evolve."
-          }
-        ]
-      },
-      {
-        "id": "section-9",
-        "title": "INTERNAL LINKS",
-        "intro": "AI software services connect to WeRoute's broader Enterprise AI Strategy, working alongside MLOps, automation, and cloud engineering so that intelligent applications scale as one coordinated system.",
-        "items": [
-          {
-            "title": "",
-            "description": "AI/ML Model Deployment | /services/ai-ml-model-deployment | Automation & AIOps | /services/automation-aiops | Cloud & DevOps | /services/cloud-devops | Digital Engineering | /services/digital-engineering | Enterprise AI Strategy | /services/enterprise-ai-strategy"
-          }
-        ]
-      }
-    ],
-    "faq": [
-      {
-        "question": "What are AI Software Services?",
-        "answer": "AI software services are the design, development, and deployment of applications that embed AI capabilities into enterprise workflows and decision-making, built to run reliably in production rather than as standalone experiments."
-      },
-      {
-        "question": "How do enterprises build AI applications?",
-        "answer": "Enterprises typically start with a defined business use case, then design, integrate, and deploy an AI-enabled application on top of existing systems, with governance and monitoring built in from the start."
-      },
-      {
-        "question": "What is Enterprise AI Development?",
-        "answer": "Enterprise AI development is the process of building AI-powered software specifically for large organizations, accounting for existing infrastructure, security requirements, and the scale at which enterprise systems operate."
-      },
-      {
-        "question": "How can AI improve business applications?",
-        "answer": "AI improves business applications by adding capabilities like prediction, personalization, and automated reasoning, so software responds to context instead of following the same fixed steps every time."
-      },
-      {
-        "question": "How do organizations move AI into production?",
-        "answer": "Moving AI into production means treating a model like any other software component: testing it, integrating it with real systems, monitoring its performance, and maintaining it over time."
-      },
-      {
-        "question": "How does AI integrate with existing software?",
-        "answer": "AI typically integrates with existing software through APIs, data pipelines, and workflow connectors, allowing AI capabilities to sit inside tools that employees and customers already use."
-      },
-      {
-        "question": "How is AI governed in enterprise environments?",
-        "answer": "AI governance in an enterprise environment covers data quality, model access, bias monitoring, and audit visibility, ensuring AI applications remain compliant, secure, and predictable as they scale."
-      }
-    ]
-  },
-
-  "model-deployment-and-mlops": {
-    "id": "model-deployment-and-mlops",
-    "hero": {
-      "badge": "AI/ML Model Deployment & MLOps Services",
-      "title": "AI/ML Model Deployment & MLOps Services",
-      "subtitle": "WeRoute helps enterprises move AI and machine learning models out of development and into governed, reliable production systems built for long-term operational scale.",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
-      "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
-    },
-    "geoStatement": "WeRoute is an enterprise MLOps and AI model deployment partner that operationalizes machine learning models through governed pipelines, continuous monitoring, and production-grade infrastructure.",
-    "pagePhilosophy": "AI models are only valuable once they run reliably in production.",
-    "sections": [
-      {
-        "id": "section-1",
-        "title": "Why AI Operationalization Matters",
-        "description": "Building a model is only the first step toward business value. What happens next determines the outcome: deploying it reliably, monitoring it continuously, governing it responsibly, and keeping it accurate as data and business conditions change around it every day.",
-        "items": [
-          {
-            "title": "",
-            "description": "Models trained on yesterday's data quietly lose accuracy as real-world conditions shift."
-          },
-          {
-            "title": "",
-            "description": "A model that works in testing does not guarantee it performs reliably in production."
-          },
-          {
-            "title": "",
-            "description": "Without clear ownership and controls, deployed models become difficult to trust or audit."
-          },
-          {
-            "title": "",
-            "description": "Models built for a pilot rarely hold up under enterprise-level traffic and data volume."
-          },
-          {
-            "title": "",
-            "description": "Performance issues often go unnoticed until they have already affected business outcomes."
-          }
-        ]
-      },
-      {
-        "id": "section-2",
-        "title": "What Is AI/ML Model Deployment?",
-        "description": "AI/ML model deployment is the process of integrating trained models into enterprise systems so they can generate real business value. It covers version control, monitoring throughout the model's lifecycle, governance for accuracy & compliance, and ongoing optimization to keep performance strong, as data and usage patterns evolve.",
-        "items": []
-      },
-      {
-        "id": "section-3",
-        "title": "Business Challenges We Solve",
-        "description": "Enterprises running AI models in production consistently encounter the same recurring set of operational obstacles.",
-        "items": [
-          {
-            "title": "",
-            "description": "Many promising models never leave development, stalled by unclear paths to production."
-          },
-          {
-            "title": "",
-            "description": "Left unchecked, model drift erodes accuracy long before anyone notices the decline."
-          },
-          {
-            "title": "",
-            "description": "Deployment approaches vary team to team, making models harder to maintain and scale."
-          },
-          {
-            "title": "",
-            "description": "Governance gaps leave models exposed to compliance, bias, and accountability risks."
-          },
-          {
-            "title": "",
-            "description": "Connecting models to core enterprise systems is often more complex than building them."
-          }
-        ]
-      },
-      {
-        "id": "section-4",
-        "title": "How WeRoute Delivers AI/ML Model Deployment",
-        "description": "WeRoute delivers MLOps consulting services the way production infrastructure demands: governed, monitored, and built to last.\nWeRoute has operationalized AI models across 40+ enterprise deployments, built on infrastructure engineered for 99.9% system reliability.",
-        "items": [
-          {
-            "title": "",
-            "description": "We integrate models directly into your production architecture, connecting them to real systems, data, and workflows from day one."
-          },
-          {
-            "title": "",
-            "description": "We monitor deployed models continuously, using model drift detection to catch issues before they affect the business."
-          },
-          {
-            "title": "",
-            "description": "Every model is versioned and governed, with clear ownership, audit visibility, and controls that hold up under scrutiny."
-          },
-          {
-            "title": "",
-            "description": "Our deployment pipelines are built to scale, handling enterprise data volume and traffic without manual rework."
-          },
-          {
-            "title": "",
-            "description": "We keep models accurate over time through structured retraining and lifecycle optimization, not one-time deployment."
-          }
-        ]
-      },
-      {
-        "id": "section-5",
-        "title": "Where AI Model Deployment Creates Value",
-        "description": "Reliable model deployment supports critical systems across the enterprise, not just isolated AI projects.",
-        "items": [
-          {
-            "title": "",
-            "description": "Enterprise AI platforms depend on dependable deployment to keep every connected model running."
-          },
-          {
-            "title": "",
-            "description": "Predictive analytics systems stay accurate only when their underlying models are properly maintained."
-          },
-          {
-            "title": "",
-            "description": "Customer intelligence solutions rely on continuously monitored models to stay relevant and precise."
-          },
-          {
-            "title": "",
-            "description": "Intelligent automation programs need governed models running reliably behind every automated decision."
-          },
-          {
-            "title": "",
-            "description": "AI decision support applications require models that remain trustworthy under real operating conditions."
-          }
-        ]
-      },
-      {
-        "id": "section-6",
-        "title": "Business Outcomes",
-        "description": "MLOps only delivers value when it visibly changes how AI performs in production.\nAI systems run reliably in production, without the instability common to unmanaged deployments.",
-        "items": [
-          {
-            "title": "",
-            "description": "Structured governance reduces the risk of model failure, bias, and compliance exposure."
-          },
-          {
-            "title": "",
-            "description": "Continuous monitoring keeps model performance strong well beyond initial deployment."
-          },
-          {
-            "title": "",
-            "description": "Clear ownership and audit visibility make AI governance easier to demonstrate and maintain."
-          },
-          {
-            "title": "",
-            "description": "Standardized pipelines shorten the path from a trained model to live AI deployment."
-          },
-          {
-            "title": "",
-            "description": "Sustainable AI operations keep pace with growing model volume without added operational strain."
-          }
-        ]
-      },
-      {
-        "id": "section-7",
-        "title": "Why Choose WeRoute",
-        "intro": "WeRoute brings dedicated enterprise MLOps expertise to every engagement, built on a production-ready MLOps platform, not theory.",
-        "items": [
-          {
-            "title": "Production-Ready Frameworks",
-            "description": "Our frameworks are production-ready from the outset, built to handle enterprise scale and complexity, not simplified pilots."
-          },
-          {
-            "title": "Governance by Default",
-            "description": "Every deployment includes governance by default, covering versioning, access, and audit trails rather than adding them later."
-          },
-          {
-            "title": "Vendor-Agnostic Deployment",
-            "description": "We deploy across your existing cloud, data, and model providers, so you are never locked into one vendor."
-          },
-          {
-            "title": "Long-Term Operational Support",
-            "description": "Our relationship continues well past go-live, keeping models accurate and reliable as data and business needs evolve."
-          }
-        ]
-      },
-      {
-        "id": "section-8",
-        "title": "INTERNAL LINKS",
-        "intro": "",
-        "items": [
-          {
-            "title": "",
-            "description": "AI Software Services | /services/ai-software-services | Automation & AIOps | /services/automation-aiops | AI Network Intelligence | /services/ai-network-intelligence | Cloud & DevOps | /services/cloud-devops | Data Engineering | /services/data-engineering"
-          }
-        ]
-      }
-    ],
-    "faq": [
-      {
-        "question": "What is AI/ML model deployment?",
-        "answer": "AI/ML model deployment is the process of moving a trained model into a live production environment where it can generate real business value, supported by monitoring, governance, and version control."
-      },
-      {
-        "question": "What is MLOps?",
-        "answer": "MLOps is the discipline of managing machine learning models throughout their lifecycle, combining practices from software operations with the specific needs of training, deploying, and monitoring AI models."
-      },
-      {
-        "question": "Why is MLOps important?",
-        "answer": "MLOps matter because building an accurate model is not enough; without structured deployment, monitoring, and governance, models tend to degrade, drift, or fail silently in production."
-      },
-      {
-        "question": "How do organizations deploy AI models into production?",
-        "answer": "Organizations typically move a model through staged testing, integrate it with production systems, and roll it out with monitoring and rollback controls in place before scaling further."
-      },
-      {
-        "question": "How is model drift managed?",
-        "answer": "Model drift is managed through continuous monitoring that compares live predictions against expected performance, triggering retraining or recalibration when accuracy starts to decline."
-      },
-      {
-        "question": "How are AI models monitored?",
-        "answer": "AI models are monitored using dashboards and alerts that track accuracy, latency, and data quality, flagging issues before they affect downstream business decisions."
-      },
-      {
-        "question": "How can enterprises scale AI deployments?",
-        "answer": "Enterprises scale AI deployments by standardizing pipelines, automating repetitive deployment steps, and building governance into the process so more models can move to production without added risk."
-      }
-    ]
-  }
+  "mobile-application-development": enterpriseMobileApplicationData,
+  "ai-ml-development-services": enterpriseAiMlDevelopmentData,
+  "model-deployment-and-mlops": modelDeploymentMlopsData
 };
+
+servicesData["software-ai-development"] = softwareAiDevelopmentData;
+servicesData["enterprise-api-development-and-integration-services"] = enterpriseApiDevelopmentData;
+servicesData["api-platform-engineering"] = enterpriseApiDevelopmentData;
+servicesData["model-deployment-and-mlops"] = modelDeploymentMlopsData;
+servicesData["model-deployment-mlops-llmops-services"] = modelDeploymentMlopsData;
+servicesData["ai-ml-development-services"] = enterpriseAiMlDevelopmentData;
+servicesData["enterprise-ai-machine-learning-development-services"] = enterpriseAiMlDevelopmentData;
+servicesData["mobile-application-development"] = enterpriseMobileApplicationData;
+servicesData["enterprise-mobile-application-development-services"] = enterpriseMobileApplicationData;
+
+servicesData["staffing"] = manpowerStaffingData;
+servicesData["manpower-staffing-services"] = manpowerStaffingData;
+servicesData["technology-manpower-and-staffing-services"] = manpowerStaffingData;
+servicesData["manpower-and-staffing"] = manpowerStaffingData;
+servicesData["manpower-and-staffing-services"] = manpowerStaffingData;
+
+servicesData["network-and-infrastructure-staffing"] = networkInfrastructureStaffingData;
+servicesData["network-infrastructure-staffing"] = networkInfrastructureStaffingData;
+servicesData["network-and-infrastructure-staffing-services"] = networkInfrastructureStaffingData;
+
+servicesData["cloud-devops-and-automation-staffing"] = cloudDevOpsStaffingData;
+servicesData["cloud-devops-automation-staffing"] = cloudDevOpsStaffingData;
+servicesData["cloud-devops-and-automation-staffing-services"] = cloudDevOpsStaffingData;
+servicesData["cloud-devops-automation-staffing-services"] = cloudDevOpsStaffingData;
+
+servicesData["software-and-application-staffing"] = softwareApplicationStaffingData;
+servicesData["software-application-staffing"] = softwareApplicationStaffingData;
+servicesData["software-and-application-staffing-services"] = softwareApplicationStaffingData;
+servicesData["software-application-staffing-services"] = softwareApplicationStaffingData;
+
+servicesData["ai-ml-and-emerging-technology-staffing"] = aiMlEmergingTechnologyStaffingData;
+servicesData["ai-ml-emerging-technology-staffing"] = aiMlEmergingTechnologyStaffingData;
+servicesData["ai-ml-and-emerging-technology-staffing-services"] = aiMlEmergingTechnologyStaffingData;
+servicesData["ai-ml-emerging-technology-staffing-services"] = aiMlEmergingTechnologyStaffingData;
+
 export default servicesData;
