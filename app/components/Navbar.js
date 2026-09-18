@@ -25,45 +25,6 @@ import {
 import Link from "next/link";
 
 const MENU = {
-  "Who We Are": {
-    type: "grid",
-    badge: "COMPANY",
-    title: "Technology consulting built for complex enterprise environments.",
-    desc: "Explore WeRoute's identity, mission, delivery style, and consulting-first approach.",
-    items: [
-      {
-        icon: <FileText size={18} />,
-        title: "Company Overview",
-        desc: "Enterprise technology consulting and implementation partner.",
-        href: "/company-overview",
-      },
-      {
-        icon: <HelpCircle size={18} />,
-        title: "Our Mission",
-        desc: "Reliable, secure, and future-ready IT solutions.",
-        href: "/our-mission",
-      },
-      {
-        icon: <Network size={18} />,
-        title: "Our Vision",
-        desc: "Simplifying complex IT environments worldwide.",
-        href: "/our-vision",
-      },
-      {
-        icon: <Activity size={18} />,
-        title: "Consulting Approach",
-        desc: "Assessment-first strategy before execution.",
-        href: "/consulting-approch",
-      },
-      {
-        icon: <Shield size={18} />,
-        title: "Governance",
-        desc: "Scalability, structure, and measurable outcomes.",
-        href: "/governance",
-      },
-    ],
-  },
-
   Services: {
     type: "list",
     groups: [
@@ -218,10 +179,10 @@ const MENU = {
 };
 
 const NAV_ITEMS = [
-  { label: "Who We Are", href: "/who-we-are" },
-  { label: "Why WeRoute", href: "/why-weroute" },
+  { label: "About WeRoute", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Solutions", href: "/solutions" },
+  { label: "Blogs", href: "/blogs" },
 ];
 
 export default function Navbar() {
@@ -325,7 +286,19 @@ export default function Navbar() {
         >
           {NAV_ITEMS.map((item) => {
             const hasMenu = Boolean(MENU[item.label]);
-            const isCurrent = pathname === item.href || (item.href !== "/" && pathname?.startsWith(item.href));
+            const isCurrent =
+              pathname === item.href ||
+              (item.href !== "/" && pathname?.startsWith(item.href)) ||
+              (item.label === "About WeRoute" &&
+                [
+                  "/company-overview",
+                  "/our-mission",
+                  "/our-vision",
+                  "/consulting-approch",
+                  "/governance",
+                  "/why-weroute",
+                  "/who-we-are",
+                ].some((route) => pathname?.startsWith(route)));
 
             return (
               <div

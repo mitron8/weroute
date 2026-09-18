@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Logo from "./Logo";
 import { Phone, MapPin, Globe, Building2 } from 'lucide-react';
@@ -163,30 +164,30 @@ export default function Footer() {
               "
             >
 
-              <a
-                href="#"
+              <Link
+                href="/about"
                 className="
                   text-white/45
                   transition-colors duration-300
                   hover:text-white
                 "
               >
-                Who We Are
-              </a>
+                About Us
+              </Link>
 
-              <a
-                href="#"
+              <Link
+                href="/blogs"
                 className="
                   text-white/45
                   transition-colors duration-300
                   hover:text-white
                 "
               >
-                Careers
-              </a>
+                Blogs & Insights
+              </Link>
 
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="
                   text-white/45
                   transition-colors duration-300
@@ -194,7 +195,7 @@ export default function Footer() {
                 "
               >
                 Contact
-              </a>
+              </Link>
 
             </div>
 
