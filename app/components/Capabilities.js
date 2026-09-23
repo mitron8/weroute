@@ -1,339 +1,155 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CAPS } from "./data";
+import {
+  Eye,
+  Cog,
+  Shield,
+  Cloud,
+  BrainCircuit,
+  GitFork
+} from "lucide-react";
+
+const capabilities = [
+  {
+    icon: Eye,
+    n: "01",
+    t: "Network Observability",
+    b: "Gain deeper visibility into traffic, dependencies, performance, events, and network health to accelerate troubleshooting and optimization.",
+    tags: ["Telemetry", "Flow Analysis", "Health Diagnostics"],
+  },
+  {
+    icon: Cog,
+    n: "02",
+    t: "Infrastructure as Code",
+    b: "Standardize and automate infrastructure provisioning using governed, version-controlled engineering practices.",
+    tags: ["Terraform", "Ansible", "Version Controlled"],
+  },
+  {
+    icon: Shield,
+    n: "03",
+    t: "Security Operations",
+    b: "Strengthen detection, investigation, response, and governance across enterprise security operations.",
+    tags: ["SIEM & SOAR", "Incident Response", "Governance"],
+  },
+  {
+    icon: Cloud,
+    n: "04",
+    t: "Cloud Operations",
+    b: "Improve reliability, governance, visibility, scalability, and cost control across cloud and hybrid environments.",
+    tags: ["Hybrid Governance", "Cost Control", "Reliability"],
+  },
+  {
+    icon: BrainCircuit,
+    n: "05",
+    t: "AI Operations & Automation",
+    b: "Apply intelligence and automation across infrastructure, applications, and operational workflows.",
+    tags: ["AIOps", "Workflow Automation", "Self-Healing"],
+  },
+  {
+    icon: GitFork,
+    n: "06",
+    t: "API & Integration Engineering",
+    b: "Connect applications, data, platforms, and workflows through secure and reusable integration architectures.",
+    tags: ["API Gateways", "Event Brokers", "System Mesh"],
+  },
+];
 
 export default function Capabilities() {
   return (
     <section
       id="capabilities"
-      className="
-        relative
-        overflow-hidden
-        bg-[#f7f9fc]
-        py-32
-        text-[#0E1A59]
-      "
+      className="relative overflow-hidden bg-[#f7f9fc] py-28 text-[#0E1A59]"
     >
-
-      {/* BACKGROUND */}
-      <div className="absolute inset-0">
-
-        {/* GLOW */}
-        <div
-          className="
-            absolute
-            left-[-10%]
-            top-[10%]
-            h-[420px]
-            w-[420px]
-            rounded-full
-            bg-[#080357]/5
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            absolute
-            bottom-[-10%]
-            right-[-10%]
-            h-[380px]
-            w-[380px]
-            rounded-full
-            bg-[#0d5ea8]/5
-            blur-3xl
-          "
-        />
-
+      {/* Background Ambience */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-[-10%] top-[10%] h-[450px] w-[450px] rounded-full bg-[#080357]/5 blur-3xl" />
+        <div className="absolute right-[-10%] bottom-[-10%] h-[400px] w-[400px] rounded-full bg-[#0d5ea8]/5 blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-
-        {/* HEADER */}
-        <div
-          className="
-            flex
-            flex-col
-            gap-10
-            lg:flex-row
-            lg:items-end
-            lg:justify-between
-          "
-        >
-
-          {/* LEFT */}
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
+        {/* Header */}
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl"
           >
-
-            {/* BADGE */}
-            <span
-              className="
-                inline-flex
-                items-center
-                rounded-full
-                border border-[#052440]/10
-                bg-white/80
-                px-5
-                py-2
-                text-xs
-                font-semibold
-                uppercase
-                tracking-[0.22em]
-                text-[#052440]
-                shadow-sm
-                backdrop-blur-md
-              "
-            >
-              Capabilities
+            <span className="clay-badge-light inline-flex items-center border border-[#052440]/10 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440]">
+              Engineering Capabilities
             </span>
 
-            {/* TITLE */}
-            <h2
-              className="
-                mt-6
-                text-3xl
-                font-normal
-                leading-tight
-                text-[#080357]
-                md:text-4xl
-                lg:text-[46px]
-              "
-            >
-              Engineering
-              <br />
-
-              Capabilities for
-              <span
-                className="
-                  bg-gradient-to-r
-                  from-[#080357]
-                  to-[#A7BF73]
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                {" "}
-                Modern IT
+            <h2 className="mt-6 text-3xl font-extrabold leading-tight text-[#080357] md:text-4xl lg:text-[44px] tracking-tight">
+              Engineering Capabilities for{" "}
+              <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+                Modern Enterprise IT
               </span>
-
             </h2>
-
           </motion.div>
 
-          {/* RIGHT */}
-          <p
-            className="
-              max-w-xl
-              text-lg
-              leading-8
-              text-[#052440]/60
-            "
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="max-w-xl text-base sm:text-lg leading-relaxed text-[#052440]/70 font-normal"
           >
-            Advanced enterprise capabilities
-            designed to optimize performance,
-            security, automation and operational
-            scalability across modern infrastructure.
-          </p>
-
+            Beneath the solution categories sits the engineering work that makes them hold up in production, from network observability through infrastructure automation.
+          </motion.p>
         </div>
 
-        {/* NEW UI */}
-        <div
-          className="
-            mt-24
-            grid
-            gap-6
-            lg:grid-cols-12
-          "
-        >
-
-          {CAPS.map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className={`
-                group
-                relative
-                overflow-hidden
-                rounded-[36px]
-                border
-                border-[#052440]/10
-                bg-white/90
-                p-8
-                shadow-[0_15px_50px_rgba(5,36,64,0.05)]
-                backdrop-blur-xl
-                transition-all
-                duration-500
-                hover:-translate-y-3
-                hover:shadow-[0_30px_80px_rgba(5,36,64,0.08)]
-
-                ${
-                  i === 0
-                    ? "lg:col-span-7 lg:min-h-[420px]"
-                    : i === 1
-                    ? "lg:col-span-5"
-                    : i === 2
-                    ? "lg:col-span-4"
-                    : i === 3
-                    ? "lg:col-span-8"
-                    : "lg:col-span-6"
-                }
-              `}
-            >
-
-              {/* GRADIENT */}
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-gradient-to-br
-                  from-[#052440]/5
-                  via-transparent
-                  to-[#0d5ea8]/5
-                  opacity-0
-                  transition-opacity
-                  duration-500
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* TOP */}
-              <div
-                className="
-                  relative z-10
-                  flex
-                  items-start
-                  justify-between
-                "
+        {/* 6 Capabilities Claymorphic Grid */}
+        <div className="mt-20 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {capabilities.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="clay-light group relative flex flex-col justify-between bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-all duration-300 hover:-translate-y-1.5"
               >
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="clay-badge-light flex h-14 w-14 items-center justify-center bg-[#080357] text-white transition-transform duration-300 group-hover:scale-105">
+                      <Icon size={24} />
+                    </div>
 
-                {/* ICON */}
-                <div
-                  className="
-                    flex
-                    h-16
-                    w-16
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-[#0E1A59]
-                    text-white
-                    shadow-lg
-                    transition-transform
-                    duration-500
-                    group-hover:scale-110
-                  "
-                >
-                  {c.icon}
-                </div>
-
-                {/* NUMBER */}
-                <span
-                  className="
-                    text-sm
-                    font-bold
-                    tracking-[0.25em]
-                    text-[#052440]/25
-                  "
-                >
-                  {c.n}
-                </span>
-
-              </div>
-
-              {/* CONTENT */}
-              <div className="relative z-10 mt-14">
-
-                {/* TITLE */}
-                <h3
-                  className="
-                    max-w-md
-                    text-3xl
-                    font-bold
-                    leading-tight
-                    tracking-[-0.03em]
-                    text-[#052440]
-                  "
-                >
-                  {c.t}
-                </h3>
-
-                {/* DESC */}
-                <p
-                  className="
-                    mt-6
-                    max-w-xl
-                    text-base
-                    leading-8
-                    text-[#052440]/60
-                  "
-                >
-                  {c.b}
-                </p>
-
-                {/* TAGS */}
-                <div
-                  className="
-                    mt-10
-                    flex
-                    flex-wrap
-                    gap-3
-                  "
-                >
-
-                  {c.tags.map((tg, idx) => (
-                    <span
-                      key={idx}
-                      className="
-                        rounded-full
-                        border
-                        border-[#052440]/10
-                        bg-[#052440]/5
-                        px-4
-                        py-2
-                        text-xs
-                        font-semibold
-                        text-[#052440]/70
-                      "
-                    >
-                      {tg}
+                    <span className="clay-badge-light px-3 py-1 text-xs font-mono font-extrabold tracking-widest text-[#052440]/40 bg-[#f7f9fc]">
+                      {c.n}
                     </span>
-                  ))}
+                  </div>
 
+                  <div>
+                    <h3 className="text-2xl font-extrabold tracking-tight text-[#080357]">
+                      {c.t}
+                    </h3>
+
+                    <p className="mt-3.5 text-base leading-relaxed text-[#052440]/70">
+                      {c.b}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-5 border-t border-[#052440]/10 flex flex-wrap gap-2">
+                    {c.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="clay-badge-light text-[11px] font-medium px-3 py-1 bg-[#f7f9fc] text-[#052440]/75"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-              </div>
-
-              {/* DECORATIVE ELEMENT */}
-              <div
-                className="
-                  absolute
-                  bottom-[-40px]
-                  right-[-40px]
-                  h-[180px]
-                  w-[180px]
-                  rounded-full
-                  border
-                  border-[#052440]/5
-                "
-              />
-
-            </motion.div>
-          ))}
-
+              </motion.div>
+            );
+          })}
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -49,16 +49,8 @@ export const aiMlEmergingTechnologyStaffingData = {
       intro: "AI, Machine Learning & Emerging Technology Staffing Services provide specialized professionals who help enterprises design, develop, deploy, integrate, and operate intelligent systems across production environments.\n\nThis includes support for Generative AI applications, Retrieval-Augmented Generation, AI agents, data engineering, MLOps and LLMOps, and AI platform engineering. Professionals are matched by AI domain expertise, engineering capability, data needs, and engagement model.",
       consoleTitle: "weroute-ai-talent-mesh.manifest",
       consoleTag: "v4.2",
-      pillars: [
-        { title: "AI/ML Vetted", subtitle: "Production Benchmarked", icon: "shield", color: "blue" },
-        { title: "48h Deployment", subtitle: "Rapid AI Matching", icon: "zap", color: "emerald" },
-        { title: "GenAI & LLMOps", subtitle: "RAG & Foundation Models", icon: "layers", color: "purple" }
-      ],
-      features: [
-        { title: "Generative AI & LLM Systems", subtitle: "RAG, Agents, Prompt & Fine-tuning", tag: "Production", icon: "code", color: "navy" },
-        { title: "Machine Learning & MLOps", subtitle: "PyTorch, TensorFlow, MLflow & Pipelines", tag: "Verified", icon: "server", color: "blue" },
-        { title: "Data Architecture & Vector DBs", subtitle: "Pinecone, Milvus, Qdrant & Scalable Data", tag: "Enforced", icon: "shield", color: "emerald" }
-      ],
+      pillars: [],
+      features: [],
       items: []
     },
     {

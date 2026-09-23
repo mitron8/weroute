@@ -49,16 +49,8 @@ export const softwareApplicationStaffingData = {
       intro: "Software & Application Staffing Services provide qualified technology professionals who support application design, development, modernization, integration, testing, deployment, and ongoing product engineering.\n\nThis includes new application development, enterprise application modernization, web and mobile development, backend and API engineering, and dedicated development teams. Professionals are matched based on technology stack, architecture, project complexity, engineering practices, and engagement model.",
       consoleTitle: "weroute-software-talent-mesh.manifest",
       consoleTag: "v3.2",
-      pillars: [
-        { title: "Code & Stack Vetted", subtitle: "Hands-on Evaluated", icon: "code", color: "blue" },
-        { title: "48h Deployment", subtitle: "Rapid Engineering Match", icon: "zap", color: "emerald" },
-        { title: "Full Lifecycle", subtitle: "Architecture to Delivery", icon: "layers", color: "purple" }
-      ],
-      features: [
-        { title: "Full-Stack & Backend Systems", subtitle: "Java, Python, .NET, Node & Microservices", tag: "Verified", icon: "server", color: "navy" },
-        { title: "Modern Frontend & Mobile Apps", subtitle: "React, Angular, Native iOS, Android & Flutter", tag: "Production", icon: "code", color: "blue" },
-        { title: "Architecture, APIs & QA", subtitle: "REST/GraphQL, CI/CD & Automated Testing", tag: "Active", icon: "shield", color: "emerald" }
-      ],
+      pillars: [],
+      features: [],
       items: []
     },
     {

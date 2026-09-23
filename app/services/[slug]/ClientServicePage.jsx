@@ -34,6 +34,12 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import FinalCTA from "@/app/components/FinalCTA";
 import FAQSection from "@/app/components/ui/FAQAccordion";
 import Link from "next/link";
+import StaffingArchitectureDiagram from "../components/StaffingArchitectureDiagram";
+import NetworkStaffingArchitectureDiagram from "../components/NetworkStaffingArchitectureDiagram";
+import CybersecurityStaffingArchitectureDiagram from "../components/CybersecurityStaffingArchitectureDiagram";
+import CloudDevOpsStaffingArchitectureDiagram from "../components/CloudDevOpsStaffingArchitectureDiagram";
+import SoftwareStaffingArchitectureDiagram from "../components/SoftwareStaffingArchitectureDiagram";
+import AiStaffingArchitectureDiagram from "../components/AiStaffingArchitectureDiagram";
 
 // Safe DotLottie wrapper to suppress AbortError on fast tab switching / unmounts
 const SafeDotLottie = ({ src, loop = true, autoplay = true, className = "", ...props }) => {
@@ -873,111 +879,168 @@ function WhatAreSection({ section }) {
     );
   };
 
+  const isStaffing = consoleTitle === "weroute-staffing-talent-mesh.manifest";
+  const isNetworkStaffing = consoleTitle === "weroute-network-talent-mesh.manifest";
+  const isCybersecurityStaffing = consoleTitle === "weroute-cybersecurity-talent-mesh.manifest";
+  const isCloudDevOpsStaffing = consoleTitle === "weroute-cloud-devops-talent.manifest";
+  const isSoftwareStaffing = consoleTitle === "weroute-software-talent-mesh.manifest";
+  const isAiStaffing = consoleTitle === "weroute-ai-talent-mesh.manifest";
+  const hasCustomDiagram = isStaffing || isNetworkStaffing || isCybersecurityStaffing || isCloudDevOpsStaffing || isSoftwareStaffing || isAiStaffing;
+
   return (
     <div className="w-full clay-light bg-white rounded-[3rem] p-8 sm:p-12 md:p-16 border border-[#080357]/5 overflow-hidden relative shadow-[0_20px_50px_rgba(8,3,87,0.04)]">
       {/* Background Decorative Glow Orbs */}
       <div className="absolute top-0 right-0 w-[35rem] h-[35rem] bg-gradient-to-bl from-blue-50/70 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-gradient-to-tr from-[#B7F36B]/15 to-transparent rounded-full translate-y-1/2 -translate-x-1/4 pointer-events-none" />
 
-      <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
-        
-        {/* Left Column: Scope & Definition Narrative */}
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-7 flex flex-col items-start"
-        >
-          <div className="clay-badge-light inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#080357] mb-6 border border-[#080357]/5">
-            <Workflow size={13} className="text-[#080357]" />
-            <span>Service Scope &amp; Architecture</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#080357] mb-6 tracking-tight leading-[1.12]">
-            {section.title}
-          </h2>
-
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed mb-8">
-            {section.intro}
-          </p>
-
-          {/* 3 Claymorphic Value Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full pt-4 border-t border-[#080357]/10">
-            {pillars.map((pillar, pIdx) => (
-              <div key={pIdx} className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
-                <div className={`w-8 h-8 rounded-xl ${getPillarColors(pillar.color)} flex items-center justify-center flex-shrink-0`}>
-                  {getPillarIcon(pillar.icon)}
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs font-bold text-[#080357] truncate">{pillar.title}</p>
-                  <p className="text-[10px] text-slate-500 truncate">{pillar.subtitle}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Right Column: Interactive Architecture Console Card with Claymorphism */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.94, y: 20 }} 
-          whileInView={{ opacity: 1, scale: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-5 w-full flex justify-center"
-        >
-          <div className="clay-light w-full max-w-md rounded-[2.5rem] bg-white border border-[#080357]/5 overflow-hidden">
-            
-            {/* macOS Titlebar */}
-            <div className="px-5 py-3.5 bg-[#f7f8fc]/80 border-b border-[#080357]/5 flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
-              </div>
-              <span className="text-[11px] font-mono font-semibold text-slate-500">
-                {consoleTitle}
-              </span>
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+      {hasCustomDiagram ? (
+        <div className="flex flex-col gap-10 relative z-10">
+          {/* Scope & Definition Narrative */}
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-center text-center max-w-3xl mx-auto"
+          >
+            <div className="clay-badge-light inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#080357] mb-6 border border-[#080357]/5">
+              <Workflow size={13} className="text-[#080357]" />
+              <span>Service Scope &amp; Architecture</span>
             </div>
 
-            {/* Console Body */}
-            <div className="p-6 space-y-3.5 bg-white">
-              {features.map((feat, fIdx) => (
-                <div key={fIdx} className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
-                  <div className="flex items-center gap-3">
-                    {getFeatureIcon(feat.icon, feat.color)}
-                    <div>
-                      <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
-                        {feat.title}
-                      </p>
-                      <p className="text-[10px] text-slate-500">
-                        {feat.subtitle}
-                      </p>
-                    </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#080357] mb-6 tracking-tight leading-[1.12]">
+              {section.title}
+            </h2>
+
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed">
+              {section.intro}
+            </p>
+          </motion.div>
+
+          {/* Exact Architecture Diagram as requested */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="pt-8 border-t border-[#080357]/10 w-full hidden md:block"
+          >
+            {isAiStaffing ? (
+              <AiStaffingArchitectureDiagram />
+            ) : isSoftwareStaffing ? (
+              <SoftwareStaffingArchitectureDiagram />
+            ) : isCloudDevOpsStaffing ? (
+              <CloudDevOpsStaffingArchitectureDiagram />
+            ) : isCybersecurityStaffing ? (
+              <CybersecurityStaffingArchitectureDiagram />
+            ) : isNetworkStaffing ? (
+              <NetworkStaffingArchitectureDiagram />
+            ) : (
+              <StaffingArchitectureDiagram />
+            )}
+          </motion.div>
+        </div>
+      ) : (
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
+          
+          {/* Left Column: Scope & Definition Narrative */}
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 flex flex-col items-start"
+          >
+            <div className="clay-badge-light inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#080357] mb-6 border border-[#080357]/5">
+              <Workflow size={13} className="text-[#080357]" />
+              <span>Service Scope &amp; Architecture</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#080357] mb-6 tracking-tight leading-[1.12]">
+              {section.title}
+            </h2>
+
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed mb-8">
+              {section.intro}
+            </p>
+
+            {/* 3 Claymorphic Value Pillars */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full pt-4 border-t border-[#080357]/10">
+              {pillars.map((pillar, pIdx) => (
+                <div key={pIdx} className="clay-soft-light flex items-center gap-2.5 p-3.5 rounded-2xl bg-white border border-[#080357]/5">
+                  <div className={`w-8 h-8 rounded-xl ${getPillarColors(pillar.color)} flex items-center justify-center flex-shrink-0`}>
+                    {getPillarIcon(pillar.icon)}
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
-                    {feat.tag}
-                  </span>
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold text-[#080357] truncate">{pillar.title}</p>
+                    <p className="text-[10px] text-slate-500 truncate">{pillar.subtitle}</p>
+                  </div>
                 </div>
               ))}
+            </div>
+          </motion.div>
 
-              {/* Bottom Quick Callout */}
-              <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500 font-medium border-t border-[#080357]/5">
-                <span className="flex items-center gap-1.5 text-emerald-600 font-bold">
-                  <CheckCircle2 size={13} />
-                  Enterprise-Grade Delivery
+          {/* Right Column: Interactive Architecture Console Card with Claymorphism */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.94, y: 20 }} 
+            whileInView={{ opacity: 1, scale: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 w-full flex justify-center"
+          >
+            <div className="clay-light w-full max-w-md rounded-[2.5rem] bg-white border border-[#080357]/5 overflow-hidden">
+              
+              {/* macOS Titlebar */}
+              <div className="px-5 py-3.5 bg-[#f7f8fc]/80 border-b border-[#080357]/5 flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+                </div>
+                <span className="text-[11px] font-mono font-semibold text-slate-500">
+                  {consoleTitle}
                 </span>
-                <span className="font-mono text-[10px] text-slate-400">
-                  {consoleTag}
-                </span>
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               </div>
 
-            </div>
-          </div>
-        </motion.div>
+              {/* Console Body */}
+              <div className="p-6 space-y-3.5 bg-white">
+                {features.map((feat, fIdx) => (
+                  <div key={fIdx} className="clay-soft-light p-3.5 rounded-2xl bg-[#fafbff] border border-[#080357]/5 flex items-center justify-between hover:bg-white transition-all group">
+                    <div className="flex items-center gap-3">
+                      {getFeatureIcon(feat.icon, feat.color)}
+                      <div>
+                        <p className="text-xs font-bold text-[#080357] group-hover:text-blue-900 transition-colors">
+                          {feat.title}
+                        </p>
+                        <p className="text-[10px] text-slate-500">
+                          {feat.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
+                      {feat.tag}
+                    </span>
+                  </div>
+                ))}
 
-      </div>
+                {/* Bottom Quick Callout */}
+                <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500 font-medium border-t border-[#080357]/5">
+                  <span className="flex items-center gap-1.5 text-emerald-600 font-bold">
+                    <CheckCircle2 size={13} />
+                    Enterprise-Grade Delivery
+                  </span>
+                  <span className="font-mono text-[10px] text-slate-400">
+                    {consoleTag}
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+      )}
     </div>
   );
 }

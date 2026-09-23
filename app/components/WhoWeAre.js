@@ -1,428 +1,178 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  IcoGlobe,
-  IcoTgt,
-  IcoShield,
-  IcoArr,
-} from "./Icons";
+import { Eye, Target, ShieldCheck } from "lucide-react";
 
 export default function WhoWeAre() {
   return (
     <section
       id="who"
-      className="
-        relative
-        overflow-hidden
-        bg-[#f7f9fc]
-        py-28
-        text-[#080357]
-      "
+      className="relative overflow-hidden bg-[#f7f9fc] py-28 text-[#052440]"
     >
-
-      {/* BACKGROUND */}
-      <div className="absolute inset-0">
-
-        {/* GLOW */}
-        <div
-          className="
-            absolute
-            left-[-10%]
-            top-0
-            h-[420px]
-            w-[420px]
-            rounded-full
-            bg-[#080357]/5
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            absolute
-            bottom-[-10%]
-            right-[-10%]
-            h-[380px]
-            w-[380px]
-            rounded-full
-            bg-[#080357]/5
-            blur-3xl
-          "
-        />
-
+      {/* Background Ambience */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-[-10%] top-0 h-[450px] w-[450px] rounded-full bg-[#052440]/5 blur-3xl" />
+        <div className="absolute bottom-[-10%] right-[-10%] h-[400px] w-[400px] rounded-full bg-[#080357]/5 blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-
-        {/* TOP LAYOUT */}
-        <div
-          className="
-            grid
-            gap-20
-            lg:grid-cols-2
-          "
-        >
-
-          {/* LEFT */}
+        {/* SECTION 2: ABOUT WEROUTE */}
+        <div className="grid gap-16 lg:grid-cols-12 items-start">
+          {/* Left Column */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6"
           >
-
-            {/* LABEL */}
-            <span
-              className="
-                inline-block
-                rounded-full
-                border border-[#052440]/10
-                bg-white/80
-                px-5 py-2
-                text-xs
-                font-semibold
-                uppercase
-                tracking-[0.22em]
-                text-[#052440]
-                shadow-sm
-                backdrop-blur-md
-              "
-            >
-              About Us
+            {/* Claymorphic Badge */}
+            <span className="clay-badge-light inline-block border border-[#052440]/10 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440]">
+              About WeRoute
             </span>
 
-            {/* HEADING */}
-            <h2
-              className="
-                mt-6
-                text-3xl
-                font-normal
-                leading-tight
-                text-[#052440]
-                md:text-4xl
-                lg:text-[44px]
-              "
-            >
-              Technology Built
-              <br />
-
-              Around Your
-
-              <span
-                className="
-                  bg-gradient-to-r
-                  from-[#080357]
-                  to-[#A7BF73]
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                {" "}
-                Business Goals
+            {/* Heading */}
+            <h2 className="mt-6 text-3xl font-extrabold leading-tight text-[#080357] md:text-4xl lg:text-[44px] tracking-tight">
+              Technology Built Around{" "}
+              <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+                Your Business Goals
               </span>
-
             </h2>
 
-            {/* TEXT */}
-            <p
-              className="
-                mt-8
-                text-lg
-                leading-8
-                text-[#052440]/75
-              "
-            >
-              WeRoute is a technology
-              consulting and solutions company
-              helping enterprises design,
-              build, and operate secure,
-              scalable, and future-ready
-              digital infrastructure.
+            {/* Description */}
+            <p className="mt-8 text-lg leading-relaxed text-[#052440]/75 font-normal">
+              WeRoute is an enterprise technology consulting and engineering company. We help organizations design, implement, integrate, secure, and operate modern technology environments, starting from the business objective rather than a product catalog. That means the architecture comes first, the tooling follows, and the same team stays accountable from the first assessment through to day-to-day operations.
             </p>
-
-            <p
-              className="
-                mt-6
-                text-lg
-                leading-8
-                text-[#052440]/60
-              "
-            >
-              Our approach is consulting-first
-              and outcome-driven. We partner
-              with businesses to understand
-              their challenges, architect the
-              right solutions, and deliver
-              them with precision.
-            </p>
-
           </motion.div>
 
-          {/* RIGHT */}
-          <div
-            className="
-              flex
-              flex-col
-              gap-6
-            "
-          >
-
+          {/* Right Column: 3 Claymorphic Pillars */}
+          <div className="lg:col-span-6 flex flex-col gap-5">
             {[
               {
                 n: "01",
                 t: "Consulting-Led, Outcome-Driven",
-                d: "We begin by understanding business goals before recommending any technology.",
+                d: "We begin with the business objective before making any technology decisions, so the architecture serves the outcome.",
               },
               {
                 n: "02",
-                t: "Vendor-Agnostic Decisions",
-                d: "Architecture that serves the business — not the vendor.",
+                t: "Vendor-Agnostic by Design",
+                d: "Architectures are based on enterprise requirements, scalability, security, interoperability, and long-term value, not vendor incentives.",
               },
               {
                 n: "03",
-                t: "Single Accountability",
-                d: "One partner from strategy and design to deployment.",
+                t: "End-to-End Accountability",
+                d: "One technology partner across advisory, design, engineering, implementation, operations, and optimization, with nothing handed off mid-project.",
               },
             ].map((item, index) => (
               <motion.div
                 key={item.n}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-3xl
-                  border border-[#052440]/10
-                  bg-white/80
-                  p-7
-                  shadow-[0_10px_40px_rgba(5,36,64,0.05)]
-                  backdrop-blur-xl
-                  transition-all duration-500
-                  hover:-translate-y-2
-                  hover:border-[#080357]/20
-                  hover:shadow-[0_20px_60px_rgba(5,36,64,0.08)]
-                "
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_20px_rgba(5,36,64,0.1)]"
               >
-
-                {/* HOVER GLOW */}
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-r
-                    from-[#052440]/5
-                    to-[#0d5ea8]/5
-                    opacity-0
-                    transition-opacity duration-500
-                    group-hover:opacity-100
-                  "
-                />
-
-                <div
-                  className="
-                    relative z-10
-                    flex items-start gap-5
-                  "
-                >
-
-                  {/* NUMBER */}
-                  <div
-                    className="
-                      flex
-                      h-14
-                      w-14
-                      items-center
-                      justify-center
-                      rounded-2xl
-                      border border-[#052440]/10
-                      bg-[#0E1A59]
-                      text-lg
-                      font-bold
-                      text-white
-                    "
-                  >
+                <div className="flex items-start gap-5">
+                  <div className="clay-badge-light flex h-13 w-13 shrink-0 items-center justify-center bg-[#080357] text-white text-base font-extrabold">
                     {item.n}
                   </div>
-
-                  {/* CONTENT */}
                   <div>
-
-                    <h4
-                      className="
-                        text-xl
-                        font-semibold
-                        text-[#052440]
-                      "
-                    >
+                    <h3 className="text-xl font-bold text-[#080357]">
                       {item.t}
-                    </h4>
-
-                    <p
-                      className="
-                        mt-3
-                        text-base
-                        leading-7
-                        text-[#052440]/60
-                      "
-                    >
+                    </h3>
+                    <p className="mt-2 text-sm sm:text-base leading-relaxed text-[#052440]/70">
                       {item.d}
                     </p>
-
                   </div>
-
                 </div>
-
               </motion.div>
             ))}
-
           </div>
-
         </div>
 
-        {/* VISION / MISSION / VALUES */}
-        <div
-          className="
-            mt-24
-            grid
-            gap-8
-            md:grid-cols-2
-            xl:grid-cols-3
-          "
-        >
+        {/* SECTION 3: VISION, MISSION & VALUES (Claymorphic Compact Cards) */}
+        <div className="mt-24 pt-16 border-t border-[#052440]/10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-12 text-center"
+          >
+            <span className="clay-badge-light inline-block border border-[#052440]/10 bg-[#f7f9fc] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#052440] mb-3">
+              Guiding Principles
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#080357] tracking-tight">
+              Vision, Mission &amp; Values
+            </h2>
+          </motion.div>
 
-          {[
-            {
-              icon: <IcoGlobe />,
-              title: "Our Vision",
-              desc: "To be a trusted global technology partner simplifying enterprise complexity.",
-            },
-            {
-              icon: <IcoTgt />,
-              title: "Our Mission",
-              desc: "Deliver intelligent, secure, and scalable enterprise ecosystems.",
-            },
-            {
-              icon: <IcoShield />,
-              title: "Our Values",
-              desc: "Integrity, precision, partnership, and long-term trust.",
-            },
-          ].map((card, i) => (
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* VISION */}
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-[32px]
-                border border-[#052440]/10
-                bg-white/85
-                p-8
-                shadow-[0_10px_40px_rgba(5,36,64,0.05)]
-                backdrop-blur-2xl
-                transition-all duration-500
-                hover:-translate-y-3
-                hover:border-[#052440]/20
-                hover:shadow-[0_20px_60px_rgba(5,36,64,0.08)]
-              "
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: 0, ease: [0.22, 1, 0.36, 1] }}
+              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-all duration-300 hover:-translate-y-1"
             >
-
-              {/* HOVER GLOW */}
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-gradient-to-br
-                  from-[#052440]/5
-                  via-transparent
-                  to-[#0d5ea8]/5
-                  opacity-0
-                  transition-opacity duration-500
-                  group-hover:opacity-100
-                "
-              />
-
-              <div className="relative z-10">
-
-                {/* ICON */}
-                <div
-                  className="
-                    flex
-                    h-16
-                    w-16
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    border border-[#052440]/10
-                    bg-[#080357]
-                    text-white
-                  "
-                >
-                  {card.icon}
+              <div className="flex items-center gap-3.5 mb-5">
+                <div className="clay-badge-light flex h-12 w-12 items-center justify-center bg-[#080357] text-white">
+                  <Eye size={22} />
                 </div>
-
-                {/* TITLE */}
-                <h5
-                  className="
-                    mt-7
-                    text-2xl
-                    font-bold
-                    text-[#052440]
-                  "
-                >
-                  {card.title}
-                </h5>
-
-                {/* DESC */}
-                <p
-                  className="
-                    mt-4
-                    text-base
-                    leading-7
-                    text-[#052440]/60
-                  "
-                >
-                  {card.desc}
-                </p>
-
-                {/* CTA */}
-                <div
-                  className="
-                    mt-8
-                    inline-flex
-                    items-center
-                    gap-2
-                    text-sm
-                    font-semibold
-                    text-[#052440]
-                    transition-all duration-300
-                    group-hover:gap-4
-                  "
-                >
-                  Learn More
-
-                  <span>
-                    <IcoArr />
-                  </span>
-
-                </div>
-
+                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[#052440]/60">
+                  Vision
+                </h3>
               </div>
-
+              <p className="text-base font-semibold leading-relaxed text-[#080357]">
+                Simplify enterprise technology complexity through secure, scalable, and intelligent architectures.
+              </p>
             </motion.div>
-          ))}
 
+            {/* MISSION */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex items-center gap-3.5 mb-5">
+                <div className="clay-badge-light flex h-12 w-12 items-center justify-center bg-[#080357] text-white">
+                  <Target size={22} />
+                </div>
+                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[#052440]/60">
+                  Mission
+                </h3>
+              </div>
+              <p className="text-base font-semibold leading-relaxed text-[#080357]">
+                Deliver technology ecosystems that improve resilience, performance, efficiency, and business agility.
+              </p>
+            </motion.div>
+
+            {/* VALUES */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex items-center gap-3.5 mb-5">
+                <div className="clay-badge-light flex h-12 w-12 items-center justify-center bg-[#080357] text-white">
+                  <ShieldCheck size={22} />
+                </div>
+                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[#052440]/60">
+                  Values
+                </h3>
+              </div>
+              <p className="text-sm font-bold leading-relaxed text-[#080357]">
+                Integrity <span className="text-[#052440]/30 font-normal">|</span> Engineering Excellence <span className="text-[#052440]/30 font-normal">|</span> Accountability <span className="text-[#052440]/30 font-normal">|</span> Partnership <span className="text-[#052440]/30 font-normal">|</span> Continuous Improvement
+              </p>
+            </motion.div>
+          </div>
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -46,7 +46,7 @@ export default function HeroLeopolda() {
               className="group inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.07] hover:bg-white/[0.12] backdrop-blur-xl border border-white/15 transition-all duration-300 shadow-md shadow-black/10"
             >
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.14em] uppercase text-white/90">
-                WEROUTE DRIVES 42% FASTER MULTI-CLOUD DEPLOYMENT
+                Enterprise Technology Consulting, Engineering, and Operations
               </span>
               <span className="h-3 w-px bg-white/20" />
               <span className="flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-[#B7F36B] group-hover:translate-x-0.5 transition-transform">
@@ -73,7 +73,7 @@ export default function HeroLeopolda() {
               className="text-[clamp(2.2rem,3.8vw,3.6rem)] font-extrabold text-white tracking-[-0.035em] leading-[1.08] mb-4"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              The next generation of enterprise IT is engineered by WeRoute.
+              Engineering the Next Generation of Enterprise Technology
             </motion.h1>
 
             {/* Subtitle */}
@@ -84,7 +84,7 @@ export default function HeroLeopolda() {
               className="text-base sm:text-lg md:text-[1.125rem] text-white/90 font-normal leading-relaxed max-w-lg mb-8"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              Imagine an architectural foundation built to give your enterprise workloads, cloud topologies, and security teams superpowers. That’s WeRoute.
+              WeRoute helps enterprises design, modernize, secure, integrate, and operate technology across networking, cloud, cybersecurity, AI, software, and automation. One team takes the work from architecture through production, so strategy and delivery never sit with different vendors.
             </motion.p>
 
             {/* ─── Two Sleek CTA Buttons ─── */}
@@ -103,10 +103,10 @@ export default function HeroLeopolda() {
               </Link>
 
               <Link
-                href="/services"
+                href="#solutions"
                 className="px-7 py-3.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-xl border border-white/20 hover:border-white/35 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
               >
-                <span>Explore Services</span>
+                <span>Explore Solutions</span>
               </Link>
             </motion.div>
 
@@ -117,7 +117,7 @@ export default function HeroLeopolda() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-[10px] tracking-[0.16em] uppercase font-bold text-white/40 font-body"
             >
-              TIME TO VALUE IN DAYS, NOT MONTHS.
+              FROM STRATEGY TO PRODUCTION WITH ONE TECHNOLOGY PARTNER
             </motion.p>
 
           </div>
@@ -151,7 +151,7 @@ export default function HeroLeopolda() {
                 <div className="flex items-center justify-between mb-3">
                   <div>
                     <p className="text-[9px] text-white/50 font-bold uppercase tracking-wider">Multi-Cloud Uptime</p>
-                    <p className="text-lg font-extrabold text-white">99.999%</p>
+                    <p className="text-lg font-extrabold text-white">99.9%</p>
                   </div>
                   <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/20 text-[#B7F36B] text-[11px] font-bold border border-emerald-500/30">
                     <TrendingUp size={11} />

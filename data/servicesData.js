@@ -9,6 +9,7 @@ import { networkInfrastructureStaffingData } from "./networkInfrastructureStaffi
 import { cloudDevOpsStaffingData } from "./cloudDevOpsStaffingData.js";
 import { softwareApplicationStaffingData } from "./softwareApplicationStaffingData.js";
 import { aiMlEmergingTechnologyStaffingData } from "./aiMlEmergingTechnologyStaffingData.js";
+import { cybersecurityStaffingData } from "./cybersecurityStaffingData.js";
 
 export const servicesData = {
   "managed-data-centre-services": {
@@ -7683,5 +7684,9 @@ servicesData["ai-ml-and-emerging-technology-staffing"] = aiMlEmergingTechnologyS
 servicesData["ai-ml-emerging-technology-staffing"] = aiMlEmergingTechnologyStaffingData;
 servicesData["ai-ml-and-emerging-technology-staffing-services"] = aiMlEmergingTechnologyStaffingData;
 servicesData["ai-ml-emerging-technology-staffing-services"] = aiMlEmergingTechnologyStaffingData;
+
+servicesData["cybersecurity-and-soc-staffing"] = cybersecurityStaffingData;
+servicesData["cybersecurity-soc-staffing"] = cybersecurityStaffingData;
+servicesData["cybersecurity-and-soc-staffing-services"] = cybersecurityStaffingData;
 
 export default servicesData;

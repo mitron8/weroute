@@ -49,16 +49,8 @@ export const cloudDevOpsStaffingData = {
       intro: "Cloud, DevOps & Automation Staffing Services provide experienced technology professionals who support cloud adoption, infrastructure modernization, platform engineering, automation, reliability, and enterprise operations.\n\nThis includes cloud migration, DevOps transformation, Kubernetes adoption, CI/CD implementation, and dedicated engineering teams. Professionals are matched through structured Cloud & DevOps Recruitment based on platform experience, technical stack, and engagement model.",
       consoleTitle: "weroute-cloud-devops-talent.manifest",
       consoleTag: "v2.6",
-      pillars: [
-        { title: "Cloud & CKA Vetted", subtitle: "Certified Engineers", icon: "shield", color: "blue" },
-        { title: "48h Deployment", subtitle: "Rapid Resource Matching", icon: "zap", color: "emerald" },
-        { title: "Multi-Cloud & GitOps", subtitle: "AWS, Azure, Terraform", icon: "layers", color: "purple" }
-      ],
-      features: [
-        { title: "Cloud Infrastructure & Migration", subtitle: "AWS, Azure, GCP & Hybrid Cloud", tag: "Certified", icon: "server", color: "navy" },
-        { title: "DevOps, CI/CD & GitOps", subtitle: "GitHub Actions, Jenkins, ArgoCD", tag: "Automated", icon: "code", color: "blue" },
-        { title: "SRE, Kubernetes & Automation", subtitle: "K8s, Terraform, Ansible, 99.9% Uptime", tag: "Verified", icon: "shield", color: "emerald" }
-      ],
+      pillars: [],
+      features: [],
       items: []
     },
     {
