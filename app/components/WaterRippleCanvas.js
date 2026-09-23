@@ -8,29 +8,49 @@ export default function WaterRippleCanvas() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    
+
     let ripples = [];
-    let animationFrameId;
+    let animationFrameId = null;
+    let isVisible = false;
+    let isRunning = false;
     let targetX = -1000;
     let targetY = -1000;
     let currentX = -1000;
     let currentY = -1000;
-    
+    let cachedRect = null;
+
+    const updateRect = () => {
+      if (canvas) {
+        cachedRect = canvas.getBoundingClientRect();
+      }
+    };
+
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+      updateRect();
     };
-    
-    window.addEventListener('resize', resize);
-    resize();
-    
+
+    const startAnimation = () => {
+      if (!isRunning && isVisible) {
+        isRunning = true;
+        animationFrameId = requestAnimationFrame(render);
+      }
+    };
+
     const render = () => {
-      // Clear the canvas to be completely transparent so the CSS background shows through
+      if (!isVisible) {
+        isRunning = false;
+        return;
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       // Smoothly interpolate current spotlight position towards target position
-      currentX += (targetX - currentX) * 0.08;
-      currentY += (targetY - currentY) * 0.08;
+      const dx = targetX - currentX;
+      const dy = targetY - currentY;
+      currentX += dx * 0.08;
+      currentY += dy * 0.08;
 
       // Draw the revealing spotlight glow
       if (currentX > -500) {
@@ -38,64 +58,92 @@ export default function WaterRippleCanvas() {
         gradient.addColorStop(0, "rgba(183, 243, 107, 0.08)");
         gradient.addColorStop(0.5, "rgba(0, 191, 255, 0.03)");
         gradient.addColorStop(1, "transparent");
-        
+
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
       }
-      
+
       // Draw ripples
       for (let i = ripples.length - 1; i >= 0; i--) {
         const r = ripples[i];
         r.radius += r.speed;
         r.alpha -= r.decay;
-        
+
         if (r.alpha <= 0) {
           ripples.splice(i, 1);
           continue;
         }
-        
+
         // Primary water wave
         ctx.beginPath();
         ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(183, 243, 107, ${r.alpha})`; // Accent green ripple
+        ctx.strokeStyle = `rgba(183, 243, 107, ${r.alpha})`;
         ctx.lineWidth = 1 + (r.radius * 0.02);
         ctx.stroke();
-        
+
         // Secondary inner refraction wave
         if (r.radius > 20) {
           ctx.beginPath();
           ctx.arc(r.x, r.y, r.radius - 15, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(0, 191, 255, ${r.alpha * 0.4})`; // Cyan inner ripple
+          ctx.strokeStyle = `rgba(0, 191, 255, ${r.alpha * 0.4})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
-      
-      animationFrameId = requestAnimationFrame(render);
+
+      // If there are ripples or spotlight is still moving, continue RAF
+      const isSpotlightMoving = Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5;
+      if (ripples.length > 0 || isSpotlightMoving) {
+        animationFrameId = requestAnimationFrame(render);
+      } else {
+        isRunning = false;
+      }
     };
-    
-    render();
-    
+
+    // Use IntersectionObserver so offscreen footer consumes zero CPU/GPU
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          updateRect();
+          startAnimation();
+        } else {
+          if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+          }
+          isRunning = false;
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(canvas);
+
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('scroll', updateRect, { passive: true });
+
+    // Handle mouse events only when visible
     const handleMouseMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      
-      // Only spawn ripples if the mouse is actually hovering over the footer area
+      if (!isVisible) return;
+      if (!cachedRect) updateRect();
+
+      const rect = cachedRect;
       if (
-        e.clientY < rect.top || 
-        e.clientY > rect.bottom || 
-        e.clientX < rect.left || 
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom ||
+        e.clientX < rect.left ||
         e.clientX > rect.right
       ) {
         return;
       }
-      
+
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       targetX = x;
       targetY = y;
-      
-      // Throttle drops so it looks like fluid wakes rather than a solid line
+
       if (ripples.length === 0 || Math.hypot(ripples[ripples.length - 1].x - x, ripples[ripples.length - 1].y - y) > 40) {
         ripples.push({
           x,
@@ -106,16 +154,19 @@ export default function WaterRippleCanvas() {
           decay: 0.002 + Math.random() * 0.002
         });
       }
+
+      startAnimation();
     };
-    
-    // Also add a ripple on click for a "stone dropped in pond" effect
+
     const handleClick = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      
+      if (!isVisible) return;
+      if (!cachedRect) updateRect();
+
+      const rect = cachedRect;
       if (
-        e.clientY < rect.top || 
-        e.clientY > rect.bottom || 
-        e.clientX < rect.left || 
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom ||
+        e.clientX < rect.left ||
         e.clientX > rect.right
       ) {
         return;
@@ -129,22 +180,26 @@ export default function WaterRippleCanvas() {
         alpha: 0.4,
         decay: 0.003
       });
+
+      startAnimation();
     };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('click', handleClick);
-    
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('click', handleClick, { passive: true });
+
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', resize);
+      window.removeEventListener('scroll', updateRect);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('click', handleClick);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
-    <canvas 
-      ref={canvasRef} 
+    <canvas
+      ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
       style={{ zIndex: 0 }}
     />

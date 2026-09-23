@@ -156,12 +156,9 @@ export default function Page() {
       {/* WEBSITE */}
       <div
         className={`
-          transition-opacity duration-700
-          ${loadingDone ? "opacity-100" : "opacity-0"}
+          transition-opacity duration-500 ease-out
+          ${loadingDone ? "opacity-100" : "opacity-0 pointer-events-none"}
         `}
-        style={{
-          willChange: "opacity",
-        }}
       >
         <main>
           {/* HERO SECTION */}

@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export default function HeroLeopolda() {
   return (
-    <section className="relative w-full min-h-screen lg:h-screen lg:max-h-[960px] flex flex-col justify-between overflow-hidden bg-[#241758] text-white pt-24 lg:pt-20 pb-5 px-6 sm:px-8 lg:px-12 selection:bg-[#B7F36B] selection:text-[#080357]">
+    <section className="relative w-full min-h-screen lg:h-screen lg:max-h-[960px] flex flex-col justify-between overflow-hidden bg-[#241758] text-white pt-24 lg:pt-[90px] pb-5 px-6 sm:px-8 lg:px-12 selection:bg-[#B7F36B] selection:text-[#080357]">
       
       {/* ─── Ambient Background Glows & Gradients ─── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -27,9 +27,9 @@ export default function HeroLeopolda() {
         />
 
         {/* Soft cyan & green atmospheric lighting highlights */}
-        <div className="absolute top-[15%] right-[15%] w-[450px] h-[450px] rounded-full bg-blue-500/15 blur-[130px]" />
-        <div className="absolute bottom-[15%] right-[5%] w-[400px] h-[400px] rounded-full bg-[#B7F36B]/10 blur-[120px]" />
-        <div className="absolute top-[10%] left-[5%] w-[350px] h-[350px] rounded-full bg-indigo-500/10 blur-[110px]" />
+        <div className="absolute top-[15%] right-[15%] w-[450px] h-[450px] rounded-full bg-blue-500/15 blur-[100px] transform-gpu" />
+        <div className="absolute bottom-[15%] right-[5%] w-[400px] h-[400px] rounded-full bg-[#B7F36B]/10 blur-[100px] transform-gpu" />
+        <div className="absolute top-[10%] left-[5%] w-[350px] h-[350px] rounded-full bg-indigo-500/10 blur-[90px] transform-gpu" />
       </div>
 
       <div className="relative z-10 w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-center">
@@ -43,13 +43,14 @@ export default function HeroLeopolda() {
           >
             <Link 
               href="#contact"
-              className="group inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.07] hover:bg-white/[0.12] backdrop-blur-xl border border-white/15 transition-all duration-300 shadow-md shadow-black/10"
+              className="group inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-xl border border-white/20 transition-all duration-300 shadow-md shadow-black/10"
             >
+              <span className="h-1.5 w-1.5 rounded-full bg-[#B7F36B] shadow-[0_0_8px_#B7F36B] shrink-0 animate-pulse" />
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.14em] uppercase text-white/90">
                 Enterprise Technology Consulting, Engineering, and Operations
               </span>
               <span className="h-3 w-px bg-white/20" />
-              <span className="flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-[#B7F36B] group-hover:translate-x-0.5 transition-transform">
+              <span className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-[#B7F36B] group-hover:translate-x-0.5 transition-transform">
                 <span>EXPLORE</span>
                 <ArrowRight size={11} />
               </span>
@@ -65,34 +66,47 @@ export default function HeroLeopolda() {
           {/* ════════════════════════════════════════════════════ */}
           <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start text-left z-20">
 
-            {/* Headline */}
+            {/* Headline with Strong Visual Anchor & Cadence */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[clamp(2.2rem,3.8vw,3.6rem)] font-extrabold text-white tracking-[-0.035em] leading-[1.08] mb-4"
+              className="text-[clamp(2.35rem,4.1vw,3.75rem)] font-extrabold text-white tracking-[-0.035em] leading-[1.12] mb-6"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Engineering the Next Generation of Enterprise Technology
+              Engineering the Next Generation of{" "}
+              <span className="bg-gradient-to-r from-white via-[#B7F36B] to-[#9ee24e] bg-clip-text text-transparent">
+                Enterprise Technology
+              </span>
             </motion.h1>
 
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
+            {/* Subtitle / Narrative with Clear Hierarchical Contrast */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-[1.125rem] text-white/90 font-normal leading-relaxed max-w-lg mb-8"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="max-w-xl mb-8 space-y-3"
             >
-              WeRoute helps enterprises design, modernize, secure, integrate, and operate technology across networking, cloud, cybersecurity, AI, software, and automation. One team takes the work from architecture through production, so strategy and delivery never sit with different vendors.
-            </motion.p>
+              <p
+                className="text-base sm:text-[17px] text-white/80 font-normal leading-[1.7]"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                WeRoute helps enterprises design, modernize, secure, integrate, and operate technology across networking, cloud, cybersecurity, AI, software, and automation.
+              </p>
+              <p
+                className="text-sm sm:text-[15px] text-white/60 font-normal leading-relaxed"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                One team takes the work from architecture through production, so strategy and delivery never sit with different vendors.
+              </p>
+            </motion.div>
 
             {/* ─── Two Sleek CTA Buttons ─── */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-5"
             >
               <Link
                 href="#contact"
@@ -138,7 +152,7 @@ export default function HeroLeopolda() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-8 -right-2 sm:-right-4 w-[84%] rounded-2xl bg-white/[0.08] backdrop-blur-2xl border border-white/20 p-4 shadow-[0_25px_60px_rgba(0,0,0,0.3)] [transform:translateZ(-50px)]"
+                className="absolute -top-8 -right-2 sm:-right-4 w-[84%] rounded-2xl bg-white/[0.08] backdrop-blur-2xl border border-white/20 p-4 shadow-[0_25px_60px_rgba(0,0,0,0.3)] [transform:translateZ(-50px)] transform-gpu will-change-transform"
               >
                 {/* Window Traffic Lights */}
                 <div className="flex items-center gap-1.5 mb-3">
@@ -186,7 +200,7 @@ export default function HeroLeopolda() {
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="relative z-20 w-[88%] rounded-2xl bg-white/[0.12] backdrop-blur-3xl border border-white/30 p-4 sm:p-5 shadow-[0_35px_80px_rgba(0,0,0,0.45)] [transform:translateZ(35px)]"
+                className="relative z-20 w-[88%] rounded-2xl bg-white/[0.12] backdrop-blur-3xl border border-white/30 p-4 sm:p-5 shadow-[0_35px_80px_rgba(0,0,0,0.45)] [transform:translateZ(35px)] transform-gpu will-change-transform"
               >
                 {/* Window Traffic Lights */}
                 <div className="flex items-center justify-between mb-3.5">
@@ -265,14 +279,14 @@ export default function HeroLeopolda() {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4 }}
-        className="relative z-10 w-full max-w-[1440px] mx-auto mt-4 lg:mt-6 pt-3.5 border-t border-white/10"
+        className="relative z-10 w-full max-w-[1440px] mx-auto mt-3 lg:mt-5 pt-3 border-t border-white/10 -translate-y-[2px]"
       >
-        <p className="text-center text-[11px] sm:text-xs font-medium text-white/50 mb-3 tracking-wide">
+        <p className="text-center text-[11px] sm:text-xs font-semibold text-white/70 mb-2.5 tracking-wide">
           Recognized and trusted by global leaders in enterprise infrastructure.
         </p>
 
         {/* Enterprise Logos Grid */}
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 opacity-60 hover:opacity-80 transition-opacity">
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 opacity-70 hover:opacity-90 transition-opacity">
           <span className="font-extrabold tracking-widest text-xs sm:text-sm text-white font-mono">
             AWS PARTNER
           </span>

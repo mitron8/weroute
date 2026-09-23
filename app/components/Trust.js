@@ -90,7 +90,7 @@ export default function Trust() {
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#080357]/50 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#080357]/0 via-transparent to-transparent pointer-events-none" />
 
                     {/* Floating Icon Badge */}
                     <div className="absolute top-3 left-3">

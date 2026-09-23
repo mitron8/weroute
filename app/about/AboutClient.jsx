@@ -400,18 +400,7 @@ export default function AboutClient() {
                 </Link>
               </motion.div>
 
-              {/* TARGET KEYWORDS */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                className="mt-8 flex flex-wrap items-center gap-2 pt-6 border-t border-[#050849]/10 text-xs font-semibold text-[#050849]"
-              >
-                <span className="text-[#4c658a] uppercase tracking-wider text-[11px] mr-2">(Target:</span>
-                <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">WeRoute Systems</span>
-                <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Enterprise Technology Company</span>
-                <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Enterprise Technology Services)</span>
-              </motion.div>
+
             </div>
 
             {/* RIGHT COLUMN: LOTTIE ANIMATION (BORDERLESS / NO CARD) */}
@@ -457,12 +446,7 @@ export default function AboutClient() {
               Where Strategy Meets Engineering
             </h2>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-[#050849]">
-              <span className="text-[#4c658a] uppercase tracking-wider text-[11px] self-center mr-1">(Target:</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Digital Transformation Company</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Technology Consulting Company</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Enterprise IT Consulting)</span>
-            </div>
+
           </motion.div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -516,12 +500,7 @@ export default function AboutClient() {
               One Technology Partner. Multiple Enterprise Capabilities.
             </h2>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-[#050849]">
-              <span className="text-[#4c658a] uppercase tracking-wider text-[11px] self-center mr-1">(Target:</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Enterprise IT Solutions Company</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Technology Engineering Services</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Enterprise Managed Services)</span>
-            </div>
+
 
             <div className="clay-light mt-8 rounded-[32px] border border-[#050849]/5 bg-white p-8 sm:p-10">
               <p className="text-lg sm:text-xl text-[#050849] leading-relaxed font-normal">
@@ -591,10 +570,18 @@ export default function AboutClient() {
                 transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                 className="clay-light hidden lg:block rounded-[28px] border border-[#050849]/5 bg-white p-6 shadow-sm"
               >
-                <div className="relative flex items-center justify-between">
-                  {/* Background connector line */}
+                <div className="relative flex items-start justify-between">
+                  {/* Background connector track line - centered exactly at top-6 (24px) to pass through the middle of the 48px (h-12) step boxes */}
                   <div 
-                    className="absolute top-1/2 left-8 right-8 -translate-y-1/2 h-[3px] bg-gradient-to-r from-blue-500/25 via-indigo-500/30 to-emerald-500/30 z-0" 
+                    className="absolute top-6 left-6 right-6 -translate-y-1/2 h-[3px] bg-[#050849]/10 z-0 rounded-full" 
+                    aria-hidden="true" 
+                  />
+                  {/* Active progress indicator line */}
+                  <div 
+                    className="absolute top-6 left-6 -translate-y-1/2 h-[3px] bg-gradient-to-r from-blue-600 via-indigo-600 to-[#B7F36B] z-0 rounded-full transition-all duration-500 ease-out" 
+                    style={{ 
+                      width: `calc(${activeStageIndex / 5} * (100% - 48px))` 
+                    }}
                     aria-hidden="true" 
                   />
 
@@ -807,12 +794,7 @@ export default function AboutClient() {
               Strategy with Purpose. Execution with Precision.
             </h2>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-[#050849]">
-              <span className="text-[#4c658a] uppercase tracking-wider text-[11px] self-center mr-1">(Target:</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Technology Consulting & Advisory</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Enterprise Technology Services</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Digital Transformation Company)</span>
-            </div>
+
 
             <div className="clay-light mt-8 rounded-[32px] border border-[#050849]/5 bg-white p-8 sm:p-10">
               <p className="text-lg sm:text-xl text-[#050849] leading-relaxed font-normal">
@@ -898,12 +880,7 @@ export default function AboutClient() {
               Building High-Performance, Scalable Technology Systems
             </h2>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-[#050849]">
-              <span className="text-[#4c658a] uppercase tracking-wider text-[11px] self-center mr-1">(Target:</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Network Solutions Company</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Cybersecurity Services Company</span>
-              <span className="clay-badge-light bg-white px-3.5 py-1.5 border border-[#050849]/5">Cloud & DevOps Services)</span>
-            </div>
+
           </motion.div>
 
           {/* 6 CAPABILITIES SYMMETRICAL 3x2 GRID */}
@@ -965,12 +942,7 @@ export default function AboutClient() {
               Built for Enterprises That Demand Reliability and Scale
             </h2>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-white/70">
-              <span className="text-white/40 uppercase tracking-wider text-[11px] self-center mr-1">(Target:</span>
-              <span className="clay-badge bg-white/5 px-3.5 py-1.5 border border-white/10">AI Automation Services</span>
-              <span className="clay-badge bg-white/5 px-3.5 py-1.5 border border-white/10">Software Engineering Company</span>
-              <span className="clay-badge bg-white/5 px-3.5 py-1.5 border border-white/10">Professional IT Services)</span>
-            </div>
+
 
             <p className="mt-6 text-lg text-white/75 leading-relaxed font-normal">
               Enterprises choose WeRoute because we take ownership of outcomes, not just individual projects. We think in architecture, not vendor catalogs, and we consider networking, cloud, cybersecurity, AI, software, and operations together rather than as separate technology silos.
