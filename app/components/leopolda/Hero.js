@@ -2,24 +2,24 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
-  TrendingUp, 
-  ShieldCheck, 
-  Zap, 
-  Activity, 
+import {
+  ArrowRight,
+  TrendingUp,
+  ShieldCheck,
+  Zap,
+  Activity,
   Cloud
 } from "lucide-react";
 import Link from "next/link";
 
 export default function HeroLeopolda() {
   return (
-    <section className="relative w-full min-h-screen lg:h-screen lg:max-h-[960px] flex flex-col justify-between overflow-hidden bg-[#241758] text-white pt-24 lg:pt-[90px] pb-5 px-6 sm:px-8 lg:px-12 selection:bg-[#B7F36B] selection:text-[#080357]">
-      
+    <section className="relative w-full min-h-screen lg:h-screen lg:max-h-[960px] flex flex-col justify-between overflow-hidden bg-[#241758] text-white pt-24 lg:pt-[92px] pb-5 px-6 sm:px-8 lg:px-12 selection:bg-[#B7F36B] selection:text-[#080357]">
+
       {/* ─── Ambient Background Glows & Gradients ─── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Deep rich indigo/purple backdrop radial gradient */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             background: "radial-gradient(ellipse 90% 70% at 75% 40%, #3d238c 0%, #241758 55%, #180f3d 100%)"
@@ -35,13 +35,13 @@ export default function HeroLeopolda() {
       <div className="relative z-10 w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-center">
 
         {/* ─── Top News / Announcement Pill ─── */}
-        <div className="flex justify-center lg:justify-start mb-4 lg:mb-6">
+        <div className="flex justify-center lg:justify-start mb-3 lg:mb-4">
           <motion.div
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <Link 
+            <Link
               href="#contact"
               className="group inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-xl border border-white/20 transition-all duration-300 shadow-md shadow-black/10"
             >
@@ -183,11 +183,10 @@ export default function HeroLeopolda() {
                   ].map((bar, i) => (
                     <div key={i} className="flex-1 flex flex-col items-center gap-1 h-full justify-end">
                       <div
-                        className={`w-full rounded-t transition-all ${
-                          bar.active 
-                            ? "bg-gradient-to-t from-blue-500 to-[#B7F36B] shadow-[0_0_15px_rgba(183,243,107,0.35)]" 
-                            : "bg-white/20"
-                        }`}
+                        className={`w-full rounded-t transition-all ${bar.active
+                          ? "bg-gradient-to-t from-blue-500 to-[#B7F36B] shadow-[0_0_15px_rgba(183,243,107,0.35)]"
+                          : "bg-white/20"
+                          }`}
                         style={{ height: bar.h }}
                       />
                       <span className="text-[8px] text-white/40 font-mono">{bar.label}</span>
@@ -279,14 +278,14 @@ export default function HeroLeopolda() {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4 }}
-        className="relative z-10 w-full max-w-[1440px] mx-auto mt-3 lg:mt-5 pt-3 border-t border-white/10 -translate-y-[2px]"
+        className="relative z-10 w-full max-w-[1440px] mx-auto mt-4 lg:mt-6 pt-3.5 border-t border-white/10"
       >
-        <p className="text-center text-[11px] sm:text-xs font-semibold text-white/70 mb-2.5 tracking-wide">
+        <p className="text-center text-[11px] sm:text-xs font-medium text-white/50 mb-3 tracking-wide">
           Recognized and trusted by global leaders in enterprise infrastructure.
         </p>
 
         {/* Enterprise Logos Grid */}
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 opacity-70 hover:opacity-90 transition-opacity">
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 opacity-60 hover:opacity-80 transition-opacity">
           <span className="font-extrabold tracking-widest text-xs sm:text-sm text-white font-mono">
             AWS PARTNER
           </span>

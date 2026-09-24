@@ -7,7 +7,6 @@ const proofCards = [
   {
     icon: FolderCheck,
     title: "Enterprise Projects Delivered",
-    highlight: "40+ Projects",
     desc: "40+ enterprise technology projects delivered across networking, cloud, security, software, and automation.",
     tags: ["Networking", "Cloud", "Security", "Automation"],
     image: "/images/enterprise-projects-delivered.png"
@@ -15,7 +14,6 @@ const proofCards = [
   {
     icon: Factory,
     title: "Industries Served",
-    highlight: "8 Sectors",
     desc: "Financial services, healthcare, manufacturing, telecommunications, retail, logistics, energy, and technology.",
     tags: ["Financial Services", "Healthcare", "Manufacturing", "Telecom", "Retail", "Logistics", "Energy"],
     image: "/images/industries-served.png"
@@ -23,7 +21,6 @@ const proofCards = [
   {
     icon: Layers,
     title: "Technology Domains",
-    highlight: "Full Lifecycle",
     desc: "Networking, cloud, cybersecurity, AI and automation, software engineering, and managed operations.",
     tags: ["Networking", "Cloud", "Cybersecurity", "AI & Automation", "Software", "Managed Ops"],
     image: "/images/technology-domains.png"
@@ -97,13 +94,6 @@ export default function Trust() {
                       <div className="clay-badge-light flex h-11 w-11 items-center justify-center bg-[#080357] text-[#B7F36B] shadow-md backdrop-blur-md">
                         <Icon size={20} />
                       </div>
-                    </div>
-
-                    {/* Floating Highlight Pill */}
-                    <div className="absolute top-3 right-3">
-                      <span className="clay-badge-light px-3 py-1 text-xs font-mono font-bold tracking-wider text-[#080357] bg-white/95 backdrop-blur-md border border-[#052440]/10 shadow-sm">
-                        {card.highlight}
-                      </span>
                     </div>
                   </div>
 

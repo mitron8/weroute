@@ -14,7 +14,7 @@ export default function InternalLinks() {
 
   return (
     <section className="py-12 bg-white border-t border-gray-100">
-      <div className="mx-auto max-w-[1500px] px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-8">
           <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">Internal Links:</span>
           {links.map((link, index) => (

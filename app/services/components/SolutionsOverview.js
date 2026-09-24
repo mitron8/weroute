@@ -116,7 +116,7 @@ export default function SolutionsOverview() {
 
   return (
     <section id="solutions" className="py-24 bg-white relative overflow-hidden">
-      <div className="mx-auto max-w-[1500px] px-8 relative z-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-20">

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function ServicesPhilosophy() {
   return (
     <section className="py-24 bg-[#f7f9fc] relative overflow-hidden">
-      <div className="mx-auto max-w-[1500px] px-8 relative z-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         
         <div className="max-w-4xl mx-auto text-center">
            <motion.div
@@ -15,11 +15,15 @@ export default function ServicesPhilosophy() {
               transition={{ duration: 0.6 }}
               className="mb-8"
            >
-              <span className="inline-block px-4 py-1.5 border border-[#080357]/10 bg-[#080357]/5 text-[#080357] text-xs font-bold uppercase tracking-wider rounded-full mb-6">
-                Page Philosophy
+              <span className="clay-badge-light mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#050849]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#080357]">
+                <span className="h-2 w-2 rounded-full bg-[#10b981] animate-pulse" />
+                Delivery Philosophy
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6">
-                 How WeRoute Delivers Services
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#080357] mb-6 tracking-tight">
+                 How WeRoute Delivers{" "}
+                 <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+                   Services
+                 </span>
               </h2>
            </motion.div>
 
@@ -42,14 +46,15 @@ export default function ServicesPhilosophy() {
            </motion.div>
 
            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-12 clay-light bg-white p-8 border border-[#050849]/5"
+              className="mt-12 clay-light bg-white p-8 border border-[#050849]/5 max-w-2xl mx-auto flex items-center justify-center gap-3.5"
            >
-              <h3 className="text-2xl font-bold text-[#080357]">
-                 One partner, every stage, no handoffs.
+              <span className="h-2.5 w-2.5 rounded-full bg-[#B7F36B] shadow-[0_0_8px_#B7F36B] shrink-0" />
+              <h3 className="text-xl md:text-2xl font-extrabold text-[#080357] tracking-tight">
+                 One partner, every stage, zero handoffs.
               </h3>
            </motion.div>
         </div>

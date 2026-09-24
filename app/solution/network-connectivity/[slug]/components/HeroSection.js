@@ -35,8 +35,8 @@ export default function HeroSection({ data }) {
       {/* Subtle ambient glow behind the text using primary color */}
       <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[600px] h-[600px] bg-[#080357] opacity-[0.03] blur-[100px] rounded-full pointer-events-none" />
 
-      {/* Match Navbar container: max-w-[1500px] px-8 */}
-      <div className="mx-auto max-w-[1500px] px-8 relative z-10">
+      {/* Match standard container: max-w-7xl px-6 lg:px-8 */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Text Content (Left Side) */}

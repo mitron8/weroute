@@ -32,7 +32,7 @@ export default function OurApproach() {
       {/* Subtle background blob */}
       <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-blue-100/40 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="mx-auto max-w-[1500px] px-8 relative z-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

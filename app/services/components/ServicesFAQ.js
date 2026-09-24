@@ -63,7 +63,7 @@ export default function ServicesFAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <div className="relative z-10 mx-auto max-w-4xl px-6">
+      <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8">
         <div className="text-center mb-14 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -71,7 +71,8 @@ export default function ServicesFAQ() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="clay-badge-light inline-block border border-[#050849]/5 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#050849]">
+            <span className="clay-badge-light mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#050849]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#080357]">
+              <span className="h-2 w-2 rounded-full bg-[#10b981] animate-pulse" />
               Support & Clarity
             </span>
           </motion.div>
@@ -81,10 +82,10 @@ export default function ServicesFAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-3xl font-normal leading-tight text-[#050849] md:text-4xl lg:text-[44px] tracking-tight"
+            className="mt-6 text-3xl font-extrabold leading-tight text-[#080357] md:text-4xl lg:text-[44px] tracking-tight"
           >
             Frequently Asked{" "}
-            <span className="bg-gradient-to-r from-[#050849] to-[#4c658a] bg-clip-text text-transparent font-medium">
+            <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
               Questions
             </span>
           </motion.h2>
