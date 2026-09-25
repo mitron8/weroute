@@ -7,6 +7,9 @@ import {
   ChevronRight, 
   CheckCircle2, 
   ChevronDown, 
+  ChevronUp,
+  Sparkles,
+  Search,
   Workflow, 
   ArrowRight, 
   ArrowDown, 
@@ -504,11 +507,20 @@ function ProcessSection({ section }) {
 }
 
 // ==========================================
-// 3.5 Checklist Section (For items with no descriptions)
+// 3.4 Capabilities Section (Previous Points Design with "Know More" Toggle)
 // ==========================================
-function ChecklistSection({ section }) {
+function CapabilitiesSection({ section }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const sectionRef = useRef(null);
+
+  const rawItems = section.items || [];
+  const PREVIEW_LIMIT = 8;
+  const hasMore = rawItems.length > PREVIEW_LIMIT;
+  const visibleItems = isExpanded ? rawItems : rawItems.slice(0, PREVIEW_LIMIT);
+  const remainingCount = rawItems.length - PREVIEW_LIMIT;
+
   return (
-    <div className="w-full">
+    <div ref={sectionRef} id={section.id || "capabilities"} className="w-full scroll-mt-24">
       <div className="max-w-3xl mb-12">
         {section.title && (
           <>
@@ -543,13 +555,143 @@ function ChecklistSection({ section }) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-        {section.items.map((item, idx) => (
+        {visibleItems.map((item, idx) => {
+          const title = (item.title || item.description || "").replace(/\(Target:.*?\)/, "").trim();
+          const desc = item.title && item.description && item.description.trim() !== item.title.trim() ? item.description.trim() : "";
+
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.3, delay: (idx % 8) * 0.04 }}
+              className="flex items-start gap-4 group"
+            >
+              <div className="mt-1 w-6 h-6 rounded-full bg-[#B7F36B]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#B7F36B] transition-colors">
+                <CheckCircle2 size={14} className="text-[#080357]" />
+              </div>
+              <div className="flex-grow">
+                <p className="text-gray-700 leading-relaxed font-medium group-hover:text-[#080357] transition-colors">
+                  {title}
+                </p>
+                {desc && (
+                  <p className="text-gray-500 text-sm mt-1 leading-relaxed font-light">
+                    {desc}
+                  </p>
+                )}
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {hasMore && !isExpanded && (
+        <div className="mt-10 flex flex-col items-center justify-center gap-2">
+          <button
+            onClick={() => setIsExpanded(true)}
+            type="button"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-[#080357] px-7 py-3.5 text-xs md:text-sm font-bold uppercase tracking-wider text-white shadow-lg hover:bg-[#052440] hover:scale-105 active:scale-95 transition-all"
+          >
+            <span>Know More ({remainingCount} more)</span>
+            <ChevronDown size={16} className="text-[#B7F36B] transition-transform group-hover:translate-y-0.5" />
+          </button>
+          <span className="text-xs text-gray-500 font-medium">
+            Showing {PREVIEW_LIMIT} of {rawItems.length} capabilities
+          </span>
+        </div>
+      )}
+
+      {isExpanded && rawItems.length > PREVIEW_LIMIT && (
+        <div className="mt-10 flex flex-col items-center justify-center gap-2">
+          <button
+            onClick={() => {
+              setIsExpanded(false);
+              sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            type="button"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-white border border-[#080357]/20 px-7 py-3.5 text-xs md:text-sm font-bold uppercase tracking-wider text-[#080357] shadow-sm hover:bg-[#f7f9fc] hover:border-[#080357]/40 active:scale-95 transition-all"
+          >
+            <span>Show Less</span>
+            <ChevronUp size={16} className="transition-transform group-hover:-translate-y-0.5" />
+          </button>
+          <span className="text-xs text-gray-500 font-medium">
+            All {rawItems.length} capabilities displayed
+          </span>
+        </div>
+      )}
+
+      {(section.outro || section.footer) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-12 max-w-4xl"
+        >
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light">
+            {section.outro || section.footer}
+          </p>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
+// ==========================================
+// 3.5 Checklist Section (For items with no descriptions)
+// ==========================================
+function ChecklistSection({ section }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const sectionRef = useRef(null);
+  const items = section.items || [];
+  const PREVIEW_LIMIT = 10;
+  const hasMore = items.length > PREVIEW_LIMIT;
+  const visibleItems = isExpanded ? items : items.slice(0, PREVIEW_LIMIT);
+
+  return (
+    <div ref={sectionRef} className="w-full scroll-mt-24">
+      <div className="max-w-3xl mb-12">
+        {section.title && (
+          <>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-extrabold text-[#080357] mb-6"
+            >
+              {section.title}
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: "3rem" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="h-1.5 bg-[#B7F36B] mb-8 rounded-full" 
+            />
+          </>
+        )}
+        {section.intro && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-xl text-gray-600 leading-relaxed font-light"
+          >
+            {section.intro}
+          </motion.p>
+        )}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+        {visibleItems.map((item, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4, delay: idx * 0.05 }}
+            transition={{ duration: 0.3, delay: (idx % 10) * 0.04 }}
             className="flex items-start gap-4 group"
           >
             <div className="mt-1 w-6 h-6 rounded-full bg-[#B7F36B]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#B7F36B] transition-colors">
@@ -561,6 +703,36 @@ function ChecklistSection({ section }) {
           </motion.div>
         ))}
       </div>
+
+      {hasMore && !isExpanded && (
+        <div className="mt-10 flex flex-col items-center justify-center gap-2">
+          <button
+            onClick={() => setIsExpanded(true)}
+            type="button"
+            className="inline-flex items-center gap-2.5 rounded-full bg-[#080357] px-7 py-3 text-xs md:text-sm font-bold uppercase tracking-wider text-white shadow-lg hover:bg-[#052440] hover:scale-105 transition-all"
+          >
+            <span>Learn More ({items.length - PREVIEW_LIMIT} more)</span>
+            <ChevronDown size={16} className="text-[#B7F36B]" />
+          </button>
+        </div>
+      )}
+
+      {isExpanded && items.length > PREVIEW_LIMIT && (
+        <div className="mt-10 flex flex-col items-center justify-center gap-2">
+          <button
+            onClick={() => {
+              setIsExpanded(false);
+              sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            type="button"
+            className="inline-flex items-center gap-2.5 rounded-full bg-white border border-[#080357]/20 px-7 py-3 text-xs md:text-sm font-bold uppercase tracking-wider text-[#080357] shadow-sm hover:bg-[#f7f9fc] transition-all"
+          >
+            <span>Show Less</span>
+            <ChevronUp size={16} />
+          </button>
+        </div>
+      )}
+
       {(section.outro || section.footer) && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -1166,7 +1338,7 @@ function PortfolioSection({ section }) {
                                      <CheckCircle2 size={16} className="text-white" />
                                   </div>
                                   <h4 className="text-sm font-bold uppercase tracking-widest text-white">
-                                    {isRoles ? "Example Roles" : "Core Deliverables"}
+                                    {isRoles ? "Example Roles" : "Core Capabilities"}
                                   </h4>
                                </div>
                                <p className="text-white/80 font-light text-sm leading-relaxed">{capabilities}</p>
@@ -1409,6 +1581,7 @@ export default function ClientServicePage({ service, isNewLayout }) {
     const isProcess = (section.title || "").toLowerCase().includes("delivery approach") || (section.title || "").toLowerCase().includes("process") || (section.title || "").toLowerCase().includes("approach");
     const isPortfolio = (section.title || "").toLowerCase().includes("portfolio");
     const isIndustries = (section.title || "").toLowerCase().includes("industries");
+    const isCapabilities = (section.title || "").toLowerCase().includes("capabilit") || (section.id || "").toLowerCase().includes("capabilit");
     const isChecklist = section.items && section.items.length > 5 && section.items.every(item => !item.description || item.description.trim() === "");
     const isDeliverables = (section.title || "").toLowerCase().includes("deliverables");
     const isWhatAre = (section.title || "").toLowerCase().includes("what are");
@@ -1417,6 +1590,12 @@ export default function ClientServicePage({ service, isNewLayout }) {
     if (isDeliverables) {
       previousLayoutType = "deliverables";
       return <DeliverablesSection key={section.id} section={section} />;
+    }
+
+    // Dedicated Redesigned Capabilities Section with "Know More" Toggle
+    if (isCapabilities) {
+      previousLayoutType = "capabilities";
+      return <CapabilitiesSection key={section.id} section={section} />;
     }
 
     if (isWhatAre || !section.items || section.items.length === 0) {
