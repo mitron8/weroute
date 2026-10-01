@@ -4,6 +4,10 @@ export const professionalData = {
     badge: "Professional Services",
     title: "Enterprise Professional Services & Technology Implementation",
     subtitle: "WeRoute delivers end-to-end professional services to design, build, deploy, migrate, and modernize enterprise technology architectures across infrastructure, cloud, cybersecurity, and modern networks.",
+    ctaText: "Talk to Our Engineers",
+    ctaHref: "#contact",
+    secondaryCtaText: "Explore Our Solutions",
+    secondaryCtaHref: "/solutions",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
     lottieUrl: "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
   },
@@ -41,6 +45,7 @@ export const professionalData = {
     {
       id: "section-2",
       title: "What Are Enterprise Professional Services?",
+      consoleTitle: "weroute-professional-services.manifest",
       targetKeywords: "(Target: Professional IT Services, Technology Deployment, Enterprise Engineering)",
       intro: "Enterprise Professional Services encompass hands-on design, engineering, deployment, migration, and modernization of complex IT environments. Unlike advisory consulting which provides direction, Professional Services carry out the hands-on engineering build: provisioning infrastructure, configuring networks, executing data and workload migrations, building automation pipelines, and integrating enterprise systems.",
       items: []

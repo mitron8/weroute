@@ -1,0 +1,233 @@
+"use client";
+
+import React, { useState } from "react";
+import { ArrowDown } from "lucide-react";
+
+const assessmentDomains = [
+  "Network",
+  "Cloud",
+  "Wireless",
+  "Identity",
+  "Firewall",
+  "Monitoring",
+  "Operational",
+];
+
+export default function NetworkSecurityAssessmentDiagram() {
+  const [hoveredIdx, setHoveredIdx] = useState(null);
+
+  // Y centers for 7 cards in 368px height:
+  // Card height = 44px, gap = 10px
+  // y = 22, 76, 130, 184, 238, 292, 346
+  const yTargets = [22, 76, 130, 184, 238, 292, 346];
+
+  return (
+    <div className="w-full py-6">
+      {/* ─── DESKTOP & TABLET DIAGRAM (md and up) ─── */}
+      <div className="hidden md:grid grid-cols-11 items-center max-w-5xl mx-auto px-4">
+        
+        {/* ─── LEFT: 7 Assessment Domains ─── */}
+        <div className="col-span-3 flex flex-col justify-between h-[368px] w-full">
+          {assessmentDomains.map((item, idx) => {
+            const isHovered = hoveredIdx === idx;
+            return (
+              <div
+                key={idx}
+                onMouseEnter={() => setHoveredIdx(idx)}
+                onMouseLeave={() => setHoveredIdx(null)}
+                className={`flex items-center justify-center h-11 px-4 rounded-xl border transition-all duration-200 cursor-pointer select-none ${
+                  isHovered
+                    ? "border-[#080357] shadow-md -translate-y-0.5 bg-white text-[#080357]"
+                    : "border-[#94a3b8]/50 shadow-xs bg-[#fcfdfe] text-[#1e293b] hover:border-[#080357]/40"
+                }`}
+                style={{
+                  backgroundImage: "radial-gradient(#cbd5e1 0.8px, transparent 0.8px)",
+                  backgroundSize: "5px 5px",
+                }}
+              >
+                <span className="text-sm font-semibold tracking-normal text-center">
+                  {item}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ─── CONNECTOR 1: 7 Converging Dashed Lines ─── */}
+        <div className="col-span-2 h-[368px] flex items-center justify-center relative px-2">
+          <svg
+            className="w-full h-full overflow-visible"
+            preserveAspectRatio="none"
+            viewBox="0 0 100 368"
+          >
+            {assessmentDomains.map((_, idx) => {
+              const isHovered = hoveredIdx === idx;
+              const isAnyHovered = hoveredIdx !== null;
+              const startY = yTargets[idx];
+
+              return (
+                <g key={idx}>
+                  {/* Subtle glow on hover */}
+                  {isHovered && (
+                    <path
+                      d={`M 0 ${startY} L 100 184`}
+                      stroke="#080357"
+                      strokeWidth="3.5"
+                      strokeOpacity="0.2"
+                      fill="none"
+                    />
+                  )}
+                  {/* Dashed connector line */}
+                  <path
+                    d={`M 0 ${startY} L 100 184`}
+                    stroke={isHovered ? "#080357" : isAnyHovered ? "#cbd5e1" : "#94a3b8"}
+                    strokeWidth={isHovered ? "2" : "1.5"}
+                    strokeDasharray="4 4"
+                    fill="none"
+                    className="transition-colors duration-200"
+                  />
+                  {/* Small start anchor on right edge of domain card */}
+                  <circle
+                    cx="0"
+                    cy={startY}
+                    r={isHovered ? "3" : "2"}
+                    fill={isHovered ? "#080357" : "#94a3b8"}
+                    className="transition-all duration-200"
+                  />
+                  {/* Converging dot on center card edge */}
+                  <circle
+                    cx="100"
+                    cy="184"
+                    r="2"
+                    fill="#0d1d3c"
+                  />
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+
+        {/* ─── CENTER: Consolidated Assessment View ─── */}
+        <div className="col-span-3 flex items-center justify-center h-[368px] w-full">
+          <div
+            className="w-full h-[112px] rounded-2xl bg-[#0d1d3c] border border-[#1e2d4e] shadow-lg flex items-center justify-center text-center p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-[#2d4270] relative overflow-hidden"
+            style={{
+              backgroundImage: "radial-gradient(#1c315e 1px, transparent 1px)",
+              backgroundSize: "6px 6px",
+            }}
+          >
+            <div className="relative z-10">
+              <h4 className="text-base lg:text-lg font-bold text-white tracking-wide leading-tight">
+                Consolidated<br />Assessment View
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── CONNECTOR 2: Straight Arrow pointing right ─── */}
+        <div className="col-span-1 h-[368px] flex items-center justify-center relative px-1">
+          <svg
+            className="w-full h-full overflow-visible"
+            preserveAspectRatio="none"
+            viewBox="0 0 100 368"
+          >
+            <defs>
+              <marker
+                id="arrowhead-assessments"
+                markerWidth="8"
+                markerHeight="8"
+                refX="7"
+                refY="3.5"
+                orient="auto"
+              >
+                <polygon points="0 0, 8 3.5, 0 7" fill="#556987" />
+              </marker>
+            </defs>
+            <line
+              x1="0"
+              y1="184"
+              x2="90"
+              y2="184"
+              stroke="#556987"
+              strokeWidth="1.75"
+              markerEnd="url(#arrowhead-assessments)"
+            />
+          </svg>
+        </div>
+
+        {/* ─── RIGHT: Prioritized Findings ─── */}
+        <div className="col-span-2 flex items-center justify-center h-[368px] w-full">
+          <div
+            className="w-full h-[112px] rounded-2xl border border-[#94a3b8]/50 shadow-xs bg-[#fcfdfe] flex items-center justify-center text-center p-4 transition-all duration-300 hover:border-[#080357]/40 hover:shadow-md hover:-translate-y-0.5"
+            style={{
+              backgroundImage: "radial-gradient(#cbd5e1 0.8px, transparent 0.8px)",
+              backgroundSize: "5px 5px",
+            }}
+          >
+            <h4 className="text-base font-semibold text-[#1e293b] tracking-wide leading-tight">
+              Prioritized<br />Findings
+            </h4>
+          </div>
+        </div>
+
+      </div>
+
+      {/* ─── MOBILE RESPONSIVE DIAGRAM (screens under md) ─── */}
+      <div className="flex md:hidden flex-col items-center max-w-sm mx-auto px-4">
+        {/* Top: 7 Domain Chips */}
+        <div className="w-full grid grid-cols-2 gap-2">
+          {assessmentDomains.map((item, idx) => (
+            <div
+              key={idx}
+              className={`flex items-center justify-center h-10 px-3 rounded-xl border border-[#94a3b8]/50 shadow-xs bg-[#fcfdfe] text-[#1e293b] ${
+                idx === assessmentDomains.length - 1 ? "col-span-2 max-w-[160px] mx-auto w-full" : ""
+              }`}
+              style={{
+                backgroundImage: "radial-gradient(#cbd5e1 0.8px, transparent 0.8px)",
+                backgroundSize: "5px 5px",
+              }}
+            >
+              <span className="text-xs font-semibold text-center">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Arrow Down 1 */}
+        <div className="flex justify-center text-[#7e92ac] my-3">
+          <ArrowDown size={20} className="animate-bounce" />
+        </div>
+
+        {/* Center: Consolidated Assessment View */}
+        <div
+          className="w-full max-w-[240px] h-[80px] rounded-2xl bg-[#0d1d3c] border border-[#1e2d4e] shadow-md flex items-center justify-center text-center p-3 relative overflow-hidden"
+          style={{
+            backgroundImage: "radial-gradient(#1c315e 1px, transparent 1px)",
+            backgroundSize: "6px 6px",
+          }}
+        >
+          <h4 className="text-sm font-bold text-white tracking-wide leading-tight">
+            Consolidated<br />Assessment View
+          </h4>
+        </div>
+
+        {/* Arrow Down 2 */}
+        <div className="flex justify-center text-[#7e92ac] my-3">
+          <ArrowDown size={20} className="animate-bounce" />
+        </div>
+
+        {/* Bottom: Prioritized Findings */}
+        <div
+          className="w-full max-w-[200px] h-[70px] rounded-2xl border border-[#94a3b8]/50 shadow-xs bg-[#fcfdfe] flex items-center justify-center text-center p-3"
+          style={{
+            backgroundImage: "radial-gradient(#cbd5e1 0.8px, transparent 0.8px)",
+            backgroundSize: "5px 5px",
+          }}
+        >
+          <h4 className="text-sm font-semibold text-[#1e293b] leading-tight">
+            Prioritized Findings
+          </h4>
+        </div>
+      </div>
+    </div>
+  );
+}

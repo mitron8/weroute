@@ -4,7 +4,7 @@ export const consultingData = {
     badge: "Consulting & Advisory Services",
     title: "Enterprise Technology Consulting & Advisory Services",
     subtitle: "WeRoute combines business context, architecture expertise, and vendor-agnostic advisory to help you assess your environment, define future-state direction, and prioritize transformation investment.",
-    ctaText: "Talk to Our Technology Consultants",
+    ctaText: "Talk to Our Consultants",
     ctaHref: "#contact",
     secondaryCtaText: "Explore Our Solutions",
     secondaryCtaHref: "/solutions",
@@ -45,6 +45,7 @@ export const consultingData = {
     {
       id: "section-2",
       title: "What Are Technology Consulting & Advisory Services?",
+      consoleTitle: "weroute-consulting-advisory.manifest",
       targetKeywords: "(Target: IT Consulting Services, Digital Transformation Consulting, Technology Consulting Services)",
       intro: "Technology Consulting & Advisory Services help organizations assess current-state environments, identify risks and opportunities, define future-state architectures, evaluate technology options, and build practical transformation roadmaps. Advisory focuses on strategy, assessment, architecture, evaluation, prioritization, governance, and roadmaps rather than direct implementation or ongoing operations. The goal is clearer decisions, not more technology.",
       items: []
@@ -423,7 +424,7 @@ export const consultingData = {
   cta: {
     title: "Turn Complexity into a Clear Technology Roadmap",
     description: "Talk to WeRoute about your technology environment and get clear, vendor-agnostic guidance on the right next step for your transformation.",
-    button: "Talk to Our Technology Consultants"
+    button: "Talk to Our Consultants"
   },
   seo: {
     h1: "Enterprise Technology Consulting & Advisory Services",

@@ -43,6 +43,19 @@ import CybersecurityStaffingArchitectureDiagram from "../components/Cybersecurit
 import CloudDevOpsStaffingArchitectureDiagram from "../components/CloudDevOpsStaffingArchitectureDiagram";
 import SoftwareStaffingArchitectureDiagram from "../components/SoftwareStaffingArchitectureDiagram";
 import AiStaffingArchitectureDiagram from "../components/AiStaffingArchitectureDiagram";
+import ConsultingAdvisoryDiagram from "../components/ConsultingAdvisoryDiagram";
+import NetworkSecurityAssessmentDiagram from "../components/NetworkSecurityAssessmentDiagram";
+import CloudReadinessAssessmentDiagram from "../components/CloudReadinessAssessmentDiagram";
+import AiAutomationAdvisoryDiagram from "../components/AiAutomationAdvisoryDiagram";
+import WeightedEvaluationFrameworkDiagram from "../components/WeightedEvaluationFrameworkDiagram";
+import ObservabilityPlatformDiagram from "../components/ObservabilityPlatformDiagram";
+import EnterpriseNetworkArchitectureDiagram from "../components/EnterpriseNetworkArchitectureDiagram";
+import CloudDevOpsLifecycleDiagram from "../components/CloudDevOpsLifecycleDiagram";
+import IacDeliveryLifecycleDiagram from "../components/IacDeliveryLifecycleDiagram";
+import SoftwareAiPlatformDiagram from "../components/SoftwareAiPlatformDiagram";
+import GovernedApiLayerDiagram from "../components/GovernedApiLayerDiagram";
+import GovernedMobilePlatformDiagram from "../components/GovernedMobilePlatformDiagram";
+import EnterpriseAiPlatformDiagram from "../components/EnterpriseAiPlatformDiagram";
 
 // Safe DotLottie wrapper to suppress AbortError on fast tab switching / unmounts
 const SafeDotLottie = ({ src, loop = true, autoplay = true, className = "", ...props }) => {
@@ -281,6 +294,130 @@ function CarouselSection({ section }) {
 }
 
 // ==========================================
+// 1.5 What We Deliver Section (Balanced, Proportionate Enterprise Delivery Grid)
+// ==========================================
+function WhatWeDeliverSection({ section }) {
+  if (!section || !section.items || section.items.length === 0) return null;
+
+  const total = section.items.length;
+
+  let gridColsClass = "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+  if (total === 4) {
+    gridColsClass = "grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-5xl";
+  } else if (total === 2) {
+    gridColsClass = "grid-cols-1 md:grid-cols-2 max-w-4xl";
+  } else if (total === 8) {
+    gridColsClass = "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl";
+  }
+
+  return (
+    <div id={section.id || "what-we-deliver"} className="w-full py-16 md:py-20 my-8">
+      {/* Section Header */}
+      <div className="max-w-3xl mb-12">
+        <span className="inline-flex items-center gap-2 rounded-full bg-[#f7f9fc] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#080357] mb-4 border border-[#080357]/5">
+          <CheckCircle2 size={13} className="text-[#080357]" /> What We Deliver
+        </span>
+        {section.title && (
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-black text-[#080357] tracking-tight mb-4"
+          >
+            {section.title}
+          </motion.h2>
+        )}
+        <motion.div 
+          initial={{ opacity: 0, width: 0 }}
+          whileInView={{ opacity: 1, width: "3.5rem" }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="h-1.5 bg-[#B7F36B] mb-6 rounded-full" 
+        />
+        {section.intro && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-base md:text-lg text-slate-600 leading-relaxed font-light"
+          >
+            {section.intro}
+          </motion.p>
+        )}
+      </div>
+
+      {/* Balanced Uniform Grid */}
+      <div className={`grid ${gridColsClass} gap-6 mx-auto`}>
+        {section.items.map((item, idx) => {
+          const cleanTitle = (item.title || "").replace(/\(Target:.*?\)/, "").trim();
+
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: (idx % 6) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
+              className="clay-light group bg-white border border-[#080357]/8 rounded-[1.75rem] p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:border-[#080357]/25 hover:shadow-[0_20px_40px_rgba(8,3,87,0.06)]"
+            >
+              {/* Subtle top-right ambient hover glow */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#B7F36B]/25 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              <div>
+                {/* Header row with step index and subtle badge */}
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#080357]/5 text-[#080357] border border-[#080357]/5 flex items-center justify-center font-black text-sm group-hover:bg-[#080357] group-hover:text-white transition-all duration-300">
+                    {(idx + 1).toString().padStart(2, "0")}
+                  </div>
+                  <div className="w-7 h-7 rounded-full bg-[#f7f9fc] border border-[#080357]/5 flex items-center justify-center text-slate-400 group-hover:text-emerald-600 group-hover:bg-emerald-50 transition-colors">
+                    <CheckCircle2 size={15} />
+                  </div>
+                </div>
+
+                {/* Deliverable Title */}
+                <h3 className="text-lg sm:text-xl font-bold text-[#080357] mb-3 group-hover:text-blue-950 transition-colors leading-snug">
+                  {cleanTitle}
+                </h3>
+
+                {/* Deliverable Description */}
+                <div className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed font-normal">
+                  {renderFormattedDescription(item.description)}
+                </div>
+              </div>
+
+              {/* Bottom Subtle Indicator Bar */}
+              <div className="mt-6 pt-4 border-t border-[#080357]/5 flex items-center justify-between">
+                <span className="text-[11px] font-semibold tracking-wider uppercase text-slate-400 group-hover:text-[#080357] transition-colors">
+                  Enterprise Deliverable
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#080357]/20 group-hover:bg-[#B7F36B] transition-colors" />
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Outro / Footer if exists */}
+      {(section.outro || section.footer) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-10 max-w-4xl"
+        >
+          <p className="text-base text-slate-600 leading-relaxed font-light">
+            {section.outro || section.footer}
+          </p>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
+// ==========================================
 // 2. Bento Grid Section (For 4-5 Items, or explicitly forced)
 // ==========================================
 function BentoGridSection({ section, theme = "light" }) {
@@ -288,7 +425,7 @@ function BentoGridSection({ section, theme = "light" }) {
 
   return (
     <div 
-      className={`relative ${isDarkTheme ? 'py-32 bg-[#080357] my-32 overflow-hidden' : 'w-full'}`}
+      className={`relative ${isDarkTheme ? 'py-20 md:py-24 bg-[#080357] my-20 overflow-hidden' : 'w-full'}`}
       style={isDarkTheme ? { width: '100vw', marginLeft: 'calc(50% - 50vw)' } : {}}
     >
       <div className={`mx-auto ${isDarkTheme ? 'max-w-7xl px-6' : 'w-full'}`}>
@@ -355,24 +492,24 @@ function BentoGridSection({ section, theme = "light" }) {
           return (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              initial={{ opacity: 0, y: 30, scale: 0.96 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
-              className={`group ${spanClass} min-h-[280px] rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-center relative overflow-hidden cursor-pointer transition-all duration-300 ${
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
+              className={`group ${spanClass} min-h-[200px] rounded-[1.75rem] p-6 sm:p-8 flex flex-col justify-center relative overflow-hidden cursor-pointer transition-all duration-300 ${
                 isHighlight ? "bg-[#080357] text-white clay-dark border border-white/5 shadow-xl hover:border-[#B7F36B]/40" : "bg-white clay-light border border-[#080357]/5 hover:shadow-xl hover:border-[#B7F36B]/50"
               }`}
             >
-              <div className={`absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl -z-10 transition-all duration-300 ${isHighlight ? 'bg-[#B7F36B]/5 group-hover:bg-[#B7F36B]/15' : 'bg-[#B7F36B]/5 group-hover:bg-[#B7F36B]/20'}`} />
-              <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center flex-shrink-0 transition-colors ${isHighlight ? 'bg-white/10 text-[#B7F36B] group-hover:bg-[#B7F36B]/20' : 'bg-[#f7f9fc] text-[#080357] clay-badge-light group-hover:bg-[#B7F36B]/20 group-hover:text-[#080357]'}`}>
-                 <CheckCircle2 size={24} />
+              <div className={`absolute top-0 right-0 w-36 h-36 rounded-full blur-3xl -z-10 transition-all duration-300 ${isHighlight ? 'bg-[#B7F36B]/5 group-hover:bg-[#B7F36B]/15' : 'bg-[#B7F36B]/5 group-hover:bg-[#B7F36B]/20'}`} />
+              <div className={`w-10 h-10 rounded-xl mb-4 flex items-center justify-center flex-shrink-0 transition-colors ${isHighlight ? 'bg-white/10 text-[#B7F36B] group-hover:bg-[#B7F36B]/20' : 'bg-[#f7f9fc] text-[#080357] clay-badge-light group-hover:bg-[#B7F36B]/20 group-hover:text-[#080357]'}`}>
+                 <CheckCircle2 size={20} />
               </div>
               <div>
-                <h3 className={`text-2xl font-bold mb-4 transition-colors ${isHighlight ? "text-white" : "text-[#080357] group-hover:text-[#052440]"}`}>
+                <h3 className={`text-xl font-bold mb-2.5 transition-colors ${isHighlight ? "text-white" : "text-[#080357] group-hover:text-[#052440]"}`}>
                   {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
                 </h3>
-                <div className={`${isHighlight ? "text-white/80" : "text-gray-600"} leading-relaxed font-light text-lg`}>
+                <div className={`${isHighlight ? "text-white/80" : "text-gray-600"} leading-relaxed font-light text-sm sm:text-base`}>
                   {renderFormattedDescription(item.description, isHighlight)}
                 </div>
               </div>
@@ -404,6 +541,60 @@ function BentoGridSection({ section, theme = "light" }) {
 // ==========================================
 function ProcessSection({ section }) {
   const total = section.items.length;
+  const scrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(total > 4);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+
+      // Determine active index based on scroll position
+      const card = scrollRef.current.querySelector(".process-card");
+      if (card) {
+        const cardWidth = card.clientWidth + 24;
+        const currentIdx = Math.round(scrollLeft / cardWidth);
+        setActiveIndex(Math.min(Math.max(0, currentIdx), total - 1));
+      }
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener("scroll", checkScroll, { passive: true });
+      window.addEventListener("resize", checkScroll);
+      return () => {
+        el.removeEventListener("scroll", checkScroll);
+        window.removeEventListener("resize", checkScroll);
+      };
+    }
+  }, [total]);
+
+  const scrollToIndex = (idx) => {
+    if (scrollRef.current) {
+      const cards = scrollRef.current.querySelectorAll(".process-card");
+      if (cards && cards[idx]) {
+        cards[idx].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+        setActiveIndex(idx);
+      }
+    }
+  };
+
+  const scrollByDirection = (direction) => {
+    if (scrollRef.current) {
+      const card = scrollRef.current.querySelector(".process-card");
+      const scrollAmount = card ? (card.clientWidth + 24) * 2 : 400;
+      scrollRef.current.scrollBy({
+        left: direction > 0 ? scrollAmount : -scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
     <div 
@@ -440,21 +631,36 @@ function ProcessSection({ section }) {
           </motion.p>
         </div>
 
-        {/* Step Progression Timeline Indicator - All items visible without horizontal scrollbar */}
+        {/* Step Progression Timeline Indicator - Clickable to scroll directly to any card */}
         {total > 1 && (
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-6xl mx-auto mb-16 p-4 sm:p-5 rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur-md">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-6xl mx-auto mb-14 p-4 sm:p-5 rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur-md">
             {section.items.map((item, idx) => {
               const cleanTitle = (item.title || "").replace(/^[0-9]+\.\s*/, "").replace(/\(Target:.*?\)/, "").trim();
+              const isSelected = activeIndex === idx;
               return (
                 <div key={idx} className="flex items-center gap-2 sm:gap-3 group">
-                  <div className="flex items-center gap-2.5 bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl group-hover:border-[#B7F36B]/60 group-hover:bg-white/10 transition-all duration-300">
-                    <span className="w-6 h-6 rounded-lg bg-[#B7F36B] text-[#080357] text-xs font-black flex items-center justify-center shadow-sm flex-shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => scrollToIndex(idx)}
+                    className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl transition-all duration-300 cursor-pointer ${
+                      isSelected
+                        ? "bg-[#B7F36B]/20 border border-[#B7F36B] shadow-md -translate-y-0.5"
+                        : "bg-white/5 border border-white/10 hover:border-[#B7F36B]/60 hover:bg-white/10"
+                    }`}
+                  >
+                    <span className={`w-6 h-6 rounded-lg text-xs font-black flex items-center justify-center shadow-sm flex-shrink-0 transition-colors ${
+                      isSelected
+                        ? "bg-[#B7F36B] text-[#080357]"
+                        : "bg-white/10 text-white"
+                    }`}>
                       {idx + 1}
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-white group-hover:text-[#B7F36B] transition-colors whitespace-nowrap">
+                    <span className={`text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap ${
+                      isSelected ? "text-[#B7F36B]" : "text-white group-hover:text-[#B7F36B]"
+                    }`}>
                       {cleanTitle}
                     </span>
-                  </div>
+                  </button>
                   {idx < total - 1 && (
                     <ArrowRight size={14} className="text-[#B7F36B]/50 hidden lg:inline-block flex-shrink-0" />
                   )}
@@ -464,29 +670,115 @@ function ProcessSection({ section }) {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {section.items.map((item, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="flex flex-col p-8 clay-dark bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/50 hover:-translate-y-2 transition-all duration-300 group rounded-[2.5rem] shadow-xl"
+        {/* ─── CAROUSEL / BALANCED 4-CARD CONTAINER ─── */}
+        {total <= 4 ? (
+          <div className={`grid grid-cols-1 md:grid-cols-2 ${total === 3 ? 'lg:grid-cols-3' : total === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-4'} gap-6 md:gap-8`}>
+            {section.items.map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="flex flex-col p-8 clay-dark bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/50 hover:-translate-y-2 transition-all duration-300 group rounded-[2.5rem] shadow-xl"
+              >
+                <div className="mb-6 w-14 h-14 rounded-2xl flex items-center justify-center bg-white/10 border border-white/10 text-[#B7F36B] font-black text-2xl flex-shrink-0 transform group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300 shadow-lg">
+                  {idx + 1}
+                </div>
+                
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#B7F36B] transition-colors">
+                  {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
+                </h3>
+                <div className="text-white/95 text-base leading-relaxed font-normal flex-grow">
+                   {renderFormattedDescription(item.description, true)}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="relative w-full">
+            {/* Carousel Controls Header */}
+            <div className="flex items-center justify-between mb-6 px-1">
+              <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#B7F36B] bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
+                Showing 4 Stages per view • Stage {activeIndex + 1} of {total}
+              </span>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <button
+                  type="button"
+                  onClick={() => scrollByDirection(-1)}
+                  disabled={!canScrollLeft}
+                  aria-label="Previous stage"
+                  className={`p-2.5 sm:p-3 rounded-full border transition-all duration-300 ${
+                    canScrollLeft
+                      ? "bg-white/10 border-white/20 text-white hover:bg-[#B7F36B] hover:text-[#080357] hover:scale-105 active:scale-95 shadow-md cursor-pointer"
+                      : "bg-white/5 border-white/5 text-white/30 cursor-not-allowed"
+                  }`}
+                >
+                  <ChevronLeft size={20} className="sm:w-5 sm:h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollByDirection(1)}
+                  disabled={!canScrollRight}
+                  aria-label="Next stage"
+                  className={`p-2.5 sm:p-3 rounded-full border transition-all duration-300 ${
+                    canScrollRight
+                      ? "bg-white/10 border-white/20 text-white hover:bg-[#B7F36B] hover:text-[#080357] hover:scale-105 active:scale-95 shadow-md cursor-pointer"
+                      : "bg-white/5 border-white/5 text-white/30 cursor-not-allowed"
+                  }`}
+                >
+                  <ChevronRight size={20} className="sm:w-5 sm:h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Carousel Track: Exactly 4 cards visible side-by-side on desktop */}
+            <div
+              ref={scrollRef}
+              className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 hide-scrollbar scroll-smooth"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
-              <div className="mb-6 w-14 h-14 rounded-2xl flex items-center justify-center bg-white/10 border border-white/10 text-[#B7F36B] font-black text-2xl flex-shrink-0 transform group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300 shadow-lg">
-                {idx + 1}
-              </div>
-              
-              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#B7F36B] transition-colors">
-                {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
-              </h3>
-              <div className="text-white/95 text-base leading-relaxed font-normal flex-grow">
-                 {renderFormattedDescription(item.description, true)}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              {section.items.map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.06 }}
+                  className="process-card snap-start shrink-0 flex-shrink-0 w-[85vw] sm:w-[320px] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex flex-col p-7 sm:p-8 clay-dark bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-[#B7F36B]/50 hover:-translate-y-2 transition-all duration-300 group rounded-[2.5rem] shadow-xl select-none"
+                >
+                  <div className="mb-6 w-14 h-14 rounded-2xl flex items-center justify-center bg-white/10 border border-white/10 text-[#B7F36B] font-black text-2xl flex-shrink-0 transform group-hover:scale-110 group-hover:bg-[#B7F36B] group-hover:text-[#080357] transition-all duration-300 shadow-lg">
+                    {idx + 1}
+                  </div>
+                  
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#B7F36B] transition-colors leading-tight">
+                    {(item.title || "").replace(/\(Target:.*?\)/, "").trim()}
+                  </h3>
+                  <div className="text-white/95 text-sm sm:text-base leading-relaxed font-normal flex-grow">
+                     {renderFormattedDescription(item.description, true)}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Pagination Progress Dots */}
+            <div className="flex justify-center items-center gap-2 mt-4">
+              {section.items.map((_, dotIdx) => (
+                <button
+                  key={dotIdx}
+                  type="button"
+                  onClick={() => scrollToIndex(dotIdx)}
+                  aria-label={`Go to stage ${dotIdx + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    activeIndex === dotIdx
+                      ? "w-8 bg-[#B7F36B]"
+                      : "w-2 bg-white/20 hover:bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
         {(section.outro || section.footer) && (
           <motion.div
@@ -996,7 +1288,7 @@ function StandardGridSection({ section }) {
 // ==========================================
 // 5. Redesigned What Are Section (Enterprise Architecture & Scope with Claymorphism)
 // ==========================================
-function WhatAreSection({ section }) {
+function WhatAreSection({ section, service }) {
   const defaultPillars = [
     { title: "SLA-Guaranteed", subtitle: "99.99% Uptime", icon: "shield", color: "blue" },
     { title: "24/7 Telemetry", subtitle: "Observability", icon: "activity", color: "emerald" },
@@ -1057,7 +1349,52 @@ function WhatAreSection({ section }) {
   const isCloudDevOpsStaffing = consoleTitle === "weroute-cloud-devops-talent.manifest";
   const isSoftwareStaffing = consoleTitle === "weroute-software-talent-mesh.manifest";
   const isAiStaffing = consoleTitle === "weroute-ai-talent-mesh.manifest";
-  const hasCustomDiagram = isStaffing || isNetworkStaffing || isCybersecurityStaffing || isCloudDevOpsStaffing || isSoftwareStaffing || isAiStaffing;
+  const isConsulting = 
+    consoleTitle === "weroute-consulting-advisory.manifest" || 
+    service?.id === "enterprise-technology-consulting-and-advisory" ||
+    (section?.title && section.title.toLowerCase().includes("technology consulting & advisory"));
+  const isItStrategy =
+    consoleTitle === "weroute-it-strategy-optimization.manifest" ||
+    service?.id === "it-strategy-and-optimization" ||
+    (section?.title && section.title.toLowerCase().includes("it strategy & optimization"));
+  const isNetworkSecurityAssessments =
+    consoleTitle === "weroute-network-security-assessments.manifest" ||
+    service?.id === "network-and-security-assessments" ||
+    (section?.title && section.title.toLowerCase().includes("network & security assessment"));
+  const isCloudReadiness =
+    consoleTitle === "weroute-cloud-readiness.manifest" ||
+    service?.id === "cloud-readiness-and-migration-strategy" ||
+    (section?.title && section.title.toLowerCase().includes("cloud readiness"));
+  const isAiAutomationAdvisory =
+    consoleTitle === "weroute-ai-automation-advisory.manifest" ||
+    service?.id === "ai-and-automation-advisory" ||
+    (section?.title && section.title.toLowerCase().includes("ai & automation advisory"));
+  const isProfessionalServices =
+    consoleTitle === "weroute-professional-services.manifest" ||
+    service?.id === "enterprise-professional-services" ||
+    (section?.title && section.title.toLowerCase().includes("enterprise professional services"));
+  const isNetworkIntegration =
+    consoleTitle === "weroute-network-integration.manifest" ||
+    service?.id === "network-integration-and-modernization" ||
+    (section?.title && section.title.toLowerCase().includes("network integration services"));
+  const isSoftwareAiDevelopment =
+    consoleTitle === "weroute-software-ai-mesh.manifest" ||
+    service?.id === "software-ai-development" ||
+    (section?.title && section.title.toLowerCase().includes("software & ai development"));
+  const isEnterpriseApiIntegration =
+    consoleTitle === "weroute-api-mesh.manifest" ||
+    service?.id === "enterprise-api-development-and-integration-services" ||
+    (section?.title && section.title.toLowerCase().includes("enterprise api & integration"));
+  const isMobileAppDevelopment =
+    consoleTitle === "weroute-mobile-platform.manifest" ||
+    service?.id === "mobile-application-development" ||
+    service?.id === "enterprise-mobile-application-development-services" ||
+    (section?.title && section.title.toLowerCase().includes("mobile application development"));
+  const isEnterpriseAiMlDevelopment =
+    consoleTitle === "weroute-ai-platform.manifest" ||
+    service?.id === "ai-ml-development-services" ||
+    (section?.title && section.title.toLowerCase().includes("ai & machine learning development"));
+  const hasCustomDiagram = isStaffing || isNetworkStaffing || isCybersecurityStaffing || isCloudDevOpsStaffing || isSoftwareStaffing || isAiStaffing || isConsulting || isItStrategy || isNetworkSecurityAssessments || isCloudReadiness || isAiAutomationAdvisory || isProfessionalServices || isNetworkIntegration || isSoftwareAiDevelopment || isEnterpriseApiIntegration || isMobileAppDevelopment || isEnterpriseAiMlDevelopment;
 
   return (
     <div className="w-full clay-light bg-white rounded-[3rem] p-8 sm:p-12 md:p-16 border border-[#080357]/5 overflow-hidden relative shadow-[0_20px_50px_rgba(8,3,87,0.04)]">
@@ -1095,9 +1432,40 @@ function WhatAreSection({ section }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="pt-8 border-t border-[#080357]/10 w-full hidden md:block"
+            className="pt-8 border-t border-[#080357]/10 w-full"
           >
-            {isAiStaffing ? (
+            {isEnterpriseAiMlDevelopment ? (
+              <EnterpriseAiPlatformDiagram />
+            ) : isMobileAppDevelopment ? (
+              <GovernedMobilePlatformDiagram />
+            ) : isEnterpriseApiIntegration ? (
+              <GovernedApiLayerDiagram />
+            ) : isSoftwareAiDevelopment ? (
+              <SoftwareAiPlatformDiagram />
+            ) : isNetworkIntegration ? (
+              <EnterpriseNetworkArchitectureDiagram />
+            ) : isProfessionalServices ? (
+              <ObservabilityPlatformDiagram />
+            ) : isAiAutomationAdvisory ? (
+              <AiAutomationAdvisoryDiagram />
+            ) : isCloudReadiness ? (
+              <CloudReadinessAssessmentDiagram />
+            ) : isNetworkSecurityAssessments ? (
+              <NetworkSecurityAssessmentDiagram />
+            ) : isItStrategy ? (
+              <ConsultingAdvisoryDiagram
+                rootTitle="Business Priorities"
+                items={[
+                  { id: "technology-assessment", label: "Technology Assessment" },
+                  { id: "rationalization", label: "Rationalization" },
+                  { id: "governance", label: "Governance" },
+                  { id: "investment-prioritization", label: "Investment Prioritization" },
+                  { id: "modernization-roadmap", label: "Modernization Roadmap" },
+                ]}
+              />
+            ) : isConsulting ? (
+              <ConsultingAdvisoryDiagram />
+            ) : isAiStaffing ? (
               <AiStaffingArchitectureDiagram />
             ) : isSoftwareStaffing ? (
               <SoftwareStaffingArchitectureDiagram />
@@ -1513,10 +1881,10 @@ function MagneticCTAButton({ children, href }) {
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       className="
         clay-light
-        relative inline-flex items-center justify-center gap-3
-        overflow-hidden rounded-full border border-[#080357]/5 bg-[#B7F36B] px-10 py-5
-        text-base font-bold tracking-tight text-[#080357] shadow-[0_10px_30px_rgba(183,243,107,0.3)]
-        transition-colors duration-300 hover:bg-[#f7f9fc]
+        relative inline-flex items-center justify-center gap-2.5
+        overflow-hidden rounded-full border border-[#080357]/5 bg-[#B7F36B] px-7 py-3.5
+        text-sm md:text-[15px] font-bold tracking-tight text-[#080357] shadow-[0_8px_25px_rgba(183,243,107,0.35)]
+        transition-colors duration-300 hover:bg-[#f7f9fc] active:scale-95
       "
     >
       <span className="relative z-10 flex items-center gap-2">
@@ -1563,16 +1931,6 @@ export default function ClientServicePage({ service, isNewLayout }) {
     );
   }
 
-  const getDiagramForService = (id) => {
-    switch (id) {
-      case 'managed-data-centre-services': return '/services%20digram/infra%20stack.jpg';
-      case 'managed-network-services': return '/services%20digram/network%20op.jpg';
-      case 'managed-cloud-hybrid-environment-services': return '/services%20digram/cloud%20op.jpg';
-      case 'managed-cybersecurity-soc-services': return '/services%20digram/managed%20soc.jpg';
-      default: return '/services%20digram/slc.jpg';
-    }
-  };
-
   // Prevent consecutive carousels to improve UX
   let previousLayoutType = null;
   const renderSection = (section, index, totalSections) => {
@@ -1600,7 +1958,7 @@ export default function ClientServicePage({ service, isNewLayout }) {
 
     if (isWhatAre || !section.items || section.items.length === 0) {
       previousLayoutType = "what-are";
-      return <WhatAreSection key={section.id} section={section} />;
+      return <WhatAreSection key={section.id} section={section} service={service} />;
     }
     
     if (isPortfolio) {
@@ -1620,36 +1978,54 @@ export default function ClientServicePage({ service, isNewLayout }) {
     
     // Explicit override for "What We Deliver"
     if (isDeliver) {
-      previousLayoutType = "bento";
-      return <BentoGridSection key={section.id} section={section} theme="dark" />;
+      previousLayoutType = "deliver";
+      const isTechSelection = service?.id === "technology-selection-and-roadmaps";
+      return (
+        <React.Fragment key={section.id}>
+          <WhatWeDeliverSection section={section} />
+          {isTechSelection && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full my-12"
+            >
+              <WeightedEvaluationFrameworkDiagram />
+            </motion.div>
+          )}
+        </React.Fragment>
+      );
     }
 
     if (isProcess) {
       previousLayoutType = "process";
-      const isDiagramSuppressed = 
-        service.id === 'software-ai-development' || 
-        service.id === 'enterprise-api-development-and-integration-services' ||
-        (service.id && service.id.includes('staffing'));
+      const isCloudDevOps = service?.id === "cloud-and-devops-implementation";
+      const isIacAutomation = service?.id === "infrastructure-automation-and-standardization";
       return (
         <React.Fragment key={section.id}>
           <ProcessSection section={section} />
-          {/* Diagram Placeholder - suppressed for software & staffing services */}
-          {!isDiagramSuppressed && (
-            <div className="flex justify-center mt-24">
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="w-fit relative overflow-hidden rounded-[2rem] clay-dark border border-[#050849]/10 shadow-xl p-4 sm:p-6 bg-[#080357]"
-              >
-                <img 
-                  src={getDiagramForService(service.id)}
-                  alt="Service Delivery Approach Diagram" 
-                  className="max-h-[400px] w-auto object-contain rounded-xl"
-                />
-              </motion.div>
-            </div>
+          {isCloudDevOps && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full my-12"
+            >
+              <CloudDevOpsLifecycleDiagram />
+            </motion.div>
+          )}
+          {isIacAutomation && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full my-12"
+            >
+              <IacDeliveryLifecycleDiagram />
+            </motion.div>
           )}
         </React.Fragment>
       );
@@ -1773,21 +2149,21 @@ export default function ClientServicePage({ service, isNewLayout }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-10 flex flex-wrap gap-4"
+              className="mt-8 flex flex-wrap items-center gap-3.5"
             >
               <Link
                 href={service.hero?.ctaHref || "#contact"}
-                className="group relative inline-flex items-center justify-center gap-4 rounded-full bg-[#080357] px-8 py-4 font-bold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-[#B7F36B] hover:text-[#080357] hover:shadow-[0_10px_40px_rgba(183,243,107,0.3)] hover:-translate-y-1 active:scale-95"
+                className="group relative inline-flex items-center justify-center gap-3 rounded-full bg-[#080357] px-6 py-3 text-sm md:text-[15px] font-semibold text-white transition-all duration-300 hover:bg-[#B7F36B] hover:text-[#080357] hover:shadow-[0_8px_25px_rgba(183,243,107,0.35)] hover:-translate-y-0.5 active:scale-95 shadow-md shadow-[#080357]/15"
               >
-                <span>{service.hero?.ctaText || "Get Started"}</span>
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#080357]/10">
-                  <ArrowRight size={16} strokeWidth={2.5} />
+                <span className="leading-snug">{service.hero?.ctaText || "Get Started"}</span>
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#080357]/15 flex-shrink-0">
+                  <ArrowRight size={14} strokeWidth={2.5} />
                 </div>
               </Link>
               {service.hero?.secondaryCtaText && (
                 <Link
                   href={service.hero?.secondaryCtaHref || "#section-5"}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#080357]/15 bg-white px-8 py-4 font-bold text-xs uppercase tracking-[0.15em] text-[#080357] hover:bg-[#f7f9fc] hover:border-[#080357]/30 transition-all duration-300 clay-badge-light shadow-sm"
+                  className="inline-flex items-center justify-center rounded-full border border-[#080357]/15 bg-white px-5 py-3 text-sm font-semibold text-[#080357] hover:bg-[#f7f9fc] hover:border-[#080357]/30 transition-all duration-300 clay-badge-light shadow-xs active:scale-95"
                 >
                   <span>{service.hero.secondaryCtaText}</span>
                 </Link>
@@ -1850,11 +2226,11 @@ export default function ClientServicePage({ service, isNewLayout }) {
                 <p className="text-xl md:text-2xl leading-relaxed text-gray-700 font-light mb-8">{service.geoStatement}</p>
                 <Link
                   href="/contact"
-                  className="group relative inline-flex items-center justify-center gap-4 rounded-full bg-[#080357] px-8 py-4 font-bold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-[#B7F36B] hover:text-[#080357] hover:shadow-[0_10px_40px_rgba(183,243,107,0.3)] hover:-translate-y-1 active:scale-95 shadow-xl shadow-[#080357]/20"
+                  className="group relative inline-flex items-center justify-center gap-3 rounded-full bg-[#080357] px-6 py-3 text-sm md:text-[15px] font-semibold text-white transition-all duration-300 hover:bg-[#B7F36B] hover:text-[#080357] hover:shadow-[0_8px_25px_rgba(183,243,107,0.35)] hover:-translate-y-0.5 active:scale-95 shadow-md shadow-[#080357]/15"
                 >
                   <span>Talk to an Expert</span>
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#080357]/10">
-                    <ArrowRight size={16} strokeWidth={2.5} />
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#080357]/15 flex-shrink-0">
+                    <ArrowRight size={14} strokeWidth={2.5} />
                   </div>
                 </Link>
               </motion.div>

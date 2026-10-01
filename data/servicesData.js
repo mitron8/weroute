@@ -2410,6 +2410,10 @@ export const servicesData = {
       "badge": "Enterprise Network Integration Services",
       "title": "Enterprise Network Integration Services",
       "subtitle": "WeRoute combines architecture-led planning, multi-vendor engineering, controlled migration, and comprehensive validation to deliver enterprise network environments built for performance, resilience, and long-term scale.",
+      "ctaText": "Talk to Our Engineers",
+      "ctaHref": "#contact",
+      "secondaryCtaText": "Explore Our Solutions",
+      "secondaryCtaHref": "/solutions",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
       "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
@@ -2446,6 +2450,7 @@ export const servicesData = {
       {
         "title": "What Are Network Integration Services?",
         "id": "section-2",
+        "consoleTitle": "weroute-network-integration.manifest",
         "intro": "Network Integration Services cover the design, implementation, connection, migration, and validation of network technologies across campuses, branches, data centres, cloud environments, remote users, and multi-vendor platforms.\n\nIntegration extends beyond device configuration to include architecture, security, routing, segmentation, resilience, migration planning, testing, and operational transition.",
         "items": []
       },
@@ -2827,6 +2832,10 @@ export const servicesData = {
       "title": "Cloud & DevOps Implementation Services",
       "badge": "Cloud & DevOps Implementation Services",
       "subtitle": "WeRoute combines cloud engineering, DevOps automation, security controls, and structured migration to help enterprises deliver applications faster and operate reliably.",
+      "ctaText": "Talk to Our Engineers",
+      "ctaHref": "#contact",
+      "secondaryCtaText": "Explore Our Solutions",
+      "secondaryCtaHref": "/solutions",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
       "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
@@ -3266,6 +3275,10 @@ export const servicesData = {
       "title": "Infrastructure as Code Services",
       "badge": "Infrastructure as Code Services",
       "subtitle": "WeRoute combines Terraform, Ansible, version control, and automation pipelines to turn manual infrastructure into reliable, repeatable, and fully governed engineering workflows.",
+      "ctaText": "Talk to Our Engineers",
+      "ctaHref": "#contact",
+      "secondaryCtaText": "Explore Our Solutions",
+      "secondaryCtaHref": "/solutions",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
       "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
@@ -4212,6 +4225,10 @@ export const servicesData = {
       "badge": "Consulting & Advisory",
       "title": "IT Strategy & Optimization Services",
       "subtitle": "WeRoute evaluates your complete technology landscape to reduce duplication, strengthen governance, and build a modernization roadmap that ties directly to business priorities and measurable value.",
+      "ctaText": "Talk to Our Consultants",
+      "ctaHref": "#contact",
+      "secondaryCtaText": "Explore Our Solutions",
+      "secondaryCtaHref": "/solutions",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
       "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
@@ -4247,6 +4264,7 @@ export const servicesData = {
       {
         "id": "section-2",
         "title": "What Are IT Strategy & Optimization Services?",
+        "consoleTitle": "weroute-it-strategy-optimization.manifest",
         "intro": "IT Strategy & Optimization Services assess your current technology environment, operating model, costs, risks, and maturity to define a business-aligned future-state direction. Engagements may include current-state assessments, technology portfolio reviews, operating model assessments, cost optimization, governance design, modernization planning, and investment prioritization. The goal is not to modernize everything, but to identify where change creates the greatest measurable value.",
         "items": [],
         "targetKeywords": "(Target: Enterprise Technology Strategy, Technology Strategy Consulting, IT Optimization Services)"
@@ -4719,6 +4737,10 @@ export const servicesData = {
       "badge": "Consulting & Advisory",
       "title": "Network & Security Assessment Services",
       "subtitle": "WeRoute evaluates network architecture, security controls, and operational performance to reveal real risk, then turns findings into a prioritized plan you can act on.",
+      "ctaText": "Talk to Our Consultants",
+      "ctaHref": "#contact",
+      "secondaryCtaText": "Explore Our Solutions",
+      "secondaryCtaHref": "/solutions",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
       "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
@@ -4754,6 +4776,7 @@ export const servicesData = {
       {
         "id": "section-2",
         "title": "What Are Network & Security Assessment Services?",
+        "consoleTitle": "weroute-network-security-assessments.manifest",
         "intro": "Network and Security Assessment Services, sometimes called Cybersecurity Assessment Services, evaluate your current environment across architecture, configuration, performance, capacity, resilience, access, segmentation, monitoring, and operational practices. A Network Security Assessment answers what is working, where risk exists, what is creating exposure, and what needs attention first. The result is not just a findings report. It is a prioritized remediation plan tied to business impact.",
         "items": [],
         "targetKeywords": "(Target: Network Security Assessment, Security Posture Assessment, Network Health Assessment, Cybersecurity Assessment Services)"
@@ -5238,6 +5261,10 @@ export const servicesData = {
       "badge": "Consulting & Advisory",
       "title": "Cloud Readiness & Migration Strategy Services",
       "subtitle": "WeRoute evaluates workloads, dependencies, security, governance, cost, architecture, and operational readiness to build a practical, risk-aware cloud adoption roadmap.",
+      "ctaText": "Talk to Our Consultants",
+      "ctaHref": "#contact",
+      "secondaryCtaText": "Explore Our Solutions",
+      "secondaryCtaHref": "/solutions",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
       "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
@@ -5273,6 +5300,7 @@ export const servicesData = {
       {
         "id": "section-2",
         "title": "What Is Cloud Readiness & Migration Strategy?",
+        "consoleTitle": "weroute-cloud-readiness.manifest",
         "intro": "Cloud Readiness & Migration Strategy evaluates whether an organization, its workloads, infrastructure, data, security controls, processes, and teams are prepared for cloud adoption. It determines what should migrate, what should remain on-premises, which cloud model fits, and what foundations are required. The goal is not moving everything to cloud, but placing each workload where it best supports value and cost.",
         "items": [],
         "targetKeywords": "(Target: Cloud Strategy Consulting, Cloud Adoption Strategy)"
@@ -5805,6 +5833,10 @@ export const servicesData = {
       "badge": "Consulting & Advisory",
       "title": "AI & Automation Advisory Services",
       "subtitle": "WeRoute helps organizations assess readiness, prioritize use cases, evaluate platforms, define governance, and create a practical roadmap from discovery to production.",
+      "ctaText": "Talk to Our Consultants",
+      "ctaHref": "#contact",
+      "secondaryCtaText": "Explore Our Solutions",
+      "secondaryCtaHref": "/solutions",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
       "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
@@ -5840,6 +5872,7 @@ export const servicesData = {
       {
         "id": "section-2",
         "title": "What Are AI & Automation Advisory Services?",
+        "consoleTitle": "weroute-ai-automation-advisory.manifest",
         "intro": "AI & Automation Advisory Services help organizations identify the most valuable AI opportunities, assess technical and organizational readiness, evaluate risks, establish governance, and define a roadmap for implementation and scale. Advisory spans generative AI, machine learning, intelligent automation, AI agents, conversational AI, and intelligent document processing. The objective is not AI everywhere, but AI where it creates measurable, sustainable value.",
         "items": [],
         "targetKeywords": "(Target: Intelligent Automation Consulting, Generative AI Consulting)"
@@ -6368,6 +6401,10 @@ export const servicesData = {
       "badge": "Consulting & Advisory",
       "title": "Technology Selection & Roadmap Services",
       "subtitle": "WeRoute combines requirements analysis, architecture assessment, vendor evaluation, commercial review, and risk analysis to support confident, defensible enterprise technology decisions.",
+      "ctaText": "Talk to Our Consultants",
+      "ctaHref": "#contact",
+      "secondaryCtaText": "Explore Our Solutions",
+      "secondaryCtaHref": "/solutions",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1170&auto=format&fit=crop",
       "lottieUrl": "https://lottie.host/3174ed14-45e4-40aa-aef3-aede3faaee50/qrt7xVyWOr.lottie"
     },
@@ -6938,6 +6975,7 @@ export const servicesData = {
       {
         "id": "section-2",
         "title": "What Are Technology Consulting & Advisory Services?",
+        "consoleTitle": "weroute-consulting-advisory.manifest",
         "intro": "Technology Consulting & Advisory Services help organizations assess current-state environments, identify risks and opportunities, define future-state architectures, evaluate technology options, and build practical transformation roadmaps. Advisory focuses on strategy, assessment, architecture, evaluation, prioritization, governance, and roadmaps rather than direct implementation or ongoing operations. The goal is clearer decisions, not more technology.",
         "items": [],
         "targetKeywords": "(Target: IT Consulting Services, Digital Transformation Consulting, Technology Consulting Services)"

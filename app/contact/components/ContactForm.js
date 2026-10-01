@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Send, User, Mail, MessageSquare, Building } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -14,56 +15,67 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 1500);
+    }, 1200);
   };
 
   if (submitted) {
     return (
-      <div className="clay-light bg-[#f7f9fc] border border-[#050849]/5 p-8 flex flex-col items-center justify-center text-center h-full min-h-[400px]">
-        <div className="w-16 h-16 bg-white clay-badge-light text-[#A7BF73] flex items-center justify-center mb-6">
-          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.97 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className="rounded-2xl bg-white border border-slate-200/80 p-8 sm:p-10 shadow-sm flex flex-col items-center justify-center text-center min-h-[380px]"
+      >
+        <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mb-5">
+          <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-[#080357] mb-2">Message Sent!</h3>
-        <p className="text-gray-600 mb-6">
-          Thank you for reaching out. Our team will get back to you shortly.
+        <h3 className="text-2xl font-bold text-[#080357] mb-2">Message Sent</h3>
+        <p className="text-slate-600 text-sm max-w-sm mb-6 leading-relaxed">
+          Thank you for reaching out. An engineer from our team will get back to you shortly.
         </p>
-        <button 
-          onClick={() => setSubmitted(false)}
-          className="text-[#080357] font-semibold hover:underline"
+        <button
+          onClick={() => {
+            setFormData({ name: '', email: '', company: '', message: '' });
+            setSubmitted(false);
+          }}
+          className="text-sm font-semibold text-[#080357] hover:underline cursor-pointer"
         >
           Send another message
         </button>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div className="clay-light bg-white border border-[#050849]/5 p-6 sm:p-8 relative overflow-hidden h-full">
-      {/* Decorative background blur */}
-      <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-100/50 rounded-full blur-3xl pointer-events-none" />
-      
-      <h3 className="text-2xl sm:text-3xl font-bold text-[#080357] mb-2 relative z-10">Get in Touch</h3>
-      <p className="text-gray-500 mb-5 text-sm sm:text-base relative z-10">We'd love to hear from you. Fill out the form below.</p>
-      
-      <form onSubmit={handleSubmit} className="space-y-3 relative z-10">
+    <div className="rounded-2xl bg-white border border-slate-200/80 p-6 sm:p-8 shadow-sm">
+      <div className="mb-6">
+        <h3 className="text-xl sm:text-2xl font-bold text-[#080357] tracking-tight mb-1">
+          Get in Touch
+        </h3>
+        <p className="text-sm text-slate-500">
+          Fill out the form below and we'll connect with you shortly.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">Full Name</label>
+          <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
+            Full Name
+          </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <User className="h-5 w-5 text-gray-400" />
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <User className="h-4 w-4" />
             </div>
             <input
               type="text"
@@ -72,17 +84,19 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="block w-full pl-11 pr-4 py-2.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
-              placeholder="John Doe"
+              className="block w-full pl-10 pr-3.5 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#080357] focus:ring-2 focus:ring-[#080357]/10 transition-all"
+              placeholder="Your name"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
+          <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
+            Email Address
+          </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Mail className="h-5 w-5 text-gray-400" />
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <Mail className="h-4 w-4" />
             </div>
             <input
               type="email"
@@ -91,17 +105,19 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="block w-full pl-11 pr-4 py-2.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
-              placeholder="you@company.com"
+              className="block w-full pl-10 pr-3.5 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#080357] focus:ring-2 focus:ring-[#080357]/10 transition-all"
+              placeholder="Your email"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1.5">Company (Optional)</label>
+          <label htmlFor="company" className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
+            Company <span className="text-slate-400 font-normal lowercase">(optional)</span>
+          </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Building className="h-5 w-5 text-gray-400" />
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <Building className="h-4 w-4" />
             </div>
             <input
               type="text"
@@ -109,17 +125,19 @@ export default function ContactForm() {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="block w-full pl-11 pr-4 py-2.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm"
-              placeholder="Your Organization"
+              className="block w-full pl-10 pr-3.5 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#080357] focus:ring-2 focus:ring-[#080357]/10 transition-all"
+              placeholder="Your company"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
+          <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
+            Message
+          </label>
           <div className="relative">
-            <div className="absolute top-4 left-4 pointer-events-none">
-              <MessageSquare className="h-5 w-5 text-gray-400" />
+            <div className="absolute top-3 left-3.5 pointer-events-none text-slate-400">
+              <MessageSquare className="h-4 w-4" />
             </div>
             <textarea
               id="message"
@@ -127,9 +145,9 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               required
-              rows={3}
-              className="block w-full pl-11 pr-4 py-2.5 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#080357]/20 focus:border-[#080357] transition-colors bg-white/70 backdrop-blur-sm shadow-sm resize-none"
-              placeholder="How can we help you?"
+              rows={4}
+              className="block w-full pl-10 pr-3.5 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#080357] focus:ring-2 focus:ring-[#080357]/10 transition-all resize-none"
+              placeholder="Your message"
             />
           </div>
         </div>
@@ -137,21 +155,21 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full flex justify-center items-center py-4 px-4 text-base font-semibold text-white bg-[#080357] clay-btn-accent disabled:opacity-70 disabled:cursor-not-allowed group mt-4"
+          className="w-full flex justify-center items-center gap-2 py-3 px-4 text-sm font-semibold text-white bg-[#080357] hover:bg-[#0c057a] rounded-xl transition-all duration-200 shadow-sm disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer group mt-2"
         >
           {isSubmitting ? (
-            <span className="flex items-center">
-              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <span className="flex items-center gap-2">
+              <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
               Sending...
             </span>
           ) : (
-            <span className="flex items-center">
-              Send Message
-              <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </span>
+            <>
+              <span>Send Message</span>
+              <Send className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+            </>
           )}
         </button>
       </form>
