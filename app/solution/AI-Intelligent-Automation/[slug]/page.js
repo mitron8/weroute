@@ -178,7 +178,7 @@ export default async function Page({ params }) {
       supportingText: rawSolution.cta?.description,
       buttons: [
         { label: rawSolution.cta?.button || "Talk to an Expert", href: "/contact", variant: "primary" },
-        ...(rawSolution.cta?.button2 ? [{ label: rawSolution.cta.button2, href: "/consultation", variant: "secondary" }] : [])
+        ...(rawSolution.cta?.button2 ? [{ label: rawSolution.cta.button2, href: "/contact", variant: "secondary" }] : [])
       ]
     }
   };

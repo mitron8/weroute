@@ -52,10 +52,20 @@ export default function TestimonialsLeopolda() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex items-center gap-8 text-gray-400"
         >
-          <button className="hover:text-black transition-colors duration-300">
+          <button
+            type="button"
+            aria-label="Previous testimonial"
+            onClick={() => {}}
+            className="hover:text-black transition-colors duration-300 cursor-pointer"
+          >
             <ChevronLeft size={24} strokeWidth={1} />
           </button>
-          <button className="hover:text-black transition-colors duration-300">
+          <button
+            type="button"
+            aria-label="Next testimonial"
+            onClick={() => {}}
+            className="hover:text-black transition-colors duration-300 cursor-pointer"
+          >
             <ChevronRight size={24} strokeWidth={1} />
           </button>
         </motion.div>

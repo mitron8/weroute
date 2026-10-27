@@ -195,7 +195,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/software-application-staffing"
+                  href="/services/software-ai-development"
                   className="text-white/65 transition-colors duration-200 hover:text-white"
                 >
                   Software &amp; AI Dev

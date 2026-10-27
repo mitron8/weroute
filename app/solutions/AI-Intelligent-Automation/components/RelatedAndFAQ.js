@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { FAQItem } from "@/app/components/ui/FAQAccordion";
@@ -53,7 +54,7 @@ export default function RelatedAndFAQ() {
     { label: "AI Network Intelligence", href: "/solution/AI-Intelligent-Automation/ai-network-intelligence" },
     { label: "AI-Driven Observability", href: "/solution/AI-Intelligent-Automation/ai-driven-observability" },
     { label: "AI Software Services", href: "/solution/AI-Intelligent-Automation/ai-software-services" },
-    { label: "AI Cybersecurity Solutions", href: "/solution/AI-Intelligent-Automation/ai-cybersecurity-solutions" },
+    { label: "AI Cybersecurity Solutions", href: "/solutions/cybersecurity" },
   ];
 
   return (
@@ -107,13 +108,13 @@ export default function RelatedAndFAQ() {
               <ul className="mt-8 space-y-3 border-t border-[#4c658a]/20 pt-8">
                 {relatedSolutions.map((link, i) => (
                   <li key={i}>
-                    <a
+                    <Link
                       href={link.href}
                       className="group flex items-center justify-between rounded-2xl bg-white p-4 text-sm font-medium text-[#050849] shadow-sm transition-all duration-300 hover:text-[#98c93c] hover:translate-x-1"
                     >
                       <span>{link.label}</span>
                       <ChevronRight size={18} className="text-[#4c658a] transition-colors group-hover:text-[#98c93c]" />
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -6,14 +6,14 @@ import "lenis/dist/lenis.css";
 
 export default function SmoothScroll({ children }) {
   useEffect(() => {
-    // Initialize Lenis with slow, silky smooth scrolling parameters
+    // Initialize Lenis with responsive, silky smooth parameters
     const lenis = new Lenis({
-      duration: 2.0, // Slow, elegant cinematic gliding pace
-      easing: (t) => 1 - Math.pow(1 - t, 4), // Quartic ease-out for ultra-smooth deceleration
+      duration: 1.0, // Responsive, natural smooth scroll pace
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Snappy start with smooth exponential settling
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.8, // Calibrated for gentle, graceful wheel response
+      wheelMultiplier: 1.0, // Standard 1:1 wheel response
       touchMultiplier: 1.5,
       infinite: false,
     });
@@ -36,7 +36,7 @@ export default function SmoothScroll({ children }) {
         const targetEl = document.querySelector(targetId);
         if (targetEl) {
           e.preventDefault();
-          lenis.scrollTo(targetEl, { offset: -80, duration: 2.0 });
+          lenis.scrollTo(targetEl, { offset: -80, duration: 1.0 });
         }
       }
     };

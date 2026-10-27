@@ -24,7 +24,7 @@ const ecosystems = [
     title: "Cloud Platforms",
     desc: "Public, private, and hybrid cloud environments, including migration, governance, and cost management.",
     tags: ["AWS", "Azure", "GCP", "Hybrid Cloud", "FinOps"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/eco-cloud.png",
   },
   {
     icon: Network,
@@ -33,7 +33,7 @@ const ecosystems = [
     title: "Networking",
     desc: "Enterprise routing, switching, wireless, SD-WAN, and data centre network fabrics.",
     tags: ["SD-WAN", "Routing & Switching", "Data Centre Fabric", "Wi-Fi 6E/7"],
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/eco-networking.png",
   },
   {
     icon: Shield,
@@ -42,7 +42,7 @@ const ecosystems = [
     title: "Cybersecurity",
     desc: "Identity, endpoint, network, cloud, and data security platforms, plus governance and compliance tooling.",
     tags: ["Zero Trust", "IAM", "SOC / SIEM", "Cloud Security", "Compliance"],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/eco-cybersecurity.png",
   },
   {
     icon: Eye,
@@ -51,7 +51,7 @@ const ecosystems = [
     title: "Observability",
     desc: "Monitoring, logging, tracing, and network observability platforms for unified operational visibility.",
     tags: ["APM", "Log Analytics", "Network Telemetry", "AIOps", "Distributed Tracing"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/eco-observability.png",
   },
   {
     icon: Cpu,
@@ -60,7 +60,7 @@ const ecosystems = [
     title: "Automation & DevOps",
     desc: "Infrastructure as Code, CI/CD, configuration management, and container orchestration toolchains.",
     tags: ["Terraform", "CI/CD Pipelines", "Kubernetes", "GitOps", "Ansible"],
-    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/eco-automation.png",
   },
   {
     icon: BrainCircuit,
@@ -69,7 +69,7 @@ const ecosystems = [
     title: "AI Platforms",
     desc: "Machine learning, generative AI, and MLOps platforms for building and running intelligent systems.",
     tags: ["LLM Orchestration", "MLOps", "Model Deployment", "Inference Pipelines"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/eco-ai.png",
   },
   {
     icon: Layers,
@@ -78,7 +78,7 @@ const ecosystems = [
     title: "Enterprise Software",
     desc: "Enterprise applications, APIs, integration platforms, and the data layers connecting them.",
     tags: ["API Gateways", "Event Streaming", "Microservices", "System Integration"],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/eco-software.png",
   },
 ];
 
@@ -263,14 +263,14 @@ export default function TechnologyEcosystem() {
               >
                 <div>
                   {/* Visual Image Banner with Floating Badges */}
-                  <div className="relative h-44 sm:h-48 md:h-52 w-full overflow-hidden rounded-2xl mb-6 bg-slate-200">
+                  <div className="relative h-44 sm:h-48 md:h-52 w-full overflow-hidden rounded-2xl mb-6 bg-white border border-[#052440]/5 shadow-xs">
                     <img
                       src={eco.image}
                       alt={eco.title}
                       loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#080357]/50 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none" />
 
                     {/* Floating Icon Badge */}
                     <div className="absolute top-3 left-3">

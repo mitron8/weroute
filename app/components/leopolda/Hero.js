@@ -27,9 +27,9 @@ export default function HeroLeopolda() {
         />
 
         {/* Soft cyan & green atmospheric lighting highlights */}
-        <div className="absolute top-[15%] right-[15%] w-[450px] h-[450px] rounded-full bg-blue-500/15 blur-[100px] transform-gpu" />
-        <div className="absolute bottom-[15%] right-[5%] w-[400px] h-[400px] rounded-full bg-[#B7F36B]/10 blur-[100px] transform-gpu" />
-        <div className="absolute top-[10%] left-[5%] w-[350px] h-[350px] rounded-full bg-indigo-500/10 blur-[90px] transform-gpu" />
+        <div className="absolute top-[15%] right-[15%] w-[420px] h-[420px] rounded-full bg-blue-500/15 blur-3xl transform-gpu pointer-events-none" />
+        <div className="absolute bottom-[15%] right-[5%] w-[380px] h-[380px] rounded-full bg-[#B7F36B]/10 blur-3xl transform-gpu pointer-events-none" />
+        <div className="absolute top-[10%] left-[5%] w-[320px] h-[320px] rounded-full bg-indigo-500/10 blur-3xl transform-gpu pointer-events-none" />
       </div>
 
       <div className="relative z-10 w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-center">
@@ -152,7 +152,7 @@ export default function HeroLeopolda() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-8 -right-2 sm:-right-4 w-[84%] rounded-2xl bg-white/[0.08] backdrop-blur-2xl border border-white/20 p-4 shadow-[0_25px_60px_rgba(0,0,0,0.3)] [transform:translateZ(-50px)] transform-gpu will-change-transform"
+                className="absolute -top-8 -right-2 sm:-right-4 w-[84%] rounded-2xl bg-[#241758]/75 backdrop-blur-xs border border-white/20 p-4 shadow-[0_25px_60px_rgba(0,0,0,0.3)] [transform:translateZ(-50px)] transform-gpu will-change-transform"
               >
                 {/* Window Traffic Lights */}
                 <div className="flex items-center gap-1.5 mb-3">
@@ -199,7 +199,7 @@ export default function HeroLeopolda() {
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="relative z-20 w-[88%] rounded-2xl bg-white/[0.12] backdrop-blur-3xl border border-white/30 p-4 sm:p-5 shadow-[0_35px_80px_rgba(0,0,0,0.45)] [transform:translateZ(35px)] transform-gpu will-change-transform"
+                className="relative z-20 w-[88%] rounded-2xl bg-[#241758]/80 backdrop-blur-xs border border-white/30 p-4 sm:p-5 shadow-[0_35px_80px_rgba(0,0,0,0.45)] [transform:translateZ(35px)] transform-gpu will-change-transform"
               >
                 {/* Window Traffic Lights */}
                 <div className="flex items-center justify-between mb-3.5">

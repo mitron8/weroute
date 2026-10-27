@@ -1,5 +1,4 @@
-"use client";
-
+import Link from "next/link";
 import {
   ClipboardCheck,
   ArrowRight,
@@ -409,7 +408,8 @@ export default function ConsultingApproachPage() {
               environment and build a roadmap for growth.
             </p>
 
-            <button
+            <Link
+              href="/contact"
               className="
                 mt-10
                 inline-flex
@@ -421,13 +421,15 @@ export default function ConsultingApproachPage() {
                 py-4
                 font-semibold
                 text-[#052440]
+                transition
+                hover:bg-white/90
               "
             >
               Schedule a Consultation
 
               <ArrowRight size={18} />
 
-            </button>
+            </Link>
 
           </div>
 

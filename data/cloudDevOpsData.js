@@ -26,7 +26,7 @@ export const cloudDevOpsData = {
         "Application Modernization",
         "Data Center Modernization"
       ],
-      canonical: "/cloud-services/cloud-architecture-integration",
+      canonical: "/solution/CloudDevOpsPage/cloud-architecture-integration",
       robots: {
         index: true,
         follow: true,
@@ -34,7 +34,7 @@ export const cloudDevOpsData = {
       openGraph: {
         title: "Cloud Architecture & Integration Services | WeRoute",
         description: "WeRoute designs and integrates hybrid cloud architecture and multi-cloud architecture for enterprises that need secure, scalable, and governed cloud foundations.",
-        url: "/cloud-services/cloud-architecture-integration",
+        url: "/solution/CloudDevOpsPage/cloud-architecture-integration",
         siteName: "WeRoute",
         type: "website",
         images: [
@@ -79,11 +79,11 @@ export const cloudDevOpsData = {
       },
       {
         title: "Cloud Services",
-        href: "/cloud-and-devOps",
+        href: "/solutions/cloud-and-devOps",
       },
       {
         title: "Cloud Architecture & Integration",
-        href: "/cloud-and-devOps/cloud-architecture-integration",
+        href: "/solution/CloudDevOpsPage/cloud-architecture-integration",
       },
     ],
 
@@ -355,11 +355,11 @@ export const cloudDevOpsData = {
       title: "Cloud Architecture Within Your Cloud Strategy",
       intro: "Cloud architecture is the foundation that the rest of your cloud strategy is built on. It connects directly to platform engineering, infrastructure automation, observability, security, and modernization efforts.",
       links: [
-        { label: "DevOps & Platform Engineering", href: "/cloud-services/devops-platform-engineering" },
-        { label: "Infrastructure as Code (IaC)", href: "/cloud-services/infrastructure-as-code" },
-        { label: "Cloud Observability", href: "/cloud-services/cloud-observability" },
-        { label: "Cloud Security", href: "/cloud-services/cloud-security" },
-        { label: "Application Modernization", href: "/cloud-services/application-modernization" },
+        { label: "DevOps & Platform Engineering", href: "/solution/CloudDevOpsPage/devops-platform-engineering" },
+        { label: "Infrastructure as Code (IaC)", href: "/solution/CloudDevOpsPage/infrastructure-as-code" },
+        { label: "Cloud Observability", href: "/solution/CloudDevOpsPage/cloud-observability" },
+        { label: "Cloud Security", href: "/solution/cybersecurity/endpoint-and-cloud-security-services" },
+        { label: "Application Modernization", href: "/solution/softwareDigitalEngineering/enterprise-applications" },
       ],
     },
 
@@ -402,7 +402,7 @@ export const cloudDevOpsData = {
       supportingText: "Talk to WeRoute about designing a cloud architecture built for governance, scalability, and long-term reliability.",
       buttons: [
         { label: "Talk to a Cloud Architecture Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   },
@@ -423,7 +423,7 @@ export const cloudDevOpsData = {
         "platform engineering solutions",
         "CI/CD automation"
       ],
-      canonical: "/cloud-services/devops-platform-engineering",
+      canonical: "/solution/CloudDevOpsPage/devops-platform-engineering",
       robots: {
         index: true,
         follow: true,
@@ -431,7 +431,7 @@ export const cloudDevOpsData = {
       openGraph: {
         title: "DevOps & Platform Engineering Services | WeRoute",
         description: "WeRoute delivers DevOps transformation, platform engineering, and CI/CD automation for enterprises building internal developer platforms that scale software delivery without losing governance.",
-        url: "/cloud-services/devops-platform-engineering",
+        url: "/solution/CloudDevOpsPage/devops-platform-engineering",
         siteName: "WeRoute",
         type: "website",
         images: [
@@ -476,11 +476,11 @@ export const cloudDevOpsData = {
       },
       {
         title: "Cloud Services",
-        href: "/cloud-services",
+        href: "/solutions/cloud-and-devOps",
       },
       {
         title: "DevOps & Platform Engineering",
-        href: "/cloud-services/devops-platform-engineering",
+        href: "/solution/CloudDevOpsPage/devops-platform-engineering",
       },
     ],
 
@@ -755,11 +755,11 @@ export const cloudDevOpsData = {
       title: "Platform Engineering Within Your Cloud Strategy",
       intro: "Platform engineering connects directly to the rest of your cloud strategy, supporting cloud architecture, infrastructure automation, observability, and security as engineering teams scale their delivery practices.",
       links: [
-        { label: "Cloud Architecture & Integration", href: "/cloud-services/cloud-architecture-integration" },
-        { label: "Infrastructure as Code", href: "/cloud-services/infrastructure-as-code" },
-        { label: "Cloud Observability", href: "/cloud-services/cloud-observability" },
-        { label: "Cloud Security", href: "/cloud-services/cloud-security" },
-        { label: "Application Modernization", href: "/cloud-services/application-modernization" },
+        { label: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
+        { label: "Infrastructure as Code", href: "/solution/CloudDevOpsPage/infrastructure-as-code" },
+        { label: "Cloud Observability", href: "/solution/CloudDevOpsPage/cloud-observability" },
+        { label: "Cloud Security", href: "/solution/cybersecurity/endpoint-and-cloud-security-services" },
+        { label: "Application Modernization", href: "/solution/softwareDigitalEngineering/enterprise-applications" },
       ],
     },
 
@@ -802,7 +802,7 @@ export const cloudDevOpsData = {
       supportingText: "Talk to WeRoute about designing a platform engineering approach that improves delivery speed without losing governance.",
       buttons: [
         { label: "Talk to a DevOps Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   },
@@ -826,7 +826,7 @@ export const cloudDevOpsData = {
         "Infrastructure Lifecycle Management",
         "Cloud Automation"
       ],
-      canonical: "/cloud-services/infrastructure-as-code",
+      canonical: "/solution/CloudDevOpsPage/infrastructure-as-code",
       robots: {
         index: true,
         follow: true,
@@ -834,7 +834,7 @@ export const cloudDevOpsData = {
       openGraph: {
         title: "Infrastructure as Code (IaC) Services | WeRoute",
         description: "WeRoute delivers Infrastructure as Code services that automate infrastructure provisioning and management for enterprises, replacing manual configuration with governed, version-controlled infrastructure.",
-        url: "/cloud-services/infrastructure-as-code",
+        url: "/solution/CloudDevOpsPage/infrastructure-as-code",
         siteName: "WeRoute",
         type: "website",
         images: [
@@ -879,11 +879,11 @@ export const cloudDevOpsData = {
       },
       {
         title: "Cloud Services",
-        href: "/cloud-services",
+        href: "/solutions/cloud-and-devOps",
       },
       {
         title: "Infrastructure as Code",
-        href: "/cloud-services/infrastructure-as-code",
+        href: "/solution/CloudDevOpsPage/infrastructure-as-code",
       },
     ],
 
@@ -1158,11 +1158,11 @@ export const cloudDevOpsData = {
       title: "IaC Within Your Cloud Strategy",
       intro: "Infrastructure as Code is the operational foundation beneath the rest of your cloud strategy, supporting cloud architecture, platform engineering, observability, and security as infrastructure truly scales.",
       links: [
-        { label: "Cloud Architecture & Integration", href: "/cloud-services/cloud-architecture-integration" },
-        { label: "DevOps & Platform Engineering", href: "/cloud-services/devops-platform-engineering" },
-        { label: "Cloud Observability", href: "/cloud-services/cloud-observability" },
-        { label: "Cloud Security", href: "/cloud-services/cloud-security" },
-        { label: "Automation & Operations", href: "/cloud-services/automation-operations" },
+        { label: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
+        { label: "DevOps & Platform Engineering", href: "/solution/CloudDevOpsPage/devops-platform-engineering" },
+        { label: "Cloud Observability", href: "/solution/CloudDevOpsPage/cloud-observability" },
+        { label: "Cloud Security", href: "/solution/cybersecurity/endpoint-and-cloud-security-services" },
+        { label: "Automation & Operations", href: "/solution/AI-Intelligent-Automation/automation-aiops" },
       ],
     },
 
@@ -1205,7 +1205,7 @@ export const cloudDevOpsData = {
       supportingText: "Talk to WeRoute about replacing manual infrastructure management with Infrastructure as Code built for governance and scale.",
       buttons: [
         { label: "Talk to an Infrastructure Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   },
@@ -1228,7 +1228,7 @@ export const cloudDevOpsData = {
         "Performance Monitoring",
         "Cloud Visibility"
       ],
-      canonical: "/cloud-services/cloud-observability",
+      canonical: "/solution/CloudDevOpsPage/cloud-observability",
       robots: {
         index: true,
         follow: true,
@@ -1236,7 +1236,7 @@ export const cloudDevOpsData = {
       openGraph: {
         title: "Cloud Observability Services | Cloud Monitoring | WeRoute",
         description: "WeRoute provides cloud observability services and cloud monitoring solutions for enterprises running hybrid and multi-cloud environments, translating distributed system data into operational insight.",
-        url: "/cloud-services/cloud-observability",
+        url: "/solution/CloudDevOpsPage/cloud-observability",
         siteName: "WeRoute",
         type: "website",
         images: [
@@ -1281,11 +1281,11 @@ export const cloudDevOpsData = {
       },
       {
         title: "Cloud Services",
-        href: "/cloud-services",
+        href: "/solutions/cloud-and-devOps",
       },
       {
         title: "Cloud Observability",
-        href: "/cloud-services/cloud-observability",
+        href: "/solution/CloudDevOpsPage/cloud-observability",
       },
     ],
 
@@ -1562,11 +1562,11 @@ export const cloudDevOpsData = {
       title: "Cloud Observability Within Your Cloud Strategy",
       intro: "Cloud observability is not a standalone tool. It works alongside cloud architecture, DevOps practices, infrastructure automation, and security to support a cloud strategy built for long-term reliability.",
       links: [
-        { label: "Cloud Architecture & Integration", href: "/cloud-services/cloud-architecture-integration" },
-        { label: "DevOps & Platform Engineering", href: "/cloud-services/devops-platform-engineering" },
-        { label: "Infrastructure as Code", href: "/cloud-services/infrastructure-as-code" },
-        { label: "Cloud Security", href: "/cloud-services/cloud-security" },
-        { label: "Site Reliability Engineering", href: "/cloud-services/site-reliability-engineering" },
+        { label: "Cloud Architecture & Integration", href: "/solution/CloudDevOpsPage/cloud-architecture-integration" },
+        { label: "DevOps & Platform Engineering", href: "/solution/CloudDevOpsPage/devops-platform-engineering" },
+        { label: "Infrastructure as Code", href: "/solution/CloudDevOpsPage/infrastructure-as-code" },
+        { label: "Cloud Security", href: "/solution/cybersecurity/endpoint-and-cloud-security-services" },
+        { label: "Site Reliability Engineering", href: "/solution/CloudDevOpsPage/cloud-observability" },
       ],
     },
 
@@ -1609,7 +1609,7 @@ export const cloudDevOpsData = {
       supportingText: "Talk to WeRoute about building cloud observability into your operations, so issues are caught before they become incidents.",
       buttons: [
         { label: "Talk to a Cloud Observability Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   },

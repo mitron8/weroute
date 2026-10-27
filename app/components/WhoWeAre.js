@@ -70,7 +70,7 @@ export default function WhoWeAre() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_20px_rgba(5,36,64,0.1)]"
+                className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-7 transition-[box-shadow,border-color] duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_20px_rgba(5,36,64,0.1)]"
               >
                 <div className="flex items-start gap-5">
                   <div className="clay-badge-light flex h-13 w-13 shrink-0 items-center justify-center bg-[#080357] text-white text-base font-extrabold">
@@ -114,7 +114,7 @@ export default function WhoWeAre() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: 0, ease: [0.22, 1, 0.36, 1] }}
-              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-all duration-300 hover:-translate-y-1"
+              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-[box-shadow,border-color] duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-3.5 mb-5">
                 <div className="clay-badge-light flex h-12 w-12 items-center justify-center bg-[#080357] text-white">
@@ -135,7 +135,7 @@ export default function WhoWeAre() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-all duration-300 hover:-translate-y-1"
+              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-[box-shadow,border-color] duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-3.5 mb-5">
                 <div className="clay-badge-light flex h-12 w-12 items-center justify-center bg-[#080357] text-white">
@@ -156,7 +156,7 @@ export default function WhoWeAre() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-all duration-300 hover:-translate-y-1"
+              className="clay-light group relative bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-[box-shadow,border-color] duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-3.5 mb-5">
                 <div className="clay-badge-light flex h-12 w-12 items-center justify-center bg-[#080357] text-white">

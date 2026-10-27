@@ -8,22 +8,22 @@ const SOLUTIONS = [
   {
     title: "Networking",
     img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop",
-    link: "/solutions/networking"
+    link: "/solutions/network-connectivity"
   },
   {
     title: "Cloud Native",
     img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
-    link: "/solutions/cloud"
+    link: "/solutions/cloud-and-devOps"
   },
   {
     title: "Cybersecurity",
     img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop",
-    link: "/solutions/cyber"
+    link: "/solutions/cybersecurity"
   },
   {
     title: "Observability",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-    link: "/solutions/observability"
+    link: "/solutions/AI-Intelligent-Automation"
   }
 ];
 

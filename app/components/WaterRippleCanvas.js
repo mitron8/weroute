@@ -121,7 +121,14 @@ export default function WaterRippleCanvas() {
 
     resize();
     window.addEventListener('resize', resize, { passive: true });
-    window.addEventListener('scroll', updateRect, { passive: true });
+    
+    // Invalidate cached rect on scroll without calling getBoundingClientRect synchronously
+    const handleScroll = () => {
+      if (isVisible) {
+        cachedRect = null;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Handle mouse events only when visible
     const handleMouseMove = (e) => {
@@ -129,6 +136,7 @@ export default function WaterRippleCanvas() {
       if (!cachedRect) updateRect();
 
       const rect = cachedRect;
+      if (!rect) return;
       if (
         e.clientY < rect.top ||
         e.clientY > rect.bottom ||
@@ -163,6 +171,7 @@ export default function WaterRippleCanvas() {
       if (!cachedRect) updateRect();
 
       const rect = cachedRect;
+      if (!rect) return;
       if (
         e.clientY < rect.top ||
         e.clientY > rect.bottom ||
@@ -190,7 +199,7 @@ export default function WaterRippleCanvas() {
     return () => {
       observer.disconnect();
       window.removeEventListener('resize', resize);
-      window.removeEventListener('scroll', updateRect);
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('click', handleClick);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);

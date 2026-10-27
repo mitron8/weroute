@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Code,
   Monitor,
@@ -15,6 +16,7 @@ const capabilities = [
     description: "We design and build custom software tailored to how your business actually operates, rather than forcing workflows into off-the-shelf tools.",
     icon: <Code size={24} className="text-[#050849]" />,
     tags: ["Bespoke Software", "Workflow Automation", "Legacy Modernization"],
+    href: "/solution/softwareDigitalEngineering/custom-software-development",
   },
   {
     number: "02",
@@ -22,6 +24,7 @@ const capabilities = [
     description: "We build and modernize enterprise applications that connect core business processes, data, and teams into one coherent system.",
     icon: <Monitor size={24} className="text-[#050849]" />,
     tags: ["Core Systems", "Data Integration", "Process Alignment"],
+    href: "/solution/softwareDigitalEngineering/enterprise-applications",
   },
   {
     number: "03",
@@ -29,6 +32,7 @@ const capabilities = [
     description: "We design and engineer enterprise mobile applications that extend your systems securely to employees, customers, and partners on any device.",
     icon: <Smartphone size={24} className="text-[#050849]" />,
     tags: ["Enterprise Mobility", "Secure Endpoints", "Cross-Platform"],
+    href: "/solution/softwareDigitalEngineering/mobile-application-development",
   },
   {
     number: "04",
@@ -36,6 +40,7 @@ const capabilities = [
     description: "We build APIs and platform infrastructure that let your systems, partners, and products connect and scale without custom rework.",
     icon: <Network size={24} className="text-[#050849]" />,
     tags: ["API-First", "Platform Scalability", "Seamless Integration"],
+    href: "/solution/softwareDigitalEngineering/api-platform-engineering",
   }
 ];
 
@@ -68,7 +73,7 @@ export default function NetworkCapabilities() {
             return (
               <div
                 key={item.title}
-                className={`clay-light group relative overflow-hidden rounded-[32px] border border-[#050849]/5 bg-white p-8 transition-all duration-300 hover:-translate-y-1 ${
+                className={`clay-light group relative overflow-hidden rounded-[24px] border border-[#050849]/5 bg-white p-8 transition-all duration-300 hover:-translate-y-1 ${
                   index === 0
                     ? "lg:col-span-7"
                     : index === 1
@@ -110,13 +115,16 @@ export default function NetworkCapabilities() {
                       ))}
                     </div>
 
-                    <button className="group/btn inline-flex items-center gap-2 text-sm font-bold text-[#050849] transition-colors hover:text-[#98c93c] shrink-0">
+                    <Link 
+                      href={item.href}
+                      className="group/btn inline-flex items-center gap-2 text-sm font-bold text-[#050849] transition-colors hover:text-[#98c93c] shrink-0"
+                    >
                       <span>Learn More</span>
                       <ArrowRight
                         size={16}
                         className="transition-transform duration-300 group-hover/btn:translate-x-1"
                       />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

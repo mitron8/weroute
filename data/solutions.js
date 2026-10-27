@@ -522,7 +522,7 @@ export const networkSolutionsData = {
       supportingText: "Move from reactive monitoring to predictive operations with AIOps built around how your network actually runs.",
       buttons: [
         { label: "Talk to an AI Network Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   }
@@ -924,7 +924,7 @@ export const networkSolutionsData = {
       supportingText: "Partner with a team that designs software-defined network architecture around agility, consistency, and growth, not just uptime reports.",
       buttons: [
         { label: "Talk to a Network Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   },
@@ -1315,7 +1315,7 @@ export const networkSolutionsData = {
       supportingText: "Move beyond basic monitoring with network observability built to explain why, instead of just confirming that something happened.",
       buttons: [
         { label: "Talk to an Observability Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   },
@@ -1710,7 +1710,7 @@ export const networkSolutionsData = {
       supportingText: "Align networking to business growth with a service model that scales when you do, not years before or after.",
       buttons: [
         { label: "Talk to a Network Strategy Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   },
@@ -2101,7 +2101,7 @@ export const networkSolutionsData = {
       supportingText: "Deliver secure connectivity everywhere people work, with mobility solutions built around how your teams actually operate.",
       buttons: [
         { label: "Talk to a Mobility Expert", href: "/contact", variant: "primary" },
-        { label: "Request Consultation", href: "/consultation", variant: "secondary" },
+        { label: "Request Consultation", href: "/contact", variant: "secondary" },
       ],
     },
   },

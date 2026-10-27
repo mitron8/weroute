@@ -9,22 +9,43 @@ export default function ContactForm() {
     name: '',
     email: '',
     company: '',
-    message: ''
+    message: '',
+    _honeypot: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message. Please try again.');
+      }
+
       setSubmitted(true);
-    }, 1200);
+    } catch (err) {
+      setErrorMessage(err.message || 'Unable to connect to server. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -151,6 +172,24 @@ export default function ContactForm() {
             />
           </div>
         </div>
+
+        {/* Hidden honeypot field for bot protection */}
+        <input
+          type="text"
+          name="_honeypot"
+          value={formData._honeypot}
+          onChange={handleChange}
+          style={{ display: 'none' }}
+          tabIndex="-1"
+          autoComplete="off"
+          aria-hidden="true"
+        />
+
+        {errorMessage && (
+          <div className="rounded-xl bg-red-50 border border-red-200 p-3 text-xs text-red-700 flex items-center justify-between">
+            <span>{errorMessage}</span>
+          </div>
+        )}
 
         <button
           type="submit"

@@ -9,7 +9,7 @@ export default function BigImagesLeopolda() {
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
         
         {/* Image 1 */}
-        <Link href="/services/consulting" className="group relative block overflow-hidden rounded-[2rem] h-[500px] lg:h-[700px] clay-light">
+        <Link href="/services/consulting-advisory" className="group relative block overflow-hidden rounded-[2rem] h-[500px] lg:h-[700px] clay-light">
           <motion.div
             initial={{ scale: 1.1 }}
             whileInView={{ scale: 1 }}
@@ -33,7 +33,7 @@ export default function BigImagesLeopolda() {
         </Link>
 
         {/* Image 2 */}
-        <Link href="/services/managed" className="group relative block overflow-hidden rounded-[2rem] h-[500px] lg:h-[700px] clay-light">
+        <Link href="/services/managed-services" className="group relative block overflow-hidden rounded-[2rem] h-[500px] lg:h-[700px] clay-light">
           <motion.div
             initial={{ scale: 1.1 }}
             whileInView={{ scale: 1 }}

@@ -1,5 +1,6 @@
 
 
+import Link from "next/link";
 import {
   ArrowRight,
   Shield,
@@ -92,29 +93,35 @@ export default function CompanyOverview() {
 
               <div className="mt-10 flex gap-4">
 
-                <button
+                <Link
+                  href="/contact"
                   className="
                     rounded-2xl
                     bg-[#052440]
                     px-7 py-4
                     font-semibold
                     text-white
+                    transition
+                    hover:bg-[#080357]
                   "
                 >
                   Contact Us
-                </button>
+                </Link>
 
-                <button
+                <Link
+                  href="/services"
                   className="
                     rounded-2xl
                     border border-[#052440]/10
                     bg-white
                     px-7 py-4
                     font-semibold
+                    transition
+                    hover:bg-[#f7f9fc]
                   "
                 >
                   Explore Services
-                </button>
+                </Link>
 
               </div>
 
@@ -425,7 +432,8 @@ export default function CompanyOverview() {
               secure, and scale your technology ecosystem.
             </p>
 
-            <button
+            <Link
+              href="/contact"
               className="
                 mt-10
                 inline-flex
@@ -437,12 +445,14 @@ export default function CompanyOverview() {
                 py-4
                 font-semibold
                 text-[#052440]
+                transition
+                hover:bg-white/90
               "
             >
               Talk to an Expert
 
               <ArrowRight size={18} />
-            </button>
+            </Link>
 
           </div>
 

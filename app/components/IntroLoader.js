@@ -7,41 +7,21 @@ export default function IntroLoader({ onDone }) {
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    // Lock scroll during intro loader to prevent background desync
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    if (typeof window !== "undefined" && window.__lenis) {
-      window.__lenis.stop();
-    }
-
-    // Set duration to a crisp 1.8s for fast, responsive launch feel
+    // 1.5s display duration so the user can clearly see and appreciate the loading screen
     const timer = setTimeout(() => {
       setHide(true);
-    }, 1800);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);
-      document.body.style.overflow = originalOverflow;
-      if (typeof window !== "undefined" && window.__lenis) {
-        window.__lenis.start();
-      }
     };
   }, []);
 
   const handleExitComplete = () => {
-    document.body.style.overflow = "";
-    if (typeof window !== "undefined" && window.__lenis) {
-      window.__lenis.start();
-    }
     if (onDone) onDone();
   };
 
-  const words = [
-    "Beyond",
-    "Boundaries,",
-    "Bridging",
-    "Connectivity",
-  ];
+  const words = ["Beyond", "Boundaries,", "Bridging", "Connectivity"];
 
   return (
     <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
@@ -50,10 +30,9 @@ export default function IntroLoader({ onDone }) {
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
-            scale: 1.02,
             transition: {
-              duration: 0.6,
-              ease: [0.22, 1, 0.36, 1],
+              duration: 0.45,
+              ease: "easeInOut",
             },
           }}
           className="
@@ -65,52 +44,24 @@ export default function IntroLoader({ onDone }) {
             justify-center
             overflow-hidden
             bg-[#080357]
-            transform-gpu
+            pointer-events-auto
           "
         >
-          {/* BACKGROUND AMBIENCE */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div
-              className="
-                absolute
-                left-1/2
-                top-1/2
-                h-[400px]
-                w-[400px]
-                -translate-x-1/2
-                -translate-y-1/2
-                rounded-full
-                bg-blue-500/15
-                blur-3xl
-              "
-            />
-          </div>
+          {/* AMBIENT BACKGROUND GLOW */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-40"
+            style={{
+              background: "radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.25) 0%, transparent 60%)",
+            }}
+          />
 
           {/* CONTENT */}
-          <div
-            className="
-              relative z-10
-              flex
-              flex-col
-              items-center
-              justify-center
-              text-center
-            "
-          >
+          <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
             {/* LOGO */}
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <img
                 className="h-16 md:h-20 px-6 object-contain"
@@ -119,37 +70,22 @@ export default function IntroLoader({ onDone }) {
               />
             </motion.div>
 
-            {/* TEXT */}
-            <div
-              className="
-                mt-8
-                flex
-                flex-wrap
-                items-center
-                justify-center
-                gap-3
-              "
-            >
+            {/* WORDS */}
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
               {words.map((word, i) => (
                 <motion.span
                   key={i}
-                  initial={{
-                    opacity: 0,
-                    y: 15,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: 0.2 + i * 0.08,
-                    duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
+                    delay: 0.15 + i * 0.08,
+                    duration: 0.4,
+                    ease: "easeOut",
                   }}
                   className="
-                    text-xl
+                    text-lg
                     font-light
-                    tracking-[-0.03em]
+                    tracking-[-0.02em]
                     text-white/90
                     sm:text-2xl
                     lg:text-3xl
@@ -160,27 +96,13 @@ export default function IntroLoader({ onDone }) {
               ))}
             </div>
 
-            {/* LOADING PROGRESS BAR */}
-            <div
-              className="
-                relative
-                mt-10
-                h-[2px]
-                w-[200px]
-                overflow-hidden
-                rounded-full
-                bg-white/10
-              "
-            >
+            {/* PROGRESS BAR */}
+            <div className="relative mt-8 h-[2px] w-[200px] sm:w-[240px] overflow-hidden rounded-full bg-white/10">
               <motion.div
-                initial={{
-                  width: 0,
-                }}
-                animate={{
-                  width: "100%",
-                }}
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
                 transition={{
-                  duration: 1.4,
+                  duration: 1.25,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="
@@ -197,26 +119,12 @@ export default function IntroLoader({ onDone }) {
               />
             </div>
 
-            {/* CAPTION */}
+            {/* TAGLINE */}
             <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                delay: 0.6,
-                duration: 0.6,
-              }}
-              className="
-                mt-6
-                text-[10px]
-                font-semibold
-                uppercase
-                tracking-[0.3em]
-                text-white/40
-              "
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+              className="mt-5 text-[10px] font-semibold uppercase tracking-[0.25em] text-white/50"
             >
               Enterprise Technology · Reimagined
             </motion.p>

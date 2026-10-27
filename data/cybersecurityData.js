@@ -22,7 +22,7 @@ export const cybersecurityData = {
       "Identity-Aware Endpoint Security",
     ],
 
-    canonical: "/Cybersecurity/endpoint-and-cloud-security-services",
+    canonical: "/solution/cybersecurity/endpoint-and-cloud-security-services",
 
     robots: {
       index: true,
@@ -36,7 +36,7 @@ export const cybersecurityData = {
       description:
         "WeRoute delivers unified endpoint and cloud security for enterprises, combining endpoint protection, cloud workload security, and identity-aware controls into a single architecture.",
 
-      url: "/Cybersecurity/endpoint-and-cloud-security-services",
+      url: "/solution/cybersecurity/endpoint-and-cloud-security-services",
 
       siteName: "WeRoute",
 
@@ -497,7 +497,7 @@ export const cybersecurityData = {
       },
       {
         label: "Request Consultation",
-        href: "/consultation",
+        href: "/contact",
         variant: "secondary",
       },
     ],
@@ -1001,7 +1001,7 @@ export const cybersecurityData = {
       },
       {
         label: "Request Consultation",
-        href: "/consultation",
+        href: "/contact",
         variant: "secondary",
       },
     ],
@@ -1031,7 +1031,7 @@ export const cybersecurityData = {
       "SOC Modernization",
     ],
 
-    canonical: "/cybersecurity/soc-siem-soar",
+    canonical: "/solution/cybersecurity/soc-siem-soar",
 
     robots: {
       index: true,
@@ -1045,7 +1045,7 @@ export const cybersecurityData = {
       description:
         "WeRoute designs Security Operations Architecture for enterprises, unifying SOC, SIEM, and SOAR capabilities into a single, governance-driven security operations practice across hybrid and multi-cloud environments.",
 
-      url: "/cybersecurity/soc-siem-soar",
+      url: "/solution/cybersecurity/soc-siem-soar",
 
       siteName: "WeRoute",
 
@@ -1516,7 +1516,7 @@ export const cybersecurityData = {
       },
       {
         label: "Request Consultation",
-        href: "/consultation",
+        href: "/contact",
         variant: "secondary",
       },
     ],
@@ -2022,7 +2022,7 @@ export const cybersecurityData = {
       },
       {
         label: "Request Consultation",
-        href: "/consultation",
+        href: "/contact",
         variant: "secondary",
       },
     ],
@@ -2530,7 +2530,7 @@ export const cybersecurityData = {
       },
       {
         label: "Request Consultation",
-        href: "/consultation",
+        href: "/contact",
         variant: "secondary",
       },
     ],

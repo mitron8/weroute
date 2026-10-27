@@ -97,7 +97,7 @@ export default function Solutions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="clay-light group relative w-full bg-[#f7f9fc] border border-[#052440]/5 p-7 md:p-8 transition-all duration-300 hover:-translate-y-1.5"
+                className="clay-light group relative w-full bg-[#f7f9fc] border border-[#052440]/5 p-7 md:p-8 transition-[box-shadow,border-color] duration-300 hover:-translate-y-1.5"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                   {/* Left: Icon, Number, Title */}

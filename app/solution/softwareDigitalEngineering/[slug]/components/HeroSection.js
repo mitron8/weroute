@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -32,13 +33,19 @@ export default function HeroSection({ data }) {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-2xl bg-[#080357] px-8 py-4 font-semibold text-white transition hover:-translate-y-1">
+              <Link
+                href="/contact"
+                className="rounded-2xl bg-[#080357] px-8 py-4 font-semibold text-white transition hover:-translate-y-1 inline-block"
+              >
                 Talk To An Expert
-              </button>
+              </Link>
 
-              <button className="rounded-2xl border border-[#052440]/10 px-8 py-4 font-semibold text-[#052440] transition hover:bg-[#f7f9fc]">
+              <Link
+                href="/contact"
+                className="rounded-2xl border border-[#052440]/10 px-8 py-4 font-semibold text-[#052440] transition hover:bg-[#f7f9fc] inline-block"
+              >
                 Request Consultation
-              </button>
+              </Link>
             </div>
 
           </div>

@@ -8,7 +8,6 @@ import {
   CheckCircle2, 
   ChevronDown, 
   ChevronUp,
-  Sparkles,
   Search,
   Workflow, 
   ArrowRight, 

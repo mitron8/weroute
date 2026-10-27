@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Target,
   ArrowRight,
@@ -385,7 +386,8 @@ export default function MissionPage() {
               future-ready technology solutions.
             </p>
 
-            <button
+            <Link
+              href="/services"
               className="
                 mt-10
                 inline-flex
@@ -397,13 +399,15 @@ export default function MissionPage() {
                 py-4
                 font-semibold
                 text-[#052440]
+                transition
+                hover:bg-white/90
               "
             >
               Explore Our Services
 
               <ArrowRight size={18} />
 
-            </button>
+            </Link>
 
           </div>
 

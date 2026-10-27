@@ -9,21 +9,21 @@ const proofCards = [
     title: "Enterprise Projects Delivered",
     desc: "40+ enterprise technology projects delivered across networking, cloud, security, software, and automation.",
     tags: ["Networking", "Cloud", "Security", "Automation"],
-    image: "/images/enterprise-projects-delivered.png"
+    image: "/images/enterprise-projects-delivered.png",
   },
   {
     icon: Factory,
     title: "Industries Served",
     desc: "Financial services, healthcare, manufacturing, telecommunications, retail, logistics, energy, and technology.",
     tags: ["Financial Services", "Healthcare", "Manufacturing", "Telecom", "Retail", "Logistics", "Energy"],
-    image: "/images/industries-served.png"
+    image: "/images/industries-served.png",
   },
   {
     icon: Layers,
     title: "Technology Domains",
     desc: "Networking, cloud, cybersecurity, AI and automation, software engineering, and managed operations.",
     tags: ["Networking", "Cloud", "Cybersecurity", "AI & Automation", "Software", "Managed Ops"],
-    image: "/images/technology-domains.png"
+    image: "/images/technology-domains.png",
   },
 ];
 
@@ -31,22 +31,24 @@ export default function Trust() {
   return (
     <section
       id="trust"
-      className="relative overflow-hidden bg-[#f7f9fc] py-24 md:py-28 text-[#052440]"
+      className="relative overflow-hidden bg-[#f7f9fc] py-20 md:py-28 text-[#052440]"
     >
-      {/* Background Ambience */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#052440]/5 blur-3xl" />
-        <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#080357]/5 blur-3xl" />
-      </div>
+      {/* Background Ambience: Lightweight GPU-composited radial gradients */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-50"
+        style={{
+          background: "radial-gradient(circle at 10% 20%, rgba(5, 36, 64, 0.04) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(8, 3, 87, 0.04) 0%, transparent 40%)",
+        }}
+      />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-3xl text-center"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mx-auto max-w-3xl text-center transform-gpu will-change-transform"
         >
           {/* Claymorphic Badge */}
           <span className="clay-badge-light inline-flex items-center border border-[#052440]/10 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440]">
@@ -65,33 +67,32 @@ export default function Trust() {
           </p>
         </motion.div>
 
-        {/* 3 Proof Cards in Claymorphism */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* 3 Proof Cards */}
+        <div className="mt-14 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
           {proofCards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="clay-light group relative flex flex-col justify-between overflow-hidden bg-[#f7f9fc] border border-[#052440]/5 p-6 sm:p-7 transition-all duration-300 hover:border-[#052440]/15 hover:-translate-y-1.5 hover:shadow-[10px_10px_20px_rgba(5,36,64,0.08)]"
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: idx * 0.08, ease: "easeOut" }}
+                className="clay-light group relative flex flex-col justify-between overflow-hidden bg-[#f7f9fc] border border-[#052440]/5 p-6 sm:p-7 transition-all duration-300 hover:border-[#052440]/15 hover:-translate-y-1 hover:shadow-[8px_8px_20px_rgba(5,36,64,0.07)] transform-gpu will-change-transform"
               >
                 <div>
                   {/* Card Image Banner */}
-                  <div className="relative h-48 w-full overflow-hidden rounded-2xl mb-6 bg-slate-200">
+                  <div className="relative h-52 w-full overflow-hidden rounded-2xl mb-6 bg-white border border-[#052440]/5 transform-gpu shadow-xs">
                     <img
                       src={card.image}
                       alt={card.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 block"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#080357]/0 via-transparent to-transparent pointer-events-none" />
 
                     {/* Floating Icon Badge */}
-                    <div className="absolute top-3 left-3">
-                      <div className="clay-badge-light flex h-11 w-11 items-center justify-center bg-[#080357] text-[#B7F36B] shadow-md backdrop-blur-md">
+                    <div className="absolute top-3 left-3 z-10">
+                      <div className="clay-badge-light flex h-11 w-11 items-center justify-center bg-[#080357] text-[#B7F36B] shadow-md">
                         <Icon size={20} />
                       </div>
                     </div>
@@ -124,7 +125,7 @@ export default function Trust() {
         </div>
 
         {/* Bottom Capabilities Tags */}
-        <div className="relative z-10 mt-14 flex flex-wrap items-center justify-center gap-3">
+        <div className="relative z-10 mt-12 md:mt-14 flex flex-wrap items-center justify-center gap-3">
           {[
             "Vendor-Agnostic by Design",
             "Production-Grade Architectures",

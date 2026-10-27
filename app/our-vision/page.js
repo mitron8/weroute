@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   Globe,
   ArrowRight,
@@ -393,7 +394,8 @@ export default function VisionPage() {
               ecosystems that empower organizations worldwide.
             </p>
 
-            <button
+            <Link
+              href="/solutions"
               className="
                 mt-10
                 inline-flex
@@ -405,13 +407,15 @@ export default function VisionPage() {
                 py-4
                 font-semibold
                 text-[#052440]
+                transition
+                hover:bg-white/90
               "
             >
               Explore Our Solutions
 
               <ArrowRight size={18} />
 
-            </button>
+            </Link>
 
           </div>
 

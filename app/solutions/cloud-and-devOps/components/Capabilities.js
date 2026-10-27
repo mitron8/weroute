@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Cloud,
@@ -16,24 +17,28 @@ export default function Capabilities() {
       desc: "Secure, scalable cloud foundations that unify infrastructure, applications, networking, security, and data into one governed operating model.",
       icon: <Cloud size={24} className="text-[#050849]" />,
       tags: ["Cloud Foundations", "Unified Infrastructure", "Security & Data"],
+      href: "/solution/CloudDevOpsPage/cloud-architecture-integration",
     },
     {
       title: "DevOps & Platform Engineering",
       desc: "Internal developer platforms and CI/CD practices that give engineering teams standardized, self-service tools for reliable software delivery.",
       icon: <Terminal size={24} className="text-[#050849]" />,
       tags: ["Developer Platforms", "CI/CD Practices", "Self-Service Tools"],
+      href: "/solution/CloudDevOpsPage/devops-platform-engineering",
     },
     {
       title: "Infrastructure as Code (IaC)",
       desc: "Automated, version-controlled infrastructure provisioning that replaces manual configuration with consistent, governed environments at enterprise scale.",
       icon: <FileCode size={24} className="text-[#050849]" />,
       tags: ["Automated Provisioning", "Version-Controlled", "Enterprise Scale"],
+      href: "/solution/CloudDevOpsPage/infrastructure-as-code",
     },
     {
       title: "Cloud Observability",
       desc: "End-to-end visibility across distributed systems, helping teams resolve issues faster and operate with greater confidence.",
       icon: <Activity size={24} className="text-[#050849]" />,
       tags: ["End-to-End Visibility", "Distributed Systems", "Rapid Resolution"],
+      href: "/solution/CloudDevOpsPage/cloud-observability",
     },
   ];
 
@@ -128,16 +133,16 @@ export default function Capabilities() {
                     </div>
 
                     {/* CTA */}
-                    <a
-                      href="#"
+                    <Link
+                      href={item.href}
                       className="group/btn inline-flex items-center gap-2 text-sm font-bold text-[#050849] transition-colors hover:text-[#98c93c] shrink-0"
                     >
-                      <span>[Learn More]</span>
+                      <span>Learn More</span>
                       <ArrowRight
                         size={16}
                         className="transition-transform duration-300 group-hover/btn:translate-x-1"
                       />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -162,13 +167,16 @@ export default function Capabilities() {
               </div>
 
               <div className="flex flex-col justify-end gap-6 mt-6 lg:mt-0 pt-6 lg:pt-0 border-t lg:border-t-0 border-[#050849]/5 lg:border-l lg:pl-12 shrink-0">
-                <button className="clay-badge-light group/btn inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[#050849] transition-colors hover:text-[#98c93c] shrink-0 border border-[#050849]/5">
+                <Link 
+                  href="/contact" 
+                  className="clay-badge-light group/btn inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[#050849] transition-colors hover:text-[#98c93c] shrink-0 border border-[#050849]/5"
+                >
                   <span>Talk to WeRoute</span>
                   <ArrowRight
                     size={16}
                     className="transition-transform duration-300 group-hover/btn:translate-x-1"
                   />
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>

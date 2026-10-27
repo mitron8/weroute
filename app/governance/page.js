@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   ShieldCheck,
   ArrowRight,
@@ -378,7 +379,8 @@ export default function GovernancePage() {
               organization with confidence.
             </p>
 
-            <button
+            <Link
+              href="/contact"
               className="
                 mt-10
                 inline-flex
@@ -390,13 +392,15 @@ export default function GovernancePage() {
                 py-4
                 font-semibold
                 text-[#052440]
+                transition
+                hover:bg-white/90
               "
             >
               Talk to an Expert
 
               <ArrowRight size={18} />
 
-            </button>
+            </Link>
 
           </div>
 

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Shield,
   Key,
@@ -21,6 +22,7 @@ const capabilities = [
       "Cloud Workloads",
       "Hybrid Security",
     ],
+    href: "/solution/cybersecurity/endpoint-and-cloud-security-services",
   },
   {
     number: "02",
@@ -33,6 +35,7 @@ const capabilities = [
       "Least Privilege",
       "Access Governance",
     ],
+    href: "/solution/cybersecurity/identity-access-management",
   },
   {
     number: "03",
@@ -45,6 +48,7 @@ const capabilities = [
       "Incident Response",
       "Security Operations",
     ],
+    href: "/solution/cybersecurity/soc-siem-soar",
   },
   {
     number: "04",
@@ -57,6 +61,7 @@ const capabilities = [
       "Audit Readiness",
       "Risk Management",
     ],
+    href: "/solution/cybersecurity/grc-vendor-risk-management",
   },
   {
     number: "05",
@@ -69,6 +74,7 @@ const capabilities = [
       "Microsegmentation",
       "ZTA",
     ],
+    href: "/solution/cybersecurity/zero-trust-architecture",
   },
 ];
 
@@ -175,13 +181,16 @@ export default function NetworkCapabilities() {
                       ))}
                     </div>
 
-                    <button className="group/btn inline-flex items-center gap-2 text-sm font-bold text-[#050849] transition-colors shrink-0">
+                    <Link 
+                      href={item.href}
+                      className="group/btn inline-flex items-center gap-2 text-sm font-bold text-[#050849] transition-colors hover:text-[#98c93c] shrink-0"
+                    >
                       <span>Learn More</span>
                       <ArrowRight
                         size={16}
                         className="transition-transform duration-300 group-hover/btn:translate-x-1"
                       />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

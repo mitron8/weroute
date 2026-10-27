@@ -256,7 +256,7 @@ export default function Navbar() {
 
   return (
     <header 
-      className={`fixed left-0 top-0 z-[999] w-full transition-all duration-500 ${
+      className={`fixed left-0 top-0 z-[999] w-full transition-[background-color,border-color,box-shadow] duration-300 ${
         isHeroTheme
           ? "bg-transparent border-b border-white/10"
           : "border-b border-[#050849]/10 bg-white/90 backdrop-blur-xl shadow-xs"
@@ -267,7 +267,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex shrink-0 items-center">
           <img
-            className="h-7 transition-all duration-500"
+            className="h-7 transition-opacity duration-300"
             src={"/images/logo/weroute.png"}
             style={
               !isHeroTheme
@@ -282,7 +282,7 @@ export default function Navbar() {
         <nav 
           onMouseEnter={clearCloseTimeout}
           onMouseLeave={handleMouseLeave}
-          className={`relative hidden xl:flex items-center gap-2 rounded-full px-2 py-1.5 backdrop-blur-md transition-all duration-500 ${
+          className={`relative hidden xl:flex items-center gap-2 rounded-full px-2 py-1.5 backdrop-blur-md transition-[background-color,border-color,box-shadow,color] duration-300 ${
             isHeroTheme
               ? "border border-white/15 bg-white/[0.08] shadow-lg shadow-black/10 text-white"
               : "border border-[#050849]/10 bg-white/60 shadow-sm text-[#050849]"
