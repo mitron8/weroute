@@ -7701,8 +7701,12 @@ servicesData["enterprise-mobile-application-development-services"] = enterpriseM
 servicesData["staffing"] = manpowerStaffingData;
 servicesData["manpower-staffing-services"] = manpowerStaffingData;
 servicesData["technology-manpower-and-staffing-services"] = manpowerStaffingData;
+servicesData["technology-manpower-staffing-services"] = manpowerStaffingData;
 servicesData["manpower-and-staffing"] = manpowerStaffingData;
 servicesData["manpower-and-staffing-services"] = manpowerStaffingData;
+
+servicesData["enterprise-network-integration-services"] = servicesData["network-integration-and-modernization"];
+servicesData["managed-network-monitoring-services"] = servicesData["managed-network-services"];
 
 servicesData["network-and-infrastructure-staffing"] = networkInfrastructureStaffingData;
 servicesData["network-infrastructure-staffing"] = networkInfrastructureStaffingData;

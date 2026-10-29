@@ -540,13 +540,9 @@ export default function TerraformAnsibleBlogDetail({ blog }) {
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#050849]">
             How does WeRoute help?
           </h2>
-          <div className="mt-1 text-xs text-blue-700/80 font-medium">
-            (Internal link: <Link href="/services/enterprise-network-integration-services" className="underline hover:text-blue-900">Enterprise Network Integration Services</Link>)
-          </div>
-
           <p className="mt-4 text-[16px] leading-relaxed text-[#050849]/85">
             WeRoute designs and delivers infrastructure automation, from Terraform and Ansible pipelines to network device templating. Our{" "}
-            <Link href="/services/enterprise-network-integration-services" className="font-bold text-blue-700 underline hover:text-blue-900">
+            <Link href="/services/network-integration-and-modernization" className="font-bold text-blue-700 underline hover:text-blue-900">
               Enterprise Network Integration Services
             </Link>{" "}
             page describes the approach. Managed Network Services covers daily operation.
@@ -598,13 +594,13 @@ export default function TerraformAnsibleBlogDetail({ blog }) {
             </h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link href="/services/enterprise-network-integration-services" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
+                <Link href="/services/network-integration-and-modernization" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
                   <span>Enterprise Network Integration Services</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services/managed-network-monitoring-services" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
+                <Link href="/services/managed-network-services" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
                   <span>Managed Network Services</span>
                 </Link>

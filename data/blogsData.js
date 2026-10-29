@@ -863,7 +863,7 @@ export const blogsData = [
     relatedServices: [
       {
         title: "Technology Manpower & Staffing Services",
-        link: "/services/technology-manpower-staffing-services",
+        link: "/services/technology-manpower-and-staffing-services",
         description: "Dedicated technology teams, contract-to-hire staffing, and specialist IT engineering manpower."
       },
       {
@@ -998,7 +998,7 @@ export const blogsData = [
     relatedServices: [
       {
         title: "Enterprise AI & Machine Learning Development Services",
-        link: "/solution/enterprise-ai",
+        link: "/services/enterprise-ai-machine-learning-development-services",
         description: "Custom LLM integrations, document intelligence pipelines, and production RAG implementations."
       },
       {
@@ -1008,7 +1008,7 @@ export const blogsData = [
       },
       {
         title: "Cybersecurity Solutions",
-        link: "/solution/cybersecurity",
+        link: "/solutions/cybersecurity",
         description: "AI workload defense, prompt-injection containment, and OWASP LLM Top 10 mitigation."
       }
     ],
@@ -1136,12 +1136,12 @@ export const blogsData = [
     relatedServices: [
       {
         title: "Enterprise Network Integration Services",
-        link: "/services/enterprise-network-integration-services",
+        link: "/services/network-integration-and-modernization",
         description: "Architecture design, campus and data center fabric automation, and multi-vendor integrations."
       },
       {
         title: "Managed Network Services",
-        link: "/services/managed-network-monitoring-services",
+        link: "/services/managed-network-services",
         description: "Continuous 24/7 network observability, change validation, and incident remediation."
       },
       {

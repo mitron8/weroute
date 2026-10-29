@@ -51,7 +51,7 @@ export default function FinalCTA({
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#f7f9fc] py-20 sm:py-24"
+      className="relative lg:sticky lg:top-0 z-10 overflow-hidden bg-[#f7f9fc] py-16 lg:py-20 pb-32 sm:pb-40 min-h-[auto] lg:min-h-screen flex flex-col justify-center"
     >
       {/* Subtle Section Ambience */}
       <div className="absolute inset-0 pointer-events-none">

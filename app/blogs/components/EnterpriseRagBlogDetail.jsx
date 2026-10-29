@@ -533,13 +533,9 @@ export default function EnterpriseRagBlogDetail({ blog }) {
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#050849]">
             How does WeRoute help?
           </h2>
-          <div className="mt-1 text-xs text-blue-700/80 font-medium">
-            (Internal link: <Link href="/solution/enterprise-ai" className="underline hover:text-blue-900">Enterprise AI & Machine Learning Development Services</Link>)
-          </div>
-
           <p className="mt-4 text-[16px] leading-relaxed text-[#050849]/85">
             WeRoute designs and delivers production RAG systems, from document ingestion and hybrid retrieval to access control and evaluation. Our{" "}
-            <Link href="/solution/enterprise-ai" className="font-bold text-blue-700 underline hover:text-blue-900">
+            <Link href="/services/enterprise-ai-machine-learning-development-services" className="font-bold text-blue-700 underline hover:text-blue-900">
               Enterprise AI & Machine Learning Development Services
             </Link>{" "}
             page describes the approach. Model Deployment & MLOps Services covers operation after launch.
@@ -591,7 +587,7 @@ export default function EnterpriseRagBlogDetail({ blog }) {
             </h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link href="/solution/enterprise-ai" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
+                <Link href="/services/enterprise-ai-machine-learning-development-services" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
                   <span>Enterprise AI & Machine Learning Development Services</span>
                 </Link>
@@ -603,7 +599,7 @@ export default function EnterpriseRagBlogDetail({ blog }) {
                 </Link>
               </li>
               <li>
-                <Link href="/solution/cybersecurity" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
+                <Link href="/solutions/cybersecurity" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
                   <span>Cybersecurity Solutions</span>
                 </Link>

@@ -298,10 +298,7 @@ export default function Navbar() {
                   "/company-overview",
                   "/our-mission",
                   "/our-vision",
-                  "/consulting-approch",
-                  "/governance",
                   "/why-weroute",
-                  "/who-we-are",
                 ].some((route) => pathname?.startsWith(route)));
 
             return (

@@ -572,13 +572,9 @@ export default function StaffAugmentationBlogDetail({ blog }) {
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#050849]">
             How does WeRoute help?
           </h2>
-          <div className="mt-1 text-xs text-blue-700/80 font-medium">
-            (Internal link: <Link href="/services/technology-manpower-staffing-services" className="underline hover:text-blue-900">Technology Manpower & Staffing Services</Link>)
-          </div>
-
           <p className="mt-4 text-[16px] leading-relaxed text-[#050849]/85">
             WeRoute offers staff augmentation, dedicated technology teams and project-based delivery, and helps teams choose between them. Our{" "}
-            <Link href="/services/technology-manpower-staffing-services" className="font-bold text-blue-700 underline hover:text-blue-900">
+            <Link href="/services/technology-manpower-and-staffing-services" className="font-bold text-blue-700 underline hover:text-blue-900">
               Technology Manpower & Staffing Services
             </Link>{" "}
             page describes the engagement models and role coverage. Specialist pages cover Network & Infrastructure Staffing, Cybersecurity & SOC Staffing and Cloud, DevOps & Automation Staffing.
@@ -630,7 +626,7 @@ export default function StaffAugmentationBlogDetail({ blog }) {
             </h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link href="/services/technology-manpower-staffing-services" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
+                <Link href="/services/technology-manpower-and-staffing-services" className="font-semibold text-blue-700 hover:underline flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
                   <span>Technology Manpower & Staffing Services</span>
                 </Link>

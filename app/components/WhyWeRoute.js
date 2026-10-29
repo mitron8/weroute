@@ -1,13 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React from "react";
+import Image from "next/image";
 import {
   Layers,
   Scale,
   Workflow,
   ShieldCheck,
   Compass,
-  Handshake
+  Handshake,
+  CheckCircle2
 } from "lucide-react";
 
 const whyPillars = [
@@ -53,76 +55,99 @@ export default function WhyWeRoute() {
   return (
     <section
       id="why"
-      className="relative overflow-hidden bg-[#f7f9fc] py-28 text-[#052440]"
+      className="relative z-20 rounded-t-[36px] sm:rounded-t-[48px] lg:rounded-t-[60px] rounded-b-none border-t border-white/20 bg-[#050238] text-white shadow-[0_-10px_28px_rgba(0,0,0,0.18)] overflow-hidden"
     >
-      {/* Background Ambience */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-[-10%] top-0 h-[450px] w-[450px] rounded-full bg-[#052440]/5 blur-3xl" />
-        <div className="absolute right-[-10%] bottom-[-10%] h-[400px] w-[400px] rounded-full bg-[#0d5ea8]/5 blur-3xl" />
-      </div>
+      {/* Hardware-accelerated CSS radial ambience (zero blur, zero repaint lag) */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.14),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(183,243,107,0.08),transparent_50%)]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <span className="clay-badge-light inline-flex items-center border border-[#052440]/10 bg-[#f7f9fc] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#052440]">
-            Why WeRoute
-          </span>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 pt-20 pb-24 sm:pt-28 sm:pb-32">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
+          {/* ───────────────────────────────────────────────────────── */}
+          {/* Left Column: Sticky Narrative Anchor                      */}
+          {/* ───────────────────────────────────────────────────────── */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 backdrop-blur-sm mb-5">
+              <span className="h-2 w-2 rounded-full bg-[#B7F36B] shadow-[0_0_6px_#B7F36B]" />
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B7F36B]">
+                Why WeRoute
+              </span>
+            </div>
 
-          <h2 className="mt-6 text-3xl font-extrabold leading-tight text-[#080357] md:text-4xl lg:text-[44px] tracking-tight">
-            Why Enterprises{" "}
-            <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
-              Choose WeRoute
-            </span>
-          </h2>
+            <h2 className="text-3xl font-extrabold leading-tight text-white md:text-4xl lg:text-[44px] tracking-tight">
+              Why Enterprises{" "}
+              <span className="bg-gradient-to-r from-white via-white to-[#B7F36B] bg-clip-text text-transparent">
+                Choose WeRoute
+              </span>
+            </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#052440]/70 font-normal">
-            Most providers sell either strategy or execution, and the gap between the two is where transformation projects stall. WeRoute covers both, which means the architecture we recommend is the architecture we build and operate.
-          </p>
-        </motion.div>
+            <p className="mt-6 text-base sm:text-lg leading-relaxed text-white/70 font-normal">
+              Most providers sell either strategy or execution, and the gap between the two is where transformation projects stall. WeRoute covers both, which means the architecture we recommend is the architecture we build and operate.
+            </p>
 
-        {/* 6 Pillars Claymorphic Bento Grid */}
-        <div className="mt-20 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {whyPillars.map((c, i) => {
-            const Icon = c.icon;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="clay-light group relative flex flex-col justify-between bg-[#f7f9fc] border border-[#052440]/5 p-8 transition-all duration-300 hover:-translate-y-1.5"
-              >
-                <div className="flex flex-col h-full justify-between">
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="clay-badge-light flex h-14 w-14 items-center justify-center bg-[#080357] text-white transition-transform duration-300 group-hover:scale-105">
-                      <Icon size={24} />
+            {/* Architectural Trust Summary Bar */}
+            <div className="mt-8 pt-8 border-t border-white/10 flex flex-col gap-3">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-white/80">
+                <CheckCircle2 size={16} className="text-[#B7F36B] shrink-0" />
+                <span>Single accountable partner across design &amp; run</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-white/80">
+                <CheckCircle2 size={16} className="text-[#B7F36B] shrink-0" />
+                <span>100% objective, vendor-agnostic technology guidance</span>
+              </div>
+            </div>
+
+            {/* Seamless Outline Illustration (No card, blends naturally with subtle opacity) */}
+            <div className="relative mt-8 select-none pointer-events-none">
+              {/* Atmospheric subtle ambient glow */}
+              <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-[#B7F36B]/[0.06] blur-3xl pointer-events-none" />
+
+              <Image
+                src="/images/why-weroute-tower.png"
+                alt="Telecommunications Tower & Optical Backhaul Architecture"
+                width={1200}
+                height={896}
+                className="relative z-10 w-full h-auto object-contain opacity-70 transition-opacity duration-300 hover:opacity-85 drop-shadow-[0_0_24px_rgba(183,243,107,0.1)]"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* ───────────────────────────────────────────────────────── */}
+          {/* Right Column: Architectural Precision Ledger (No Cards)    */}
+          {/* ───────────────────────────────────────────────────────── */}
+          <div className="lg:col-span-7 flex flex-col divide-y divide-white/10 border-y border-white/10">
+            {whyPillars.map((c) => {
+              const Icon = c.icon;
+              return (
+                <div
+                  key={c.n}
+                  className="group py-7 sm:py-8 transition-all duration-300 -mx-4 sm:-mx-6 px-4 sm:px-6 rounded-2xl hover:bg-white/[0.04]"
+                >
+                  <div className="flex items-start gap-5 sm:gap-6">
+                    {/* Index & Icon */}
+                    <div className="flex flex-col items-center gap-2 shrink-0 pt-0.5">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.06] border border-white/15 text-[#B7F36B] transition-colors duration-300 group-hover:bg-[#B7F36B]/15 group-hover:border-[#B7F36B]/40">
+                        <Icon size={20} />
+                      </div>
+                      <span className="font-mono text-[11px] font-bold text-white/40 tracking-wider">
+                        {c.n}
+                      </span>
                     </div>
 
-                    <span className="clay-badge-light px-3 py-1 text-xs font-mono font-extrabold tracking-widest text-[#052440]/40 bg-[#f7f9fc]">
-                      {c.n}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-2xl font-extrabold leading-snug text-[#080357]">
-                      {c.t}
-                    </h3>
-
-                    <p className="mt-3.5 text-base leading-relaxed text-[#052440]/70">
-                      {c.b}
-                    </p>
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-[#B7F36B] transition-colors duration-200">
+                        {c.t}
+                      </h3>
+                      <p className="mt-2 text-sm sm:text-base leading-relaxed text-white/70 font-normal">
+                        {c.b}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

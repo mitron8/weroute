@@ -15,6 +15,7 @@ import Impact from "./components/Impact";
 import TimeToValueArchitecture from "./components/TimeToValueArchitecture";
 import HomepageFAQ from "./components/HomepageFAQ";
 import FinalCTA from "./components/FinalCTA";
+import Footer from "./components/Footer";
 
 export default function Page() {
   const [loadingDone, setLoadingDone] = useState(false);
@@ -168,11 +169,11 @@ export default function Page() {
           {/* SECTION 4: ENTERPRISE SOLUTIONS */}
           <Solutions />
 
-          {/* SECTION 5: SERVICES */}
-          <Services />
-
-          {/* SECTION 6: WHY WEROUTE */}
-          <WhyWeRoute />
+          {/* SECTION 5 & 6: SERVICES + WHY WEROUTE (OVERLAPPING STACK) */}
+          <div className="relative bg-[#f7f9fc]">
+            <Services />
+            <WhyWeRoute />
+          </div>
 
           {/* SECTION 7: ENGINEERING CAPABILITIES */}
           <Capabilities />
@@ -189,8 +190,11 @@ export default function Page() {
           {/* SECTION 11: FREQUENTLY ASKED QUESTIONS */}
           <HomepageFAQ />
 
-          {/* FINAL CTA: START YOUR TRANSFORMATION */}
-          <FinalCTA />
+          {/* FINAL CTA + FOOTER (OVERLAPPING STACK) */}
+          <div className="relative bg-[#f7f9fc]">
+            <FinalCTA />
+            <Footer />
+          </div>
         </main>
       </div>
     </>

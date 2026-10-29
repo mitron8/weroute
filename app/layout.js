@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
         <SmoothScroll>
           {children}
           <Navbar/>
-          <Footer/>
+          <Footer isLayout={true} />
         </SmoothScroll>
       </body>
     </html>

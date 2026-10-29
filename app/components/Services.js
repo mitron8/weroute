@@ -73,7 +73,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#f7f9fc] py-28 text-[#052440]"
+      className="relative lg:sticky lg:top-0 z-10 overflow-hidden bg-[#f7f9fc] py-16 lg:py-20 min-h-[auto] lg:min-h-screen flex flex-col justify-center text-[#052440]"
     >
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none">
