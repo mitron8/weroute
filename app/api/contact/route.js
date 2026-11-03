@@ -34,7 +34,7 @@ export async function POST(request) {
     const cleanMessage = message.trim().slice(0, 5000);
 
     const apiKey = process.env.RESEND_API_KEY;
-    const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || 'info@weroute.com';
+    const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || 'sales@weroute.ai';
     const senderEmail = process.env.CONTACT_SENDER_EMAIL || 'WeRoute Contact <onboarding@resend.dev>';
 
     // 3. Fallback for local development if RESEND_API_KEY is not yet added

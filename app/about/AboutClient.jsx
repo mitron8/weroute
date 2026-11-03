@@ -335,21 +335,28 @@ export default function AboutClient() {
 
   return (
     <main className="relative min-h-screen bg-[#f7f9fc] text-[#080357]">
-      
+
       {/* ========================================================
           HERO SECTION: About WeRoute
           Engineering Secure, Scalable Enterprise Technology
       ======================================================== */}
-      <section className="relative overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20 border-b border-gray-100 bg-white">
-        {/* Ambient atmospheric glows */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 right-0 h-[600px] w-[600px] rounded-full bg-[#080357]/[0.03] blur-[140px]" />
-          <div className="absolute top-40 left-[-100px] h-[500px] w-[500px] rounded-full bg-[#B7F36B]/10 blur-[120px]" />
+      <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 bg-[#f7f9fc] border-b border-[#050849]/5">
+        {/* Subtle Ambient Curved Graphic Backdrop */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <img
+            src="/images/about-hero-bg.jpg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-right md:object-center opacity-85 select-none"
+          />
+          {/* Edge fade scrims for perfect seamless blending with page background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f9fc] via-[#f7f9fc]/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#f7f9fc] to-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
             {/* LEFT COLUMN: HERO CONTENT */}
             <div className="lg:col-span-7">
               {/* BADGE */}
@@ -357,7 +364,7 @@ export default function AboutClient() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="clay-badge-light mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#050849]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#080357]"
+                className="clay-badge-light mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#050849]/10 bg-white/90 backdrop-blur-md px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#080357]"
               >
                 <span className="h-2 w-2 rounded-full bg-[#10b981] animate-pulse" />
                 <span>About WeRoute</span>
@@ -370,9 +377,10 @@ export default function AboutClient() {
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-[58px] font-black tracking-tight text-[#080357] leading-[1.08] mb-6"
               >
-                Engineering Secure, Scalable{" "}
-                <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
-                  Enterprise Technology
+                Engineering Secure, <br className="hidden sm:inline" />
+                Scalable Enterprise <br className="hidden sm:inline" />
+                <span className="bg-gradient-to-r from-[#080357] via-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+                  Technology
                 </span>
               </motion.h1>
 
@@ -381,7 +389,7 @@ export default function AboutClient() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-[#080357]/80"
+                className="mt-6 max-w-2xl text-base sm:text-lg font-normal leading-relaxed text-[#080357]/80"
               >
                 WeRoute helps enterprises design, modernize, secure, integrate, and operate technology across networking, cybersecurity, cloud, AI, automation, and digital engineering, built around real business outcomes instead of isolated tools.
               </motion.p>
@@ -391,34 +399,34 @@ export default function AboutClient() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="mt-8 flex flex-wrap items-center gap-4"
+                className="mt-9 flex flex-wrap items-center gap-4"
               >
                 <a
                   href="mailto:sales@weroute.ai"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[#080357] px-8 py-4 text-[15px] font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#052440] hover:-translate-y-0.5 hover:shadow-xl"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-[#080357] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#080357]/20 transition-all duration-300 hover:bg-[#052440] hover:-translate-y-0.5 hover:shadow-xl"
                 >
                   <span>Talk to Our Technology Experts</span>
-                  <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1 text-[#B7F36B]" />
+                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1 text-[#B7F36B]" />
                 </a>
 
                 <Link
                   href="/solutions"
-                  className="clay-badge-light group inline-flex items-center gap-3 rounded-full border border-[#050849]/10 bg-white px-8 py-4 text-[15px] font-semibold text-[#080357] transition-all duration-300 hover:bg-[#f7f9fc] hover:border-[#080357]/30"
+                  className="clay-badge-light group inline-flex items-center gap-2 rounded-full border border-[#050849]/10 bg-white/90 backdrop-blur-md px-7 py-3.5 text-sm font-bold text-[#080357] transition-all duration-300 hover:bg-white hover:border-[#080357]/30 hover:-translate-y-0.5"
                 >
                   <span>Explore Our Solutions</span>
-                  <ChevronRight size={17} className="transition-transform duration-300 group-hover:translate-x-1 text-[#080357]/60" />
+                  <ChevronRight size={15} className="transition-transform duration-300 group-hover:translate-x-1 text-[#080357]/60" />
                 </Link>
               </motion.div>
             </div>
 
             {/* RIGHT COLUMN: LOTTIE ANIMATION */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92, y: 15 }}
+              initial={{ opacity: 0, scale: 0.94, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 flex items-center justify-center lg:justify-end lg:-mt-6 xl:-mt-10"
+              className="lg:col-span-5 flex items-center justify-center lg:justify-end"
             >
-              <div className="relative w-full max-w-[480px] aspect-square flex items-center justify-center pointer-events-none">
+              <div className="relative w-full max-w-[460px] aspect-square flex items-center justify-center pointer-events-none">
                 <DotLottieReact
                   src="https://lottie.host/799676d8-2daa-4729-8a48-0f5f8f7044fc/MuhrXOY42y.lottie"
                   loop
@@ -438,7 +446,7 @@ export default function AboutClient() {
       ======================================================== */}
       <section className="relative py-24 md:py-32 bg-[#f7f9fc]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -450,7 +458,7 @@ export default function AboutClient() {
               <span className="h-2 w-2 rounded-full bg-[#10b981] animate-pulse" />
               <span>Our Story</span>
             </span>
-            
+
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#080357] tracking-tight mb-6">
               Where Strategy Meets{" "}
               <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
@@ -508,7 +516,7 @@ export default function AboutClient() {
       ======================================================== */}
       <section className="relative py-24 md:py-32 bg-white border-t border-[#050849]/5">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -539,7 +547,7 @@ export default function AboutClient() {
 
           {/* SIX-STAGE LIFECYCLE DIAGRAM FLOW & CAROUSEL */}
           <div className="mt-16">
-            
+
             {/* SECTION HEADER & CAROUSEL CONTROLS */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -564,11 +572,10 @@ export default function AboutClient() {
                   onClick={() => handleScrollBy(-1)}
                   disabled={!canScrollLeft}
                   aria-label="Previous stage"
-                  className={`clay-badge-light flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 ${
-                    canScrollLeft
+                  className={`clay-badge-light flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 ${canScrollLeft
                       ? "border-[#050849]/10 bg-white text-[#080357] hover:bg-[#080357] hover:text-[#B7F36B] shadow-sm hover:scale-105 active:scale-95 cursor-pointer"
                       : "border-[#050849]/5 bg-white/40 text-[#080357]/25 cursor-not-allowed"
-                  }`}
+                    }`}
                 >
                   <ChevronLeft size={18} />
                 </button>
@@ -577,11 +584,10 @@ export default function AboutClient() {
                   onClick={() => handleScrollBy(1)}
                   disabled={!canScrollRight}
                   aria-label="Next stage"
-                  className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 ${
-                    canScrollRight
+                  className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 ${canScrollRight
                       ? "border-transparent bg-[#080357] text-white shadow-md hover:bg-[#052440] hover:text-[#B7F36B] hover:scale-105 active:scale-95 cursor-pointer"
                       : "border-[#050849]/5 bg-[#080357]/20 text-white/50 cursor-not-allowed"
-                  }`}
+                    }`}
                 >
                   <ChevronRight size={18} />
                 </button>
@@ -589,7 +595,7 @@ export default function AboutClient() {
             </motion.div>
 
             <div className="space-y-8">
-                
+
               {/* INTERACTIVE HORIZONTAL TIMELINE STEPPER TRACK (DESKTOP) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -599,16 +605,16 @@ export default function AboutClient() {
                 className="clay-light hidden lg:block rounded-[28px] border border-[#050849]/5 bg-[#f7f9fc] p-6 shadow-sm"
               >
                 <div className="relative flex items-start justify-between">
-                  <div 
-                    className="absolute top-6 left-6 right-6 -translate-y-1/2 h-[3px] bg-[#080357]/10 z-0 rounded-full" 
-                    aria-hidden="true" 
+                  <div
+                    className="absolute top-6 left-6 right-6 -translate-y-1/2 h-[3px] bg-[#080357]/10 z-0 rounded-full"
+                    aria-hidden="true"
                   />
-                  <div 
-                    className="absolute top-6 left-6 -translate-y-1/2 h-[3px] bg-gradient-to-r from-[#080357] via-[#080357] to-[#B7F36B] z-0 rounded-full transition-all duration-500 ease-out" 
-                    style={{ 
-                      width: `calc(${activeStageIndex / 5} * (100% - 48px))` 
+                  <div
+                    className="absolute top-6 left-6 -translate-y-1/2 h-[3px] bg-gradient-to-r from-[#080357] via-[#080357] to-[#B7F36B] z-0 rounded-full transition-all duration-500 ease-out"
+                    style={{
+                      width: `calc(${activeStageIndex / 5} * (100% - 48px))`
                     }}
-                    aria-hidden="true" 
+                    aria-hidden="true"
                   />
 
                   {LIFECYCLE_STAGES.map((stg, idx) => {
@@ -621,17 +627,15 @@ export default function AboutClient() {
                         className="relative z-10 flex flex-col items-center group cursor-pointer focus:outline-none"
                       >
                         <div
-                          className={`flex h-12 w-12 items-center justify-center rounded-2xl text-xs font-black transition-all duration-300 ${
-                            isActive
+                          className={`flex h-12 w-12 items-center justify-center rounded-2xl text-xs font-black transition-all duration-300 ${isActive
                               ? "bg-[#080357] text-[#B7F36B] shadow-lg ring-4 ring-[#B7F36B]/40 scale-110"
                               : "clay-badge-light bg-white border border-[#050849]/10 text-[#080357] group-hover:scale-105 group-hover:border-[#080357]/30"
-                          }`}
+                            }`}
                         >
                           {stg.step}
                         </div>
-                        <span className={`mt-2.5 text-xs transition-colors duration-300 ${
-                          isActive ? "font-black text-[#080357]" : "font-bold text-[#080357]/70 group-hover:text-[#080357]"
-                        }`}>
+                        <span className={`mt-2.5 text-xs transition-colors duration-300 ${isActive ? "font-black text-[#080357]" : "font-bold text-[#080357]/70 group-hover:text-[#080357]"
+                          }`}>
                           {stg.name}
                         </span>
                         {isActive && (
@@ -659,12 +663,11 @@ export default function AboutClient() {
                         key={stage.step}
                         className="lifecycle-card w-[82vw] sm:w-[320px] lg:w-[340px] flex-shrink-0 snap-start"
                       >
-                        <div className={`clay-light relative flex h-full flex-col justify-between overflow-hidden rounded-[26px] border bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
-                          isActive
+                        <div className={`clay-light relative flex h-full flex-col justify-between overflow-hidden rounded-[26px] border bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${isActive
                             ? "border-[#B7F36B] shadow-xl ring-2 ring-[#B7F36B]/30"
                             : "border-[#050849]/5"
-                        }`}>
-                          
+                          }`}>
+
                           {/* TOP ROW: Badge + Icon */}
                           <div>
                             <div className="flex items-center justify-between">
@@ -727,11 +730,10 @@ export default function AboutClient() {
                         type="button"
                         onClick={() => scrollToStage(i)}
                         aria-label={`Go to stage ${stg.step} ${stg.name}`}
-                        className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                          isActive
+                        className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${isActive
                             ? "w-8 bg-[#080357]"
                             : "w-2.5 bg-[#080357]/20 hover:bg-[#080357]/40"
-                        }`}
+                          }`}
                       />
                     );
                   })}
@@ -750,33 +752,55 @@ export default function AboutClient() {
           SECTION 3: Technology Impact
           Technology Impact You Can Measure
       ======================================================== */}
-      <section className="relative py-20 md:py-28 bg-[#f7f9fc] border-t border-[#050849]/5">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+      <section className="relative py-20 md:py-28 overflow-hidden bg-[#f7f9fc] border-t border-[#050849]/5">
+        {/* Abstract Architectural Backdrop (provided 3D graphic) */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <img
+            src="/images/about-impact-bg.jpg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-right md:object-center opacity-75 select-none"
+          />
+          {/* Theme blending gradient scrim: seamless transition to WeRoute's #f7f9fc background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f9fc] via-[#f7f9fc]/85 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#f7f9fc] to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#f7f9fc] to-transparent" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl mb-12"
+            className="max-w-2xl mb-12 sm:mb-14"
           >
+            {/* Standard WeRoute Clay Badge */}
             <span className="clay-badge-light mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#050849]/10 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#080357]">
               <span className="h-2 w-2 rounded-full bg-[#10b981] animate-pulse" />
               <span>Proven Impact</span>
             </span>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#080357] tracking-tight mb-6">
-              Technology Impact{" "}
-              <span className="bg-gradient-to-r from-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
+            {/* Section Heading with WeRoute signature gradient */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#080357] tracking-tight leading-[1.15]">
+              Technology Impact <br className="hidden sm:inline" />
+              <span className="bg-gradient-to-r from-[#080357] via-[#080357] to-[#A7BF73] bg-clip-text text-transparent">
                 You Can Measure
               </span>
             </h2>
 
-            <div className="h-1.5 w-14 bg-[#B7F36B] rounded-full" />
+            {/* WeRoute Signature Lime Accent Line */}
+            <div className="mt-6 h-1.5 w-14 bg-[#B7F36B] rounded-full" />
+
+            {/* Subheading in site's standard typography */}
+            <p className="mt-5 text-base sm:text-lg text-[#080357]/80 font-normal leading-relaxed max-w-xl">
+              Real results, measurable outcomes, and lasting value delivered through technology.
+            </p>
           </motion.div>
 
-          {/* 5 IMPACT CLAY CARDS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-5 gap-5 sm:gap-6">
+          {/* 5 IMPACT CARDS (Matching WeRoute Claymorphic Aesthetics + Clean Modern Layout) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6">
             {METRICS.map((metric, i) => {
               const Icon = metric.icon;
               return (
@@ -786,15 +810,10 @@ export default function AboutClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  className={`clay-light group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-[#050849]/5 bg-white p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#B7F36B]/50 hover:shadow-xl ${
-                    i < 3
-                      ? "col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-1"
-                      : i === 3
-                      ? "col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-1"
-                      : "col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-1"
-                  }`}
+                  className="clay-light group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-white/80 bg-white/90 backdrop-blur-md p-6 sm:p-7 shadow-[0_10px_30px_rgba(8,3,87,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:bg-white hover:border-[#B7F36B]/50 hover:shadow-xl min-h-[250px]"
                 >
                   <div>
+                    {/* Top Icon Badge in WeRoute Signature Deep Navy & Lime Accent */}
                     <div className="flex items-center justify-between">
                       <div className="clay-badge-light flex h-12 w-12 items-center justify-center rounded-2xl bg-[#080357] text-[#B7F36B] shadow-sm transition-transform duration-300 group-hover:scale-105">
                         <Icon className="w-5 h-5 text-[#B7F36B]" />
@@ -805,17 +824,20 @@ export default function AboutClient() {
                       </span>
                     </div>
 
-                    <div className="mt-6 text-3xl sm:text-4xl font-black tracking-tight text-[#080357]">
+                    {/* Metric Value */}
+                    <div className="mt-6 text-3xl sm:text-[34px] font-black tracking-tight text-[#080357] leading-none">
                       {metric.value}
                     </div>
 
-                    <p className="mt-2.5 text-xs sm:text-sm font-medium leading-relaxed text-[#080357]/80">
+                    {/* Metric Label */}
+                    <p className="mt-3 text-xs sm:text-[13px] font-medium leading-relaxed text-[#080357]/80">
                       {metric.label}
                     </p>
                   </div>
 
+                  {/* Bottom Accent Bar in WeRoute Lime */}
                   <div className="mt-6 flex items-center gap-1.5 pt-4 border-t border-[#050849]/5">
-                    <div className="h-1 w-6 rounded-full bg-[#080357]/10 transition-all duration-300 group-hover:w-12 group-hover:bg-[#B7F36B]" />
+                    <div className="h-1 w-6 rounded-full bg-[#080357]/10 transition-all duration-300 group-hover:w-14 group-hover:bg-[#B7F36B]" />
                     <div className="h-1 w-1 rounded-full bg-[#080357]/10 transition-colors duration-300 group-hover:bg-[#B7F36B]" />
                   </div>
                 </motion.div>
@@ -832,7 +854,7 @@ export default function AboutClient() {
       ======================================================== */}
       <section className="relative py-24 md:py-32 bg-white border-t border-[#050849]/5">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -925,7 +947,7 @@ export default function AboutClient() {
       ======================================================== */}
       <section className="relative py-24 md:py-32 bg-[#f7f9fc] border-t border-[#050849]/5">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -994,7 +1016,7 @@ export default function AboutClient() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1065,7 +1087,7 @@ export default function AboutClient() {
       ======================================================== */}
       <section className="relative py-20 bg-[#f7f9fc] border-t border-[#050849]/5">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1123,9 +1145,9 @@ export default function AboutClient() {
       ======================================================== */}
       <section className="relative py-20 md:py-28 border-t border-[#050849]/5 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <div className="grid gap-14 lg:grid-cols-12 lg:items-start">
-            
+
             {/* STICKY HEADER */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}

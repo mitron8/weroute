@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare, Calendar } from "lucide-react";
 import Link from "next/link";
@@ -48,10 +49,17 @@ export default function FinalCTA({
   const b2Text = secondaryButtonText !== undefined ? secondaryButtonText : button2Text;
   const b2Href = secondaryButtonHref || button2Href;
 
+  const pathname = usePathname();
+  const isHomepage = pathname === "/";
+
   return (
     <section
       id="contact"
-      className="relative lg:sticky lg:top-0 z-10 overflow-hidden bg-[#f7f9fc] py-16 lg:py-20 pb-32 sm:pb-40 min-h-[auto] lg:min-h-screen flex flex-col justify-center"
+      className={
+        isHomepage
+          ? "relative lg:sticky lg:top-0 z-10 overflow-hidden bg-[#f7f9fc] py-16 lg:py-20 pb-32 sm:pb-40 min-h-[auto] lg:min-h-screen flex flex-col justify-center"
+          : "relative z-10 overflow-hidden bg-[#f7f9fc] py-20 sm:py-24"
+      }
     >
       {/* Subtle Section Ambience */}
       <div className="absolute inset-0 pointer-events-none">
