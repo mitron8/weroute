@@ -46,11 +46,11 @@ export default function SiemSoarBlogDetail({ blog }) {
           <span className="text-blue-700">Security Operations</span>
         </nav>
 
-        {/* HEADER BADGES (Verbatim from Page 1) */}
+        {/* HEADER BADGES */}
         <div className="flex flex-wrap items-center gap-2.5">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 shadow-2xs">
             <Shield size={12} />
-            Web Content | SEO + GEO Optimised (Blog)
+            Engineering Deep Dive
           </span>
           <span className="inline-flex items-center rounded-full bg-[#050849] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
             BLOG | SECURITY OPERATIONS

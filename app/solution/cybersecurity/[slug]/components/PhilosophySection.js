@@ -4,16 +4,8 @@ import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react'; 
 
 export default function PhilosophySection({ data }) {
-  // 1. Log the data to your browser console to see what is actually arriving
-  console.log("Philosophy Data received:", data);
-
-  // 2. Instead of returning null, show a red error if data is missing
   if (!data || !data.quote) {
-    return (
-      <div className="w-full bg-red-100 p-10 text-center text-red-700 font-bold">
-        Error: Philosophy data is missing or undefined! Check how you are passing the prop.
-      </div>
-    );
+    return null;
   }
 
   return (

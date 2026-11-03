@@ -19,7 +19,6 @@ import EngagementModelsSpectrumDiagram from "./EngagementModelsSpectrumDiagram";
 import CostPerProductiveHourDiagram from "./CostPerProductiveHourDiagram";
 import HybridEngagementModelDiagram from "./HybridEngagementModelDiagram";
 import BlogFaqAccordion from "./BlogFaqAccordion";
-import DeveloperNotesSection from "./DeveloperNotesSection";
 
 export default function StaffAugmentationBlogDetail({ blog }) {
   const [copied, setCopied] = useState(false);
@@ -67,7 +66,7 @@ export default function StaffAugmentationBlogDetail({ blog }) {
         <div className="flex flex-wrap items-center gap-2.5">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 shadow-2xs">
             <Shield size={12} />
-            Web Content | SEO + GEO Optimised (Blog)
+            Engineering Deep Dive
           </span>
           <span className="inline-flex items-center rounded-full bg-[#050849] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
             BLOG | ENGAGEMENT MODELS
@@ -666,9 +665,6 @@ export default function StaffAugmentationBlogDetail({ blog }) {
             </ul>
           </div>
         </section>
-
-        {/* SECTION 11: DEVELOPER NOTES */}
-        <DeveloperNotesSection notes={blog?.developerNotes} />
 
       </div>
     </article>

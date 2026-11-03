@@ -69,7 +69,7 @@ export default function NetworkObservabilityBlogDetail({ blog }) {
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* BREADCRUMB NAVIGATION */}
         <nav className="flex items-center gap-2 text-xs font-semibold text-[#050849]/60 mb-5">
           <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
@@ -83,7 +83,7 @@ export default function NetworkObservabilityBlogDetail({ blog }) {
         <div className="flex flex-wrap items-center gap-2.5">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 shadow-2xs">
             <Shield size={12} />
-            Web Content | SEO + GEO Optimised (Blog)
+            Engineering Deep Dive
           </span>
           <span className="inline-flex items-center rounded-full bg-[#050849] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
             BLOG | NETWORK OBSERVABILITY
@@ -167,9 +167,8 @@ export default function NetworkObservabilityBlogDetail({ blog }) {
                 {comparisonRows.map((row, idx) => (
                   <tr
                     key={idx}
-                    className={`transition-colors ${
-                      idx % 2 === 0 ? "bg-white" : "bg-slate-50/60"
-                    } hover:bg-slate-50`}
+                    className={`transition-colors ${idx % 2 === 0 ? "bg-white" : "bg-slate-50/60"
+                      } hover:bg-slate-50`}
                   >
                     <td className="py-3.5 px-4 font-bold text-[#050849] align-top">
                       <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-0.5">
@@ -649,7 +648,7 @@ export default function NetworkObservabilityBlogDetail({ blog }) {
         {/* SECTION 12: Plan Your Observability Roadmap */}
         <section className="mt-12 overflow-hidden rounded-2xl bg-[#050849] p-6 sm:p-8 text-white shadow-xl relative">
           <div className="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
-          
+
           <div className="relative z-10 max-w-xl">
             <h3 className="text-2xl font-extrabold sm:text-3xl">
               Plan Your Observability Roadmap
